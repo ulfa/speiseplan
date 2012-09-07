@@ -1,0 +1,1222 @@
+
+=INFO REPORT==== 2-Sep-2012::07:26:35 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 2-Sep-2012::07:26:37 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 2-Sep-2012::07:26:37 ===
+SSL:[]
+
+=INFO REPORT==== 2-Sep-2012::07:26:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:26:38 ===
+    application: mnesia
+    exited: stopped
+    type: temporary
+
+=INFO REPORT==== 2-Sep-2012::07:27:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:08 ===
+POST /eater/delete/eater-15 [speiseplan] 302 108ms
+
+=INFO REPORT==== 2-Sep-2012::07:27:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:08 ===
+GET /eater/index [speiseplan] 200 135ms
+
+=INFO REPORT==== 2-Sep-2012::07:27:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:28 ===
+POST /eater/create [speiseplan] 302 130ms
+
+=INFO REPORT==== 2-Sep-2012::07:27:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:28 ===
+GET /eater/index [speiseplan] 200 129ms
+
+=INFO REPORT==== 2-Sep-2012::07:27:45 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:45 ===
+POST /eater/create [speiseplan] 302 139ms
+
+=INFO REPORT==== 2-Sep-2012::07:27:45 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:27:45 ===
+GET /eater/index [speiseplan] 200 136ms
+
+=INFO REPORT==== 2-Sep-2012::07:28:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:28:44 ===
+GET /eater/index [speiseplan] 200 200ms
+
+=INFO REPORT==== 2-Sep-2012::07:28:52 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:28:52 ===
+POST /eater/create [speiseplan] 302 136ms
+
+=INFO REPORT==== 2-Sep-2012::07:28:52 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:28:52 ===
+GET /eater/index [speiseplan] 200 132ms
+
+=INFO REPORT==== 2-Sep-2012::07:29:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:29:06 ===
+POST /eater/create [speiseplan] 302 134ms
+
+=INFO REPORT==== 2-Sep-2012::07:29:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:29:07 ===
+GET /eater/index [speiseplan] 200 135ms
+
+=INFO REPORT==== 2-Sep-2012::07:30:59 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:31:00 ===
+GET /eater/index [speiseplan] 200 205ms
+
+=INFO REPORT==== 2-Sep-2012::07:31:12 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:31:13 ===
+POST /eater/create [speiseplan] 302 346ms
+
+=INFO REPORT==== 2-Sep-2012::07:31:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:31:13 ===
+GET /eater/index [speiseplan] 200 182ms
+
+=INFO REPORT==== 2-Sep-2012::07:31:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:31:29 ===
+POST /eater/create [speiseplan] 302 307ms
+
+=INFO REPORT==== 2-Sep-2012::07:31:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::07:31:29 ===
+GET /eater/index [speiseplan] 200 201ms
+
+=ERROR REPORT==== 2-Sep-2012::08:42:42 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=ERROR REPORT==== 2-Sep-2012::08:42:44 ===
+Mnesia(speiseplan@noname): ** WARNING ** Mnesia is overloaded: {dump_log,
+                                                                time_threshold}
+
+=INFO REPORT==== 2-Sep-2012::08:42:57 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:42:57 ===
+GET /eater/login [speiseplan] 200 417ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:01 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::08:43:01 ===
+{{case_clause,[{eater,"eater-16","aa","ce9ba51802f7f6daa5d81d1a58d4a911","aa",
+                      "aaa",undefined,5,false,"aa"},
+               {eater,"eater-19","aa","ce9ba51802f7f6daa5d81d1a58d4a911","aa",
+                      "aa",undefined,5,false,"aa"}]},
+ [{speiseplan_eater_controller,login,3,
+                               [{file,"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_eater_controller.erl"},
+                                {line,9}]},
+  {boss_web_controller,execute_action,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,711}]},
+  {boss_web_controller,process_request,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+  {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+  {boss_web_controller,handle_request,3,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+  {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+  {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::08:43:01 ===
+POST /eater/login [speiseplan] 500 163ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:19 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:20 ===
+POST /eater/delete/eater-19 [speiseplan] 302 460ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:20 ===
+GET /eater/index [speiseplan] 200 221ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:23 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:23 ===
+GET /eater/login [speiseplan] 200 223ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:30 ===
+POST /eater/login [speiseplan] 302 144ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:30 ===
+GET /booking/index [speiseplan] 200 202ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:43 ===
+GET /eater/ [speiseplan] 200 142ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:56 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:56 ===
+POST /eater/create [speiseplan] 302 161ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:56 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:57 ===
+GET /eater/index [speiseplan] 200 144ms
+
+=INFO REPORT==== 2-Sep-2012::08:43:59 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:43:59 ===
+GET /eater/login [speiseplan] 200 175ms
+
+=INFO REPORT==== 2-Sep-2012::08:44:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:44:04 ===
+POST /eater/login [speiseplan] 302 145ms
+
+=INFO REPORT==== 2-Sep-2012::08:44:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:44:04 ===
+GET /booking/index [speiseplan] 200 161ms
+
+=INFO REPORT==== 2-Sep-2012::08:45:49 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:45:49 ===
+POST /eater/login [speiseplan] 302 146ms
+
+=INFO REPORT==== 2-Sep-2012::08:45:49 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:45:49 ===
+GET /booking/index [speiseplan] 200 141ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:03 ===
+POST /eater/login [speiseplan] 302 164ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:03 ===
+GET /booking/index [speiseplan] 200 148ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:04 ===
+GET /admin/index [speiseplan] 302 147ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:04 ===
+GET /eater/login [speiseplan] 200 170ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:11 ===
+POST /eater/login [speiseplan] 302 133ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:12 ===
+GET /booking/index [speiseplan] 200 133ms
+
+=INFO REPORT==== 2-Sep-2012::08:46:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:46:49 ===
+GET /admin/index [speiseplan] 200 510ms
+
+=INFO REPORT==== 2-Sep-2012::08:47:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:47:08 ===
+POST /admin/create [speiseplan] 302 439ms
+
+=INFO REPORT==== 2-Sep-2012::08:47:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:47:08 ===
+GET /admin/index [speiseplan] 200 225ms
+
+=INFO REPORT==== 2-Sep-2012::08:47:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:47:13 ===
+GET /admin/detail/menu-1 [speiseplan] 200 161ms
+
+=INFO REPORT==== 2-Sep-2012::08:47:18 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::08:47:19 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['POST',
+          ["menu-1"],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.17791>,'POST',
+                      "/admin/edit/menu-1",
+                      {1,1},
+                      {11,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"content-length",
+                         {'Content-Length',"0"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           {"accept-encoding",
+                            {'Accept-Encoding',"gzip, deflate"},
+                            nil,nil},
+                           {"connection",
+                            {'Connection',"keep-alive"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::08:47:19 ===
+POST /admin/edit/menu-1 [speiseplan] 500 163ms
+
+=INFO REPORT==== 2-Sep-2012::08:49:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:49:05 ===
+GET /admin/index [speiseplan] 200 514ms
+
+=INFO REPORT==== 2-Sep-2012::08:49:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::08:49:07 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['POST',
+          ["menu-1"],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.18280>,'POST',
+                      "/admin/edit/menu-1",
+                      {1,1},
+                      {11,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"content-length",
+                         {'Content-Length',"0"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           {"accept-encoding",
+                            {'Accept-Encoding',"gzip, deflate"},
+                            nil,nil},
+                           {"connection",
+                            {'Connection',"keep-alive"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::08:49:07 ===
+POST /admin/edit/menu-1 [speiseplan] 500 130ms
+
+=INFO REPORT==== 2-Sep-2012::08:49:56 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:49:57 ===
+GET /admin/index [speiseplan] 200 506ms
+
+=INFO REPORT==== 2-Sep-2012::08:49:58 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:49:58 ===
+POST /admin/edit/menu-1 [speiseplan] 200 185ms
+
+=INFO REPORT==== 2-Sep-2012::08:53:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:53:03 ===
+GET /admin/index [speiseplan] 200 513ms
+
+=INFO REPORT==== 2-Sep-2012::08:53:17 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:53:17 ===
+POST /admin/edit/menu-1 [speiseplan] 200 141ms
+
+=INFO REPORT==== 2-Sep-2012::08:54:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:54:16 ===
+GET /admin/index [speiseplan] 200 245ms
+
+=INFO REPORT==== 2-Sep-2012::08:54:17 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::08:54:17 ===
+POST /admin/edit/menu-1 [speiseplan] 200 143ms
+
+=INFO REPORT==== 2-Sep-2012::09:17:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:17:42 ===
+GET /admin/index [speiseplan] 200 537ms
+
+=INFO REPORT==== 2-Sep-2012::09:19:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:19:40 ===
+GET /admin/index [speiseplan] 200 283ms
+
+=INFO REPORT==== 2-Sep-2012::09:19:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:19:44 ===
+POST /admin/edit/menu-1 [speiseplan] 200 206ms
+
+=INFO REPORT==== 2-Sep-2012::09:20:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:20:40 ===
+GET /admin/index [speiseplan] 200 141ms
+
+=INFO REPORT==== 2-Sep-2012::09:20:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:20:42 ===
+POST /admin/edit/menu-1 [speiseplan] 302 143ms
+
+=INFO REPORT==== 2-Sep-2012::09:20:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:20:42 ===
+GET /booking/index [speiseplan] 200 174ms
+
+=INFO REPORT==== 2-Sep-2012::09:21:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:21:00 ===
+GET /admin/index [speiseplan] 200 145ms
+
+=INFO REPORT==== 2-Sep-2012::09:21:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:21:02 ===
+POST /admin/edit/menu-1 [speiseplan] 302 141ms
+
+=INFO REPORT==== 2-Sep-2012::09:21:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:21:03 ===
+GET /booking/index [speiseplan] 200 142ms
+
+=INFO REPORT==== 2-Sep-2012::09:21:51 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:21:51 ===
+GET /admin/index [speiseplan] 200 402ms
+
+=INFO REPORT==== 2-Sep-2012::09:21:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:21:53 ===
+POST /admin/edit/menu-1 [speiseplan] 200 177ms
+
+=INFO REPORT==== 2-Sep-2012::09:25:45 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:25:46 ===
+GET /admin/index [speiseplan] 200 383ms
+
+=INFO REPORT==== 2-Sep-2012::09:25:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:25:47 ===
+POST /admin/edit/menu-1 [speiseplan] 302 139ms
+
+=INFO REPORT==== 2-Sep-2012::09:25:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:25:47 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['GET',[],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.19542>,'GET',"/admin/edit",
+                      {1,1},
+                      {10,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"accept",
+                         {'Accept',"*/*"},
+                         nil,
+                         {"accept-encoding",
+                          {'Accept-Encoding',"gzip, deflate"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           nil,
+                           {"cookie",
+                            {'Cookie',
+                                "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                            {"connection",{'Connection',"keep-alive"},nil,nil},
+                            nil}}}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:25:47 ===
+GET /admin/edit [speiseplan] 500 143ms
+
+=INFO REPORT==== 2-Sep-2012::09:28:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:28:08 ===
+GET /admin/index [speiseplan] 200 459ms
+
+=INFO REPORT==== 2-Sep-2012::09:28:09 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:28:10 ===
+POST /admin/edit/menu-1 [speiseplan] 302 156ms
+
+=INFO REPORT==== 2-Sep-2012::09:28:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:28:10 ===
+GET /admin/index [speiseplan] 200 139ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:18 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:29:18 ===
+GET /admin/index [speiseplan] 200 349ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:29:22 ===
+POST /admin/edit/menu-1 [speiseplan] 302 136ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:29:22 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['GET',[],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.19941>,'GET',"/admin/edit",
+                      {1,1},
+                      {10,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"accept",
+                         {'Accept',"*/*"},
+                         nil,
+                         {"accept-encoding",
+                          {'Accept-Encoding',"gzip, deflate"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           nil,
+                           {"cookie",
+                            {'Cookie',
+                                "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                            {"connection",{'Connection',"keep-alive"},nil,nil},
+                            nil}}}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:29:22 ===
+GET /admin/edit [speiseplan] 500 135ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:29:43 ===
+GET /admin/index [speiseplan] 200 133ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:29:46 ===
+POST /admin/edit/menu-1 [speiseplan] 302 134ms
+
+=INFO REPORT==== 2-Sep-2012::09:29:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:29:46 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['GET',[],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.19941>,'GET',"/admin/edit",
+                      {1,1},
+                      {10,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"accept",
+                         {'Accept',"*/*"},
+                         nil,
+                         {"accept-encoding",
+                          {'Accept-Encoding',"gzip, deflate"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           nil,
+                           {"cookie",
+                            {'Cookie',
+                                "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                            {"connection",{'Connection',"keep-alive"},nil,nil},
+                            nil}}}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:29:46 ===
+GET /admin/edit [speiseplan] 500 127ms
+
+=INFO REPORT==== 2-Sep-2012::09:31:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:31:36 ===
+GET /admin/index [speiseplan] 200 514ms
+
+=INFO REPORT==== 2-Sep-2012::09:31:38 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:31:39 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['POST',
+          ["menu-1"],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.20224>,'POST',
+                      "/admin/edit/menu-1",
+                      {1,1},
+                      {11,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"content-length",
+                         {'Content-Length',"0"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           {"accept-encoding",
+                            {'Accept-Encoding',"gzip, deflate"},
+                            nil,nil},
+                           {"connection",
+                            {'Connection',"keep-alive"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:31:39 ===
+POST /admin/edit/menu-1 [speiseplan] 500 166ms
+
+=INFO REPORT==== 2-Sep-2012::09:33:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:33:31 ===
+GET /admin/index [speiseplan] 200 454ms
+
+=INFO REPORT==== 2-Sep-2012::09:33:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:33:34 ===
+POST /admin/edit/menu-1 [speiseplan] 302 138ms
+
+=INFO REPORT==== 2-Sep-2012::09:33:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:33:34 ===
+{function_clause,
+    [{speiseplan_admin_controller,edit,
+         ['GET',[],
+          {eater,"eater-22","cc","c05ae7f97800405f924ab55cc1ed738d","cc",
+              "cc",undefined,5,true,"cc"},
+          {speiseplan_admin_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.20507>,'GET',"/admin/edit",
+                      {1,1},
+                      {10,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"accept",
+                         {'Accept',"*/*"},
+                         nil,
+                         {"accept-encoding",
+                          {'Accept-Encoding',"gzip, deflate"},
+                          nil,
+                          {"accept-language",
+                           {'Accept-Language',"en-us"},
+                           nil,
+                           {"cookie",
+                            {'Cookie',
+                                "_boss_session=8f09f6e6641f71aa26c32f0f4b30fa24ead49645; session_id=b10abe275150ff5b23952c0d6939669f; user_id=eater-22"},
+                            {"connection",{'Connection',"keep-alive"},nil,nil},
+                            nil}}}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                         {"origin",
+                          {"Origin","http://localhost:8001"},
+                          nil,
+                          {"referer",
+                           {'Referer',"http://localhost:8001/admin/index"},
+                           nil,nil}},
+                         {"x-requested-with",
+                          {"X-Requested-With","XMLHttpRequest"},
+                          nil,nil}}}}},
+                  false,[],[],none}}],
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_admin_controller.erl"},
+          {line,14}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:33:34 ===
+GET /admin/edit [speiseplan] 500 137ms
+
+=INFO REPORT==== 2-Sep-2012::09:36:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:36:10 ===
+GET /admin/index [speiseplan] 200 646ms
+
+=INFO REPORT==== 2-Sep-2012::09:36:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:36:13 ===
+POST /admin/edit/menu-1 [speiseplan] 302 156ms
+
+=INFO REPORT==== 2-Sep-2012::09:36:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:36:13 ===
+GET /admin/edit/menu-1 [speiseplan] 200 194ms
+
+=INFO REPORT==== 2-Sep-2012::09:36:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:36:27 ===
+GET /admin/edit/menu-1 [speiseplan] 200 154ms
+
+=INFO REPORT==== 2-Sep-2012::09:37:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:37:20 ===
+GET /admin/index [speiseplan] 200 484ms
+
+=INFO REPORT==== 2-Sep-2012::09:37:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:37:22 ===
+POST /admin/edit/menu-1 [speiseplan] 302 164ms
+
+=INFO REPORT==== 2-Sep-2012::09:37:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:37:22 ===
+{badarg,
+    [{io,format,[<0.56.0>,"1... edit ~p",[]],[]},
+     {speiseplan_admin_controller,edit,4,
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_admin_controller.erl"},
+          {line,18}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:37:22 ===
+GET /admin/edit/menu-1 [speiseplan] 500 160ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:03 ===
+GET /admin/index [speiseplan] 200 443ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:05 ===
+POST /admin/edit/menu-1 [speiseplan] 302 140ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:06 ===
+GET /admin/edit/menu-1 [speiseplan] 200 193ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:37 ===
+GET /admin/index [speiseplan] 200 204ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:40 ===
+POST /admin/edit/menu-1 [speiseplan] 302 142ms
+
+=INFO REPORT==== 2-Sep-2012::09:38:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:38:40 ===
+GET /admin/edit/menu-1 [speiseplan] 200 181ms
+
+=INFO REPORT==== 2-Sep-2012::09:40:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:40:43 ===
+GET /admin/index [speiseplan] 200 418ms
+
+=INFO REPORT==== 2-Sep-2012::09:41:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:41:05 ===
+GET /admin/index [speiseplan] 200 249ms
+
+=INFO REPORT==== 2-Sep-2012::09:41:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 2-Sep-2012::09:41:07 ===
+{function_clause,
+    [{boss_web_controller,process_location,
+         ["admin","/admin/edit/menu-1",
+          {boss_app_info,speiseplan,[],all,
+              [{speiseplan_util,true},
+               {speiseplan_db,[]},
+               {speiseplan_01_news,[]}],
+              <0.182.0>,<0.183.0>,<0.185.0>,<0.186.0>,
+              ["booking","dish","eater","menu"],
+              ["speiseplan_admin_controller","speiseplan_booking_controller",
+               "speiseplan_dish_controller","speiseplan_eater_controller",
+               "speiseplan_registration_controller"]}],
+         [{file,"src/boss/boss_web_controller.erl"},{line,750}]},
+     {boss_web_controller,process_action_result,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,780}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 2-Sep-2012::09:41:07 ===
+POST /admin/edit/menu-1 [speiseplan] 500 144ms
+
+=INFO REPORT==== 2-Sep-2012::09:42:26 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:42:27 ===
+GET /admin/index [speiseplan] 200 419ms
+
+=INFO REPORT==== 2-Sep-2012::09:42:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:42:29 ===
+POST /admin/edit/menu-1 [speiseplan] 302 139ms
+
+=INFO REPORT==== 2-Sep-2012::09:42:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:42:29 ===
+GET /eater/login [speiseplan] 200 173ms
+
+=INFO REPORT==== 2-Sep-2012::09:42:38 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:42:38 ===
+GET /admin/index [speiseplan] 200 406ms
+
+=INFO REPORT==== 2-Sep-2012::09:43:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:43:03 ===
+POST /admin/delete/menu-1 [speiseplan] 302 322ms
+
+=INFO REPORT==== 2-Sep-2012::09:43:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:43:03 ===
+GET /admin/index [speiseplan] 200 227ms
+
+=INFO REPORT==== 2-Sep-2012::09:44:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:44:47 ===
+POST /admin/edit/menu-1 [speiseplan] 302 412ms
+
+=INFO REPORT==== 2-Sep-2012::09:44:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:44:47 ===
+GET /eater/login [speiseplan] 200 199ms
+
+=INFO REPORT==== 2-Sep-2012::09:45:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:45:08 ===
+GET /admin/index [speiseplan] 200 221ms
+
+=INFO REPORT==== 2-Sep-2012::09:45:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:45:20 ===
+POST /admin/create [speiseplan] 302 138ms
+
+=INFO REPORT==== 2-Sep-2012::09:45:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:45:20 ===
+GET /admin/index [speiseplan] 200 141ms
+
+=INFO REPORT==== 2-Sep-2012::09:45:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:45:25 ===
+POST /admin/edit/menu-2 [speiseplan] 302 135ms
+
+=INFO REPORT==== 2-Sep-2012::09:45:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:45:25 ===
+GET /eater/login [speiseplan] 200 155ms
+
+=INFO REPORT==== 2-Sep-2012::09:46:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:46:25 ===
+GET /admin/index [speiseplan] 200 207ms
+
+=INFO REPORT==== 2-Sep-2012::09:46:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:46:29 ===
+POST /admin/edit/menu-2 [speiseplan] 302 135ms
+
+=INFO REPORT==== 2-Sep-2012::09:46:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:46:29 ===
+GET /eater/login [speiseplan] 200 141ms
+
+=INFO REPORT==== 2-Sep-2012::09:46:56 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:46:56 ===
+GET /admin/index [speiseplan] 200 188ms
+
+=INFO REPORT==== 2-Sep-2012::09:48:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:48:04 ===
+POST /admin/edit/menu-2 [speiseplan] 302 137ms
+
+=INFO REPORT==== 2-Sep-2012::09:48:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 2-Sep-2012::09:48:04 ===
+GET /eater/login [speiseplan] 200 155ms

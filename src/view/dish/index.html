@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+<!-- Index side of the dish interface-->
+
+{% block body %}
+<p class="alert alert-info">
+    Bei Fragen oder Anregungen wendet euch bitte an
+    <a href="mailto:anja.angermann@innoq.com">Anja</a>
+</p>
+<p class="alert alert-info">
+    Bitte meldet euch verbindlich bis Freitag um 24 Uhr für die darauf
+    folgende Woche an: nach dieser Zahl wird Anja Ihre Einkäufe tätigen.
+    Wenn durch Krankheit oder Kundentermine das Essen nicht in Anspruch
+    genommen werden kann, sollte möglichst kurzfristig, spätestens jedoch am
+    Vortag, storniert werden. Die dadurch frei gewordenen Essen können dann
+    an Interessenten "weitergegeben" werden.
+</p>
+
+<div class="row">
+  <div class="span12">
+    <h2>Aktuelle Termine</h2>
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Speise</th>
+            <th>Anmeldungen</th>
+            <th>vegetarisch</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>			
+          {% if bookings %}
+          {% for booking in bookings %}
+          <tr id="{{ booking.id }}">
+            <td data-popover-title="Teilnehmer" data-popover-content="0">
+              <a href="#">{{ booking.date }}</a>
+            </td>
+            <td>{{ booking.dish.title }}</td>
+            <td>{{ booking.eaters|length }}</td>
+            <td>0</td>
+            <td>
+				{% if eater.id in bookings.eaters %}
+                <form method="post" action=" {{ booking.id }} ">
+                	<input type="hidden" name="_method" value="delete">					
+                	<input type="submit" class="btn btn-danger" value="Stornieren">
+				</form>
+				{% else%}
+				<form method="post" action="{{ booking.id }}">
+                	<input type="hidden" name="_method" value="book">
+					{% if booking.dish.vegetarian %}
+                	<label>
+                  		<input type="checkbox" name="vegetarian" value="true">
+                  		vegetarisch
+                	</label>
+					{% endif %}
+                	<input type="submit" class="btn btn-success" value="Buchen">				
+              	</form>
+			{% endif %}
+            </td>
+          </tr>
+          <tr class="details">
+            <td colspan="4">{{ booking.dish.details }}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

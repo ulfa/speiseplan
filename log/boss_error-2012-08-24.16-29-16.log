@@ -1,0 +1,83 @@
+
+=INFO REPORT==== 24-Aug-2012::16:29:16 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 24-Aug-2012::16:29:16 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 24-Aug-2012::16:29:16 ===
+SSL:[]
+
+=INFO REPORT==== 24-Aug-2012::16:29:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::16:29:24 ===
+GET /doc/ [speiseplan] 200 31ms
+
+=INFO REPORT==== 24-Aug-2012::16:29:28 ===
+GET /doc/booking [speiseplan] 200 114ms
+
+=ERROR REPORT==== 24-Aug-2012::16:29:28 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:29:28 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:34:41 ===
+Call to tuple fun {unbound_var,'MahlzeitId'}.
+
+Tuple funs are deprecated and will be removed in R16. Use "fun M:F/A" instead, for example "fun unbound_var:'MahlzeitId'/0".
+
+(This warning will only be shown the first time a tuple fun is called.)
+
+
+=ERROR REPORT==== 24-Aug-2012::16:34:41 ===
+GET /doc/booking [speiseplan] 500 31ms
+
+=ERROR REPORT==== 24-Aug-2012::16:34:46 ===
+GET /doc/ [speiseplan] 500 30ms
+
+=INFO REPORT==== 24-Aug-2012::16:35:27 ===
+GET /doc/ [speiseplan] 200 35ms
+
+=INFO REPORT==== 24-Aug-2012::16:35:29 ===
+GET /doc/booking [speiseplan] 200 49ms
+
+=ERROR REPORT==== 24-Aug-2012::16:35:29 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:35:29 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::16:37:58 ===
+GET /doc/mahlzeit [speiseplan] 200 49ms
+
+=ERROR REPORT==== 24-Aug-2012::16:37:58 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:37:58 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:38:01 ===
+GET /doc/overview-summary.html [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::16:38:15 ===
+GET /doc/mahlzeit [speiseplan] 200 48ms
+
+=ERROR REPORT==== 24-Aug-2012::16:38:15 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:38:15 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:40:55 ===
+GET /doc/ [speiseplan] 500 11ms
+
+=INFO REPORT==== 24-Aug-2012::16:41:11 ===
+GET /doc/ [speiseplan] 200 25ms
+
+=INFO REPORT==== 24-Aug-2012::16:42:11 ===
+GET /doc/ [speiseplan] 200 24ms
+
+=INFO REPORT==== 24-Aug-2012::16:43:09 ===
+GET /doc/ [speiseplan] 200 26ms

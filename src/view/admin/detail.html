@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row">
+  <div class="span8">
+    <h2>Aktuelle Termine</h2>
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><h3>Datum</h3></th>
+            <th><h3>Speise</h3></th>
+            <th><h3>Slots</h3></th>
+            <th><h3>vegetarisch</h3></th>
+          </tr>
+        </thead>
+		<tbody>
+		<tr>
+			<td><h4>{{ menu.date }}</h4></td>
+			<td><h4>{{ menu.dish.title }}</h4></td>
+			<td><h4>{{ menu.slots }}</h4></td>
+			<td><h4>{{ menu.dish.vegetarian }}</h4></td>
+		</tr>
+		{% if  menu.booking %}		
+		{% for booking in menu.booking %}
+		<tr>
+			<td>{{ booking.eater.forename }} {{ booking.eater.name }}</td>
+			<td>{{ booking.get_formated_date }}</td>
+			<td>{{ booking.vegetarian }}</td>
+			<td>{{ booking.eater.price_to_pay }} €</td>
+		</tr>	
+		{% endfor %}
+		<tr>
+			<td><h3>Gesamt : {{ menu.get_sum}} € </h3></td>
+		</tr>
+		{% endif %}
+		</tbody>
+	</table>
+	</div>
+	</div>
+	<div class="span4">
+		<h2>Verspätete Esser</h2>
+		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
+			<p>
+			    <select name="esser" >
+				  {% for eater in eaters %}
+			      <option value="{{eater.id}}">{{eater.forename}} {{eater.name}}</option>
+				  {% endfor %}
+			    </select>
+			  </p>
+		<input type="submit", value="Hinzufügen">
+		</form>
+  	</div>
+</div>
+{% endblock %}

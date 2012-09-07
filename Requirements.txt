@@ -1,0 +1,33 @@
+- Refactoring der Datum Werte im Booking. ... müssen Datum und Zeit enthalten.
+- Rechnungslauf für alle Esser und einen Monat 
+- Ein Tag vorher, aber bis max. 15:00 Uhr. 
+- Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
+- Anja Mail schicken, wenn Esser gebucht haben.
+- Stornierung nicht möglich 24 Stunden. Ein Tag vorher, aber nur bis 15:00 Uhr
+	http://schemecookbook.org/Erlang/TimeToEpoch
+
+- Infos über andere Teilnehmer aus Speiseplan Ansicht entferne (fertig)
+- Infos über Teilnehmer in Admin Ansicht einbauen (fertig)
+- Mail an aller Esser eines Tages, dass das Essen ausfällt (fertig)
+- Nachträgliches Hinzufügen von Essern, aber nur durch den Admin (Anja) (fertig)
+- Bearbeitung von Einträgen. Speisen und Esser (fertig)
+- Bearbeitung von Einträgen.  Esser (fertig)
+- Liste der Esser, die vegetarisches Essen bestellt haben anzeigen. (fertig) 
+- Registrierungs Seite einbauen. (fertig)
+
+- Anzeige der Esser, die vegetarisch gebucht haben. (fertig)
+
+Listen 
+
+- Liste der Teilnehmer von aktuellen Tag plus 5 leerer Felder für Nachzügler.
+- Umsatz von einem Monat, gegliedert in Tagen.
+  Beispiel:
+  Von 01.01.2012 - 30.01.2012
+  
+  Datum       Anzahl Teilnehmer Einnahmen
+  01.01.2012        10            300
+
+  Gesamt:                         300  
+
+
+

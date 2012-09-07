@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form method="post" action="{% url action="update" id= edit_eater.id %}" class="well">
+	<label>Account<input type="text" name="account" value="{{ edit_eater.account }}"></label>
+	<label>Vorname<input type="text" name="forename" value="{{ edit_eater.forename}}"></textarea></label>
+	<label>Name<input type="text" name="name" value="{{ edit_eater.name }}"></label>
+	<label>Mail<input type="text" name="mail" value="{{ edit_eater.mail }}"></label>
+	<label>Preis<input type="text" name="priceToPay" value="{{ edit_eater.price_to_pay }}"></label>
+	<label>Intern <input type="checkbox" name="intern" value="true"></label>
+	<label>Admin <input type="checkbox" name="admin" value="true"></label>
+	<input type="submit">	
+</form>
+{% endblock %}

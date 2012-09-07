@@ -1,0 +1,21 @@
+
+=INFO REPORT==== 31-Aug-2012::14:08:13 ===
+Starting Boss in production mode....
+
+=INFO REPORT==== 31-Aug-2012::14:08:14 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 31-Aug-2012::14:08:14 ===
+SSL:[]
+
+=INFO REPORT==== 31-Aug-2012::14:08:14 ===
+Loading routes from "../speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 31-Aug-2012::14:08:21 ===
+GET /admin/index [speiseplan] 404 0ms
+
+=ERROR REPORT==== 31-Aug-2012::14:08:36 ===
+GET /eater/ [speiseplan] 404 0ms
+
+=ERROR REPORT==== 31-Aug-2012::14:08:45 ===
+GET /eater [speiseplan] 404 0ms

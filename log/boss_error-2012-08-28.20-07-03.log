@@ -1,0 +1,84 @@
+
+=INFO REPORT==== 28-Aug-2012::20:07:03 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 28-Aug-2012::20:07:03 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 28-Aug-2012::20:07:03 ===
+SSL:[]
+
+=INFO REPORT==== 28-Aug-2012::20:07:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:13 ===
+GET /booking [speiseplan] 302 80ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:13 ===
+GET /eater/login [speiseplan] 200 97ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:20 ===
+GET /eater/ [speiseplan] 200 106ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:28 ===
+POST /eater/create [speiseplan] 302 102ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:28 ===
+GET /eater/index [speiseplan] 200 100ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:30 ===
+GET /eater/login [speiseplan] 200 110ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:34 ===
+POST /eater/login [speiseplan] 302 101ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:34 ===
+GET /booking/index [speiseplan] 200 100ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:36 ===
+GET /admin/index [speiseplan] 200 102ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:51 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:51 ===
+POST /admin/create [speiseplan] 302 98ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:51 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:51 ===
+GET /admin/index [speiseplan] 200 100ms
+
+=INFO REPORT==== 28-Aug-2012::20:07:57 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 28-Aug-2012::20:07:57 ===
+GET /booking [speiseplan] 200 105ms

@@ -1,0 +1,18 @@
+
+=INFO REPORT==== 23-Aug-2012::09:37:00 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 23-Aug-2012::09:37:00 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 23-Aug-2012::09:37:00 ===
+SSL:[]
+
+=INFO REPORT==== 23-Aug-2012::09:37:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 23-Aug-2012::09:37:04 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:37:04 ===
+GET /mahlzeit/hello [speiseplan] 404 0ms

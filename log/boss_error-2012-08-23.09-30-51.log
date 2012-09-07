@@ -1,0 +1,94 @@
+
+=INFO REPORT==== 23-Aug-2012::09:30:51 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 23-Aug-2012::09:30:51 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 23-Aug-2012::09:30:51 ===
+SSL:[]
+
+=INFO REPORT==== 23-Aug-2012::09:30:51 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 23-Aug-2012::09:31:18 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:31:18 ===
+GET /world/hello [speiseplan] 404 0ms
+
+=INFO REPORT==== 23-Aug-2012::09:31:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:31:22 ===
+GET /world [speiseplan] 404 0ms
+
+=INFO REPORT==== 23-Aug-2012::09:31:52 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:31:52 ===
+GET /speiseplan/hello [speiseplan] 404 0ms
+
+=INFO REPORT==== 23-Aug-2012::09:32:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:32:31 ===
+** Generic server <0.125.0> terminating 
+** Last message in was {route,"/"}
+** When Server state == {state,speiseplan,["mahlzeit_controller"],28695,32792}
+** Reason for termination == 
+** {'module could not be loaded',
+       [{speiseplan_speiseplan_controller,module_info,[exports],[]},
+        {boss_controller_lib,convert_params_to_tokens,3,
+            [{file,"src/boss/boss_controller_lib.erl"},{line,5}]},
+        {boss_router_controller,handle_call,3,
+            [{file,"src/boss/boss_router_controller.erl"},{line,73}]},
+        {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 23-Aug-2012::09:32:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 23-Aug-2012::09:32:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:32:31 ===
+** Generic server <0.142.0> terminating 
+** Last message in was {route,"/"}
+** When Server state == {state,speiseplan,["mahlzeit_controller"],36888,40983}
+** Reason for termination == 
+** {'module could not be loaded',
+       [{speiseplan_speiseplan_controller,module_info,[exports],[]},
+        {boss_controller_lib,convert_params_to_tokens,3,
+            [{file,"src/boss/boss_controller_lib.erl"},{line,5}]},
+        {boss_router_controller,handle_call,3,
+            [{file,"src/boss/boss_router_controller.erl"},{line,73}]},
+        {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 23-Aug-2012::09:32:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 23-Aug-2012::09:33:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:33:10 ===
+GET / [speiseplan] 404 0ms
+
+=INFO REPORT==== 23-Aug-2012::09:33:15 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:33:15 ===
+GET /speiseplan/hello [speiseplan] 404 1ms
+
+=INFO REPORT==== 23-Aug-2012::09:33:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:33:21 ===
+GET /mahlzeit [speiseplan] 404 0ms
+
+=INFO REPORT==== 23-Aug-2012::09:35:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 23-Aug-2012::09:35:00 ===
+GET /mahlzeit/hello [speiseplan] 404 0ms

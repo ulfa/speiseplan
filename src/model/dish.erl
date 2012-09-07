@@ -1,0 +1,2 @@
+-module(dish, [Id, Title, Details, Vegetarian]).
+-compile(export_all).

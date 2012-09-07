@@ -1,0 +1,44 @@
+
+=INFO REPORT==== 27-Aug-2012::08:57:19 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 27-Aug-2012::08:57:19 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 27-Aug-2012::08:57:19 ===
+SSL:[]
+
+=INFO REPORT==== 27-Aug-2012::08:57:19 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:57:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:57:27 ===
+GET /eater/list [speiseplan] 200 71ms
+
+=INFO REPORT==== 27-Aug-2012::08:57:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:57:43 ===
+{undef,
+    [{eater,new,
+         [id,"ua","67da5858951309fd3b204a86b1176cb4","Ulf","Angermann",
+          undefined,"0"],
+         []},
+     {speiseplan_eater_controller,create,3,
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_eater_controller.erl"},
+          {line,28}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,711}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 27-Aug-2012::08:57:43 ===
+POST /eater/create [speiseplan] 500 76ms

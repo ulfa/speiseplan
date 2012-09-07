@@ -1,0 +1,276 @@
+
+=INFO REPORT==== 24-Aug-2012::17:55:31 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 24-Aug-2012::17:55:31 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 24-Aug-2012::17:55:31 ===
+SSL:[]
+
+=INFO REPORT==== 24-Aug-2012::17:55:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:55:41 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:55:41 ===
+** Generic server <0.125.0> terminating 
+** Last message in was {unroute,"eater","create",[]}
+** When Server state == {state,speiseplan,
+                               ["speiseplan_eater_controller",
+                                "speiseplan_mahlzeiten_controller"],
+                               28695,32792}
+** Reason for termination == 
+** {'module could not be loaded',
+       [{speiseplan_eater_controller,module_info,[exports],[]},
+        {boss_controller_lib,convert_params_to_tokens,3,
+            [{file,"src/boss/boss_controller_lib.erl"},{line,5}]},
+        {boss_router_controller,handle_call,3,
+            [{file,"src/boss/boss_router_controller.erl"},{line,95}]},
+        {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:55:42 ===
+{{undef,[{speiseplan_eater_controller,module_info,[exports],[]},
+         {boss_controller_lib,convert_params_to_tokens,3,
+                              [{file,"src/boss/boss_controller_lib.erl"},
+                               {line,5}]},
+         {boss_router_controller,handle_call,3,
+                                 [{file,"src/boss/boss_router_controller.erl"},
+                                  {line,95}]},
+         {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+         {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},
+ {gen_server,call,[<0.125.0>,{unroute,"eater","create",[]}]}}
+
+=INFO REPORT==== 24-Aug-2012::17:55:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:56:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:56:06 ===
+GET /speiseplan/eater/list [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::17:57:23 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:57:23 ===
+GET /eater/list [speiseplan] 200 68ms
+
+=INFO REPORT==== 24-Aug-2012::17:57:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:57:25 ===
+GET /eater/create [speiseplan] 404 67ms
+
+=INFO REPORT==== 24-Aug-2012::17:59:51 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:59:51 ===
+GET /eater/list [speiseplan] 200 86ms
+
+=INFO REPORT==== 24-Aug-2012::18:07:55 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:07:55 ===
+GET /eater/list [speiseplan] 200 84ms
+
+=INFO REPORT==== 24-Aug-2012::18:09:01 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:09:01 ===
+GET /eater/list [speiseplan] 200 84ms
+
+=INFO REPORT==== 24-Aug-2012::18:21:15 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:21:15 ===
+GET /eater/create [speiseplan] 200 77ms
+
+=INFO REPORT==== 24-Aug-2012::18:22:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:22:05 ===
+GET /eater/list [speiseplan] 200 86ms
+
+=INFO REPORT==== 24-Aug-2012::18:23:09 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:23:10 ===
+GET /eater/list [speiseplan] 200 85ms
+
+=INFO REPORT==== 24-Aug-2012::18:25:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:25:10 ===
+GET /eater/list [speiseplan] 200 82ms
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+GET /eater/list [speiseplan] 200 71ms
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+GET /eater/list [speiseplan] 200 72ms
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:25:11 ===
+GET /eater/list [speiseplan] 200 72ms
+
+=INFO REPORT==== 24-Aug-2012::18:26:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:26:28 ===
+GET /eater/list [speiseplan] 200 81ms
+
+=INFO REPORT==== 24-Aug-2012::18:27:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:27:08 ===
+GET /eater/list [speiseplan] 200 87ms
+
+=INFO REPORT==== 24-Aug-2012::18:27:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:27:11 ===
+GET /eater/create [speiseplan] 200 71ms
+
+=INFO REPORT==== 24-Aug-2012::18:28:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:28:25 ===
+GET /eater/list [speiseplan] 404 75ms
+
+=INFO REPORT==== 24-Aug-2012::18:28:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:28:53 ===
+GET /eater/list [speiseplan] 404 72ms
+
+=INFO REPORT==== 24-Aug-2012::18:29:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:29:10 ===
+GET /eater/list [speiseplan] 200 85ms
+
+=INFO REPORT==== 24-Aug-2012::18:29:23 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:29:23 ===
+GET /eater/list [speiseplan] 200 88ms
+
+=INFO REPORT==== 24-Aug-2012::18:30:01 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::18:30:01 ===
+POST /eater/create [speiseplan] 200 67ms
+
+=INFO REPORT==== 24-Aug-2012::18:35:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:35:02 ===
+Call to tuple fun {unbound_var,'Eater'}.
+
+Tuple funs are deprecated and will be removed in R16. Use "fun M:F/A" instead, for example "fun unbound_var:'Eater'/0".
+
+(This warning will only be shown the first time a tuple fun is called.)
+
+
+=ERROR REPORT==== 24-Aug-2012::18:35:02 ===
+{undef,[{unbound_var,'Eater',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::18:35:02 ===
+GET /eater/list [speiseplan] 500 29ms
+
+=INFO REPORT==== 24-Aug-2012::18:35:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:35:11 ===
+{undef,[{unbound_var,'Eater',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::18:35:11 ===
+GET /eater/list [speiseplan] 500 28ms
+
+=INFO REPORT==== 24-Aug-2012::18:35:15 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:35:15 ===
+{undef,[{unbound_var,'Eater',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::18:35:15 ===
+GET /eater/list [speiseplan] 500 28ms
+
+=INFO REPORT==== 24-Aug-2012::18:35:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:35:39 ===
+{undef,[{unbound_var,'Eater',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::18:35:39 ===
+GET /eater/list [speiseplan] 500 31ms
+
+=INFO REPORT==== 24-Aug-2012::18:37:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::18:37:13 ===
+{undef,[{unbound_var,'Eater',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::18:37:13 ===
+GET /eater/list [speiseplan] 500 29ms

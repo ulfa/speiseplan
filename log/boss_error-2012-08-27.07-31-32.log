@@ -1,0 +1,493 @@
+
+=INFO REPORT==== 27-Aug-2012::07:31:32 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 27-Aug-2012::07:31:32 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 27-Aug-2012::07:31:32 ===
+SSL:[]
+
+=INFO REPORT==== 27-Aug-2012::07:31:32 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:31:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:31:46 ===
+GET /eater/list [speiseplan] 200 62ms
+
+=INFO REPORT==== 27-Aug-2012::07:31:58 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:31:58 ===
+POST /eater/create [speiseplan] 302 70ms
+
+=INFO REPORT==== 27-Aug-2012::07:31:58 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:31:58 ===
+GET /eater/list [speiseplan] 200 68ms
+
+=INFO REPORT==== 27-Aug-2012::07:32:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:32:05 ===
+GET /eater/login [speiseplan] 200 78ms
+
+=INFO REPORT==== 27-Aug-2012::07:32:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:32:13 ===
+POST /eater/login [speiseplan] 302 70ms
+
+=INFO REPORT==== 27-Aug-2012::07:32:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:32:13 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 73ms
+
+=INFO REPORT==== 27-Aug-2012::07:36:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:36:44 ===
+POST /eater/login [speiseplan] 302 70ms
+
+=INFO REPORT==== 27-Aug-2012::07:36:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:36:44 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 71ms
+
+=INFO REPORT==== 27-Aug-2012::07:37:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:37:00 ===
+GET /eater/login [speiseplan] 200 76ms
+
+=INFO REPORT==== 27-Aug-2012::07:37:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:37:05 ===
+POST /eater/login [speiseplan] 302 74ms
+
+=INFO REPORT==== 27-Aug-2012::07:37:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:37:05 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 72ms
+
+=INFO REPORT==== 27-Aug-2012::07:44:26 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:44:26 ===
+POST /eater/login [speiseplan] 302 72ms
+
+=INFO REPORT==== 27-Aug-2012::07:44:26 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:44:26 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 73ms
+
+=INFO REPORT==== 27-Aug-2012::07:44:52 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:44:52 ===
+GET /eater/login [speiseplan] 200 76ms
+
+=INFO REPORT==== 27-Aug-2012::07:44:57 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:44:57 ===
+POST /eater/login [speiseplan] 302 72ms
+
+=INFO REPORT==== 27-Aug-2012::07:44:57 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:44:57 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 71ms
+
+=INFO REPORT==== 27-Aug-2012::07:46:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:46:03 ===
+POST /eater/login [speiseplan] 302 70ms
+
+=INFO REPORT==== 27-Aug-2012::07:46:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:46:03 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 74ms
+
+=INFO REPORT==== 27-Aug-2012::07:47:55 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:47:55 ===
+POST /eater/login [speiseplan] 302 69ms
+
+=INFO REPORT==== 27-Aug-2012::07:47:55 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:47:55 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 72ms
+
+=INFO REPORT==== 27-Aug-2012::07:48:32 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:48:32 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 81ms
+
+=INFO REPORT==== 27-Aug-2012::07:48:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:48:39 ===
+POST /eater/login [speiseplan] 302 71ms
+
+=INFO REPORT==== 27-Aug-2012::07:48:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::07:48:39 ===
+GET /eater/mahlzeiten/index [speiseplan] 404 71ms
+
+=INFO REPORT==== 27-Aug-2012::07:50:18 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:50:18 ===
+POST /eater/login [speiseplan] 200 41ms
+
+=INFO REPORT==== 27-Aug-2012::07:50:54 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:50:54 ===
+POST /eater/login [speiseplan] 200 24ms
+
+=INFO REPORT==== 27-Aug-2012::07:51:19 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:51:19 ===
+POST /eater/login [speiseplan] 302 68ms
+
+=INFO REPORT==== 27-Aug-2012::07:51:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:51:44 ===
+POST /eater/login [speiseplan] 302 69ms
+
+=INFO REPORT==== 27-Aug-2012::07:51:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:51:45 ===
+GET /mahlzeiten/index [speiseplan] 200 73ms
+
+=INFO REPORT==== 27-Aug-2012::07:51:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:51:53 ===
+GET /eater/login [speiseplan] 200 77ms
+
+=INFO REPORT==== 27-Aug-2012::07:52:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:52:00 ===
+POST /eater/login [speiseplan] 302 71ms
+
+=INFO REPORT==== 27-Aug-2012::07:52:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:52:00 ===
+GET /mahlzeiten/index [speiseplan] 200 72ms
+
+=INFO REPORT==== 27-Aug-2012::07:57:22 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:57:22 ===
+GET /mahlzeiten/index [speiseplan] 200 73ms
+
+=INFO REPORT==== 27-Aug-2012::07:57:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:57:34 ===
+GET /mahlzeiten/index [speiseplan] 200 112ms
+
+=INFO REPORT==== 27-Aug-2012::07:59:03 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::07:59:03 ===
+GET /mahlzeiten/index [speiseplan] 200 75ms
+
+=INFO REPORT==== 27-Aug-2012::08:03:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:03:53 ===
+GET /mahlzeiten/index [speiseplan] 200 110ms
+
+=INFO REPORT==== 27-Aug-2012::08:03:59 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:03:59 ===
+GET /eater/login [speiseplan] 200 79ms
+
+=INFO REPORT==== 27-Aug-2012::08:04:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:04:06 ===
+POST /eater/login [speiseplan] 302 74ms
+
+=INFO REPORT==== 27-Aug-2012::08:04:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:04:06 ===
+GET /mahlzeiten/index [speiseplan] 200 74ms
+
+=INFO REPORT==== 27-Aug-2012::08:05:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:05:44 ===
+GET /mahlzeiten/index [speiseplan] 200 74ms
+
+=INFO REPORT==== 27-Aug-2012::08:06:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:06:42 ===
+GET /mahlzeiten/index [speiseplan] 200 73ms
+
+=INFO REPORT==== 27-Aug-2012::08:20:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:20:40 ===
+GET /mahlzeiten/index [speiseplan] 200 111ms
+
+=INFO REPORT==== 27-Aug-2012::08:23:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:23:29 ===
+GET /mahlzeiten/index [speiseplan] 404 97ms
+
+=INFO REPORT==== 27-Aug-2012::08:23:38 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:23:38 ===
+GET /mahlzeiten/index [speiseplan] 200 124ms
+
+=INFO REPORT==== 27-Aug-2012::08:24:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:24:13 ===
+GET /mahlzeiten/index [speiseplan] 200 116ms
+
+=INFO REPORT==== 27-Aug-2012::08:24:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:24:28 ===
+GET /mahlzeiten/index [speiseplan] 200 120ms
+
+=INFO REPORT==== 27-Aug-2012::08:24:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:24:29 ===
+GET /mahlzeiten/index [speiseplan] 200 82ms
+
+=INFO REPORT==== 27-Aug-2012::08:24:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:24:48 ===
+GET /mahlzeiten/index [speiseplan] 200 119ms
+
+=INFO REPORT==== 27-Aug-2012::08:25:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:25:02 ===
+GET /mahlzeiten/index [speiseplan] 200 116ms
+
+=INFO REPORT==== 27-Aug-2012::08:25:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:25:12 ===
+GET /mahlzeiten/index [speiseplan] 200 119ms
+
+=INFO REPORT==== 27-Aug-2012::08:25:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:25:53 ===
+GET /mahlzeiten/index [speiseplan] 200 123ms
+
+=INFO REPORT==== 27-Aug-2012::08:26:17 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:26:18 ===
+GET /mahlzeiten/index [speiseplan] 200 123ms
+
+=INFO REPORT==== 27-Aug-2012::08:27:23 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:27:23 ===
+GET /mahlzeiten/index [speiseplan] 200 118ms
+
+=INFO REPORT==== 27-Aug-2012::08:53:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:53:07 ===
+GET /login/list [speiseplan] 404 0ms
+
+=INFO REPORT==== 27-Aug-2012::08:53:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:53:16 ===
+GET /eater/list [speiseplan] 200 12ms
+
+=INFO REPORT==== 27-Aug-2012::08:54:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:54:48 ===
+GET /eater/list [speiseplan] 200 39ms
+
+=INFO REPORT==== 27-Aug-2012::08:55:18 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:55:18 ===
+{function_clause,
+    [{eater,account,
+         [{eater,"eater-1","ua","67da5858951309fd3b204a86b1176cb4","Ulf",
+              "Angermann","on","0"}],
+         []},
+     {speiseplan_view_eater_list_html,'-render_internal/4-fun-0-',2,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_eater_list_html,render_internal,4,[]},
+     {speiseplan_view_eater_list_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 27-Aug-2012::08:55:18 ===
+GET /eater/list [speiseplan] 500 113ms
+
+=INFO REPORT==== 27-Aug-2012::08:55:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:55:44 ===
+GET /eater/index [speiseplan] 404 89ms
+
+=INFO REPORT==== 27-Aug-2012::08:55:49 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:55:49 ===
+{function_clause,
+    [{eater,session_identifier,
+         [{eater,"eater-1","ua","67da5858951309fd3b204a86b1176cb4","Ulf",
+              "Angermann","on","0"}],
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/model/eater.erl"},
+          {line,5}]},
+     {user_lib,require_login,1,
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/lib/user_lib.erl"},
+          {line,18}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,693}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 27-Aug-2012::08:55:49 ===
+GET /mahlzeiten/index [speiseplan] 500 98ms
+
+=INFO REPORT==== 27-Aug-2012::08:56:53 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 27-Aug-2012::08:56:53 ===
+GET /eater/login [speiseplan] 200 88ms
+
+=INFO REPORT==== 27-Aug-2012::08:56:59 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 27-Aug-2012::08:56:59 ===
+** Generic server boss_db_mock terminating 
+** Last message in was {find,eater,[{account,equals,"ua"}],all,0,id,ascending}
+** When Server state == [{{dict,1,16,16,8,80,48,
+                           {[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},
+                           {{[],[],[],[],[],[],[],[],[],[],
+                             [["eater-1"|
+                               {eater,"eater-1","ua",
+                                "67da5858951309fd3b204a86b1176cb4","Ulf",
+                                "Angermann","on","0"}]],
+                             [],[],[],[],[]}}},
+                          2}]
+** Reason for termination == 
+** {function_clause,
+       [{eater,account,
+            [{eater,"eater-1","ua","67da5858951309fd3b204a86b1176cb4","Ulf",
+                 "Angermann","on","0"}],
+            []},
+        {boss_db_mock_controller,match_cond,2,
+            [{file,"src/boss_db_mock_controller.erl"},{line,116}]},
+        {dict,filter_bucket,4,[{file,"dict.erl"},{line,481}]},
+        {dict,filter_bkt_list,4,[{file,"dict.erl"},{line,475}]},
+        {dict,filter_seg_list,4,[{file,"dict.erl"},{line,469}]},
+        {dict,filter_dict,2,[{file,"dict.erl"},{line,464}]},
+        {boss_db_mock_controller,do_find,7,
+            [{file,"src/boss_db_mock_controller.erl"},{line,104}]},
+        {boss_db_mock_controller,handle_call,3,
+            [{file,"src/boss_db_mock_controller.erl"},{line,24}]}]}
+
+=ERROR REPORT==== 27-Aug-2012::08:56:59 ===
+** Generic server <0.70.0> terminating 
+** Last message in was {find,eater,[{account,equals,"ua"}],all,0,id,ascending}
+** When Server state == {state,boss_db_adapter_mock,undefined,[],
+                               {dict,0,16,16,8,80,48,
+                                     {[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                      [],[],[]},
+                                     {{[],[],[],[],[],[],[],[],[],[],[],[],[],
+                                       [],[],[]}}},
+                               false,60,db,0}
+** Reason for termination == 
+** {{function_clause,
+        [{eater,account,
+             [{eater,"eater-1","ua","67da5858951309fd3b204a86b1176cb4","Ulf",
+                  "Angermann","on","0"}],
+             []},
+         {boss_db_mock_controller,match_cond,2,
+             [{file,"src/boss_db_mock_controller.erl"},{line,116}]},
+         {dict,filter_bucket,4,[{file,"dict.erl"},{line,481}]},
+         {dict,filter_bkt_list,4,[{file,"dict.erl"},{line,475}]},
+         {dict,filter_seg_list,4,[{file,"dict.erl"},{line,469}]},
+         {dict,filter_dict,2,[{file,"dict.erl"},{line,464}]},
+         {boss_db_mock_controller,do_find,7,
+             [{file,"src/boss_db_mock_controller.erl"},{line,104}]},
+         {boss_db_mock_controller,handle_call,3,
+             [{file,"src/boss_db_mock_controller.erl"},{line,24}]}]},
+    {gen_server,call,
+        [{global,boss_db_mock},
+         {find,eater,[{account,equals,"ua"}],all,0,id,ascending}]}}
+
+=ERROR REPORT==== 27-Aug-2012::08:56:59 ===
+{{{function_clause,
+      [{eater,account,
+           [{eater,"eater-1","ua","67da5858951309fd3b204a86b1176cb4","Ulf",
+                "Angermann","on","0"}],
+           []},
+       {boss_db_mock_controller,match_cond,2,
+           [{file,"src/boss_db_mock_controller.erl"},{line,116}]},
+       {dict,filter_bucket,4,[{file,"dict.erl"},{line,481}]},
+       {dict,filter_bkt_list,4,[{file,"dict.erl"},{line,475}]},
+       {dict,filter_seg_list,4,[{file,"dict.erl"},{line,469}]},
+       {dict,filter_dict,2,[{file,"dict.erl"},{line,464}]},
+       {boss_db_mock_controller,do_find,7,
+           [{file,"src/boss_db_mock_controller.erl"},{line,104}]},
+       {boss_db_mock_controller,handle_call,3,
+           [{file,"src/boss_db_mock_controller.erl"},{line,24}]}]},
+  {gen_server,call,
+      [{global,boss_db_mock},
+       {find,eater,[{account,equals,"ua"}],all,0,id,ascending}]}},
+ {gen_server,call,
+     [<0.70.0>,
+      {find,eater,[{account,equals,"ua"}],all,0,id,ascending},
+      30000]}}
+
+=ERROR REPORT==== 27-Aug-2012::08:56:59 ===
+POST /eater/login [speiseplan] 500 84ms

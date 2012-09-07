@@ -1,0 +1,346 @@
+
+=INFO REPORT==== 24-Aug-2012::16:45:12 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 24-Aug-2012::16:45:12 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 24-Aug-2012::16:45:12 ===
+SSL:[]
+
+=INFO REPORT==== 24-Aug-2012::16:45:12 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::16:45:16 ===
+GET /doc/ [speiseplan] 200 36ms
+
+=INFO REPORT==== 24-Aug-2012::16:45:18 ===
+GET /doc/eater [speiseplan] 200 104ms
+
+=ERROR REPORT==== 24-Aug-2012::16:45:18 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:45:18 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::16:45:49 ===
+GET /doc/eater [speiseplan] 200 50ms
+
+=ERROR REPORT==== 24-Aug-2012::16:45:49 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:45:49 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::16:46:44 ===
+GET /doc/eater [speiseplan] 200 52ms
+
+=ERROR REPORT==== 24-Aug-2012::16:46:44 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 24-Aug-2012::16:46:44 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=INFO REPORT==== 24-Aug-2012::16:50:38 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::16:50:38 ===
+GET /mahlzeiten/ [speiseplan] 200 56ms
+
+=INFO REPORT==== 24-Aug-2012::16:54:10 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::16:54:10 ===
+GET /mahlzeiten/ [speiseplan] 200 104ms
+
+=INFO REPORT==== 24-Aug-2012::16:59:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::16:59:28 ===
+GET /mahlzeiten/ [speiseplan] 200 62ms
+
+=INFO REPORT==== 24-Aug-2012::17:06:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:06:09 ===
+GET /mahlzeiten/ [speiseplan] 200 67ms
+
+=INFO REPORT==== 24-Aug-2012::17:10:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:10:05 ===
+GET /mahlzeiten/ [speiseplan] 200 110ms
+
+=INFO REPORT==== 24-Aug-2012::17:10:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:10:08 ===
+{{case_clause,{extends,{string_literal,{1,13},"\"layout.html\""}}},
+ [{erlydtl_compiler,value_ast,4,
+                    [{file,"src/erlydtl_compiler.erl"},{line,646}]},
+  {erlydtl_compiler,'-body_ast/3-fun-2-',3,
+                    [{file,"src/erlydtl_compiler.erl"},{line,613}]},
+  {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+  {lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},
+  {erlydtl_compiler,body_ast,3,[{file,"src/erlydtl_compiler.erl"},{line,509}]},
+  {erlydtl_compiler,compile_to_binary,4,
+                    [{file,"src/erlydtl_compiler.erl"},{line,189}]},
+  {erlydtl_compiler,compile,3,[{file,"src/erlydtl_compiler.erl"},{line,104}]},
+  {boss_load,compile_view_erlydtl,4,
+             [{file,"src/boss/boss_load.erl"},{line,213}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:10:08 ===
+GET /eater/login [speiseplan] 500 38ms
+
+=INFO REPORT==== 24-Aug-2012::17:10:15 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:10:15 ===
+{{case_clause,{extends,{string_literal,{1,13},"\"layout.html\""}}},
+ [{erlydtl_compiler,value_ast,4,
+                    [{file,"src/erlydtl_compiler.erl"},{line,646}]},
+  {erlydtl_compiler,'-body_ast/3-fun-2-',3,
+                    [{file,"src/erlydtl_compiler.erl"},{line,613}]},
+  {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+  {lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},
+  {erlydtl_compiler,body_ast,3,[{file,"src/erlydtl_compiler.erl"},{line,509}]},
+  {erlydtl_compiler,compile_to_binary,4,
+                    [{file,"src/erlydtl_compiler.erl"},{line,189}]},
+  {erlydtl_compiler,compile,3,[{file,"src/erlydtl_compiler.erl"},{line,104}]},
+  {boss_load,compile_view_erlydtl,4,
+             [{file,"src/boss/boss_load.erl"},{line,213}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:10:15 ===
+GET /eater/login [speiseplan] 500 40ms
+
+=INFO REPORT==== 24-Aug-2012::17:10:55 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:10:55 ===
+GET /eater/login [speiseplan] 200 60ms
+
+=INFO REPORT==== 24-Aug-2012::17:10:55 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:10:55 ===
+GET /eater/favicon.ico [speiseplan] 404 37ms
+
+=INFO REPORT==== 24-Aug-2012::17:11:17 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:11:17 ===
+GET /eater/login [speiseplan] 200 54ms
+
+=INFO REPORT==== 24-Aug-2012::17:12:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:12:27 ===
+POST /eater/login [speiseplan] 200 32ms
+
+=INFO REPORT==== 24-Aug-2012::17:12:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:12:35 ===
+POST /eater/login [speiseplan] 200 32ms
+
+=INFO REPORT==== 24-Aug-2012::17:14:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:14:31 ===
+POST /eater/login [speiseplan] 200 53ms
+
+=INFO REPORT==== 24-Aug-2012::17:18:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:18:08 ===
+POST /eater/login [speiseplan] 200 47ms
+
+=INFO REPORT==== 24-Aug-2012::17:19:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:19:40 ===
+POST /eater/login [speiseplan] 200 42ms
+
+=INFO REPORT==== 24-Aug-2012::17:20:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:20:21 ===
+POST /eater/login [speiseplan] 200 40ms
+
+=INFO REPORT==== 24-Aug-2012::17:20:41 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:20:41 ===
+POST /eater/login [speiseplan] 200 41ms
+
+=INFO REPORT==== 24-Aug-2012::17:21:35 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:21:35 ===
+POST /eater/login [speiseplan] 200 42ms
+
+=INFO REPORT==== 24-Aug-2012::17:21:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:21:46 ===
+POST /eater/login [speiseplan] 200 43ms
+
+=INFO REPORT==== 24-Aug-2012::17:27:49 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:27:49 ===
+{undef,
+    [{user_lib,require_login,
+         [{simple_bridge_request_wrapper,mochiweb_request_bridge,
+              {mochiweb_request,#Port<0.13708>,'GET',"/mahlzeiten/index",
+                  {1,1},
+                  {7,
+                   {"host",
+                    {'Host',"localhost:8001"},
+                    {"accept",
+                     {'Accept',
+                         "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+                     nil,
+                     {"accept-language",
+                      {'Accept-Language',"en-us"},
+                      {"accept-encoding",
+                       {'Accept-Encoding',"gzip, deflate"},
+                       nil,nil},
+                      {"cookie",
+                       {'Cookie',
+                           "_boss_session=e65b1bd65c8d550d4793a9ce51b5dbfce09d14f9"},
+                       {"connection",{'Connection',"keep-alive"},nil,nil},
+                       nil}}},
+                    {"user-agent",
+                     {'User-Agent',
+                         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.25 (KHTML, like Gecko) Version/6.0 Safari/536.25"},
+                     nil,nil}}}},
+              false,[],[],none}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,693}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:27:49 ===
+GET /mahlzeiten/index [speiseplan] 500 67ms
+
+=INFO REPORT==== 24-Aug-2012::17:34:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:34:11 ===
+Call to tuple fun {unbound_var,'WardBoss'}.
+
+Tuple funs are deprecated and will be removed in R16. Use "fun M:F/A" instead, for example "fun unbound_var:'WardBoss'/0".
+
+(This warning will only be shown the first time a tuple fun is called.)
+
+
+=ERROR REPORT==== 24-Aug-2012::17:34:11 ===
+{undef,[{unbound_var,'WardBoss',[],[]},
+        {erlydtl_filters,format_number,1,
+                         [{file,"src/erlydtl_filters.erl"},{line,335}]},
+        {boss_html_error_template,'-render_internal/4-fun-0-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]},
+        {boss_html_error_template,'-render_internal/4-fun-2-',2,[]},
+        {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+        {erlydtl_runtime,forloop,3,
+                         [{file,"src/erlydtl_runtime.erl"},{line,228}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:34:11 ===
+GET /mahlzeiten/index [speiseplan] 500 11ms
+
+=INFO REPORT==== 24-Aug-2012::17:34:35 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:34:35 ===
+GET /mahlzeiten/index [speiseplan] 302 70ms
+
+=INFO REPORT==== 24-Aug-2012::17:34:35 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:34:35 ===
+GET /eater/login [speiseplan] 200 31ms
+
+=INFO REPORT==== 24-Aug-2012::17:34:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:34:39 ===
+POST /eater/login [speiseplan] 200 35ms
+
+=INFO REPORT==== 24-Aug-2012::17:49:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:49:21 ===
+** Generic server <0.125.0> terminating 
+** Last message in was {unroute,"eater","create",[]}
+** When Server state == {state,speiseplan,
+                               ["speiseplan_eater_controller",
+                                "speiseplan_mahlzeiten_controller"],
+                               28695,32792}
+** Reason for termination == 
+** {'module could not be loaded',
+       [{speiseplan_eater_controller,module_info,[exports],[]},
+        {boss_controller_lib,convert_params_to_tokens,3,
+            [{file,"src/boss/boss_controller_lib.erl"},{line,5}]},
+        {boss_router_controller,handle_call,3,
+            [{file,"src/boss/boss_router_controller.erl"},{line,95}]},
+        {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:49:21 ===
+{{undef,[{speiseplan_eater_controller,module_info,[exports],[]},
+         {boss_controller_lib,convert_params_to_tokens,3,
+                              [{file,"src/boss/boss_controller_lib.erl"},
+                               {line,5}]},
+         {boss_router_controller,handle_call,3,
+                                 [{file,"src/boss/boss_router_controller.erl"},
+                                  {line,95}]},
+         {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+         {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},
+ {gen_server,call,[<0.125.0>,{unroute,"eater","create",[]}]}}
+
+=INFO REPORT==== 24-Aug-2012::17:49:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::17:51:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::17:51:49 ===
+** Generic server <0.455.0> terminating 
+** Last message in was {unroute,"eater","create",[]}
+** When Server state == {state,speiseplan,
+                               ["speiseplan_eater_controller",
+                                "speiseplan_mahlzeiten_controller"],
+                               266264,270359}
+** Reason for termination == 
+** {'module could not be loaded',
+       [{speiseplan_eater_controller,module_info,[exports],[]},
+        {boss_controller_lib,convert_params_to_tokens,3,
+            [{file,"src/boss/boss_controller_lib.erl"},{line,5}]},
+        {boss_router_controller,handle_call,3,
+            [{file,"src/boss/boss_router_controller.erl"},{line,95}]},
+        {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+        {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::17:51:49 ===
+{{undef,[{speiseplan_eater_controller,module_info,[exports],[]},
+         {boss_controller_lib,convert_params_to_tokens,3,
+                              [{file,"src/boss/boss_controller_lib.erl"},
+                               {line,5}]},
+         {boss_router_controller,handle_call,3,
+                                 [{file,"src/boss/boss_router_controller.erl"},
+                                  {line,95}]},
+         {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,578}]},
+         {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},
+ {gen_server,call,[<0.455.0>,{unroute,"eater","create",[]}]}}
+
+=INFO REPORT==== 24-Aug-2012::17:51:49 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....

@@ -1,0 +1,115 @@
+
+=INFO REPORT==== 24-Aug-2012::14:57:36 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 24-Aug-2012::14:57:36 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 24-Aug-2012::14:57:36 ===
+SSL:[]
+
+=INFO REPORT==== 24-Aug-2012::14:57:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::14:57:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::14:57:43 ===
+GET /mahlzeiten/index [speiseplan] 200 26ms
+
+=INFO REPORT==== 24-Aug-2012::14:57:43 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::14:57:43 ===
+GET /mahlzeiten/static/images/logo.png [speiseplan] 404 31ms
+
+=INFO REPORT==== 24-Aug-2012::14:59:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::14:59:44 ===
+GET /mahlzeiten/index [speiseplan] 200 68ms
+
+=INFO REPORT==== 24-Aug-2012::15:00:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::15:00:36 ===
+GET /mahlzeiten/index [speiseplan] 200 70ms
+
+=INFO REPORT==== 24-Aug-2012::15:00:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::15:00:36 ===
+GET /mahlzeiten/favicon.ico [speiseplan] 404 32ms
+
+=INFO REPORT==== 24-Aug-2012::15:05:50 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 24-Aug-2012::15:05:50 ===
+GET /mahlzeiten/index [speiseplan] 200 71ms
+
+=INFO REPORT==== 24-Aug-2012::15:08:14 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::15:08:14 ===
+{function_clause,
+    [{boss_html_error_template,'-render_internal/4-fun-2-',
+         ["Circular file inclusion!",
+          [{counter,1},
+           {counter0,0},
+           {revcounter,1},
+           {revcounter0,0},
+           {first,true},
+           {last,true},
+           {parentloop,undefined}]],
+         []},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {boss_html_error_template,render_internal,4,[]},
+     {boss_html_error_template,render,2,[]},
+     {boss_web_controller,render_errors,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,659}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::15:08:14 ===
+GET /mahlzeiten/index [speiseplan] 500 37ms
+
+=INFO REPORT==== 24-Aug-2012::15:09:07 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::15:09:07 ===
+GET /mahlzeiten/index [speiseplan] 404 35ms
+
+=INFO REPORT==== 24-Aug-2012::15:09:56 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 24-Aug-2012::15:09:56 ===
+{function_clause,
+    [{boss_html_error_template,'-render_internal/4-fun-2-',
+         ["Circular file inclusion!",
+          [{counter,1},
+           {counter0,0},
+           {revcounter,1},
+           {revcounter0,0},
+           {first,true},
+           {last,true},
+           {parentloop,undefined}]],
+         []},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {boss_html_error_template,render_internal,4,[]},
+     {boss_html_error_template,render,2,[]},
+     {boss_web_controller,render_errors,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,659}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]}]}
+
+=ERROR REPORT==== 24-Aug-2012::15:09:56 ===
+GET /mahlzeiten/index [speiseplan] 500 34ms
+
+=INFO REPORT==== 24-Aug-2012::15:10:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....

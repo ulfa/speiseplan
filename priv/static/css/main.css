@@ -1,0 +1,39 @@
+header {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+header p {
+  clear: right;
+  float: right;
+}
+
+nav {
+  float: right;
+  margin-left: 5em;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.alert {
+  overflow: auto; /* block formatting context */
+}
+
+tr.details td {
+  border-top: none;
+  padding-top: 0;
+  white-space: pre;
+}
+
+.kalendae a:hover {
+  text-decoration: none;
+}
+
+label input[type="checkbox"],
+label input[type="radio"] {
+  display: inline;
+  margin-right: 0.5em;
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row">
+  <div class="span8">
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+	        <th>Datum</th>
+            <th>Speise</th>
+            <th>Slots</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if menus %}
+          {% for menu in menus %}
+          <tr id="/admin/{{ menu.id }}">
+            <td>{{ menu.date }}</td>
+            <td>{{ menu.dish.title }}</td>
+            <td>{{ menu.slots}}</td>
+          </tr>
+          <tr class="details">
+            <td colspan="4">{{ menu.dish.details }}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="span4">
+	{% include "dish/edit.html" %}
+  </div>
+</div>
+{% endblock %}

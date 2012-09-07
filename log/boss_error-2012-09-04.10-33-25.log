@@ -1,0 +1,657 @@
+
+=INFO REPORT==== 4-Sep-2012::10:33:25 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 4-Sep-2012::10:33:25 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 4-Sep-2012::10:33:25 ===
+SSL:[]
+
+=INFO REPORT==== 4-Sep-2012::10:33:25 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:33:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:33:27 ===
+GET /admin/ [speiseplan] 200 135ms
+
+=INFO REPORT==== 4-Sep-2012::10:33:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:33:27 ===
+GET /admin/favicon.ico [speiseplan] 404 142ms
+
+=INFO REPORT==== 4-Sep-2012::10:33:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:33:31 ===
+GET /eater/index [speiseplan] 200 144ms
+
+=INFO REPORT==== 4-Sep-2012::10:33:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:33:31 ===
+GET /eater/favicon.ico [speiseplan] 404 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:32 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:32 ===
+GET /eater/index [speiseplan] 200 150ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:32 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:32 ===
+GET /eater/favicon.ico [speiseplan] 404 147ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:36 ===
+GET /admin/index [speiseplan] 200 150ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:36 ===
+GET /admin/favicon.ico [speiseplan] 404 144ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:37 ===
+GET /eater/index [speiseplan] 200 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:37 ===
+GET /eater/favicon.ico [speiseplan] 404 159ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:38 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:39 ===
+GET /admin/index [speiseplan] 200 155ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:39 ===
+GET /admin/favicon.ico [speiseplan] 404 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:40 ===
+GET /eater/index [speiseplan] 200 154ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:40 ===
+GET /eater/favicon.ico [speiseplan] 404 151ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:42 ===
+GET /admin/index [speiseplan] 200 157ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:42 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:42 ===
+GET /admin/favicon.ico [speiseplan] 404 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:44 ===
+GET /eater/index [speiseplan] 200 159ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:44 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:44 ===
+GET /eater/favicon.ico [speiseplan] 404 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:46 ===
+GET /admin/index [speiseplan] 200 154ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:46 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:46 ===
+GET /admin/favicon.ico [speiseplan] 404 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:34:48 ===
+GET /admin/detail/menu-2 [speiseplan] 200 155ms
+
+=INFO REPORT==== 4-Sep-2012::10:34:48 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:34:48 ===
+{undef,[{error,module_info,[exports],[]},
+        {erlydtl_runtime,find_value,2,
+                         [{file,"src/erlydtl_runtime.erl"},{line,44}]},
+        {speiseplan_view_admin_detail_html,render_internal,4,[]},
+        {speiseplan_view_admin_detail_html,render,2,[]},
+        {boss_web_controller,render_view,6,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,843}]},
+        {boss_web_controller,execute_action,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,734}]},
+        {boss_web_controller,process_request,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,460}]},
+        {timer,tc,3,[{file,"timer.erl"},{line,194}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:34:48 ===
+GET /admin/detail/favicon.ico [speiseplan] 500 151ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:11 ===
+GET /admin/detail/menu-2 [speiseplan] 200 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:11 ===
+{undef,[{error,module_info,[exports],[]},
+        {erlydtl_runtime,find_value,2,
+                         [{file,"src/erlydtl_runtime.erl"},{line,44}]},
+        {speiseplan_view_admin_detail_html,render_internal,4,[]},
+        {speiseplan_view_admin_detail_html,render,2,[]},
+        {boss_web_controller,render_view,6,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,843}]},
+        {boss_web_controller,execute_action,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,734}]},
+        {boss_web_controller,process_request,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,460}]},
+        {timer,tc,3,[{file,"timer.erl"},{line,194}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:35:11 ===
+GET /admin/detail/favicon.ico [speiseplan] 500 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:14 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:14 ===
+GET /admin/favicon.ico [speiseplan] 404 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:16 ===
+GET /admin/edit/menu-1 [speiseplan] 200 160ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:16 ===
+{undef,[{error,module_info,[exports],[]},
+        {erlydtl_runtime,find_value,2,
+                         [{file,"src/erlydtl_runtime.erl"},{line,44}]},
+        {speiseplan_view_admin_edit_html,render_internal,4,[]},
+        {speiseplan_view_admin_edit_html,render,2,[]},
+        {boss_web_controller,render_view,6,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,843}]},
+        {boss_web_controller,execute_action,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,734}]},
+        {boss_web_controller,process_request,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,460}]},
+        {timer,tc,3,[{file,"timer.erl"},{line,194}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:35:16 ===
+GET /admin/edit/favicon.ico [speiseplan] 500 159ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:29 ===
+GET /admin/edit/menu-1 [speiseplan] 200 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:29 ===
+{undef,[{error,module_info,[exports],[]},
+        {erlydtl_runtime,find_value,2,
+                         [{file,"src/erlydtl_runtime.erl"},{line,44}]},
+        {speiseplan_view_admin_edit_html,render_internal,4,[]},
+        {speiseplan_view_admin_edit_html,render,2,[]},
+        {boss_web_controller,render_view,6,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,843}]},
+        {boss_web_controller,execute_action,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,734}]},
+        {boss_web_controller,process_request,5,
+                             [{file,"src/boss/boss_web_controller.erl"},
+                              {line,460}]},
+        {timer,tc,3,[{file,"timer.erl"},{line,194}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:35:29 ===
+GET /admin/edit/favicon.ico [speiseplan] 500 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:31 ===
+GET /eater/index [speiseplan] 200 155ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:31 ===
+GET /eater/favicon.ico [speiseplan] 404 145ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:33 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:33 ===
+POST /eater/edit/eater-2 [speiseplan] 200 150ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:33 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:33 ===
+{function_clause,
+    [{speiseplan_eater_controller,edit,
+         ['GET',
+          ["favicon.ico"],
+          {speiseplan_eater_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.13488>,'GET',
+                      "/eater/edit/favicon.ico",
+                      {1,1},
+                      {8,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"connection",
+                         {'Connection',"keep-alive"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-encoding",
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {"accept-charset",
+                            {'Accept-Charset',
+                                "ISO-8859-1,utf-8;q=0.7,*;q=0.3"},
+                            nil,nil},
+                           {"accept-language",
+                            {'Accept-Language',"en-US,en;q=0.8,de;q=0.6"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "plushContainerWidth=100%25; plushNoTopMenu=0; user_id=eater-1; session_id=3e0b0dce7a329e269e6ec49f345c7621; _boss_session=8d8a7526c2c151afa23a6ddc5bb93c1cb0715a62"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"},
+                         nil,nil}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,711}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:35:33 ===
+GET /eater/edit/favicon.ico [speiseplan] 500 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:35 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:35 ===
+GET /admin/index [speiseplan] 200 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:36 ===
+GET /admin/favicon.ico [speiseplan] 404 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:39 ===
+GET /eater/index [speiseplan] 200 149ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:39 ===
+GET /eater/favicon.ico [speiseplan] 404 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:35:47 ===
+POST /eater/edit/eater-2 [speiseplan] 200 152ms
+
+=INFO REPORT==== 4-Sep-2012::10:35:47 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:35:47 ===
+{function_clause,
+    [{speiseplan_eater_controller,edit,
+         ['GET',
+          ["favicon.ico"],
+          {speiseplan_eater_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.13488>,'GET',
+                      "/eater/edit/favicon.ico",
+                      {1,1},
+                      {8,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"connection",
+                         {'Connection',"keep-alive"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-encoding",
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {"accept-charset",
+                            {'Accept-Charset',
+                                "ISO-8859-1,utf-8;q=0.7,*;q=0.3"},
+                            nil,nil},
+                           {"accept-language",
+                            {'Accept-Language',"en-US,en;q=0.8,de;q=0.6"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "plushContainerWidth=100%25; plushNoTopMenu=0; user_id=eater-1; session_id=3e0b0dce7a329e269e6ec49f345c7621; _boss_session=8d8a7526c2c151afa23a6ddc5bb93c1cb0715a62"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"},
+                         nil,nil}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,711}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:35:47 ===
+GET /eater/edit/favicon.ico [speiseplan] 500 147ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:12 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:12 ===
+GET /eater/favicon.ico [speiseplan] 404 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:13 ===
+GET /eater/index [speiseplan] 200 150ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:13 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:13 ===
+GET /eater/favicon.ico [speiseplan] 404 150ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:16 ===
+POST /eater/edit/eater-2 [speiseplan] 200 172ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:16 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:16 ===
+{function_clause,
+    [{speiseplan_eater_controller,edit,
+         ['GET',
+          ["favicon.ico"],
+          {eater,"eater-1","ua","598f04fd6e3586a93d27aa1ddcf5f2e6","Ulf",
+              "Angermann",true,5,true,"ua@innoq.com"},
+          {speiseplan_eater_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.13496>,'GET',
+                      "/eater/edit/favicon.ico",
+                      {1,1},
+                      {8,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"connection",
+                         {'Connection',"keep-alive"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-encoding",
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {"accept-charset",
+                            {'Accept-Charset',
+                                "ISO-8859-1,utf-8;q=0.7,*;q=0.3"},
+                            nil,nil},
+                           {"accept-language",
+                            {'Accept-Language',"en-US,en;q=0.8,de;q=0.6"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "plushContainerWidth=100%25; plushNoTopMenu=0; user_id=eater-1; session_id=3e0b0dce7a329e269e6ec49f345c7621; _boss_session=8d8a7526c2c151afa23a6ddc5bb93c1cb0715a62"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"},
+                         nil,nil}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:37:16 ===
+GET /eater/edit/favicon.ico [speiseplan] 500 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:31 ===
+POST /eater/edit/eater-2 [speiseplan] 200 156ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:31 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:31 ===
+{function_clause,
+    [{speiseplan_eater_controller,edit,
+         ['GET',
+          ["favicon.ico"],
+          {eater,"eater-1","ua","598f04fd6e3586a93d27aa1ddcf5f2e6","Ulf",
+              "Angermann",true,5,true,"ua@innoq.com"},
+          {speiseplan_eater_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.14763>,'GET',
+                      "/eater/edit/favicon.ico",
+                      {1,1},
+                      {8,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"connection",
+                         {'Connection',"keep-alive"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-encoding",
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {"accept-charset",
+                            {'Accept-Charset',
+                                "ISO-8859-1,utf-8;q=0.7,*;q=0.3"},
+                            nil,nil},
+                           {"accept-language",
+                            {'Accept-Language',"en-US,en;q=0.8,de;q=0.6"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "plushContainerWidth=100%25; plushNoTopMenu=0; user_id=eater-1; session_id=3e0b0dce7a329e269e6ec49f345c7621; _boss_session=8d8a7526c2c151afa23a6ddc5bb93c1cb0715a62"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"},
+                         nil,nil}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:37:31 ===
+GET /eater/edit/favicon.ico [speiseplan] 500 143ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:33 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:33 ===
+POST /eater/update/eater-2 [speiseplan] 302 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:33 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:33 ===
+GET /eater/index [speiseplan] 200 151ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:33 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:34 ===
+GET /eater/favicon.ico [speiseplan] 404 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:35 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:35 ===
+POST /eater/edit/eater-1 [speiseplan] 200 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:36 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:36 ===
+{function_clause,
+    [{speiseplan_eater_controller,edit,
+         ['GET',
+          ["favicon.ico"],
+          {eater,"eater-1","ua","598f04fd6e3586a93d27aa1ddcf5f2e6","Ulf",
+              "Angermann",true,5,true,"ua@innoq.com"},
+          {speiseplan_eater_controller,
+              {simple_bridge_request_wrapper,mochiweb_request_bridge,
+                  {mochiweb_request,#Port<0.14763>,'GET',
+                      "/eater/edit/favicon.ico",
+                      {1,1},
+                      {8,
+                       {"host",
+                        {'Host',"localhost:8001"},
+                        {"connection",
+                         {'Connection',"keep-alive"},
+                         {"accept",
+                          {'Accept',"*/*"},
+                          nil,
+                          {"accept-encoding",
+                           {'Accept-Encoding',"gzip,deflate,sdch"},
+                           {"accept-charset",
+                            {'Accept-Charset',
+                                "ISO-8859-1,utf-8;q=0.7,*;q=0.3"},
+                            nil,nil},
+                           {"accept-language",
+                            {'Accept-Language',"en-US,en;q=0.8,de;q=0.6"},
+                            nil,nil}}},
+                         {"cookie",
+                          {'Cookie',
+                              "plushContainerWidth=100%25; plushNoTopMenu=0; user_id=eater-1; session_id=3e0b0dce7a329e269e6ec49f345c7621; _boss_session=8d8a7526c2c151afa23a6ddc5bb93c1cb0715a62"},
+                          nil,nil}},
+                        {"user-agent",
+                         {'User-Agent',
+                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"},
+                         nil,nil}}}},
+                  false,[],[],none}}],
+         []},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 4-Sep-2012::10:37:36 ===
+GET /eater/edit/favicon.ico [speiseplan] 500 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:37 ===
+GET /eater/favicon.ico [speiseplan] 404 146ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:39 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:40 ===
+GET /admin/index [speiseplan] 200 151ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:40 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:40 ===
+GET /admin/favicon.ico [speiseplan] 404 148ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:41 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 4-Sep-2012::10:37:41 ===
+GET /eater/index [speiseplan] 200 153ms
+
+=INFO REPORT==== 4-Sep-2012::10:37:41 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 4-Sep-2012::10:37:41 ===
+GET /eater/favicon.ico [speiseplan] 404 152ms
