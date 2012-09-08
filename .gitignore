@@ -1,2 +1,3 @@
 Mnesia.speiseplan@*
 log/*
+ebin/*
