@@ -1,0 +1,39 @@
+
+=INFO REPORT==== 8-Sep-2012::09:24:44 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 8-Sep-2012::09:24:44 ===
+Starting master services on speiseplan@noname
+
+=INFO REPORT==== 8-Sep-2012::09:24:45 ===
+SSL:[]
+
+=INFO REPORT==== 8-Sep-2012::09:24:45 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:24:45 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:25:00 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:25:00 ===
+GET /login [speiseplan] 200 29ms
+
+=INFO REPORT==== 8-Sep-2012::09:25:05 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:25:05 ===
+POST /login [speiseplan] 200 29ms
+
+=INFO REPORT==== 8-Sep-2012::09:26:15 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:26:15 ===
+GET /login [speiseplan] 200 31ms
+
+=INFO REPORT==== 8-Sep-2012::09:26:20 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 8-Sep-2012::09:26:20 ===
+POST /login [speiseplan] 200 31ms

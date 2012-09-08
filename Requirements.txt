@@ -1,10 +1,13 @@
+
 - Refactoring der Datum Werte im Booking. ... müssen Datum und Zeit enthalten.
+- Refactoring: Login in eigenen Controller auslagern.
 - Rechnungslauf für alle Esser und einen Monat 
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
 - Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
 - Anja Mail schicken, wenn Esser gebucht haben.
 - Stornierung nicht möglich 24 Stunden. Ein Tag vorher, aber nur bis 15:00 Uhr
 	http://schemecookbook.org/Erlang/TimeToEpoch
+- Raspberry Pi aufsetzen
 
 - Infos über andere Teilnehmer aus Speiseplan Ansicht entferne (fertig)
 - Infos über Teilnehmer in Admin Ansicht einbauen (fertig)

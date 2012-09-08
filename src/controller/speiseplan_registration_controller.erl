@@ -13,7 +13,7 @@ create('POST', []) ->
   	Intern = Req:post_param("intern"),
   	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail),
 	case NewEater:save() of
-  		{ok, SavedEater} -> {redirect, "/eater/login"};
+  		{ok, SavedEater} -> {redirect, "/login/index"};
     	{error, Errors} -> {ok, [{errors, Errors}, {eater,NewEater}]}
 	end.
 	

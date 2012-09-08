@@ -1,21 +1,8 @@
 -module(speiseplan_eater_controller, [Req]).
 -compile(export_all).
+
 before_(_) ->
 	user_lib:require_login(Req).
-
-login('GET', []) ->
-  {ok, [{redirect, Req:header(referer)}]};
-
-login('POST', []) ->
-  Account = Req:post_param("account"),
-  case boss_db:find(eater, [{account, Account}]) of
-    [Eater] ->
-      case Eater:check_password(Req:post_param("password")) of
-        true -> {redirect, "/booking/index", Eater:login_cookies()};
-        false -> {ok, [{error, "Bad name/password combination"}]}
-      end;
-    [] -> {ok, [{error, "No Eater with Account :  " ++ Account}]}
-  end.
 
 index('GET', [], Admin) ->
   Eaters = boss_db:find(eater, []),

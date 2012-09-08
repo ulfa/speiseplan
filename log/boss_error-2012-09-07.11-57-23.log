@@ -1,0 +1,132 @@
+
+=INFO REPORT==== 7-Sep-2012::11:57:23 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 7-Sep-2012::11:57:23 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 7-Sep-2012::11:57:23 ===
+SSL:[]
+
+=INFO REPORT==== 7-Sep-2012::11:57:23 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::11:57:26 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:57:26 ===
+{{badmatch,{redirect,"/eater/login"}},
+ [{user_lib,require_login,2,
+            [{file,"/Users/ulfangermann/projects/erlang/speiseplan/src/lib/user_lib.erl"},
+             {line,26}]},
+  {boss_web_controller,execute_action,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,693}]},
+  {boss_web_controller,process_request,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+  {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+  {boss_web_controller,handle_request,3,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+  {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+  {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::11:57:26 ===
+GET /admin [speiseplan] 500 115ms
+
+=INFO REPORT==== 7-Sep-2012::11:57:37 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:57:37 ===
+{function_clause,
+    [{erlydtl_filters,join,
+         [undefined,<<", ">>],
+         [{file,"src/erlydtl_filters.erl"},{line,359}]},
+     {speiseplan_view_admin_index_html,'-render_internal/4-fun-0-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_admin_index_html,render_internal,4,[]},
+     {speiseplan_view_admin_index_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::11:57:37 ===
+GET /admin [speiseplan] 500 144ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:02 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:59:02 ===
+{{badmatch,{redirect,"/eater/login"}},
+ [{user_lib,require_login,2,
+            [{file,"/Users/ulfangermann/projects/erlang/speiseplan/src/lib/user_lib.erl"},
+             {line,26}]},
+  {boss_web_controller,execute_action,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,693}]},
+  {boss_web_controller,process_request,5,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+  {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+  {boss_web_controller,handle_request,3,
+                       [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+  {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+  {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::11:59:02 ===
+GET /admin [speiseplan] 500 137ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:08 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:59:08 ===
+GET / [speiseplan] 404 0ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::11:59:21 ===
+GET /booking [speiseplan] 302 155ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::11:59:21 ===
+GET /eater/login [speiseplan] 200 140ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::11:59:28 ===
+POST /eater/login [speiseplan] 302 143ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:28 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::11:59:29 ===
+GET /booking/index [speiseplan] 200 157ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:59:29 ===
+GET /booking/favicon.ico [speiseplan] 404 150ms
+
+=INFO REPORT==== 7-Sep-2012::11:59:34 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::11:59:34 ===
+{function_clause,
+    [{erlydtl_filters,join,
+         [undefined,<<", ">>],
+         [{file,"src/erlydtl_filters.erl"},{line,359}]},
+     {speiseplan_view_admin_index_html,'-render_internal/4-fun-0-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_admin_index_html,render_internal,4,[]},
+     {speiseplan_view_admin_index_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::11:59:34 ===
+GET /admin [speiseplan] 500 142ms

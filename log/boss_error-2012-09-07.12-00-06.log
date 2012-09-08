@@ -1,0 +1,259 @@
+
+=INFO REPORT==== 7-Sep-2012::12:00:06 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 7-Sep-2012::12:00:06 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 7-Sep-2012::12:00:06 ===
+SSL:[]
+
+=INFO REPORT==== 7-Sep-2012::12:00:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:00:07 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:00:13 ===
+GET /admin [cb_admin] 200 5ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:20 ===
+GET /admin/routes/index [cb_admin] 200 2ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:24 ===
+GET /admin/model/model [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:25 ===
+GET /admin/model/model/booking [cb_admin] 200 11ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:25 ===
+POST /admin/model/watch [cb_admin] 200 3ms
+
+=ERROR REPORT==== 7-Sep-2012::12:00:28 ===
+{function_clause,
+    [{erlydtl_filters,truncatewords,
+         [true,8,[]],
+         [{file,"src/erlydtl_filters.erl"},{line,1005}]},
+     {cb_admin_view_model_show_html,'-render_internal/4-fun-4-',4,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {cb_admin_view_model_show_html,'-render_internal/4-fun-7-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1279}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::12:00:28 ===
+GET /admin/model/show/booking-41 [cb_admin] 500 8ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:30 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:31 ===
+GET /admin/lang/show [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:34 ===
+GET /admin/upgrade/upgrade [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:40 ===
+GET /admin/ [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:00:55 ===
+GET /admin/model/events/1347012025845604 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:00 ===
+GET /admin/model/events/1347012025845604 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:06 ===
+GET /admin/routes/index [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:08 ===
+GET /admin/model/model [cb_admin] 200 2ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:09 ===
+GET /admin/model/model/menu [cb_admin] 200 4ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:09 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:12 ===
+GET /admin/model/model/dish [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:12 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:13 ===
+GET /admin/model/model/booking [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:13 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:15 ===
+GET /admin/model/model/dish [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:15 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:15 ===
+GET /admin/model/model/eater [cb_admin] 200 4ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:16 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:17 ===
+GET /doc/eater [speiseplan] 200 132ms
+
+=ERROR REPORT==== 7-Sep-2012::12:01:17 ===
+GET /doc/stylesheet.css [speiseplan] 404 0ms
+
+=ERROR REPORT==== 7-Sep-2012::12:01:17 ===
+GET /doc/erlang.png [speiseplan] 404 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:20 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:22 ===
+GET /admin/model/model/menu [cb_admin] 200 4ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:22 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:27 ===
+GET /admin/model/model/booking [cb_admin] 200 3ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:27 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:34 ===
+GET /admin/routes/index [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:35 ===
+GET /admin/ [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:36 ===
+GET /admin/model/model [cb_admin] 200 1ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:38 ===
+GET /admin/model/model/menu [cb_admin] 200 4ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:38 ===
+POST /admin/model/watch [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:39 ===
+GET /admin/model/events/1347012069653796 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:42 ===
+GET /admin/model/events/1347012072282001 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:43 ===
+GET /admin/model/events/1347012073464420 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:45 ===
+GET /admin/model/events/1347012075107996 [cb_admin] 200 30000ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:46 ===
+GET /admin/model/events/1347012075990414 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:50 ===
+GET /admin/model/events/1347012075990414 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:52 ===
+GET /admin/model/events/1347012082497767 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:01:57 ===
+GET /admin/model/events/1347012087385574 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:02:08 ===
+GET /admin/model/events/1347012098407848 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:02:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:02:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:02:38 ===
+GET /admin/model/events/1347012098468003 [cb_admin] 200 30003ms
+
+=INFO REPORT==== 7-Sep-2012::12:03:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:03:08 ===
+GET /admin/model/events/1347012128476908 [cb_admin] 200 30000ms
+
+=INFO REPORT==== 7-Sep-2012::12:03:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:03:38 ===
+GET /admin/model/events/1347012158483916 [cb_admin] 200 30000ms
+
+=INFO REPORT==== 7-Sep-2012::12:04:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:04:08 ===
+GET /admin/model/events/1347012188489732 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:04:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:04:38 ===
+GET /admin/model/events/1347012218496088 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:05:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:05:08 ===
+GET /admin/model/events/1347012248503311 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:05:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:05:38 ===
+GET /admin/model/events/1347012278510830 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:06:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:06:08 ===
+GET /admin/model/events/1347012308517352 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:06:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:06:38 ===
+GET /admin/model/events/1347012338524478 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:07:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:07:08 ===
+GET /admin/model/events/1347012368530582 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:07:38 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:07:38 ===
+GET /admin/model/events/1347012398535520 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:08:08 ===
+POST /admin/model/heartbeat/10 [cb_admin] 200 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:08:08 ===
+GET /admin/model/events/1347012428541156 [cb_admin] 200 30001ms
+
+=INFO REPORT==== 7-Sep-2012::12:08:30 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:08:30 ===
+GET / [speiseplan] 200 132ms
+
+=INFO REPORT==== 7-Sep-2012::12:08:38 ===
+GET /admin/model/events/1347012458546277 [cb_admin] 200 30002ms
+
+=INFO REPORT==== 7-Sep-2012::12:11:36 ===
+GET /admin [cb_admin] 200 1ms
+
+=ERROR REPORT==== 7-Sep-2012::12:11:40 ===
+GET /admin/index [cb_admin] 404 0ms
+
+=INFO REPORT==== 7-Sep-2012::12:11:46 ===
+GET /admin [cb_admin] 200 1ms

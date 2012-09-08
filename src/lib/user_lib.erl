@@ -10,21 +10,24 @@ hash_for(Name, Password) ->
 
 require_login(Req) ->
 	case Req:cookie("user_id") of
-    	undefined -> {redirect, "/eater/login"};
+    	undefined -> {redirect, "/login/index"};
     	Id ->
       		case boss_db:find(Id) of
-        		undefined -> {redirect, "/eater/login"};
+        		undefined -> {redirect, "/login/index"};
         		Eater ->
           			case Eater:session_identifier() =:= Req:cookie("session_id") of
-            			false -> {redirect, "/eater/login"};
+            			false -> {redirect, "/login/index"};
             			true -> {ok, Eater}
           			end
       			end
   			end.
 
 require_login(admin, Req) -> 
-	{ok, User} = require_login(Req),
-	case User:admin() =:= true of
-		true -> {ok, User};
-		_ -> {redirect, "/eater/login"}
+	case require_login(Req) of
+		{redirect, "/login/index"}	-> {redirect, "/login/index"};
+		{ok, User} ->
+			case User:admin() =:= true of
+				true -> {ok, User};
+				_ -> {redirect, "/login/index"}
+			end
 	end.

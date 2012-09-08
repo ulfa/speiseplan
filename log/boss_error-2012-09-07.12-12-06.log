@@ -1,0 +1,84 @@
+
+=INFO REPORT==== 7-Sep-2012::12:12:06 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 7-Sep-2012::12:12:06 ===
+Starting master services on 'speiseplan@Ulf-Angermann-s-MacBook-Pro'
+
+=INFO REPORT==== 7-Sep-2012::12:12:06 ===
+SSL:[]
+
+=INFO REPORT==== 7-Sep-2012::12:12:06 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:12:07 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:12:11 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::12:12:11 ===
+{function_clause,
+    [{erlydtl_filters,join,
+         [undefined,<<", ">>],
+         [{file,"src/erlydtl_filters.erl"},{line,359}]},
+     {speiseplan_view_admin_index_html,'-render_internal/4-fun-0-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_admin_index_html,render_internal,4,[]},
+     {speiseplan_view_admin_index_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::12:12:11 ===
+GET /admin [speiseplan] 500 123ms
+
+=INFO REPORT==== 7-Sep-2012::12:12:21 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::12:12:21 ===
+{function_clause,
+    [{erlydtl_filters,join,
+         [undefined,<<", ">>],
+         [{file,"src/erlydtl_filters.erl"},{line,359}]},
+     {speiseplan_view_admin_index_html,'-render_internal/4-fun-0-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_admin_index_html,render_internal,4,[]},
+     {speiseplan_view_admin_index_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::12:12:21 ===
+GET /admin/index [speiseplan] 500 134ms
+
+=INFO REPORT==== 7-Sep-2012::12:12:27 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=INFO REPORT==== 7-Sep-2012::12:12:27 ===
+GET /booking [speiseplan] 200 139ms
+
+=INFO REPORT==== 7-Sep-2012::12:12:29 ===
+Loading routes from "/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes" ....
+
+=ERROR REPORT==== 7-Sep-2012::12:12:30 ===
+{function_clause,
+    [{erlydtl_filters,join,
+         [undefined,<<", ">>],
+         [{file,"src/erlydtl_filters.erl"},{line,359}]},
+     {speiseplan_view_admin_index_html,'-render_internal/4-fun-0-',3,[]},
+     {lists,mapfoldl,3,[{file,"lists.erl"},{line,1278}]},
+     {erlydtl_runtime,forloop,3,[{file,"src/erlydtl_runtime.erl"},{line,228}]},
+     {speiseplan_view_admin_index_html,render_internal,4,[]},
+     {speiseplan_view_admin_index_html,render,2,[]},
+     {boss_web_controller,render_view,6,
+         [{file,"src/boss/boss_web_controller.erl"},{line,843}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,734}]}]}
+
+=ERROR REPORT==== 7-Sep-2012::12:12:30 ===
+GET /admin/index [speiseplan] 500 134ms
