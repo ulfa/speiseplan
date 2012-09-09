@@ -22,7 +22,7 @@ delete('POST', [Id], Admin) ->
 	Dish = Menu:dish(),
 	boss_db:delete(Dish:id()),
 	boss_db:delete(Id),
-	{redirect, "/admin/index"}.
+	{ok, [{'action', "index"}]}.
 	
 add('POST', [Id], Admin) ->
 	{Y,M,D} = erlang:date(),
@@ -50,17 +50,19 @@ remove_bookings([Booking|Bookings]) ->
 	remove_bookings(Bookings).
 	
 create('POST', [], Admin) ->
-	Date = Req:post_param("date"),
+	Date = Req:post_param("date"),		
 	Title = Req:post_param("title"),
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
 	NewDish = dish:new(id, Title, Details, handle_checkbox(Vegetarian)),	
 	{ok, SavedDish} = NewDish:save(),
-	NewMenu = menu:new(id, Date, SavedDish:id(), Slots),
-	{ok, SavedMenu} = NewMenu:save(),
-	{redirect, [{'action', "index"}]}.
-	
+ 	NewMenu = menu:new(id, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
+	case NewMenu:save() of
+		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
+		{error, Errors} -> {ok, [{errors, Errors}, {menu, NewMenu}]}
+	end.
+					
 update('POST', [Id], Admin) ->
 	Menu = boss_db:find(Id),
 	Dish = Menu:dish(),
@@ -69,14 +71,13 @@ update('POST', [Id], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),	
-	NewDish = Dish:set([{'date', Date}, {'title', Title}, {'details', Details}, {'slots', Slots}, {'vegetarian', handle_checkbox(Vegetarian)}]),
+	NewDish = Dish:set([{'date', date_lib:create_date_from_string(Date)}, {'title', Title}, {'details', Details}, {'slots', Slots}, {'vegetarian', handle_checkbox(Vegetarian)}]),
 	NewMenu = Menu:set([{'slots', Slots}]),
 	{ok, SavedDish} = NewDish:save(),
 	{ok, SavedMenu} = NewMenu:save(),	
 	{redirect, [{'action', "index"}]}.
 
 handle_checkbox(Value) ->
-	io:format("c... : ~p~n", [Value]),
 	Value =:= "true". 
 	
 construct_date({Y, M, D}) ->
@@ -88,5 +89,4 @@ send_mail([Booking|Bookings], Menu) ->
 	Eater = Booking:eater(),
 	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), Menu:date(), "Das Essen muss leider abgesagt werden."),
 	send_mail(Bookings, Menu).
-	
 	

@@ -23,7 +23,7 @@
           {% for menu in menus %}
           <tr id="/admin/{{ menu.id }}">
             <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_normal_eater|join:", "|default:"Keine Fleischesser"}}">	
-              <a href="/admin/detail/{{ menu.id }}">{{ menu.date }}</a>
+              <a href="/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }}</a>
             </td>
             <td>{{ menu.dish.title }}</td>
             <td>{{ menu.slots}}</td>

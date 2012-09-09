@@ -3,7 +3,9 @@
 -belongs_to(dish).
 -has({booking, many}).
 
-
+get_date_as_string() ->
+	date_lib:create_date_string(Date).
+	
 get_slot_count() ->
 	list_to_integer(Slots) - erlang:length(booking()).
 

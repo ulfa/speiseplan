@@ -43,6 +43,14 @@
 </div>
 </div>
 	<div class="span4">
+		{% if errors %}
+		<ol>
+		{% for error in errors %}
+		<li><font color=red>{{ error }}</font>
+		{% endfor %}
+		</ol>
+		{% endif %}
+		
 	{% include "eater/create.html" %}
   </div>
 </div>	

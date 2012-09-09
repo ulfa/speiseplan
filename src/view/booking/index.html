@@ -36,7 +36,7 @@
           {% if menus %}
           {% for menu in menus %}
           <tr id="{{ menu.id }}">	
-			<td>{{ menu.date }}</td>    
+			<td>{{ menu.get_date_as_string }}</td>    
         	<td>{{ menu.dish.title }}</td>			
             <td>{{ menu.booking|length }}</td>
 			<td>{{ menu.get_vegetarian_count }}</td>
