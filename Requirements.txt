@@ -1,15 +1,35 @@
 
 
-
-
+- Löschen von Essern aus der Admin Sicht.
 - Rechnungslauf für alle Esser und einen Monat 
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
+
+	Beispiel :
+
+	Essen       : 2012-09-09 12:00
+	Buchung     : 2012-09-09 16:00 
+	-> Buchung nicht mehr möglich, da Differenz < 20 Stunden
+	Es darf eine Differenz von 21 Stunden sein
+	
+
 - Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
 - Anja Mail schicken, wenn Esser gebucht haben.
+
 - Stornierung nicht möglich 24 Stunden. Ein Tag vorher, aber nur bis 15:00 Uhr
 	http://schemecookbook.org/Erlang/TimeToEpoch
+	
+	Beispiel :
+	
+	Essen       : 2012-09-09 12:00
+	Stornierung : 2012-09-08 16:00
+	
+	-> nicht mehr möglich, da Differenz < 24 Stunden
+	
+	
+	
 - Raspberry Pi aufsetzen
 
+- Modelle auf Erland Date/Time umbauen (fertig)
 - Refactoring der Datum Werte im Booking. ... müssen Datum und Zeit enthalten.(fertig)
 - Infos über andere Teilnehmer aus Speiseplan Ansicht entferne (fertig)
 - Infos über Teilnehmer in Admin Ansicht einbauen (fertig)

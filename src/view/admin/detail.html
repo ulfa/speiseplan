@@ -13,6 +13,7 @@
             <th><h3>Speise</h3></th>
             <th><h3>Slots</h3></th>
             <th><h3>vegetarisch</h3></th>
+            <th></th>
           </tr>
         </thead>
 		<tbody>
@@ -21,6 +22,7 @@
 			<td><h4>{{ menu.dish.title }}</h4></td>
 			<td><h4>{{ menu.slots }}</h4></td>
 			<td><h4>{{ menu.dish.vegetarian }}</h4></td>
+			<td></td>
 		</tr>
 		{% if  menu.booking %}		
 		{% for booking in menu.booking %}
@@ -29,6 +31,12 @@
 			<td>{{ booking.get_formated_date }}</td>
 			<td>{{ booking.vegetarian }}</td>
 			<td>{{ booking.eater.price_to_pay }} €</td>
+			<!--td>
+        	<form method="post" action="{% url action="delete" id=menu.id %}">	
+	        	<input type="hidden" name="esser" value="{{booking.eater.id}}">
+        		<input type="submit" class="btn btn-danger" value="löschen">
+			</form>
+			</td-->			
 		</tr>	
 		{% endfor %}
 		<tr>

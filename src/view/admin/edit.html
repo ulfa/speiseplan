@@ -18,7 +18,7 @@
           {% if menus %}
           {% for menu in menus %}
           <tr id="/admin/{{ menu.id }}">
-            <td>{{ menu.date }}</td>
+            <td>{{ menu.get_date_as_string }}</td>
             <td>{{ menu.dish.title }}</td>
             <td>{{ menu.slots}}</td>
           </tr>

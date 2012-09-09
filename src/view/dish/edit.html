@@ -1,7 +1,7 @@
 <form method="post" action="{% url action="update" id= menu.id %}"class="well">        
 	<label>Speise<input type="text" name="title" value="{{menu.dish.title}}"></label>
 	<label>Details<textarea name="details">{{menu.dish.details}}</textarea></label>
-	<label>Datum<input type="text" name="date" class="auto-kal" value="{{menu.date}}"></label>
+	<label>Datum<input type="text" name="date" class="auto-kal" value="{{menu.get_date_as_string}}"></label>
 	<label>Slots<input type="number" name="slots" min="1" value="{{menu.slots}}"></label>
 	<label><input type="checkbox" name="vegetarian" value="true">vegetarisch</label>
 	<input type="submit">
