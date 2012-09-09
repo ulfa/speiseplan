@@ -2,7 +2,7 @@
 -compile(export_all).
 
 before_(_) ->
-	user_lib:require_login(Req).
+	user_lib:require_login(admin, Req).
 
 index('GET', [], Admin) ->
   Eaters = boss_db:find(eater, []),
