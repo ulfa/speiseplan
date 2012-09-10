@@ -1,5 +1,5 @@
 
-- Nach Datum sortieren. (absteigend)
+
 - Löschen von Essern aus der Admin Sicht.
 - Rechnungslauf für alle Esser und einen Monat 
 - init Admin in DB erstellen
@@ -30,6 +30,9 @@
 	
 - Raspberry Pi aufsetzen
 
+Fertige Aufgaben
+
+- Nach Datum sortieren. (absteigend) (fertig)
 - Modelle auf Erland Date/Time umbauen (fertig)
 - Refactoring der Datum Werte im Booking. ... müssen Datum und Zeit enthalten.(fertig)
 - Infos über andere Teilnehmer aus Speiseplan Ansicht entferne (fertig)

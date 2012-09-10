@@ -4,7 +4,7 @@ before_(_) ->
 	user_lib:require_login(admin, Req).
 	
 index('GET', [], Admin) ->
-	Menus = boss_db:find(menu, []),
+	Menus = boss_db:find(menu, [], [{order_by, date}, descending]),
 	{ok, [{menus, Menus}, {eater, Admin}]}.
 	
 detail('GET', [Id], Admin) ->
