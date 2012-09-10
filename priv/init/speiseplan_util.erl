@@ -37,3 +37,7 @@ create_table (Nodes, Table, Attribs) ->
   mnesia:create_table (Table,
     [ { disc_copies, Nodes   },
       { attributes,  Attribs } ]).
+
+% here i will create the init admin 
+create_admin() ->
+	ok.

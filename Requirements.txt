@@ -1,7 +1,8 @@
 
-
+- Nach Datum sortieren. (absteigend)
 - Löschen von Essern aus der Admin Sicht.
 - Rechnungslauf für alle Esser und einen Monat 
+- init Admin in DB erstellen
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
 
 	Beispiel :

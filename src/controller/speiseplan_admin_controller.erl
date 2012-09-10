@@ -17,13 +17,6 @@ edit('GET', [Id], Admin) ->
 	Menus = boss_db:find(menu, []),
 	{ok, [{menu, Menu}, {menus, Menus}, {eater, Admin}]}.
 
-delete('POST', [Id], Admin) ->
-	Menu = boss_db:find(Id),
-	Dish = Menu:dish(),
-	boss_db:delete(Dish:id()),
-	boss_db:delete(Id),
-	{ok, [{'action', "index"}]}.
-	
 add('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),
 	EaterId = Req:post_param("esser"),		
