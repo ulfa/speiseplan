@@ -8,3 +8,9 @@ get_formated_date() ->
 	Args = [Year, Month, Day, Hour, Min, Seconds],
 	A = io_lib:format("~B-~2.10.0B-~2.10.0B ~2.10.0B:~2.10.0B:~2.10.0B", Args),
 	lists:flatten(A).
+	
+get_vegetarian() ->
+	case Vegetarian of
+		true -> "vegetarisch";
+		_ -> "Fleisch"
+	end.

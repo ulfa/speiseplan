@@ -29,7 +29,7 @@
 		<tr>
 			<td>{{ booking.eater.forename }} {{ booking.eater.name }}</td>
 			<td>{{ booking.get_formated_date }}</td>
-			<td>{{ booking.vegetarian }}</td>
+			<td>{{ booking.get_vegetarian }}</td>
 			<td>{{ booking.eater.price_to_pay }} €</td>
 			<!--td>
         	<form method="post" action="{% url action="delete" id=menu.id %}">	

@@ -1,8 +1,11 @@
 
 
-- Löschen von Essern aus der Admin Sicht.
+- Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". 
+  Damit wird eine Mail an Anja generiert und gesendet.
 - Rechnungslauf für alle Esser und einen Monat 
 - init Admin in DB erstellen
+- Validierungen
+	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
 
 	Beispiel :
