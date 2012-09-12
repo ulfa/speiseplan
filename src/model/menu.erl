@@ -3,6 +3,26 @@
 -belongs_to(dish).
 -has({booking, many}).
 
+get_request_count() ->
+	io:format("Date : ~p~n", [get_date_as_string()]),
+	case boss_mq:poll(get_date_as_string()) of
+		{ok, Timestamp, Eaters} -> Eaters;
+		_ -> []
+	end.
+
+get_requester() ->
+	EaterIds = case boss_mq:poll(get_date_as_string()) of
+				{ok, Timestamp, Messages} -> Messages;
+				_ -> []
+			end,	
+	get_req(EaterIds, []).
+
+get_req([], Requester) ->
+	Requester;
+get_req([EaterId|EaterIds], Requester) ->
+	Eater = boss_db:find(erlang:binary_to_list(EaterId)),
+	get_req(EaterIds, [Eater:name()|Requester]).
+			
 get_date_as_string() ->
 	date_lib:create_date_string(Date).
 	

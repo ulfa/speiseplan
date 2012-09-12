@@ -12,9 +12,16 @@ book('POST', [], Eater) ->
 	Vegetarian = Req:post_param("vegetarian"),
 	EaterId = Req:post_param("eater-id"),
 	MenuId = Req:post_param("menu-id"),
-	%%{Y,M,D} = erlang:date(),		
 	NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
 	{ok, SavedBooking} = NewBooking:save(),
+	{redirect, "/booking/index"}.
+
+request('POST', [], Eater) ->
+	EaterId = Req:post_param("eater-id"),	
+	MenuId = Req:post_param("menu-id"),
+	Menu = boss_db:find(MenuId),
+	io:format("~p ~p ~p ~n", [EaterId, MenuId, Menu:get_date_as_string()]),
+	{ok, Timestamp} = boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId)),
 	{redirect, "/booking/index"}.
 
 detail('POST' ,[Id], Eater) ->
@@ -28,9 +35,6 @@ delete('POST', [], Eater) ->
 	ok = boss_db:delete(Booking:id()),		
 	{redirect, "/booking/index"}.
 	
-construct_date({Y, M, D}) ->
-	lists:concat([Y ,"-" ,M ,"-", D]).
-
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
 		

@@ -11,9 +11,10 @@
           <tr>
 	        <th>Datum</th>
             <th>Speise</th>
-            <th>Slots</th>
+            <th>Slots(gesamt)</th>
 			<th>Anmeldungen</th>
             <th>Vegetarier</th>
+            <th>Anfragen</th>
             <th></th>
           </tr>
         </thead>
@@ -31,6 +32,8 @@
             <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_vegetarian_eater|join:", "|default:"Keine Vegetarier"}}">			
 				<a href="#">{{ menu.get_vegetarian_eater|length }}</a>
 			</td>
+			<td data-popover-title="Fleisch" data-popover-content="{{ menu.get_requester|join:", "|default:"Keine Anfragen"}}">
+				<a href="#">{{ menu.get_request_count|length }}</a>
 			<td>
 				<a href="/admin/edit/{{ menu.id }}">bearbeiten</a>	
         	</td>
