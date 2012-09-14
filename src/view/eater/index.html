@@ -19,7 +19,9 @@
 <tbody>
 {% for eater in eaters %}
 <tr>
-  <td>{{ eater.account }}</td>
+  <td>
+	<a href="/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
+  </td>
   <td>{{ eater.forename }}</td>
   <td>{{ eater.name }}</td>
   <td>{{ eater.mail }}</td>
@@ -42,15 +44,7 @@
 </table>
 </div>
 </div>
-	<div class="span4">
-		{% if errors %}
-		<ol>
-		{% for error in errors %}
-		<li><font color=red>{{ error }}</font>
-		{% endfor %}
-		</ol>
-		{% endif %}
-		
+	<div class="span4">		
 	{% include "eater/create.html" %}
   </div>
 </div>	

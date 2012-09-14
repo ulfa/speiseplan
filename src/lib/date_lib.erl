@@ -12,7 +12,7 @@ create_date_string(Date) ->
 	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
 	Args = [Year, Month, Day],
 	lists:flatten(io_lib:format("~B-~2.10.0B-~2.10B", Args)).
-			
+				
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).
 create_date_from_string_test() ->

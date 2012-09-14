@@ -8,9 +8,10 @@ index('GET', [], Admin) ->
   Eaters = boss_db:find(eater, []),
   {ok, [{eaters, Eaters}, {eater, Admin}]}.
 
-edit('POST', [Id], Admin) ->
+edit('GET', [Id], Admin) ->
+	Eaters = boss_db:find(eater, []),
 	Eater = boss_db:find(Id),
-	{ok, [{edit_eater, Eater},{eater, Admin}]}.
+	{ok, [{edit_eater, Eater},{eater, Admin}, {eaters, Eaters}]}.
 	
 delete('POST', [Id]) ->
 	ok = boss_db:delete(Id),
@@ -31,16 +32,18 @@ update('POST', [Id]) ->
 	
 	
 create('POST', []) ->
-  Account = Req:post_param("account"),
-  Name = Req:post_param("name"),
-  Mail = Req:post_param("mail"),
-  Forename = Req:post_param("forename"),
-  Password = Req:post_param("password"),
-  Intern = convert_to_boolean(Req:post_param("intern")),
-  Admin = convert_to_boolean(Req:post_param("admin")),	
-  NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false),
-  {ok, SavedEater} = NewEater:save(),
-  {redirect, [{'action', "index"}]}.
-
+	Account = Req:post_param("account"),
+	Name = Req:post_param("name"),
+	Mail = Req:post_param("mail"),
+	Forename = Req:post_param("forename"),
+	Password = Req:post_param("password"),
+	Intern = convert_to_boolean(Req:post_param("intern")),
+	Admin = convert_to_boolean(Req:post_param("admin")),	
+	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false),
+	case  NewEater:save() of
+		{ok, SavedEater} -> {redirect, [{'action', "index"}]};
+		{error, Errors} -> {redirect, [{'action', "index"},{error, Errors}]}
+	end.
+  
 convert_to_boolean(Value) ->
 	Value =:= "true".
