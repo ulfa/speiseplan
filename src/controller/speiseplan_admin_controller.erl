@@ -10,7 +10,8 @@ index('GET', [], Admin) ->
 detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),
 	Eaters = boss_db:find(eater, []),
-	{ok, [{menu, Menu}, {eaters, Eaters}, {eater, Admin}]}.	
+	Requesters = Menu:get_requester(),
+	{ok, [{menu, Menu}, {eaters, Eaters}, {eater, Admin}, {requesters, Requesters}]}.	
 	
 edit('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),

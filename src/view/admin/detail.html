@@ -59,6 +59,17 @@
 			  </p>
 		<input type="submit", value="Hinzufügen">
 		</form>
+		<h2>Anfragen</h2>
+		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
+			<p>
+			    <select name="esser" >
+				  {% for requester in requesters %}
+			      <option value="{{requester.id}}">{{requester.forename}} {{requester.name}}</option>
+				  {% endfor %}
+			    </select>
+			  </p>
+		<input type="submit", value="Hinzufügen">
+		</form>
   	</div>
 </div>
 {% endblock %}

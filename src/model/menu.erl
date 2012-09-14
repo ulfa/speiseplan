@@ -10,18 +10,33 @@ get_request_count() ->
 		_ -> []
 	end.
 
-get_requester() ->
+get_requester_names() ->
 	EaterIds = case boss_mq:poll(get_date_as_string()) of
 				{ok, Timestamp, Messages} -> Messages;
 				_ -> []
 			end,	
+	get_req_names(EaterIds, []).
+
+get_req_names([], Requester) ->
+	Requester;
+get_req_names([EaterId|EaterIds], Requester) ->
+	Eater = boss_db:find(erlang:binary_to_list(EaterId)),
+	get_req_names(EaterIds, [Eater:name()|Requester]).
+
+get_requester() ->
+	EaterIds = case boss_mq:poll(get_date_as_string()) of
+					{ok, Timestamp, Messages} -> Messages;
+					_ -> []
+				end,	
 	get_req(EaterIds, []).
 
 get_req([], Requester) ->
 	Requester;
 get_req([EaterId|EaterIds], Requester) ->
 	Eater = boss_db:find(erlang:binary_to_list(EaterId)),
-	get_req(EaterIds, [Eater:name()|Requester]).
+	get_req(EaterIds, [Eater|Requester]).
+
+
 			
 get_date_as_string() ->
 	date_lib:create_date_string(Date).
