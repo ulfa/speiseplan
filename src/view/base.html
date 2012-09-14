@@ -16,10 +16,9 @@
       	<img src="/static/images/curry.jpg" class="img-rounded">
 		{% if eater.admin == "true" %}		
 		<p><a href="/admin/index">Speisen erfassen</a></p>
-		<p><a href="/eater/index">Esser verwalten</a></p>
-		
+		<p><a href="/eater/index">Esser verwalten</a></p>		
 		{% endif %}
-	  {% if eater%}
+	  {% if eater %}
 		<p>Mahlzeit, {{eater.forename}} {{ eater.name }}</p>
 	  {% else %}
       <p><a href="/eater/login">Log in</a></p>

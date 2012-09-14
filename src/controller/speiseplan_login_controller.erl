@@ -9,7 +9,7 @@ index('POST', []) ->
   case boss_db:find(eater, [{account, Account}]) of
     [Eater] ->
       case Eater:check_password(Req:post_param("password")) of
-        true -> {redirect, "/booking/index", Eater:login_cookies()};
+        true -> {redirect, "/booking/index", Eater:login_cookies()};				
         false -> {ok, [{error, "Bad name/password combination"}]}
       end;
     [] -> {ok, [{error, "No Eater with Account :  " ++ Account}]}

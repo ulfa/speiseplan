@@ -2,10 +2,10 @@
   Damit wird eine Mail an Anja generiert und gesendet.
 
 . Logik des Menu Status in das Modell integrieren.
-	get_state() ->  "free"    -> man kann buchen 
-					"booked"  -> man hat gebucht
-					"request" -> man kann eine Anfrage stellen
-					"finished"-> Essen ist gegessen
+	get_state() ->  "free"    -> man kann buchen, wenn man noch nicht gebucht hat und Menudatum > akt. Datum 
+					"booked"  -> man hat gebucht, wenn ein Booking Eintrag vorliegt
+					"request" -> man kann eine Anfrage stellen, wenn keine Slots mehr vefügbar sind und Menudatum > akt. Datum
+					"finished"-> Essen ist gegessen, wenn Menudatum <= akt. Datum.
 
 - Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
 

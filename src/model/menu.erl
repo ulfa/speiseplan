@@ -3,8 +3,10 @@
 -belongs_to(dish).
 -has({booking, many}).
 
+is_in_time() ->
+	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
+	
 get_request_count() ->
-	io:format("Date : ~p~n", [get_date_as_string()]),
 	case boss_mq:poll(get_date_as_string()) of
 		{ok, Timestamp, Eaters} -> Eaters;
 		_ -> []
