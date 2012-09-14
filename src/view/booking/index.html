@@ -46,7 +46,7 @@
             			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
 						<input type="submit" class="btn btn-warning" value="Stornieren">
 					</form>				
-					{% elif menu.get_slot_count > 0%}
+				{% elif menu.get_slot_count > 0%}
 						<form method="post" action="{% url action="book"%}">
 	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
@@ -58,13 +58,13 @@
 							{% endif %}
 	            			<input type="submit" class="btn btn-primary" value="Buchen">				
 	          			</form>
-					{% else %}
+				{% else %}
 						<form method="post" action="{% url action="request"%}">
 	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
 							<input type="submit" class="btn btn-danger" value="Anfrage an Küchenbulle">
 						</form>
-					{% endif %}
+				{% endif %}
             </td>
           </tr>
           {% endfor %}

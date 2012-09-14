@@ -1,7 +1,15 @@
-
-
-- Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". 
+- Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". (fertig)
   Damit wird eine Mail an Anja generiert und gesendet.
+
+. Logik des Menu Status in das Modell integrieren.
+	get_state() ->  "free"    -> man kann buchen 
+					"booked"  -> man hat gebucht
+					"request" -> man kann eine Anfrage stellen
+					"finished"-> Essen ist gegessen
+
+- Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
+
+
 - Rechnungslauf für alle Esser und einen Monat 
 - init Admin in DB erstellen
 - Validierungen

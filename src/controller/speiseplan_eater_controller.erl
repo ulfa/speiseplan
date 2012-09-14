@@ -38,10 +38,9 @@ create('POST', []) ->
   Password = Req:post_param("password"),
   Intern = convert_to_boolean(Req:post_param("intern")),
   Admin = convert_to_boolean(Req:post_param("admin")),	
-  NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail),
+  NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false),
   {ok, SavedEater} = NewEater:save(),
   {redirect, [{'action', "index"}]}.
 
 convert_to_boolean(Value) ->
-	io:format("1.. : ~p~n", [Value]),
 	Value =:= "true".

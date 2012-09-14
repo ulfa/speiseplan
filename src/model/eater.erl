@@ -1,4 +1,4 @@
--module(eater, [Id, Account, PasswordHash, Forename, Name, Intern, PriceToPay, Admin, Mail]).
+-module(eater, [Id, Account, PasswordHash, Forename, Name, Intern, PriceToPay, Admin, Mail, Verified]).
 -compile(export_all).
 -define(SECRET_STRING, "Not telling secrets!").
 

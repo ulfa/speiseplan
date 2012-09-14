@@ -5,8 +5,7 @@ index('GET', []) ->
   {ok, [{redirect, Req:header(referer)}]};
 
 index('POST', []) ->
-  Account = Req:post_param("account"),
-		io:format("1... : ~p~n",[Account]),
+  Account = Req:post_param("account"),	
   case boss_db:find(eater, [{account, Account}]) of
     [Eater] ->
       case Eater:check_password(Req:post_param("password")) of
@@ -15,3 +14,7 @@ index('POST', []) ->
       end;
     [] -> {ok, [{error, "No Eater with Account :  " ++ Account}]}
   end.
+
+check_verification(Eater) ->
+	Eater:verification().
+		

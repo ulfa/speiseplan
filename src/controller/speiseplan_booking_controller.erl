@@ -20,7 +20,6 @@ request('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),	
 	MenuId = Req:post_param("menu-id"),
 	Menu = boss_db:find(MenuId),
-	io:format("~p ~p ~p ~n", [EaterId, MenuId, Menu:get_date_as_string()]),
 	{ok, Timestamp} = boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId)),
 	{redirect, "/booking/index"}.
 
@@ -37,6 +36,13 @@ delete('POST', [], Eater) ->
 	
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
+
+send_mail(EaterId, Menu) ->
+	io:format("1.. : ~n~p", [EaterId]),
+	Eater = boss_db:find(EaterId),
+	boss_mail:send(Eater:mail(), "uangermann@googlemail.com",  Menu:date(), "Anfrage von ").
+
+	
 		
 	
 	
