@@ -5,6 +5,9 @@
 
 is_in_time() ->
 	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
+
+is_time_to_book() ->
+	calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{15,0,0}}) > 72000.
 	
 get_request_count() ->
 	case boss_mq:poll(get_date_as_string()) of

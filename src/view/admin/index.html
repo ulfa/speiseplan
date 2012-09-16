@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="row">
-  <div class="span8">
+  <div class="span9">
     <div class="well">
       <table class="table">
         <thead>
@@ -16,6 +16,7 @@
             <th>Vegetarier</th>
             <th>Anfragen</th>
             <th></th>
+			<th></th>
           </tr>
         </thead>
         <tbody>
@@ -43,6 +44,12 @@
         		<input type="submit" class="btn btn-danger" value="Absagen">
 			</form>
 			</td>
+			<td>
+				<form method="post" name="Storno" action="{% url action="mahlzeit" %}">
+					<input type="hidden" name="menu-id" value="{{ menu.id }}">
+        			<input type="submit" class="btn btn-primary" value="Mahlzeit!">
+				</form>
+        	</td>
           </tr>
           <tr class="details">
             <td colspan="4">{{ menu.dish.details }}</td>
@@ -53,7 +60,7 @@
       </table>
     </div>
   </div>
-  <div class="span4">
+  <div class="span3">
 	{% include "dish/create.html" %}
   </div>
 </div>

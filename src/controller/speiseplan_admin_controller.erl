@@ -6,6 +6,10 @@ before_(_) ->
 index('GET', [], Admin) ->
 	Menus = boss_db:find(menu, [], [{order_by, date}, descending]),
 	{ok, [{menus, Menus}, {eater, Admin}]}.
+
+mahlzeit('POST', [], Admin) ->
+	%%setze Kennzeichen, dass essen gelockt ist
+	{redirect, [{'action', "index"}]}.
 	
 detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),

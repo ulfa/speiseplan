@@ -1,4 +1,18 @@
+
+
+- Bilder für einzelne Speisen einfügen.
+
+- Anfrage nach Stornierung wieder aus Queue entfernen. Mal schauen, wie ich das mache.
+- Kennzeichen im Booking aufnehmen, dass Esser durch Anfrage gebucht wurde. (für Auswertung interessant)
+- Buchungen über Anfragen dürfen nicht stornierbar durch Esser sein.
+
+- Kennzeichen in Menu, dass ein Essen durch Anja freigegeben wurde. danach kann mit dem Essen nichts mehr gemacht werden.
+	Kein Löschen  möglich, aber noch das Hinzufügen von Essern.
+
+- Created_Date im Menu einführen, damit die zeitliche Überprüfung daran gemessen werden kann.
+
 - Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". (fertig)
+
   Damit wird eine Mail an Anja generiert und gesendet.
 
 . Logik des Menu Status in das Modell integrieren.
@@ -14,15 +28,19 @@
 - init Admin in DB erstellen
 - Validierungen
 	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
+	
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
 
 	Beispiel :
 
 	Essen       : 2012-09-09 12:00
-	Buchung     : 2012-09-09 16:00 
+	Buchung     : 2012-09-09 16:00
+	 
 	-> Buchung nicht mehr möglich, da Differenz < 20 Stunden
 	Es darf eine Differenz von 21 Stunden sein
 	
+	Essen :  2012-09-09 12:00
+			 2012-09-08 15:00 
 
 - Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
 - Anja Mail schicken, wenn Esser gebucht haben.
@@ -41,8 +59,10 @@
 	
 - Raspberry Pi aufsetzen
 
-Fertige Aufgaben
 
+
+Fertige Aufgaben
+- Get in touch with an eater. Möglich Esser an zu mailen über Liste der Esser. (fertig)
 - Nach Datum sortieren. (absteigend) (fertig)
 - Modelle auf Erland Date/Time umbauen (fertig)
 - Refactoring der Datum Werte im Booking. ... müssen Datum und Zeit enthalten.(fertig)
@@ -72,4 +92,23 @@ Listen
 BUGS
 
 - Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
+- neue Fehler
+{undef,
+    [{error,get_requester,[{error,{no_exists,'favicon.ico'}}],[]},
+     {speiseplan_admin_controller,detail,4,
+         [{file,
+              "/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_admin_controller.erl"},
+          {line,17}]},
+     {boss_web_controller,execute_action,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
+     {boss_web_controller,process_request,5,
+         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
+     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
+     {boss_web_controller,handle_request,3,
+         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
+     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+
+=ERROR REPORT==== 16-Sep-2012::08:08:05 ===
+
 

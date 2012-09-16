@@ -20,7 +20,6 @@ before_update() ->
 	{ok, set([{'price_to_pay', get_price_to_pay(Intern)}, {'admin', get_admin(Admin)}])}.		
 	
 get_price_to_pay(Intern) ->
-	io:format("1... : ~p~n", [Intern]),
 	case Intern of
 		"true" -> 3;
 		_ -> 5

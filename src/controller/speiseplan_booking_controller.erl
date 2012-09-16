@@ -9,11 +9,14 @@ index('GET', [], Eater) ->
 	{ok, [{menus, Menus}, {eater, Eater}]}.	
 	
 book('POST', [], Eater) ->
-	Vegetarian = Req:post_param("vegetarian"),
 	EaterId = Req:post_param("eater-id"),
-	MenuId = Req:post_param("menu-id"),
-	NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
-	{ok, SavedBooking} = NewBooking:save(),
+	MenuId = Req:post_param("menu-id"),	
+	Vegetarian = Req:post_param("vegetarian"),
+	case is_allready_booked(MenuId, EaterId) of
+		true -> true;
+		false -> NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
+				 {ok, SavedBooking} = NewBooking:save()
+	end,
 	{redirect, "/booking/index"}.
 
 request('POST', [], Eater) ->
@@ -42,6 +45,11 @@ send_mail(EaterId, Menu) ->
 	Eater = boss_db:find(EaterId),
 	boss_mail:send(Eater:mail(), "uangermann@googlemail.com",  Menu:date(), "Anfrage von ").
 
+is_allready_booked(MenuId, EaterId) ->
+	case boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}]) of
+		[] -> false;
+		Menu -> true
+	end.
 	
 		
 	
