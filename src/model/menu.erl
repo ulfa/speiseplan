@@ -1,4 +1,4 @@
--module(menu, [Id, Date, DishId, Slots]).
+-module(menu, [Id, CreatedDate, Date, DishId, Slots]).
 -compile(export_all).
 -belongs_to(dish).
 -has({booking, many}).
@@ -42,7 +42,12 @@ get_req([EaterId|EaterIds], Requester) ->
 	get_req(EaterIds, [Eater|Requester]).
 
 
-			
+is_eater_id_in_list(EaterId, List_of_EaterIds) ->
+	case [X || X <- List_of_EaterIds, X =:= EaterId] of
+		[] -> false;
+		_ -> true
+	end.
+		
 get_date_as_string() ->
 	date_lib:create_date_string(Date).
 	

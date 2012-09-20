@@ -40,8 +40,8 @@
             <td>{{ menu.dish.details }}</td>
             <td>{{ menu.get_slot_count }}</td>
             <td>	
-				{% if eater.id in menu.get_all_eater %}						
-					<form method="post" action="{% url action="delete" %}">
+				{% if eater.id in menu.get_all_eater and menu.is_in_time %}						
+					<form method="post" action="{% url action="storno" %}">
 						<input type="hidden" name="eater-id" value="{{ eater.id }}">
             			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
 						<input type="submit" class="btn btn-warning" value="Stornieren">
@@ -62,7 +62,7 @@
 						<form method="post" action="{% url action="request"%}">
 	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
-							<input type="submit" class="btn btn-danger" value="Anfrage an Küchenbulle">
+							<input type="submit" class="btn btn-warning" value="Anfrage">
 						</form>
 				{% else %}
 				<h4>gegessen</h4>

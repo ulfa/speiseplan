@@ -1,19 +1,22 @@
 
+- Funktion Mahlzeit im admin controller implementieren.
 
 - Bilder für einzelne Speisen einfügen.
 
+- Stornierung im Controller um Abfrage "is_in_time" erweitern
+
 - Anfrage nach Stornierung wieder aus Queue entfernen. Mal schauen, wie ich das mache.
+
 - Kennzeichen im Booking aufnehmen, dass Esser durch Anfrage gebucht wurde. (für Auswertung interessant)
+
 - Buchungen über Anfragen dürfen nicht stornierbar durch Esser sein.
 
 - Kennzeichen in Menu, dass ein Essen durch Anja freigegeben wurde. danach kann mit dem Essen nichts mehr gemacht werden.
 	Kein Löschen  möglich, aber noch das Hinzufügen von Essern.
 
-- Created_Date im Menu einführen, damit die zeitliche Überprüfung daran gemessen werden kann.
 
-- Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". (fertig)
 
-  Damit wird eine Mail an Anja generiert und gesendet.
+
 
 . Logik des Menu Status in das Modell integrieren.
 	get_state() ->  "free"    -> man kann buchen, wenn man noch nicht gebucht hat und Menudatum > akt. Datum 
@@ -62,6 +65,9 @@
 
 
 Fertige Aufgaben
+
+- Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". Damit wird eine Mail an Anja generiert und gesendet.(fertig)
+- Created_Date im Menu einführen, damit die zeitliche Überprüfung daran gemessen werden kann.
 - Get in touch with an eater. Möglich Esser an zu mailen über Liste der Esser. (fertig)
 - Nach Datum sortieren. (absteigend) (fertig)
 - Modelle auf Erland Date/Time umbauen (fertig)

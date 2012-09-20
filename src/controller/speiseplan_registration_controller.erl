@@ -4,6 +4,14 @@
 index('GET', []) ->
   {ok, []}.
 
+validate('GET', [EaterId]) ->
+	case boss_db:find(EaterId) of
+		{error, Reason} ->  false;
+		Eater -> Eater:set([{'verified', true}]),
+				 Eater:save(),
+				 true
+	end.
+
 create('POST', []) ->
 	Account = Req:post_param("account"),
 	Name = Req:post_param("name"),
@@ -18,7 +26,7 @@ create('POST', []) ->
 	end.
 	
 send_mail(Eater) ->
-	boss_mail:send("noreply@kiezkantine.de", Eater:mail(), "Registration", "Bitte bestätige deine Registrierung"),
+	boss_mail:send("noreply@kiezkantine.de", Eater:mail(), "Registration", "Bitte bestätige deine Registrierung."),
 	
 
 	

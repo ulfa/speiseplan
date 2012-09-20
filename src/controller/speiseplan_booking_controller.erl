@@ -30,7 +30,7 @@ detail('POST' ,[Id], Eater) ->
 	Menus = boss_db:find(menu, []),
 	{ok, [{menus, Menus}]}.		
 
-delete('POST', [], Eater) ->
+storno('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),
 	MenuId = Req:post_param("menu-id"),	
 	[Booking] = boss_db:find(booking, [{menu_id, 'equals', MenuId}, {eater_id , 'equals', EaterId}]),

@@ -8,7 +8,9 @@ index('GET', [], Admin) ->
 	{ok, [{menus, Menus}, {eater, Admin}]}.
 
 mahlzeit('POST', [], Admin) ->
-	%%setze Kennzeichen, dass essen gelockt ist
+	Menu_Id = Req:post_param("menu-id"),
+	Menu = boss_db:find(Menu_Id),
+	ok = send_mail(Menu:booking(), Menu, "Das Essen ist fertig!"),
 	{redirect, [{'action', "index"}]}.
 	
 detail('GET', [Id], Admin) ->
@@ -26,10 +28,13 @@ add('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),
 	EaterId = Req:post_param("esser"),		
 	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
-		[Result] -> 	{redirect, "/admin/detail/" ++ Id};
-		_ ->	NewBooking = booking:new(id, Date, false, EaterId, Id),
-				{ok, SavedBooking} = NewBooking:save(),
-				{redirect, "/admin/detail/" ++ Id}
+		[Result] -> {redirect, "/admin/detail/" ++ Id};
+				_->	NewBooking = booking:new(id, Date, false, EaterId, Id),
+					{ok, SavedBooking} = NewBooking:save(),
+					Eater = boss_db:find(EaterId),
+					Menu = boss_db:find(Id),
+					send_a_mail(Eater, Menu, "Du wurdest hinzugefügt."),
+					{redirect, "/admin/detail/" ++ Id}
 	end.
 	
 remove('POST', [Id], Admin) ->
@@ -41,7 +46,7 @@ remove('POST', [Id], Admin) ->
 storno('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
-	ok = send_mail(Menu:booking(), Menu),
+	ok = send_mail(Menu:booking(), Menu, "Das Essen muss leider abgesagt werden."),
 	remove_bookings(Menu:booking()),
 	boss_db:delete(Menu_Id),
 	io:format("asdasdas"),
@@ -54,6 +59,7 @@ remove_bookings([Booking|Bookings]) ->
 	remove_bookings(Bookings).
 	
 create('POST', [], Admin) ->
+	CreatedDate = date_lib:create_actual_date(),
 	Date = Req:post_param("date"),
 	Title = Req:post_param("title"),
 	Details = Req:post_param("details"),
@@ -61,7 +67,7 @@ create('POST', [], Admin) ->
 	Vegetarian = Req:post_param("vegetarian"),
 	NewDish = dish:new(id, Title, Details, handle_checkbox(Vegetarian)),	
 	{ok, SavedDish} = NewDish:save(),
- 	NewMenu = menu:new(id, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
+ 	NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
 	case NewMenu:save() of
 		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
 		{error, Errors} -> {ok, [{errors, Errors}, {menu, NewMenu}]}
@@ -80,17 +86,19 @@ update('POST', [Id], Admin) ->
 	{ok, SavedDish} = NewDish:save(),
 	{ok, SavedMenu} = NewMenu:save(),	
 	{redirect, [{'action', "index"}]}.
-
+	
 handle_checkbox(Value) ->
 	Value =:= "true". 
 	
 construct_date({Y, M, D}) ->
 	lists:concat([Y ,"-" ,M ,"-", D]).
 	
-send_mail([], Menu) ->
+send_mail([], Menu, Text) ->
 	ok;
-send_mail([Booking|Bookings], Menu) ->
+send_mail([Booking|Bookings], Menu, Text) ->
 	Eater = Booking:eater(),
-	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), Menu:date(), "Das Essen muss leider abgesagt werden."),
-	send_mail(Bookings, Menu).
-	
+	send_a_mail(Eater, Menu, Text),
+	send_mail(Bookings, Menu, Text).
+
+send_a_mail(Eater, Menu, Text) ->
+	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), Menu:get_date_as_string(), Text).
