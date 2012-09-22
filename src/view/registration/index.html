@@ -2,7 +2,8 @@
 
 <!-- Index side of the admin interface-->
 {% block body %}
-
+<div class="row">
+    <div class="span4">
 <form method="post" action="{% url action="create" %}" class="well">
 	<label>Account<input type="text" name="account" ></label>
 	<label>Vorname<input type="text" name="forename"></textarea></label>
@@ -10,6 +11,8 @@
 	<label>Mail<input type="text" name="mail"></label>
 	<label>Password<input type="password" name="password"></label>
 	<label>Intern <input type="checkbox" name="intern" value="true"></label>
-	<input type="submit">
+	<input type="submit" class="btn btn-small" value="Erstellen">
 </form>
+</div>
+</div>
 {% endblock %}

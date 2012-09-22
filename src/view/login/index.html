@@ -16,7 +16,9 @@
 {% if error %}
 <font color="red">{{ error }}</font>
 {% endif %}
-<form method="post">
+<div class="row">
+    <div class="span4">
+		<form method="post" class="well">
         Account:<br />
         <input name="account" /><br /><br />
 
@@ -26,4 +28,6 @@
         <input type="submit" value="Log in" />
         <input type="hidden" name="redirect" value="{{ redirect|default_if_none:"/booking/index" }}" />
 		<p><a href="/registration">Registration</a></p>
+</div>
+</div>
 </form>
