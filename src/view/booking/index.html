@@ -44,7 +44,7 @@
 					<form method="post" action="{% url action="storno" %}">
 						<input type="hidden" name="eater-id" value="{{ eater.id }}">
             			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
-						<input type="submit" class="btn btn-warning" value="Stornieren">
+						<input type="submit" class="btn btn-warning btn-mini" value="Stornieren">
 					</form>				
 				{% elif menu.get_slot_count > 0 and menu.is_in_time %}
 						<form method="post" action="{% url action="book"%}">
@@ -56,13 +56,13 @@
 	              				vegetarisch
 	            			</label>
 							{% endif %}
-	            			<input type="submit" class="btn btn-primary" value="Buchen">				
+	            			<input type="submit" class="btn btn-primary btn-mini" value="Buchen">				
 	          			</form>
 				{% elif menu.is_in_time  %}
 						<form method="post" action="{% url action="request"%}">
 	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
-							<input type="submit" class="btn btn-warning" value="Anfrage">
+							<input type="submit" class="btn btn-warning btn-mini" value="Anfrage">
 						</form>
 				{% else %}
 				<h4>gegessen</h4>

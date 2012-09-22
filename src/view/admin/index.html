@@ -41,13 +41,13 @@
 			<td>
         	<form method="post" name="Storno" action="{% url action="storno" %}">
 				<input type="hidden" name="menu-id" value="{{ menu.id }}">
-        		<input type="submit" class="btn btn-danger" value="Absagen">
+        		<input type="submit" class="btn btn-danger btn-mini" value="Absagen">
 			</form>
 			</td>
 			<td>
 				<form method="post" name="Storno" action="{% url action="mahlzeit" %}">
 					<input type="hidden" name="menu-id" value="{{ menu.id }}">
-        			<input type="submit" class="btn btn-primary" value="Mahlzeit!">
+        			<input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
 				</form>
         	</td>
           </tr>

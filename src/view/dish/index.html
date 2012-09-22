@@ -44,7 +44,7 @@
 				{% if eater.id in bookings.eaters %}
                 <form method="post" action=" {{ booking.id }} ">
                 	<input type="hidden" name="_method" value="delete">					
-                	<input type="submit" class="btn btn-danger" value="Stornieren">
+                	<input type="submit" class="btn btn-danger btn-mini" value="Stornieren">
 				</form>
 				{% else%}
 				<form method="post" action="{{ booking.id }}">
@@ -55,7 +55,7 @@
                   		vegetarisch
                 	</label>
 					{% endif %}
-                	<input type="submit" class="btn btn-success" value="Buchen">				
+                	<input type="submit" class="btn btn-success btn-mini" value="Buchen">				
               	</form>
 			{% endif %}
             </td>
