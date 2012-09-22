@@ -25,12 +25,22 @@
       {% endif %}
 		<p>Mitarbeiter 3 €, Externe 5 €</p>
     </header>
+	{% if errors %}
+		<p class="alert alert-error">
+			{% for error in errors %}
+				{{ error }}<br/>
+			{% endfor %}
+
+		</p>
+	{% endif %}
+
+
     {% block body %}{% endblock %}
   </div>
-
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/kalendae.min.js"></script>
   <script src="/static/js/application.js"></script>
 </body>
+
 </html>

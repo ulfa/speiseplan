@@ -4,14 +4,6 @@
 
 {% block body %}
 
-{% if errors %}
-<ol>
-{% for error in errors %}
-<li><font color=red>{{ error }}</font>
-{% endfor %}
-</ol>
-{% endif %}
-
 <form method="post" action="{% url action="create" %}" class="well">
 	<label>Account<input type="text" name="account" value="{{ eater.account }}"></label>
 	<label>Vorname<input type="text" name="forename" value="{{ eater.forename }}"></label>

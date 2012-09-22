@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="well">
+	<form method="post" action="{% url action="search" %}" class="form-search">        
+		<input type="text" name="from_date" placeholder="Von Datum" class="auto-kal">
+		<input type="text" name="to_date" placeholder="Bis Datum" class="auto-kal">
+		<input type="submit" class="btn" value="Suche">
+	</form>
+</div>
+{% endblock %}

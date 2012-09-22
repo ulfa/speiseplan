@@ -1,4 +1,8 @@
 
+- Release erstellen 
+
+- CSV generieren für einen bestimmten Zeitraum
+
 - Funktion Mahlzeit im admin controller implementieren.
 
 - Bilder für einzelne Speisen einfügen.

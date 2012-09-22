@@ -8,6 +8,18 @@ create_date_from_string(Date) ->
 	[Y,M,D] = string:tokens(Date, "-"),
 	{{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}, {00,00,00}}.
 	
+create_simple_date_from_string(Date) ->
+	[Y,M,D] = string:tokens(Date, "-"),
+	{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}.
+	
+create_from_date(Date) ->
+	D = create_simple_date_from_string(Date),
+	{D, {0,0,0}}.
+
+create_to_date(Date) ->
+	D = create_simple_date_from_string(Date),
+	{D, {23,59,59}}.
+	
 create_date_string(Date) ->
 	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
 	Args = [Year, Month, Day],
