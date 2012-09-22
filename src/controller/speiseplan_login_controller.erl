@@ -10,9 +10,9 @@ index('POST', []) ->
     [Eater] ->
       case Eater:check_password(Req:post_param("password")) of
         true -> {redirect, "/booking/index", Eater:login_cookies()};				
-        false -> {ok, [{error, "Bad name/password combination"}]}
+        false -> {ok, [{errors, ["Bad name/password combination"]}]}
       end;
-    [] -> {ok, [{error, "No Eater with Account :  " ++ Account}]}
+    [] -> {ok, [{errors, ["No Eater with Account"]}]}
   end.
 
 check_verification(Eater) ->
