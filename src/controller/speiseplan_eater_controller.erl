@@ -27,8 +27,8 @@ update('POST', [Id]) ->
 	Admin = convert_to_boolean(Req:post_param("admin")),
 	PriceToPay = Req:post_param("priceToPay"),
 	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}]),
-  {ok, SavedEater} = NewEater:save(),
-  {redirect, [{'action', "index"}]}.
+	{ok, SavedEater} = NewEater:save(),
+	{redirect, [{'action', "index"}]}.
 	
 	
 create('POST', []) ->
@@ -42,7 +42,7 @@ create('POST', []) ->
 	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false),
 	case  NewEater:save() of
 		{ok, SavedEater} -> {redirect, [{'action', "index"}]};
-		{error, Errors} -> {redirect, [{'action', "index"},{error, Errors}]}
+		{error, Errors} -> {redirect, [{'action', "index"}]}
 	end.
   
 convert_to_boolean(Value) ->

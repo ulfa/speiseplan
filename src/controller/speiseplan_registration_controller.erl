@@ -22,7 +22,7 @@ create('POST', []) ->
   	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail, false),
 	case NewEater:save() of
   		{ok, SavedEater} -> {redirect, "/login/index"};
-    	{error, Errors} -> {ok, [{errors, Errors}, {eater,NewEater}]}
+    	{error, Errors} -> {ok, [{errors, Errors}, {eater, NewEater}]}
 	end.
 	
 send_mail(Eater) ->

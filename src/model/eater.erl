@@ -36,6 +36,11 @@ validation_tests() ->
 	{fun() -> length(Name) > 0 end,
 		"Please enter a Name"},
 	{fun() -> length(Mail) > 0 end,
-		"Please enter a valid mail adress"}
+		"Please enter a valid mail adress"},
+	{fun() -> case boss_db:find(eater, [{account, 'eq', Account}]) of
+				[] -> true;
+				_ -> false
+			  end
+		end, "Account allready exists"}
 	].
 	
