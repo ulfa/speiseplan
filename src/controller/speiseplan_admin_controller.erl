@@ -66,11 +66,13 @@ create('POST', [], Admin) ->
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
 	NewDish = dish:new(id, Title, Details, handle_checkbox(Vegetarian)),	
-	{ok, SavedDish} = NewDish:save(),
- 	NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
-	case NewMenu:save() of
-		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
-		{error, Errors} -> {ok, [{errors, Errors}, {menu, NewMenu}]}
+	case NewDish:save() of
+		{error, Errors} -> {redirect, [{'action', "index"}]};
+		{ok, SavedDish} -> NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
+						   case NewMenu:save() of
+								{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
+								{error, Errors} -> {redirect, [{'action', "index"}]}
+							end
 	end.
 					
 update('POST', [Id], Admin) ->
