@@ -49,8 +49,7 @@ storno('POST', [], Admin) ->
 	ok = send_mail(Menu:booking(), Menu, "Das Essen muss leider abgesagt werden."),
 	remove_bookings(Menu:booking()),
 	boss_db:delete(Menu_Id),
-	io:format("asdasdas"),
-	{redirect, [{'action', "index"}]}.
+	{redirect, "/admin/index"}.	
 	
 remove_bookings([]) ->
 	ok;

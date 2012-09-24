@@ -12,31 +12,44 @@
 </head>
 <body>
 	<div class="container">
+		<div class="navbar">
+		  <div class="navbar-inner">
+			<div class="container">
+		    <a class="brand" href="/booking">Anja's Kiezkantine</a>			
+		    <ul class="nav">
+				<li class="divider-vertical"></li>
+				<li><a href="/booking/index">Booking</a></li>
+				<li class="divider-vertical"></li>
+				{% if eater.admin == "true" %}		
+					<li><a href="/admin/index">Speisen</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="/eater/index">Esser</a></li>
+				{% endif %}
+				{% if eater %}
+					<li class="divider-vertical"></li>
+					<li><p class="navbar-text"> {{eater.forename}} {{ eater.name }}</p></li>
+				{% else %}			
+					<li><a href="/login/index">Log in</a></li>
+				{% endif %}
+		    </ul>
+		  </div>
+		  </div>
+		</div>
 	<header>
       	<img src="/static/images/curry.jpg" class="img-rounded">
-		{% if eater.admin == "true" %}		
-		<p><a href="/admin/index">Speisen verwalten</a></p>
-		<p><a href="/eater/index">Esser verwalten</a></p>		
-		{% endif %}
-	  {% if eater %}
-		<p>Mahlzeit, {{eater.forename}} {{ eater.name }}</p>
-	  {% else %}
-      <p><a href="/login/index">Log in</a></p>
-      {% endif %}
-		<p>Mitarbeiter 3 €, Externe 5 €</p>
     </header>
 	{% if errors %}
 		<p class="alert alert-error">
 			{% for error in errors %}
 				{{ error }}<br/>
 			{% endfor %}
-
 		</p>
 	{% endif %}
 
 
     {% block body %}{% endblock %}
   </div>
+
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/kalendae.min.js"></script>
