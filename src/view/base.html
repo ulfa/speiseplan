@@ -22,8 +22,10 @@
 				<li><a href="/booking/index">Booking</a></li>
 				{% endif %}
 				<li class="divider-vertical"></li>
-				{% if eater.admin == "true" %}		
-					<li><a href="/admin/index">Speisen</a></li>
+				{% if eater.admin == "true" %}	
+					<li><a href="/admin/index">Menu</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="/dish/index">Speisen</a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="/eater/index">Esser</a></li>
 				{% endif %}

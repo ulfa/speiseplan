@@ -3,9 +3,9 @@
 before_(_) ->
 	user_lib:require_login(Req).
 	
-index('GET', [], Eater) ->
-  Bookings = boss_db:find(booking, []),
-  {ok, [{bookings, Bookings}, {eater, Eater}]}.
+index('GET', [], Admin) ->
+  Dishes = boss_db:find(dish, []),
+  {ok, [{dishes, Dishes}, {eater, Admin}]}.
 
 create('GET', []) ->
   ok;

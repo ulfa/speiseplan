@@ -1,9 +1,10 @@
 
+
+- Button Abbruch für Bearbeitung einbauen 
 - Release erstellen 
 
-- CSV generieren für einen bestimmten Zeitraum
+- CSV Link erstellen anbieten
 
-- Funktion Mahlzeit im admin controller implementieren.
 
 - Bilder für einzelne Speisen einfügen.
 
@@ -17,8 +18,6 @@
 
 - Kennzeichen in Menu, dass ein Essen durch Anja freigegeben wurde. danach kann mit dem Essen nichts mehr gemacht werden.
 	Kein Löschen  möglich, aber noch das Hinzufügen von Essern.
-
-
 
 
 
@@ -64,12 +63,14 @@
 	
 	
 	
-- Raspberry Pi aufsetzen
 
 
 
 Fertige Aufgaben
 
+- Raspberry Pi aufsetzen
+- Funktion Mahlzeit im admin controller implementieren. (fertig)
+- CSV generieren für einen bestimmten Zeitraum (fertig)
 - Sollte es keine SLots mehr geben, dann hat der Esser die Möglichkeit an Anja zu mailen "Anfrage stellen". Damit wird eine Mail an Anja generiert und gesendet.(fertig)
 - Created_Date im Menu einführen, damit die zeitliche Überprüfung daran gemessen werden kann.
 - Get in touch with an eater. Möglich Esser an zu mailen über Liste der Esser. (fertig)
@@ -102,6 +103,7 @@ Listen
 BUGS
 
 - Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
+
 - neue Fehler
 {undef,
     [{error,get_requester,[{error,{no_exists,'favicon.ico'}}],[]},
