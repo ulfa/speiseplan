@@ -13,6 +13,8 @@
 				<th>Mail</th>
 				<th>Kosten je Essen</th>
 				<th>Admin</th>
+				<th>Verifiziert</th>
+				
 			</tr>	
 		</thead>
 {% if eaters %}
@@ -27,6 +29,8 @@
   <td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td>
   <td>{{ eater.price_to_pay }}</td>
   <td>{{ eater.admin }}</td>
+  <td>{{ eater.verified }}</td>
+
   <td>
     <form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
       <input type="submit" class="btn btn-danger btn-mini" value="löschen">
