@@ -41,11 +41,13 @@
 	{% endif %}
   </div>
 <center>
-	<img src="/static/images/kreidetafel.jpg">
-	<div style="position: relative;top: -380px;
-		font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Heute, 20.09.2012</div>
-		<div style="position: relative;top: -300px;
-			font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Currywurst mit Pommes</div>
+	<img src="/static/images/kreidetafel.jpg" >
+	<div style="position: relative;top: -440px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Heute, {{ date }}</div>
+	<div style="position: relative;top: -420px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ text }}</div>	
+	{% if dish %}
+	<div style="position: relative;top: -380px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.title }}</div>
+	<div style="position: relative;top: -360px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.details }}</div>
+	{% endif %}
 </center>
 
   <script src="/static/js/jquery.min.js"></script>
