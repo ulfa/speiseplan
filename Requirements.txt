@@ -5,7 +5,6 @@
 
 - CSV Link erstellen anbieten
 
-
 - Bilder für einzelne Speisen einfügen.
 
 - Stornierung im Controller um Abfrage "is_in_time" erweitern

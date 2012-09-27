@@ -20,7 +20,7 @@
 {"/billing", [{controller, "billing"}, {action, "index"}]}.
 
 % Front page
-{"/", [{controller, "booking"}, {action, "actual"}]}.
+{"/", [{controller, "actual"}, {action, "index"}]}.
 
 % 404 File Not Found handler
 % {404, [{controller, "world"}, {action, "lost"}]}.
