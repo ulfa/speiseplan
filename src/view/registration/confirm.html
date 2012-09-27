@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+{% if eater %}
+<h3>Mahlzeit, {{ eater.forename }} {{ eater.name }}!</h3>
+{% endif %}
+{% endblock %}

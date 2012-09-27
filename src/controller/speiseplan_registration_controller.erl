@@ -4,12 +4,13 @@
 index('GET', []) ->
   {ok, []}.
 
-validate('GET', [EaterId]) ->
+confirm('GET', [EaterId]) ->
 	case boss_db:find(EaterId) of
-		{error, Reason} ->  false;
-		Eater -> Eater:set([{'verified', true}]),
-				 Eater:save(),
-				 true
+		{error, Reason} -> {ok, [{errors, Reason}]};
+		Eater -> UpdatedEater = Eater:set([{'verified', true}]),
+				io:format("1.. : ~p~n", [create_confirm_link(Eater)]),
+				{ok, SavedEater} = UpdatedEater:save(),
+				{ok, [{eater, SavedEater}]}
 	end.
 
 create('POST', []) ->
@@ -19,14 +20,20 @@ create('POST', []) ->
   	Forename = Req:post_param("forename"),
   	Password = Req:post_param("password"),
   	Intern = Req:post_param("intern"),
-  	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail, false),
-	case NewEater:save() of
-  		{ok, SavedEater} -> {redirect, "/login/index"};
-    	{error, Errors} -> {ok, [{errors, Errors}, {eater, NewEater}]}
+	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail, false),	
+	case boss_db:find(eater, [{account, 'eq', Account}]) of
+		[] -> case NewEater:save() of
+	  			{ok, SavedEater} -> {redirect, "/login/index"};
+	    		{error, Errors} -> {ok, [{errors, Errors}, {eater, NewEater}]}
+			end;	  				 
+		_ -> {ok, [{errors, ["Account already exists!"]}, {eater, NewEater}]}
 	end.
 	
 send_mail(Eater) ->
-	boss_mail:send("noreply@kiezkantine.de", Eater:mail(), "Registration", "Bitte bestätige deine Registrierung."),
+	boss_mail:send("noreply@kiezkantine.de", Eater:mail(), "Registration", "Bitte bestätige deine Registrierung und klicke denn Link : " ++  create_confirm_link(Eater)).
+
+create_confirm_link(Eater) ->
+	"http://" ++ Req:header(host) ++"/registration/confirm/" ++ Eater:id().
 	
 
 	

@@ -37,6 +37,9 @@ storno('POST', [], Eater) ->
 	ok = boss_db:delete(Booking:id()),		
 	{redirect, "/booking/index"}.
 	
+actual('GET', [], Eater) ->
+	{ok, [{eater, Eater}]}.	
+	
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
 

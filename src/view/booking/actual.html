@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <head>
   <meta charset="utf-8">
   <title>Speiseplan von Anja's Kiez Kantine</title>
@@ -14,13 +11,11 @@
 	<div class="container">
 		<div class="navbar">
 		  <div class="navbar-inner">
-			<div class="container">				
+			<div class="container">
 		    <a class="brand" href="/booking">Anja's Kiezkantine</a>			
 		    <ul class="nav">
 				<li class="divider-vertical"></li>
-				{% if eater %}
 				<li><a href="/booking/index">Booking</a></li>
-				{% endif %}
 				<li class="divider-vertical"></li>
 				{% if eater.admin == "true" %}		
 					<li><a href="/admin/index">Speisen</a></li>
@@ -37,9 +32,6 @@
 		  </div>
 		  </div>
 		</div>
-	<header>
-      	<img src="/static/images/curry.jpg" class="img-rounded" width="200" height="85">
-    </header>
 	{% if errors %}
 		<p class="alert alert-error">
 			{% for error in errors %}
@@ -47,15 +39,18 @@
 			{% endfor %}
 		</p>
 	{% endif %}
-
-
-    {% block body %}{% endblock %}
   </div>
+<center>
+	<img src="/static/images/kreidetafel.jpg">
+	<div style="position: relative;top: -380px;
+		font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Heute, 20.09.2012</div>
+		<div style="position: relative;top: -300px;
+			font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Currywurst mit Pommes</div>
+</center>
 
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/kalendae.min.js"></script>
   <script src="/static/js/application.js"></script>
 </body>
-
 </html>

@@ -6,7 +6,7 @@ index('GET', []) ->
 
 index('POST', []) ->
   Account = Req:post_param("account"),	
-  case boss_db:find(eater, [{account, Account}]) of
+  case boss_db:find(eater, [{account, Account}, {verified, true}]) of
     [Eater] ->
       case Eater:check_password(Req:post_param("password")) of
         true -> {redirect, "/booking/index", Eater:login_cookies()};				
