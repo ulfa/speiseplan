@@ -1,6 +1,9 @@
 
 
 - Button Abbruch für Bearbeitung einbauen 
+
+- Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
+
 - Release erstellen 
 
 - CSV Link erstellen anbieten

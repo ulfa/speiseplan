@@ -19,7 +19,6 @@
 
 <div class="row-fluid">
   <div class="span12">
-    <h2>Aktuelle Termine</h2>
     <div class="well">
       <table class="table table-condensed">
         <thead>
@@ -27,7 +26,6 @@
             <th>Datum</th>
             <th>Speise</th>
             <th>Details</th>
-            <th>Essen</th>
             <th>Aktion</th>
           </tr>
         </thead>
@@ -38,7 +36,6 @@
 			<td>{{ menu.get_date_as_string }}</td>    
         	<td>{{ menu.dish.title }}</td>			
             <td>{{ menu.dish.details }}</td>
-            <td>{{ menu.get_slot_count }}</td>
             <td>	
 				{% if eater.id in menu.get_all_eater and menu.is_in_time %}						
 					<form method="post" action="{% url action="storno" %}">

@@ -28,7 +28,7 @@ create_billing([Booking|Bookings], Acc) ->
 		{Account, Dates} -> lists:keyreplace(Account, 1, Acc, {Account,[date_lib:create_date_string(Menu:date())|Dates]})
 	end,	
 	create_billing(Bookings, Acc1).
-	
+			
 create_full_name(Eater) ->
 	Eater:forename() ++ " "++Eater:name().
 

@@ -39,8 +39,8 @@ label input[type="radio"] {
 }
 
 @font-face {
-font-family: kreide;
-src: url('/static/font/EraserRegular.ttf');
-font-style: normal;
-font-weight: normal;
+	font-family: kreide;
+	src: url('/static/font/EraserRegular.ttf');
+	font-style: normal;
+	font-weight: normal;
 }
