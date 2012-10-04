@@ -9,8 +9,11 @@ create_date_from_string(Date) ->
 	{{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}, {00,00,00}}.
 	
 create_simple_date_from_string(Date) ->
-	[Y,M,D] = string:tokens(Date, "-"),
-	{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}.
+	case Date of
+		[] -> erlang:date();
+		_ -> [Y,M,D] = string:tokens(Date, "-"),
+		{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}
+	end.
 	
 create_from_date(Date) ->
 	D = create_simple_date_from_string(Date),
