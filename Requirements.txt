@@ -1,8 +1,10 @@
 
 
+- Leerstellung aus dem Datum entfernen oder mit Nullen auffüllen. Bsp.: 2012-1-1 oder 2012-01-01 
 - Button Abbruch für Bearbeitung einbauen 
 
 - Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
+  Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
 
 - Release erstellen 
 
@@ -50,7 +52,7 @@
 	Essen :  2012-09-09 12:00
 			 2012-09-08 15:00 
 
-- Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
+
 - Anja Mail schicken, wenn Esser gebucht haben.
 
 - Stornierung nicht möglich 24 Stunden. Ein Tag vorher, aber nur bis 15:00 Uhr

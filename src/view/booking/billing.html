@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="well">
+	<form method="post" action="{% url action="billing" %}" class="form-search">        		
+		<input type="text" name="from_date" value="{{ from_date }}" placeholder="Von Datum" class="auto-kal">
+		<input type="text" name="to_date" value="{{ to_date }}" placeholder="Bis Datum" class="auto-kal">
+		<input type="submit" class="btn btn-small" value="Suche">
+	</form>
+</div>
+
+{% if billings %}
+<div class="well">
+<h1>Rechnung</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th>Preis</th>
+    </tr>
+  </thead>
+  <tbody>			
+	</tbody>	
+	{% for date, price in billings %}
+	<tr>		
+		<td>{{ date }}</td> 
+		<td>{{ price }} €</td>
+	</tr>	
+	{% endfor %}
+</table>
+<h1>Du musst {{sum}} € zahlen </h1>
+</div>
+{% endif %}
+
+{% endblock %}

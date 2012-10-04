@@ -9,8 +9,16 @@
 	</form>
 </div>
 
+{% if csvfiles %}
+<h3>CSV Dateien</h3>
+{% for csvfile in csvfiles %}
+<ul>
+	<li><a href="/static/billing/{{ csvfile }}">{{ csvfile }}</a></li>
+</ul>
+{% endfor %}
+{% endif %}
 {% if billings %}
-
+<h3>Details fuer den eingebenen Zeitraum</h3>
 <ul>
 {% for name, dates in billings %}
 <li>{{ name }}</li>
