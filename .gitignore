@@ -1,3 +1,4 @@
 Mnesia.speiseplan@*
 log/*
 ebin/*
+/priv/static/billing/*

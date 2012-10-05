@@ -10,14 +10,17 @@
 </div>
 
 {% if csvfiles %}
+<div class="well">
 <h3>CSV Dateien</h3>
 {% for csvfile in csvfiles %}
-<ul>
+<ul class="unstyled">
 	<li><a href="/static/billing/{{ csvfile }}">{{ csvfile }}</a></li>
 </ul>
 {% endfor %}
+</div>
 {% endif %}
 {% if billings %}
+<div class="well">
 <h3>Details fuer den eingebenen Zeitraum</h3>
 <ul>
 {% for name, dates in billings %}
@@ -29,5 +32,6 @@
 	</ul>
 {% endfor %}
 </ul>
+</div>
 {% endif%}
 {% endblock %}

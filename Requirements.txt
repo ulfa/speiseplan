@@ -1,14 +1,14 @@
 
 
-- Leerstellung aus dem Datum entfernen oder mit Nullen auffüllen. Bsp.: 2012-1-1 oder 2012-01-01 
+
 - Button Abbruch für Bearbeitung einbauen 
 
-- Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
-  Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
+
+- SMS Versand für diverse Situationen
 
 - Release erstellen 
 
-- CSV Link erstellen anbieten
+
 
 - Bilder für einzelne Speisen einfügen.
 
@@ -66,12 +66,15 @@
 	-> nicht mehr möglich, da Differenz < 24 Stunden
 	
 	
-	
+-------------------------------------------------------------	
 
 
 
 Fertige Aufgaben
-
+- CSV Link erstellen anbieten
+- Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
+  Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
+- Leerstellung aus dem Datum entfernen oder mit Nullen auffüllen. Bsp.: 2012-1-1 oder 2012-01-01 
 - Raspberry Pi aufsetzen
 - Funktion Mahlzeit im admin controller implementieren. (fertig)
 - CSV generieren für einen bestimmten Zeitraum (fertig)
