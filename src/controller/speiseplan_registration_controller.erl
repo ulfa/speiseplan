@@ -33,7 +33,7 @@ send_mail(Eater, Host) ->
 	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), "Registration", create_confirm_link(Eater, Host)).
 
 create_confirm_link(Eater, Host) ->
-	io_lib:format("Bitte bestätige deine Registrierung durch klicken auf den Link: http://~s/registration/confirm/~s", [Host, Eater:id()]).
+	io_lib:format("Bitte bestätige deine Registrierung durch klicken auf den Link: http://kiezkantine.no-ip.org/registration/confirm/~s", [Host, Eater:id()]).
 	
 
 	
