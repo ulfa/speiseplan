@@ -3,12 +3,9 @@
 
 - Button Abbruch für Bearbeitung einbauen 
 
-
 - SMS Versand für diverse Situationen
 
 - Release erstellen 
-
-
 
 - Bilder für einzelne Speisen einfügen.
 
@@ -34,8 +31,9 @@
 - Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
 
 
-- Rechnungslauf für alle Esser und einen Monat 
+
 - init Admin in DB erstellen
+
 - Validierungen
 	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
 	
@@ -71,6 +69,8 @@
 
 
 Fertige Aufgaben
+
+- Rechnungslauf für alle Esser und einen Monat 
 - CSV Link erstellen anbieten
 - Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
   Wie hoch sind meine Kosten für den eingebenen Zeitraum (Esser)? 
