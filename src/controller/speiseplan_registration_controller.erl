@@ -19,21 +19,21 @@ create('POST', []) ->
   	Forename = Req:post_param("forename"),
   	Password = Req:post_param("password"),
   	Intern = Req:post_param("intern"),
-	Host = Req:header(host),
+%%	Host = Req:header(host),
 	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail, true),	
 	case boss_db:find(eater, [{account, 'eq', Account}]) of
 		[] -> case NewEater:save() of
-	  			{ok, SavedEater} -> send_mail(SavedEater, Host), {redirect, "/login/index"};
+	  			{ok, SavedEater} -> send_mail(SavedEater), {redirect, "/login/index"};
 	    		{error, Errors} -> {ok, [{errors, Errors}, {eater, NewEater}]}
 			end;	  				 
 		_ -> {ok, [{errors, ["Account already exists!"]}, {eater, NewEater}]}
 	end.
 	
-send_mail(Eater, Host) ->
-	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), "Registration", create_confirm_link(Eater, Host)).
+send_mail(Eater) ->
+	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), "Registration", create_confirm_link(Eater)).
 
-create_confirm_link(Eater, Host) ->
-	io_lib:format("Bitte bestätige deine Registrierung durch klicken auf den Link: http://kiezkantine.no-ip.org/registration/confirm/~s", [Host, Eater:id()]).
+create_confirm_link(Eater) ->
+	io_lib:format("Bitte bestätige deine Registrierung durch klicken auf den Link: http://kiezkantine.no-ip.org/registration/confirm/~s", [Eater:id()]).
 	
 
 	
