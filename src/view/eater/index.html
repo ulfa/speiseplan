@@ -1,50 +1,49 @@
 {% extends "base.html" %}
-
 {% block body %}
+<div class="container">
 <div class="row">
-	<div class="span8">
-		<!-- div class="well" -->
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Account</th>
-				<th>Vorname</th>
-				<th>Name</th>
-				<th>Mail</th>
-				<th>Kosten je Essen</th>
-				<th>Admin</th>
-				<th>Verifiziert</th>
-				
-			</tr>	
-		</thead>
-{% if eaters %}
-<tbody>
-{% for eater in eaters %}
-<tr>
-  <td>
-	<a href="/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
-  </td>
-  <td>{{ eater.forename }}</td>
-  <td>{{ eater.name }}</td>
-  <td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td>
-  <td>{{ eater.price_to_pay }}</td>
-  <td>{{ eater.admin }}</td>
-  <td>{{ eater.verified }}</td>
-
-  <td>
-    <form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
-      <input type="submit" class="btn btn-danger btn-mini" value="löschen">
-    </form>
-  </td>
-</tr>
-{% endfor %}
-</tbody>
-{% endif%}
-</table>
-<!--/div-->
+	<div class="span9">
+		<div class="well">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Account</th>
+						<th>Vorname</th>
+						<th>Name</th>
+						<th>Mail</th>
+						<th>Preis</th>
+						<th>Admin</th>
+						<th>Verifiziert</th>				
+					</tr>	
+				</thead>
+				{% if eaters %}
+				<tbody>
+					{% for eater in eaters %}
+					<tr>
+						<td>
+							<a href="/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
+						</td>
+						<td>{{ eater.forename }}</td>
+						<td>{{ eater.name }}</td>
+						<td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td>
+						<td>{{ eater.price_to_pay }}</td>
+						<td>{{ eater.admin }}</td>
+						<td>{{ eater.verified }}</td>
+						<td>
+							<form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
+								<input type="submit" class="btn btn-danger btn-mini" value="löschen">
+							</form>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				{% endif%}
+			</table>
+		</div>
+		</div>
+			<div class="span3">		
+				{% include "eater/create.html" %}
+			</div>			
+	</div>
 </div>
-	<div class="span4">		
-	{% include "eater/create.html" %}
-  </div>
-</div>	
 {% endblock %}
