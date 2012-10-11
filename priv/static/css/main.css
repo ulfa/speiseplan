@@ -72,6 +72,15 @@ body {
   	font-family: Kreide; color: #FF0000
 }
 
+.board h5 {
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 1;
+	letter-spacing: -1px;
+  	font-family: Kreide; color: #FFFFFF
+}
+
+
 .board p {
   font-size: 16px;
   line-height: 1.5;
