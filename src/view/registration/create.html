@@ -1,9 +1,14 @@
 {% extends "base.html" %}
-
-<!-- Index side of the admin interface-->
-
 {% block body %}
-
+<div class="container">
+	<div class="board">
+		<h1>Registration</h1><br/>
+	</div>
+<div class="row-fluid">
+	<div class="span4">
+		<br/>
+	</div>
+    <div class="span4">
 <form method="post" action="{% url action="create" %}" class="well">
 	<label>Account<input type="text" name="account" value="{{ eater.account }}"></label>
 	<label>Vorname<input type="text" name="forename" value="{{ eater.forename }}"></label>
@@ -13,4 +18,7 @@
 	<label>Intern <input type="checkbox" name="intern" value="true"></label>
 	<input type="submit" class="btn btn-small" value="Erstellen">
 </form>
+	</div>
+</div>
+</div>
 {% endblock %}

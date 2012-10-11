@@ -1,4 +1,6 @@
 
+- CSV enthält : Name,Intern Flag, [Datum], Summe
+
 - Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.
   - Link wird Token anstatt Esser Id enthalten

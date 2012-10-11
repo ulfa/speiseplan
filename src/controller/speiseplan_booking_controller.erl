@@ -61,20 +61,20 @@ billing('POST', [], Eater) ->
 	ToDate = Req:post_param("to_date"),
 	Bookings = boss_db:find(booking, [{eater_id, 'eq', Eater:id()},{date, 'gt', date_lib:create_from_date(FromDate)}, {date, 'lt', date_lib:create_to_date(ToDate)}], [{order_by, date}]),	
 	Billings = create_billing(Bookings, [], Eater),
-	{ok, [{eater, Eater}, {from_date, FromDate}, {to_date, ToDate},{billings, Billings}, {sum, lists:foldl(fun({X, Y}, Acc0) -> Acc0 + Y end, 0, Billings)}]}.
+	{ok, [{eater, Eater}, {from_date, FromDate}, {to_date, ToDate},{billings, Billings}, {sum, lists:foldl(fun({X, Y, Z}, Acc0) -> Acc0 + Z end, 0, Billings)}]}.
 %% Sum of bookings	lists:foldl(fun({X, Y}, Acc0) -> Acc0 + Y end, 0, O).
 
 create_billing([], Acc, Eater) ->
 	Acc;
 create_billing([Booking|Bookings], Acc, Eater) ->
 	Menu = Booking:menu(),
-	Price = get_price(Eater),
-	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Price}|Acc], Eater).	
-get_price(Eater) ->
-	case Eater:intern() of
-		true -> 3;
-		false -> 5
-	end.
+	Price = get_price(Eater:intern()),
+	Dish = Menu:dish(),
+	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).	
+get_price(true) ->
+	3.0;
+get_price(false) ->
+	5.0.	
 		
 	
 	

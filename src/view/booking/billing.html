@@ -10,26 +10,17 @@
 </div>
 </center>
 
-{% if billings %}
+{% if billings %} 
 <div class="container">
 	<div class="board">
 		<h2>Rechnung</h2>		
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Datum</th>
-					<th>Preis</th>
-				</tr>
-			</thead>
-			<tbody>						
-			{% for date, price in billings %}
-			<tr>		
-				<td>{{ date }}</td> 
-				<td>{{ price }} €</td>
-			</tr>	
+			<h2>Datum Menu Preis</h2>
+			<hr/>			
+			{% for date, title, price in billings %}
+			<h3>{{ date }} {{title}} {{ price }} €</h3>
 			{% endfor %}
-		</tbody>	
-	</table>
+
+			<hr/>
 	<h2>Du musst {{sum}} € zahlen </h2>
 	</div>
 </div>

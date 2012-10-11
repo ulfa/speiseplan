@@ -44,14 +44,16 @@
 		  </div>
 
 		{% if errors %}
-		<p class="alert alert-error">
-			{% for error in errors %}
-				{{ error }}<br/>
-			{% endfor %}
-		</p>
+		<div class="container">
+			<p class="alert alert-error">
+				{% for error in errors %}
+					{{ error }}<br/>
+				{% endfor %}
+			</p>
+		</div>
 		{% endif %}
-    {% block body %}{% endblock %}
   </div>
+      {% block body %}{% endblock %}
 
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>

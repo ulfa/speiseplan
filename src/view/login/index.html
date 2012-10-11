@@ -12,12 +12,20 @@
 		  <div class="board">
 			  <h1>Login</h1>
 	{% if errors %}
-		<p class="alert alert-error">
-			{% for error in errors %}
-				{{ error }}<br/>
-			{% endfor %}
-
-		</p>
+	</div class="container">
+		<div class="row-fluid">
+			<div class="span4">
+				<br/>
+			</div>
+			<div class="span4">		
+				<p class="alert alert-error">
+					{% for error in errors %}
+					{{ error }}<br/>
+				{% endfor %}		
+				</p>
+			</div>
+		</div>
+	</div>
 	{% endif %}
 		</div>
 	</div>
