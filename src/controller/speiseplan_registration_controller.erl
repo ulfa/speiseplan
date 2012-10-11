@@ -28,7 +28,7 @@ create('POST', []) ->
 			end;	  				 
 		_ -> {ok, [{errors, ["Account already exists!"]}, {eater, NewEater}]}
 	end.
-	
+			
 send_mail(Eater) ->
 	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), "Registration", create_confirm_link(Eater)).
 

@@ -7,14 +7,14 @@ create_date_from_string([]) ->
 create_date_from_string(Date) ->
 	[Y,M,D] = string:tokens(Date, "-"),
 	{{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}, {00,00,00}}.
-	
+
+create_simple_date_from_string([]) ->
+	erlang:date();	
 create_simple_date_from_string(Date) ->
-	case Date of
-		[] -> erlang:date();
-		_ -> [Y,M,D] = string:tokens(Date, "-"),
-		{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}
-	end.
-	
+	[Y,M,D] = string:tokens(Date, "-"),
+	{erlang:list_to_integer(Y), erlang:list_to_integer(M) ,erlang:list_to_integer(D)}.
+
+
 create_from_date(Date) ->
 	D = create_simple_date_from_string(Date),
 	{D, {0,0,0}}.
