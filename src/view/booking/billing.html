@@ -2,16 +2,16 @@
 
 {% block body %}
 
-<div class="well">
+<!-- div class="well" -->
 	<form method="post" action="{% url action="billing" %}" class="form-search">        		
 		<input type="text" name="from_date" value="{{ from_date }}" placeholder="Von Datum" class="auto-kal">
 		<input type="text" name="to_date" value="{{ to_date }}" placeholder="Bis Datum" class="auto-kal">
 		<input type="submit" class="btn btn-small" value="Suche">
 	</form>
-</div>
+<!-- /div -->
 
 {% if billings %}
-<div class="well">
+<!-- div class="well"-->
 <h1>Rechnung</h1>
 <table class="table">
   <thead>
@@ -30,7 +30,7 @@
 	{% endfor %}
 </table>
 <h1>Du musst {{sum}} € zahlen </h1>
-</div>
+<!-- /div -->
 {% endif %}
 
 {% endblock %}

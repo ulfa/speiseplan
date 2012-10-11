@@ -4,6 +4,7 @@
 
 {% block body %}
 
+<!--div class="container">
 <p class="alert alert-info">
     Bei Fragen oder Anregungen wendet euch bitte an
     <a href="mailto:anja.angermann@innoq.com">Anja</a>
@@ -16,61 +17,64 @@
     Vortag, storniert werden. Die dadurch frei gewordenen Essen können dann
     an Interessenten "weitergegeben" werden.
 </p>
+</div-->
 
+
+{% if menus %}
+<div class="container">
+<div class="container">
+	<div class="board">
+		<h1>Speiseplan</h1>
+	</div>
+</div>
+{% for menu in menus %}
+
+<div class="container">
+<div class="board">
 <div class="row-fluid">
-  <div class="span12">
-    <div class="well">
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th>Datum</th>
-            <th>Speise</th>
-            <th>Details</th>
-            <th>Aktion</th>
-          </tr>
-        </thead>
-        <tbody>			
-          {% if menus %}
-          {% for menu in menus %}
-          <tr id="{{ menu.id }}">	
-			<td>{{ menu.get_date_as_string }}</td>    
-        	<td>{{ menu.dish.title }}</td>			
-            <td>{{ menu.dish.details }}</td>
-            <td>	
-				{% if eater.id in menu.get_all_eater and menu.is_in_time %}						
-					<form method="post" action="{% url action="storno" %}">
-						<input type="hidden" name="eater-id" value="{{ eater.id }}">
-            			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
-						<input type="submit" class="btn btn-warning btn-mini" value="Stornieren">
-					</form>				
-				{% elif menu.get_slot_count > 0 and menu.is_in_time %}
-						<form method="post" action="{% url action="book"%}">
-	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
-	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
-							{% if menu.dish.vegetarian %}
-	            			<label>
-	              				<input type="checkbox" name="vegetarian" value="true">
-	              				vegetarisch
-	            			</label>
-							{% endif %}
-	            			<input type="submit" class="btn btn-primary btn-mini" value="Buchen">				
-	          			</form>
-				{% elif menu.is_in_time  %}
-						<form method="post" action="{% url action="request"%}">
-	            			<input type="hidden" name="eater-id" value="{{ eater.id }}">
-	            			<input type="hidden" name="menu-id" value="{{ menu.id }}">
-							<input type="submit" class="btn btn-warning btn-mini" value="Anfrage">
-						</form>
-				{% else %}
-				<h4>gegessen</h4>
+<div class="span4">
+	<br>
+</div>	
+<div class="span4">
+	<p>
+	<h2>{{ menu.get_date_as_string }}</h1>
+	<h3>{{ menu.dish.title }}</h3>	
+	<h3>{{ menu.dish.details }}</h3>
+	</p>
+	{% if eater.id in menu.get_all_eater and menu.is_in_time %}						
+		<form method="post" action="{% url action="storno" %}">
+			<input type="hidden" name="eater-id" value="{{ eater.id }}">
+			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
+			<input type="submit" class="btn btn-warning btn-mini" value="Stornieren">
+		</form>				
+	{% elif menu.get_slot_count > 0 and menu.is_in_time %}
+			<form method="post" action="{% url action="book"%}">
+    			<input type="hidden" name="eater-id" value="{{ eater.id }}">
+    			<input type="hidden" name="menu-id" value="{{ menu.id }}">
+				{% if menu.dish.vegetarian %}
+    			<label>
+      				<input type="checkbox" name="vegetarian" value="true">
+      				vegetarisch
+    			</label>
 				{% endif %}
-            </td>
-          </tr>
-          {% endfor %}
-          {% endif %}
-        </tbody>
-      </table>
-    </div>
-  </div>
+    			<input type="submit" class="btn btn-primary btn-mini" value="Buchen">				
+  			</form>
+	{% elif menu.is_in_time  %}
+			<form method="post" action="{% url action="request"%}">
+    			<input type="hidden" name="eater-id" value="{{ eater.id }}">
+    			<input type="hidden" name="menu-id" value="{{ menu.id }}">
+				<input type="submit" class="btn btn-warning btn-mini" value="Anfrage">
+			</form>
+	{% else %}
+	<h3>gegessen</h3>
+	{% endif %}
+</div>
+</div>
+</div>
+</div>
+
+{% endfor %}
+{% endif %}
+
 </div>
 {% endblock %}

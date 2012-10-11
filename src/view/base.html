@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="/static/css/kalendae.css">
 </head>
 <body>
-	<div class="container">
 		<div class="navbar">
 		  <div class="navbar-inner">
 			<div class="container">				
@@ -41,19 +40,14 @@
 		    </ul>
 		  </div>
 		  </div>
-		</div>
-	<header>
-      	<!-- img src="/static/images/curry.jpg" class="img-rounded" width="200" height="85" -->
-    </header>
-	{% if errors %}
+
+		{% if errors %}
 		<p class="alert alert-error">
 			{% for error in errors %}
 				{{ error }}<br/>
 			{% endfor %}
 		</p>
-	{% endif %}
-
-
+		{% endif %}
     {% block body %}{% endblock %}
   </div>
 

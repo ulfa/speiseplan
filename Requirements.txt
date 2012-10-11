@@ -1,5 +1,13 @@
 
-
+- Registrierung eines neuen Essers
+  - Token wird generiert und Beziehung zu Esser gespeichert.
+  - Link wird Token anstatt Esser Id enthalten
+  - Freigabe des Essers wird durch Admin durch geführt
+  -- Registrierung eines neuen Essers
+  - Token wird generiert und Beziehung zu Esser gespeichert.
+  - Link wird Token anstatt Esser Id enthalten
+  - Freigabe des Essers wird durch Admin durch geführt
+  -  
 
 - Button Abbruch für Bearbeitung einbauen 
 

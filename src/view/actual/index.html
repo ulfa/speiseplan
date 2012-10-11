@@ -30,7 +30,7 @@
 				{% else %}			
 					<li><a href="/login/index">Log in</a></li>
 				{% endif %}
-		    </ul>
+		    </ul>s
 		  </div>
 		  </div>
 		</div>
@@ -43,12 +43,12 @@
 	{% endif %}
   </div>
 <center>
-	<img src="/static/images/kreidetafel.jpg" >
-	<div style="position: relative;top: -440px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Heute, {{ date }}</div>
-	<div style="position: relative;top: -420px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ text }}</div>	
+	<!-- img src="/static/images/kreidetafel.jpg" -->
+	<div style="position:relative; top: 100px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">Heute, {{ date }}</div>
+	<div style="position:relative; top: 140px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ text }}</div>	
 	{% if dish %}
-	<div style="position: relative;top: -380px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.title }}</div>
-	<div style="position: relative;top: -360px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.details }}</div>
+	<div style="position:relative;top: 160px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.title }}</div>
+	<div style="position:relative;top: 180px;font: 32pt kreide; color: #FFFFFF;margin-left: 16px;">{{ dish.details }}</div>
 	{% endif %}
 </center>
 
