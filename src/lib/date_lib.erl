@@ -47,6 +47,14 @@ get_formated_date(Date) ->
 	A = io_lib:format("~B-~2.10.0B-~2.10.0B ~2.10.0B:~2.10.0B:~2.10.0B", Args),
 	lists:flatten(A).
 	
+
+get_first_day({Y, M, _D}) ->
+	FromDate = date_lib:create_date_string({{Y, M, 1}, {0,0,0}}).
+	
+get_last_day({Y, M, D}) ->	
+	Last_day = calendar:last_day_of_the_month(Y, M),
+	ToDate = date_lib:create_date_string({{Y, M, Last_day}, {0,0,0}}).
+	
 					
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).

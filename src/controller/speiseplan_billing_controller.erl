@@ -5,7 +5,10 @@ before_(_) ->
 	user_lib:require_login(admin, Req).
 
 index('GET', [], Admin) ->	
-	{ok, [{eater, Admin}]}.
+	Date = erlang:date(),
+	ToDate = date_lib:get_last_day(Date),
+	FromDate = date_lib:get_first_day(Date),		
+	{ok, [{eater, Admin}, {from_date, FromDate}, {to_date, ToDate}]}.
 	
 search('POST', [], Admin) ->
 	From_Date = Req:post_param("from_date"),
@@ -43,7 +46,7 @@ create_full_name(Eater) ->
 
 write_header(FD, From_Date, To_Date) ->
 	io:fwrite(FD, "#~s ~s~n", [From_Date, To_Date]),
-	io:fwrite(FD, "#Name, [Datum], Summe~n", []).
+	io:fwrite(FD, "#Name, Intern, [Datum], Summe~n", []).
 	
 create_csv(FD,[]) ->
 	file:close(FD);

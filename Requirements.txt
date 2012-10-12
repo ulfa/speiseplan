@@ -4,6 +4,8 @@ NO-IP
 - Smell
 	Erzeugung von Essern darf nicht an 2 Stellen passieren!
 
+- Regel : Bis Montag 8:00 Uhr darf man sich anlegen
+
 - CSV enthält : Name,Intern Flag, [Datum], Summe
 
 - Registrierung eines neuen Essers

@@ -6,6 +6,7 @@ before_(_) ->
 	
 index('GET', [], Eater) ->
 	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, descending]),
+	
 	{ok, [{menus, Menus}, {eater, Eater}]}.	
 	
 book('POST', [], Eater) ->
@@ -45,16 +46,17 @@ send_mail(EaterId, Menu) ->
 	boss_mail:send(Eater:mail(), "uangermann@googlemail.com",  Menu:date(), "Anfrage von ").
 
 is_allready_booked(MenuId, EaterId) ->
-	case boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}]) of
-		[] -> false;
-		Menu -> true
-	end.
+	is_already_booked(boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}])).
+is_already_booked([]) ->
+	false;
+is_already_booked([Menu]) ->	
+	true.
+	
 	
 billing('GET', [], Eater) ->
-	{Y, M, _} = erlang:date(),
-	Last_day = calendar:last_day_of_the_month(Y, M),
-	ToDate = date_lib:create_date_string({{Y, M, Last_day}, {0,0,0}}),
-	FromDate = date_lib:create_date_string({{Y, M, 1}, {0,0,0}}),		
+	Date = erlang:date(),
+	ToDate = date_lib:get_last_day(Date),
+	FromDate = date_lib:get_first_day(Date),		
 	{ok, [{eater, Eater}, {from_date, FromDate}, {to_date, ToDate}]};
 billing('POST', [], Eater) ->
 	FromDate = Req:post_param("from_date"),

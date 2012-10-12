@@ -19,6 +19,8 @@ label input[type="radio"] {
 	font-weight: normal;
 }
 
+h2 {color: #FFFFFF;}
+
 body {
     background-image: url(/static/images/slate.jpg);
 }
