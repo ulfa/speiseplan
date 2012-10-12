@@ -1,4 +1,6 @@
-
+NO-IP
+	sudo noip2
+	
 - Smell
 	Erzeugung von Essern darf nicht an 2 Stellen passieren!
 
