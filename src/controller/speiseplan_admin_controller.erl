@@ -36,6 +36,13 @@ add('POST', [Id], Admin) ->
 					send_a_mail(Eater, Menu, "Du wurdest hinzugefügt."),
 					{redirect, "/admin/detail/" ++ Id}
 	end.
+
+add_count_given('POST', [Id], Admin) ->	
+	 Menu = boss_db:find(Id),
+	 Count_Given = Req:post_param("count_given"),
+	 MenuNew = Menu:set([{'count_given', Count_Given}]),
+	 {ok, SavedMenu} = MenuNew:save(),
+	 {redirect, "/admin/detail/" ++ Id}.
 	
 remove('POST', [Id], Admin) ->
 	EaterId = Req:post_param("esser"),
@@ -64,10 +71,10 @@ create('POST', [], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
-	NewDish = dish:new(id, Title, Details, handle_checkbox(Vegetarian)),	
+	NewDish = dish:new(id, Title, Details, elib:handle_checkbox(Vegetarian)),	
 	case NewDish:save() of
 		{error, Errors} -> {redirect, [{'action', "index"}]};
-		{ok, SavedDish} -> NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots),
+		{ok, SavedDish} -> NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots, "0"),
 						   case NewMenu:save() of
 								{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
 								{error, Errors} -> {redirect, [{'action', "index"}]}
@@ -82,18 +89,13 @@ update('POST', [Id], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),	
-	NewDish = Dish:set([{'title', Title}, {'details', Details}, {'vegetarian', handle_checkbox(Vegetarian)}]),
+	NewDish = Dish:set([{'title', Title}, {'details', Details}, {'vegetarian', elib:handle_checkbox(Vegetarian)}]),
 	NewMenu = Menu:set([{'date', date_lib:create_date_from_string(Date)}, {'slots', Slots}]),
 	{ok, SavedDish} = NewDish:save(),
 	{ok, SavedMenu} = NewMenu:save(),	
 	{redirect, [{'action', "index"}]}.
 	
-handle_checkbox(Value) ->
-	Value =:= "true". 
-	
-construct_date({Y, M, D}) ->
-	lists:concat([Y ,"-" ,M ,"-", D]).
-	
+		
 send_mail([], Menu, Text) ->
 	ok;
 send_mail([Booking|Bookings], Menu, Text) ->

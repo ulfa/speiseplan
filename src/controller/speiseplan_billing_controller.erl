@@ -25,12 +25,13 @@ create_billing([], From_Date, To_Date, Acc) ->
 	file:close(FD),
 	Acc1;
 	
-create_billing([Booking|Bookings], From_Date, To_Date,Acc) ->
+create_billing([Booking|Bookings], From_Date, To_Date, Acc) ->
 	Menu  = Booking:menu(),
+	Dish = Menu:dish(),
 	Eater = Booking:eater(),
-	Acc1  = case lists:keyfind(Eater:account(), 1, Acc) of
-		false -> [{Eater:account(), [date_lib:create_date_string(Menu:date())]}|Acc];
-		{Account, Dates} -> lists:keyreplace(Account, 1, Acc, {Account,[date_lib:create_date_string(Menu:date())|Dates]})
+	Acc1  = case lists:keyfind(create_full_name(Eater), 1, Acc) of
+		false -> [{create_full_name(Eater), Eater:intern(), [date_lib:create_date_string(Menu:date())]}|Acc];
+		{FullName, Intern, Dates} -> lists:keyreplace(FullName, 1, Acc, {create_full_name(Eater), Eater:intern(),[date_lib:create_date_string(Menu:date())|Dates]})
 	end,	
 	create_billing(Bookings, From_Date, To_Date, Acc1).
 
@@ -38,21 +39,31 @@ create_file_name() ->
 	"billing-" ++ date_lib:create_date_string_from_date(erlang:date()) ++ ".csv".
 			
 create_full_name(Eater) ->
-	Eater:forename() ++ " "++Eater:name().
+	Eater:forename() ++ " " ++ Eater:name().
 
 write_header(FD, From_Date, To_Date) ->
-	io:fwrite(FD, "#~s ~s~n", [From_Date, To_Date]).
-
+	io:fwrite(FD, "#~s ~s~n", [From_Date, To_Date]),
+	io:fwrite(FD, "#Name, [Datum], Summe~n", []).
+	
 create_csv(FD,[]) ->
 	file:close(FD);
-create_csv(FD, [{Name, Dates}|Billings]) ->
-	io:fwrite(FD, "~s~n", [create_csv_line(Name, Dates)]),
+create_csv(FD, [{Name, Intern, Dates}|Billings]) ->
+	io:fwrite(FD, "~s~n", [create_csv_line(Name, Intern, Dates)]),
 	create_csv(FD, Billings).
 	
-create_csv_line(Name, Dates) ->
-	string:join([Name|Dates], ",").	
+create_csv_line(Name, Intern, Dates) ->
+	string:join([string:join([string:join([Name, erlang:atom_to_list(Intern)], ",")|Dates], ","), create_sum(Intern, length(Dates))], ",").
+	
+create_sum(Intern, Day_Count) ->
+	erlang:integer_to_list(Day_Count * elib:intern(Intern)).
 
 	
+-include_lib("eunit/include/eunit.hrl").
+-ifdef(TEST).
+create_sum_test() ->
+	?assertEqual(6.0, create_sum(true, 2)).
+-endif.
+
 
 	
 	

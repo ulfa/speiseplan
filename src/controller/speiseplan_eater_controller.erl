@@ -23,8 +23,8 @@ update('POST', [Id]) ->
 	Name = Req:post_param("name"),
 	Mail = Req:post_param("mail"),
 	Forename = Req:post_param("forename"),
-	Intern = convert_to_boolean(Req:post_param("intern")),
-	Admin = convert_to_boolean(Req:post_param("admin")),
+	Intern = elib:convert_to_boolean(Req:post_param("intern")),
+	Admin = elib:convert_to_boolean(Req:post_param("admin")),
 	PriceToPay = Req:post_param("priceToPay"),
 	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}]),
 	{ok, SavedEater} = NewEater:save(),
@@ -37,13 +37,11 @@ create('POST', []) ->
 	Mail = Req:post_param("mail"),
 	Forename = Req:post_param("forename"),
 	Password = Req:post_param("password"),
-	Intern = convert_to_boolean(Req:post_param("intern")),
-	Admin = convert_to_boolean(Req:post_param("admin")),	
-	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false),
+	Intern = elib:convert_to_boolean(Req:post_param("intern")),
+	Admin = elib:convert_to_boolean(Req:post_param("admin")),	
+	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false, false),
 	case  NewEater:save() of
 		{ok, SavedEater} -> {redirect, [{'action', "index"}]};
 		{error, Errors} -> {redirect, [{'action', "index"}]}
 	end.
   
-convert_to_boolean(Value) ->
-	Value =:= "true".

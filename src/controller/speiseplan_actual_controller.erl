@@ -2,7 +2,7 @@
 -compile(export_all).
 
 	index('GET', [], Eater) ->
-		D = {erlang:date(), {0,0,0}},
+		D = date_lib:create_date_from_string([]),
 		Date = date_lib:create_date_german_string(D),	
 		show_menu(boss_db:find(menu, [{date,  D}]), Date, Eater).
 		

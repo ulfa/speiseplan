@@ -1,4 +1,4 @@
--module(menu, [Id, CreatedDate, Date, DishId, Slots]).
+-module(menu, [Id, CreatedDate, Date, DishId, Slots, CountGiven]).
 -compile(export_all).
 -belongs_to(dish).
 -has({booking, many}).

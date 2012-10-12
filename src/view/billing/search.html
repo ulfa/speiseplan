@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block body %}
 <div class="container">
 	<form method="post" action="{% url action="search" %}" class="form-search well">        
@@ -26,12 +25,13 @@
 	<div class="well">
 		<h3>Details fuer den eingebenen Zeitraum</h3>
 		<ul>
-			{% for name, dates in billings %}
-			<li>{{ name }}</li>
+			{% for name, intern, dates in billings %}
+			<li>{{ name }} {{ intern }}</li>
 			<ul>
 				{% for date in dates %}
 				<li>{{ date }}</li>
-				{% endfor %}
+				{% endfor %}				
+				Summe : 0.0 €
 			</ul>
 			{% endfor %}
 		</ul>

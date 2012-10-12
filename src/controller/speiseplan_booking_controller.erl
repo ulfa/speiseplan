@@ -5,7 +5,7 @@ before_(_) ->
 	user_lib:require_login(Req).
 	
 index('GET', [], Eater) ->
-	Menus = boss_db:find(menu, [{date, 'le', {erlang:date(), {0,0,0}}}], [{order_by, date}, descending]),
+	Menus = boss_db:find(menu, [{date, 'le', date_lib:create_date_from_string([])}], [{order_by, date}, descending]),
 	{ok, [{menus, Menus}, {eater, Eater}]}.	
 	
 book('POST', [], Eater) ->
@@ -68,13 +68,6 @@ create_billing([], Acc, Eater) ->
 	Acc;
 create_billing([Booking|Bookings], Acc, Eater) ->
 	Menu = Booking:menu(),
-	Price = get_price(Eater:intern()),
+	Price = elib:get_price(Eater:intern()),
 	Dish = Menu:dish(),
-	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).	
-get_price(true) ->
-	3.0;
-get_price(false) ->
-	5.0.	
-		
-	
-	
+	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).			

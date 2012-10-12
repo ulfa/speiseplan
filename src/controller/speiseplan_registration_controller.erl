@@ -18,9 +18,9 @@ create('POST', []) ->
   	Mail = Req:post_param("mail"),
   	Forename = Req:post_param("forename"),
   	Password = Req:post_param("password"),
-  	Intern = Req:post_param("intern"),
+  	Intern = elib:convert_to_boolean(Req:post_param("intern")),
 %%	Host = Req:header(host),
-	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", "false", Mail, true),	
+	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", false, Mail, true, false),	
 	case boss_db:find(eater, [{account, 'eq', Account}]) of
 		[] -> case NewEater:save() of
 	  			{ok, SavedEater} -> send_mail(SavedEater), {redirect, "/login/index"};

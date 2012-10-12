@@ -38,6 +38,16 @@ create_date_german_string(Date) ->
 	
 create_actual_date() ->
 	calendar:local_time().
+	
+construct_date({Y, M, D}) ->
+	lists:concat([Y ,"-" ,M ,"-", D]).
+	
+get_formated_date(Date) ->
+	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
+	Args = [Year, Month, Day, Hour, Min, Seconds],
+	A = io_lib:format("~B-~2.10.0B-~2.10.0B ~2.10.0B:~2.10.0B:~2.10.0B", Args),
+	lists:flatten(A).
+	
 					
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).
@@ -48,5 +58,5 @@ create_date_string_test() ->
 	?assertEqual("2012-10-20", create_date_string({{2012,10,20}, {0,0,0}})).
 	
 create_date_german_string_test() ->
-		?assertEqual("20.10.2012", create_date_string({{2012,10,20}, {0,0,0}})).
+		?assertEqual("20.10.2012", create_date_german_string({{2012,10,20}, {0,0,0}})).
 -endif.

@@ -4,13 +4,14 @@
 -belongs_to(eater).
 
 get_formated_date() ->
-	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
-	Args = [Year, Month, Day, Hour, Min, Seconds],
-	A = io_lib:format("~B-~2.10.0B-~2.10.0B ~2.10.0B:~2.10.0B:~2.10.0B", Args),
-	lists:flatten(A).
+	date_lib:get_formated_date(Date). 
 	
 get_vegetarian() ->
-	case Vegetarian of
-		true -> "vegetarisch";
-		_ -> "Fleisch"
-	end.
+	get_vegetarian(Vegetarian).
+
+get_vegetarian(true) ->
+	"vegetarisch";
+get_vegetarian(false) ->
+	"Fleisch".
+	
+	

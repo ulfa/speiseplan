@@ -1,4 +1,7 @@
 
+- Smell
+	Erzeugung von Essern darf nicht an 2 Stellen passieren!
+
 - CSV enthält : Name,Intern Flag, [Datum], Summe
 
 - Registrierung eines neuen Essers

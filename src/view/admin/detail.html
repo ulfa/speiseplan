@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block body %}
-
+<div class="container">
 <div class="row">
   <div class="span8">
-    <h2>Aktuelle Termine</h2>
+    <h2>Menu vom {{ menu.get_date_as_string }}</h2>
     <div class="well">
       <table class="table">
         <thead>
           <tr>
             <th><h3>Datum</h3></th>
             <th><h3>Speise</h3></th>
-            <th><h3>Slots</h3></th>
+            <th><h3>max.</h3></th>
             <th><h3>vegetarisch</h3></th>
             <th></th>
           </tr>
@@ -57,7 +57,7 @@
 				  {% endfor %}
 			    </select>
 			  </p>
-		<input type="submit" class="btn btn-small" value="Hinzufügen">
+			  <input type="submit" class="btn btn-small" value="Hinzufügen">
 		</form>
 		<h2>Anfragen</h2>
 		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
@@ -68,8 +68,15 @@
 				  {% endfor %}
 			    </select>
 			  </p>
-		<input type="submit" class="btn btn-small" value="Hinzufügen">
+			  <input type="submit" class="btn btn-small" value="Hinzufügen">
 		</form>
+		<h2>Ausgegebene Speisen</h2>
+		<form method="post" action="{% url action="add_count_given" id=menu.id %}" class="well">
+			<input type="text" name="count_given" value="{{ menu.count_given | default : 0 }}"><br>
+			<input type="submit" class="btn btn-small" value="Hinzufügen">
+		</form>
+		
   	</div>
+</div>
 </div>
 {% endblock %}
