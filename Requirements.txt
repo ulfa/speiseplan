@@ -6,7 +6,8 @@ NO-IP
 
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
 
-- CSV enthält : Name,Intern Flag, [Datum], Summe
+- Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
+
 
 - Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.
@@ -87,6 +88,7 @@ NO-IP
 
 Fertige Aufgaben
 
+- CSV enthält : Name,Intern Flag, [Datum], Summe (fertig)
 - Rechnungslauf für alle Esser und einen Monat 
 - CSV Link erstellen anbieten
 - Rechungsstellung füe einen Esser. Er kann eine Zeitspanne wählen und bekommt dann die Liste der Einträge.
