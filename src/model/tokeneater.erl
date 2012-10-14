@@ -1,2 +1,2 @@
--module(tokeneater, [Id, Token, EaterId).
+-module(tokeneater, [Id, Token, EaterId]).
 -compile(export_all).
