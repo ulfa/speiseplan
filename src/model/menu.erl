@@ -2,6 +2,7 @@
 -compile(export_all).
 -belongs_to(dish).
 -has({booking, many}).
+-has({comment, many}).
 
 is_in_time() ->
 	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	

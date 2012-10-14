@@ -1,10 +1,9 @@
-NO-IP
-	sudo noip2
-	
+		
 - Smell
 	Erzeugung von Essern darf nicht an 2 Stellen passieren!
 
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
+	- KW Hnadling einführen
 
 - Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 
@@ -83,8 +82,10 @@ NO-IP
 	
 	
 -------------------------------------------------------------	
+NO-IP
+	sudo noip2
 
-
+-------------------------------------------------------------	
 
 Fertige Aufgaben
 
