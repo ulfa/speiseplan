@@ -7,6 +7,8 @@
 
 - Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 
+- Konfiguration in boss.config einfügen. (z.B. feste Mail Adressen )
+- Grafische Aufbereitung (z.B. Anzahl Buchung über Zeit)
 
 - Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.

@@ -13,10 +13,17 @@ edit('GET', [Id], Admin) ->
 	Eater = boss_db:find(Id),
 	{ok, [{edit_eater, Eater},{eater, Admin}, {eaters, Eaters}]}.
 	
-delete('POST', [Id]) ->
+delete('POST', [Id], Admin) ->
 	ok = boss_db:delete(Id),
-	{redirect, "/eater/index"}.		
+	{redirect, "/eater/index"}.
 
+verfied('POST', [Id], Admin) ->
+	Eater = boss_db:find(Id),
+	Verified = elib:convert_to_boolean(Req:post_param("verified")),
+	NewEater = Eater:set([{verified, Verified}]),
+	{ok, SavedEater} = NewEater:save(),
+	{redirect, [{'action', "index"}]}.
+						
 update('POST', [Id]) ->
 	Eater = boss_db:find(Id),
 	Account = Req:post_param("account"),
