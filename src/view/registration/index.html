@@ -10,11 +10,11 @@
 	</div>
     <div class="span4">
 		<form method="post" action="{% url action="create" %}" class="well">
-			<label>Account<input type="text" name="account" ></label>
-			<label>Vorname<input type="text" name="forename"></textarea></label>
-			<label>Name<input type="text" name="name"></label>
-			<label>Mail<input type="text" name="mail"></label>
-			<label>Password<input type="password" name="password"></label>
+			<label>Account<input type="text" name="account" placeholder="hm" required></label>
+			<label>Vorname<input type="text" name="forename" placeholder="Horst" required></textarea></label>
+			<label>Name<input type="text" name="name" placeholder="Müller" required></label>
+			<label>Mail<input type="text" name="mail" placeholder="hm@email.com" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required></label>
+			<label>Password<input type="password" name="password" placeholder="secret" required></label>
 			<label>Intern <input type="checkbox" name="intern" value="true"></label>
 			<input type="submit" class="btn btn-small" value="Erstellen">
 		</form>
