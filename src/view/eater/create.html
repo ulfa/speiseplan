@@ -1,10 +1,10 @@
 <form method="post" action="{% url action="create" %}" class="well">
-	<label>Account<input type="text" name="account" ></label>
-	<label>Vorname<input type="text" name="forename"></textarea></label>
-	<label>Name<input type="text" name="name"></label>
-	<label>Mail<input type="text" name="mail"></label>
+	<label>Account<input type="text" name="account" required></label>
+	<label>Vorname<input type="text" name="forename" required></textarea></label>
+	<label>Name<input type="text" name="name" required></label>
+	<label>Mail<input type="text" name="mail" placeholder="hm@email.com" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required></label>
 	<input type="hidden" name="priceToPay"></label>
-	<label>Password<input type="password" name="password"></label>
+	<label>Password<input type="password" name="password" required></label>
 	<label>Intern <input type="checkbox" name="intern" value="true"></label>
 	<label>Admin <input type="checkbox" name="admin" value="true"></label>
 	<input type="submit" class="btn btn-primary btn-mini" value="Hinzufügen">

@@ -1,8 +1,8 @@
 <form method="post" action="{% url action="create" %}" class="well">        
-	<label>Speise<input type="text" name="title" value=""></label>
-	<label>Details<textarea name="details" rows="4"></textarea></label>
-	<label>Datum<input type="text" name="date" class="auto-kal"></label>
-	<label>Slots<input type="number" name="slots" min="1" value="1"></label>
+	<label>Speise<input type="text" name="title" value="" placeholder="Linsensuppe" required></label>
+	<label>Details<textarea name="details" rows="4" placeholder="mit einer Wurst" required></textarea></label>
+	<label>Datum<input type="text" name="date" class="auto-kal" placeholder="2012-10-01" required></label>
+	<label>max.<input type="number" name="slots" min="1" value="1" required></label>
 	<label><input type="checkbox" name="vegetarian" value="true">auch vegetarisch</label>
 	<input type="submit" class="btn btn-primary btn-mini" value="Hinzufügen">
 </form>
