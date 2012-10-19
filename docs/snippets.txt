@@ -1,0 +1,66 @@
+Week of the Year, and Day of the Week/Month/Year
+
+Problem
+
+Given a date, you need to find out what week of the year, day of the week, day of the month, or day of the year that the date falls on.
+
+Solution
+
+Luckily, this functionality is all supplied in the calendar module.
+
+1> {Today,Time} = erlang:universaltime().
+{{2004,8,28},{7,59,8}}
+2> DayOfWeek = calendar:day_of_the_week(Today).
+6
+3> {_, Month, DayOfMonth} = Today.
+{2004,8,28}
+4> DayOfMonth.
+28
+If you wanted to get the text string representing the day or the month, you can use the httpd_util module (which contains all sorts of useful things that should be moved to the calendar and string modules:
+5> DayName = httpd_util:day(DayOfWeek).
+"Sat"
+6> MonthName = httpd_util:month(Month).
+"Aug"
+Unfortunately, there are no built-in functions for identifying the week of the year, or the day of the year (directly). However, by doing a bit of math we can figure out at least the day of the year:
+7> Day0 = calendar:date_to_gregorian_days(2004,1,1).
+731946
+8> TodayDay = calendar:date_to_gregorian_days(2004,Month,DayOfMonth).
+732064
+9> DayOfYear = TodayDay - Day0.
+118
+Note: One very useful thing (beloved of Financial Systems Programmers everywhere) is that Erlang has an end-of-month function:
+10> LastDayOfMonth = calendar:last_day_of_the_month(2004, 8).
+31
+11> calendar:last_day_of_the_month(2004,2).
+29
+12> calendar:last_day_of_the_month(2005,2).
+28
+Converting Epoch Seconds to DMYHMS
+
+Problem
+
+You have a date and time in Erlang Epoch seconds (i.e., Gregorian calendar year 0 seconds), and you want to calculate the individual DMYHMS values from it.
+
+Solution
+
+In recipe TimeToday we did exactly this but only for the current date. How about if we wanted to get the date, and time (DMYHMS) associated to a particular number of seconds? Once more we would use gre.
+
+1> Seconds = 1083022458.
+1083022458
+2> DateTime = calendar:gregorian_seconds_to_datetime(Seconds).
+{{34,4,26},{23,34,18}}
+3> {{Year, Month, Day}, {Hour, Min, Sec}} = DateTime.
+{{34,4,26},{23,34,18}}
+4> io:fwrite("Today's Date is ~2B/~2B/~4B ~2B:~2.10.0B:~2.10.0B\n",
+4> [Month, Day, Year, Hour, Min, Sec]).
+Today's Date is  4/26/  34 23:34:18
+ok                       
+Discussion
+
+In recipe TimeToday we discussed how to convert a date structure to a string. Convert in the opposite direction is also possible, and useful. Unfortunately, there is not a lot of build-in Erlang plumbing to do so. However, if we are very sure of the format we can easily extract the data we need using Erlang's ever-helpful io and io_lib modules:
+
+5> Some_Date_String = "2004-04-26T18:26:18-0500".
+"2004-04-26T18:26:18-0500".
+6> {ok, [YYY,MMM,DD,HH,MM,SS,ZZ],_} = 
+6> io_lib:fread("~4d-~2d-~2dT~2d:~2d:~2d-~4d", Some_Date_String).
+{ok,[2004,4,26,18,26,18,500],[]}

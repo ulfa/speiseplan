@@ -3,7 +3,7 @@
 -belongs_to(dish).
 -has({booking, many}).
 -has({comment, many}).
-
+	
 is_in_time() ->
 	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
 
@@ -18,9 +18,9 @@ get_request_count() ->
 
 get_requester_names() ->
 	EaterIds = case boss_mq:poll(get_date_as_string()) of
-				{ok, Timestamp, Messages} -> Messages;
-				_ -> []
-			end,	
+		{ok, Timestamp, Messages} -> Messages;
+		_ -> []
+	end,	
 	get_req_names(EaterIds, []).
 
 get_req_names([], Requester) ->
@@ -31,9 +31,9 @@ get_req_names([EaterId|EaterIds], Requester) ->
 
 get_requester() ->
 	EaterIds = case boss_mq:poll(get_date_as_string()) of
-					{ok, Timestamp, Messages} -> Messages;
-					_ -> []
-				end,	
+		{ok, Timestamp, Messages} -> Messages;
+		_ -> []
+	end,	
 	get_req(EaterIds, []).
 
 get_req([], Requester) ->

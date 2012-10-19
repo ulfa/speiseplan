@@ -1,7 +1,11 @@
 -module(date_lib).
 -compile(export_all).
 
-%% "2012-10-30" -> {{2012, 10, 30},{00,00,00}}
+-define(WOCHENTAG(Int), lists:nth(Int, ["Montag","Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"])).
+
+day_of_week(Int) ->
+	?WOCHENTAG(Int).
+
 create_date_from_string([]) ->
 	{erlang:date(), {00,00,00}};
 create_date_from_string(Date) ->
@@ -37,6 +41,17 @@ create_date_german_string(Date) ->
 	
 create_actual_date() ->
 	calendar:local_time().
+
+week_of_year() ->
+	{_Year, Week} = calendar:iso_week_number(),
+	Week.
+
+complete_actual_date() ->	
+	complete_date(erlang:date()).
+	
+complete_date(Date) ->
+	{_Year, Week} = calendar:iso_week_number(Date),	
+	{Date, Week, calendar:day_of_the_week(Date)}.
 	
 construct_date({Y, M, D}) ->
 	lists:concat([Y ,"-" ,M ,"-", D]).
@@ -66,4 +81,6 @@ create_date_string_test() ->
 	
 create_date_german_string_test() ->
 		?assertEqual("20.10.2012", create_date_german_string({{2012,10,20}, {0,0,0}})).
+
+
 -endif.

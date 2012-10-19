@@ -7,7 +7,7 @@ before_(_) ->
 index('GET', [], Eater) ->
 	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, descending]),
 	
-	{ok, [{menus, Menus}, {eater, Eater}]}.	
+	{ok, [{menus, Menus}, {eater, Eater}, {week, date_lib:week_of_year()}]}.	
 	
 book('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),

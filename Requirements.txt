@@ -5,6 +5,10 @@
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
 	- KW Hnadling einführen
 
+- Datenbank Migration
+	- Tabelle für die Versionen der Migration erstellen 
+	- Ablauf: komplettes Backup, Migration der Tabellen, Migration der Daten, Version der Migration einfügen.
+	
 - Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 
 - Konfiguration in boss.config einfügen. (z.B. feste Mail Adressen )
@@ -13,7 +17,7 @@
 - Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.
   - Link wird Token anstatt Esser Id enthalten
-  - Freigabe des Essers wird durch Admin durch geführt
+001  - Freigabe des Essers wird durch Admin durch geführt
   -- Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.
   - Link wird Token anstatt Esser Id enthalten
