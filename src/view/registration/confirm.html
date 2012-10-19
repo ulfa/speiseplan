@@ -4,6 +4,23 @@
 {% block body %}
 
 {% if eater %}
-<h3>Mahlzeit, {{ eater.forename }} {{ eater.name }}!</h3>
+<div class="container">
+	<div class="board">
+		<h3>Willkommen, {{ eater.forename }} {{ eater.name }}!</h3>
+	</div>
+
+<p class="alert alert-info">
+    Bei Fragen oder Anregungen wendet euch bitte an
+    <a href="mailto:anja.angermann@innoq.com">Anja</a>
+</p>
+<p class="alert alert-info">
+    Bitte meldet euch verbindlich bis Montag um 8:00 Uhr für die darauf
+    folgende Woche an: nach dieser Zahl wird Anja Ihre Einkäufe tätigen.
+    Wenn durch Krankheit oder Kundentermine das Essen nicht in Anspruch
+    genommen werden kann, sollte möglichst kurzfristig, spätestens jedoch am
+    Vortag, storniert werden. Die dadurch frei gewordenen Essen können dann
+    an Interessenten "weitergegeben" werden.
+</p>
+</div>
 {% endif %}
 {% endblock %}
