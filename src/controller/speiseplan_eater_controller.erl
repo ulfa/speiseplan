@@ -32,8 +32,9 @@ update('POST', [Id]) ->
 	Forename = Req:post_param("forename"),
 	Intern = elib:convert_to_boolean(Req:post_param("intern")),
 	Admin = elib:convert_to_boolean(Req:post_param("admin")),
+	Verified = elib:convert_to_boolean(Req:post_param("verified")),
 	PriceToPay = Req:post_param("priceToPay"),
-	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}]),
+	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}, {'verified', Verified}]),
 	{ok, SavedEater} = NewEater:save(),
 	{redirect, [{'action', "index"}]}.
 	

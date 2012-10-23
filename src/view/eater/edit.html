@@ -13,7 +13,8 @@
 				<th>Name</th>
 				<th>Mail</th>
 				<th>Kosten je Essen</th>
-				<th>Admin</th>
+				<th>Admin</th>								
+				<th>Frei</th>
 			</tr>	
 		</thead>
 {% if eaters %}
@@ -26,6 +27,7 @@
   <td>{{ eater.mail }}</td>
   <td>{{ eater.price_to_pay }}</td>
   <td>{{ eater.admin }}</td> 	
+  <td>{{ eater.verified }}</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -42,6 +44,7 @@
 			<label>Preis<input type="text" name="priceToPay" value="{{ edit_eater.price_to_pay }}"></label>
 			<label><input type="checkbox" name="intern" value="true">Intern </label>
 			<label><input type="checkbox" name="admin" value="true">Admin</label>
+			<label><input type="checkbox" name="verified" value="true">Freigabe</label>
 			<input type="submit" class="btn btn-primary btn-mini" value="Speichern">	
 		</form>
   </div>
