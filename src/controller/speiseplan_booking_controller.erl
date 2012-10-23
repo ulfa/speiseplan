@@ -13,7 +13,7 @@ book('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),
 	MenuId = Req:post_param("menu-id"),	
 	Vegetarian = Req:post_param("vegetarian"),
-	case is_allready_booked(MenuId, EaterId) of
+	case is_allready_booked(MenuId, EaterId) and is_in_time(MenuId) of
 		true -> true;
 		false -> NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
 				 {ok, SavedBooking} = NewBooking:save()
@@ -33,10 +33,18 @@ detail('POST' ,[Id], Eater) ->
 
 storno('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),
-	MenuId = Req:post_param("menu-id"),	
-	[Booking] = boss_db:find(booking, [{menu_id, 'equals', MenuId}, {eater_id , 'equals', EaterId}]),
-	ok = boss_db:delete(Booking:id()),		
+	MenuId = Req:post_param("menu-id"),		
+	case is_in_time(MenuId) of
+		false -> false;
+		true -> [Booking] = boss_db:find(booking, [{menu_id, 'equals', MenuId}, {eater_id , 'equals', EaterId}]),
+				ok = boss_db:delete(Booking:id())
+	end,		
 	{redirect, "/booking/index"}.
+
+is_in_time(Menu_Id) ->
+	Menu = boss_db:find(Menu_Id),
+	Menu:is_in_time().		
+
 	
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
