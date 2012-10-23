@@ -18,12 +18,11 @@ before_create() ->
 		
 before_update() ->
 	{ok, set([{'price_to_pay', get_price_to_pay(Intern)}, {'admin', get_admin(Admin)}])}.		
-	
-get_price_to_pay(Intern) ->
-	case Intern of
-		"true" -> 3;
-		_ -> 5
-	end.
+
+get_price_to_pay(true) ->	
+	3;
+get_price_to_pay(false) ->	
+	5.
 
 get_admin(Admin) ->
 	Admin =:= true. 
