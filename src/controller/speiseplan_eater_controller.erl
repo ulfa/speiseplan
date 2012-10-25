@@ -21,8 +21,7 @@ verfied('POST', [Id], Admin) ->
 	Eater = boss_db:find(Id),
 	Verified = elib:convert_to_boolean(Req:post_param("verified")),
 	NewEater = Eater:set([{verified, Verified}]),
-	{ok, SavedEater} = NewEater:save(),
-	{redirect, [{'action', "index"}]}.
+	handle_return_value(NewEater:save()).
 						
 update('POST', [Id]) ->
 	Eater = boss_db:find(Id),
@@ -35,8 +34,7 @@ update('POST', [Id]) ->
 	Verified = elib:convert_to_boolean(Req:post_param("verified")),
 	PriceToPay = Req:post_param("priceToPay"),
 	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}, {'verified', Verified}]),
-	{ok, SavedEater} = NewEater:save(),
-	{redirect, [{'action', "index"}]}.
+	handle_return_value(NewEater:save()).
 	
 	
 create('POST', []) ->
@@ -48,8 +46,13 @@ create('POST', []) ->
 	Intern = elib:convert_to_boolean(Req:post_param("intern")),
 	Admin = elib:convert_to_boolean(Req:post_param("admin")),	
 	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false, false),
-	case  NewEater:save() of
-		{ok, SavedEater} -> {redirect, [{'action', "index"}]};
-		{error, Errors} -> {redirect, [{'action', "index"}]}
-	end.
+	handle_return_value(NewEater:save()).
+  
+handle_return_value({ok, SavedEater}) ->
+	{redirect, [{'action', "index"}]};
+handle_return_value({error, Errors}) ->s
+	{redirect, [{'action', "index"}, {errors, Errors}]}.
+		
+ 
+  
   

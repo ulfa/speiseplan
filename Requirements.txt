@@ -1,3 +1,7 @@
+
+
+- Validierungen
+	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
 		
 - Smell
 	Erzeugung von Essern darf nicht an 2 Stellen passieren!
@@ -5,14 +9,13 @@
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
 	- KW Hnadling einführen
 
-- Datenbank Migration
-	- Tabelle für die Versionen der Migration erstellen 
-	- Ablauf: komplettes Backup, Migration der Tabellen, Migration der Daten, Version der Migration einfügen.
-	
+-Datenbank
+	- init Admin in DB erstellen
+	- Datenbank Migration
+		- Tabelle für die Versionen der Migration erstellen 
+		- Ablauf: komplettes Backup, Migration der Tabellen, Migration der Daten, Version der Migration einfügen.
 - Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 
-- Konfiguration in boss.config einfügen. (z.B. feste Mail Adressen )
-- Grafische Aufbereitung (z.B. Anzahl Buchung über Zeit)
 
 - Registrierung eines neuen Essers
   - Token wird generiert und Beziehung zu Esser gespeichert.
@@ -26,13 +29,12 @@
 
 - Button Abbruch für Bearbeitung einbauen 
 
-- SMS Versand für diverse Situationen
+
 
 - Release erstellen 
 
-- Bilder für einzelne Speisen einfügen.
-
-- Stornierung im Controller um Abfrage "is_in_time" erweitern
+- Verwaltung einzelner Speisen
+	- Bilder für einzelne Speisen einfügen.
 
 - Anfrage nach Stornierung wieder aus Queue entfernen. Mal schauen, wie ich das mache.
 
@@ -51,14 +53,7 @@
 					"request" -> man kann eine Anfrage stellen, wenn keine Slots mehr vefügbar sind und Menudatum > akt. Datum
 					"finished"-> Essen ist gegessen, wenn Menudatum <= akt. Datum.
 
-- Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
-
-
-
-- init Admin in DB erstellen
-
-- Validierungen
-	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
+Regeln
 	
 - Ein Tag vorher, aber bis max. 15:00 Uhr. 
 
@@ -74,7 +69,7 @@
 			 2012-09-08 15:00 
 
 
-- Anja Mail schicken, wenn Esser gebucht haben.
+
 
 - Stornierung nicht möglich 24 Stunden. Ein Tag vorher, aber nur bis 15:00 Uhr
 	http://schemecookbook.org/Erlang/TimeToEpoch
@@ -86,7 +81,23 @@
 	
 	-> nicht mehr möglich, da Differenz < 24 Stunden
 	
+-------------------------------------------------------------	
+BUGS
+
+- Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
+
+-------------------------------------------------------------	
 	
+
+-------------------------------------------------------------	
+Future
+
+- SMS Versand für diverse Situationen
+- Anja Mail schicken, wenn Esser gebucht haben. (wird nicht gemacht)
+- Grafische Aufbereitung (z.B. Anzahl Buchung über Zeit)
+- Konfiguration in boss.config einfügen. (z.B. feste Mail Adressen )
+-------------------------------------------------------------	
+
 -------------------------------------------------------------	
 NO-IP
 	sudo noip2
@@ -95,6 +106,9 @@ NO-IP
 
 Fertige Aufgaben
 
+- Prüfung der Regeln muss im Controller durch geführt werden!
+- Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
+- Stornierung im Controller um Abfrage "is_in_time" erweitern (fertig)
 - CSV enthält : Name,Intern Flag, [Datum], Summe (fertig)
 - Rechnungslauf für alle Esser und einen Monat 
 - CSV Link erstellen anbieten
@@ -133,27 +147,9 @@ Listen
 
   Gesamt:                         300  
 
+-------------------------------------------------------------	
 BUGS
 
 - Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
 
-- neue Fehler
-{undef,
-    [{error,get_requester,[{error,{no_exists,'favicon.ico'}}],[]},
-     {speiseplan_admin_controller,detail,4,
-         [{file,
-              "/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_admin_controller.erl"},
-          {line,17}]},
-     {boss_web_controller,execute_action,5,
-         [{file,"src/boss/boss_web_controller.erl"},{line,714}]},
-     {boss_web_controller,process_request,5,
-         [{file,"src/boss/boss_web_controller.erl"},{line,460}]},
-     {timer,tc,3,[{file,"timer.erl"},{line,194}]},
-     {boss_web_controller,handle_request,3,
-         [{file,"src/boss/boss_web_controller.erl"},{line,388}]},
-     {mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},
-     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
-
-=ERROR REPORT==== 16-Sep-2012::08:08:05 ===
-
-
+-------------------------------------------------------------	
