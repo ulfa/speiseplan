@@ -2,46 +2,56 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <title>Anja's Kiez Kantine</title>
   <!--link rel="shortcut icon" href="favicon.ico"-->
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="stylesheet" href="/static/css/kalendae.css">
+  <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
 </head>
-<body>
-		<div class="navbar">
+	<body>
+		<div class="navbar navbar-fixed-top">
 		  <div class="navbar-inner">
-			<div class="container">	
+			 <div class="container">	
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </a>			  
 				<div class="board">			
 		    		<a class="brand" href="/"><h5>Anja's Kiezkantine</h5></a>			
 				</div>
-		    <ul class="nav">
-				<li class="divider-vertical"></li>
-				{% if eater %}
-				<li><a href="/booking/index">Booking</a></li>
-				<li><a href="/booking/billing">Rechnung</a></li>								
-				{% endif %}
-				<li class="divider-vertical"></li>
-				{% if eater.admin == "true" %}	
-					<li><a href="/admin/index">Menu</a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="/dish/index">Speisen</a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="/eater/index">Esser</a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="/billing/index">Billing</a></li>
-				{% endif %}
-				{% if eater %}
-					<li class="divider-vertical"></li>
-					<li><p class="navbar-text"> {{eater.forename}} {{ eater.name }}</p></li>
-				{% else %}			
-					<li><a href="/login/index">Log in</a></li>
-				{% endif %}
-		    </ul>
-		  </div>
-		  </div>
+				<div class="nav-collapse in collapse" style="height: auto;">	
+		    	  <ul class="nav">
+					  <li class="divider-vertical"></li>
+					  {% if eater %}
+					  <li class="active"><a href="/booking/index">Booking</a></li>
+					  <li><a href="/booking/billing">Rechnung</a></li>								
+					  {% endif %}
+					  <li class="divider-vertical"></li>
+					  {% if eater.admin == "true" %}	
+						<li><a href="/admin/index">Menu</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="/dish/index">Speisen</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="/eater/index">Esser</a></li>
+						<li class="divider-vertical"></li>
+						<li><a href="/billing/index">Billing</a></li>
+						{% endif %}
+						{% if eater %}
+						<li class="divider-vertical"></li>
+						<li><p class="navbar-text"> {{eater.forename}} {{ eater.name }}</p></li>
+						{% else %}			
+						<li><a href="/login/index">Log in</a></li>
+						{% endif %}
+		    		</ul>
+			</div>
+		</div>
+	</div>
 
 		{% if errors %}
 		<div class="container">
@@ -52,13 +62,12 @@
 			</p>
 		</div>
 		{% endif %}
-  </div>
+
       {% block body %}{% endblock %}
 
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/static/js/kalendae.min.js"></script>
-  <script src="/static/js/application.js"></script>
 </body>
 
 </html>

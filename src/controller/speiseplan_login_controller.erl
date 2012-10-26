@@ -6,6 +6,7 @@ index('GET', []) ->
 
 index('POST', []) ->
   Account = Req:post_param("account"),	
+  io:format("1.. : ~p~n", [Account]),
   case boss_db:find(eater, [{account, Account}, {verified, true}]) of
     [Eater] ->
       case Eater:check_password(Req:post_param("password")) of
