@@ -1,0 +1,2 @@
+-module(note, [Id, CreatedDate, Ativ, Text, FromDate, ToDate]).
+-compile(export_all).

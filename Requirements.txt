@@ -1,5 +1,8 @@
 
-
+- Notes
+	- Es muss möglich sein, das ein Admin Notizen erfassen kann, damit diese dann dem Esser auf der actual Seite 
+	präsentiert wird. (Anmerkung : nur eine Notiz)
+	- Auf der actual Seite wird in folgender Reihenfolge angezeigt : Das aktuelle Essen, die Notiz,  Heute bleibt die Küche kalt (ist das nicht eine Notiz?)
 - Validierungen
 	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
 		
@@ -85,7 +88,8 @@ Regeln
 BUGS
 
 - Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
-
+- Beim Verkleinern des Menus muss das Menu geschlossen werden.
+- Die Grössen der einzelnen Felder müssen dynamisch änderbar sein.
 -------------------------------------------------------------	
 
 -------------------------------------------------------------	
