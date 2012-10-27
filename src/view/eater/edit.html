@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="container">
-<div class="row">
+<div class="row-fluid">
 	<div class="span8">
 		<div class="well">
 	<table class="table">
@@ -21,13 +21,20 @@
 <tbody>
 {% for eater in eaters %}
 <tr>
-  <td>{{ eater.account }}</td>
-  <td>{{ eater.forename }}</td>
-  <td>{{ eater.name }}</td>
-  <td>{{ eater.mail }}</td>
-  <td>{{ eater.price_to_pay }}</td>
-  <td>{{ eater.admin }}</td> 	
-  <td>{{ eater.verified }}</td>
+	<td>
+		<a href="/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
+	</td>
+	<td>{{ eater.forename }}</td>
+	<td>{{ eater.name }}</td>
+	<td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td>
+	<td>{{ eater.price_to_pay }}</td>
+	<td>{{ eater.admin }}</td>
+	<td>{{ eater.verified }}</td>
+	<td>
+		<form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
+			<input type="submit" class="btn btn-danger btn-mini" value="löschen">
+		</form>
+	</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -36,17 +43,7 @@
 </div>
 </div>
 	<div class="span4">		
-		<form method="post" action="{% url action="update" id= edit_eater.id %}" class="well">
-			<label>Account<input type="text" name="account" value="{{ edit_eater.account }}"></label>
-			<label>Vorname<input type="text" name="forename" value="{{ edit_eater.forename}}"></textarea></label>
-			<label>Name<input type="text" name="name" value="{{ edit_eater.name }}"></label>
-			<label>Mail<input type="text" name="mail" value="{{ edit_eater.mail }}"></label>
-			<label>Preis<input type="text" name="priceToPay" value="{{ edit_eater.price_to_pay }}"></label>
-			<label><input type="checkbox" name="intern" value="true">Intern </label>
-			<label><input type="checkbox" name="admin" value="true">Admin</label>
-			<label><input type="checkbox" name="verified" value="true">Freigabe</label>
-			<input type="submit" class="btn btn-primary btn-mini" value="Speichern">	
-		</form>
+{% include "eater/create.html" %}
   </div>
 </div>	
 </div>
