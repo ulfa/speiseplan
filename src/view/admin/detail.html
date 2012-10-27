@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="container">
-<div class="row">
+<div class="row-fluid">
   <div class="span8">
     <h2>Menu vom {{ menu.get_date_as_string }}</h2>
     <div class="well">
@@ -31,17 +31,17 @@
 			<td>{{ booking.eater.forename }} {{ booking.eater.name }}</td>
 			<td>{{ booking.get_formated_date }}</td>
 			<td>{{ booking.get_vegetarian }}</td>
-			<td>{{ booking.eater.price_to_pay }} €</td>
-			<!--td>
-        	<form method="post" action="{% url action="delete" id=menu.id %}">	
-	        	<input type="hidden" name="esser" value="{{booking.eater.id}}">
-        		<input type="submit" class="btn btn-danger" value="löschen">
-			</form>
-			</td-->			
+			<td>{{ booking.eater.price_to_pay }} €</td>				
 		</tr>	
 		{% endfor %}
 		<tr>
 			<td><h3>Gesamt : {{ menu.get_sum}} € </h3></td>
+			<td>
+				<form method="post" name="Mahlzeit" action="{% url action="mahlzeit" %}">
+					<input type="hidden" name="menu-id" value="{{ menu.id }}">
+        			<input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
+				</form>
+        	</td>
 		</tr>
 		{% endif %}
 		</tbody>

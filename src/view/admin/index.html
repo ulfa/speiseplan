@@ -2,7 +2,7 @@
 {% block body %}
 <div class="container">
 <div class="row-fluid">
-  <div class="span9">
+  <div class="span8">
     <div class="well">
       <table class="table">
         <thead>
@@ -13,8 +13,7 @@
 			<th>Anmeldungen</th>
             <th>Vegetarier</th>
             <th>Anfragen</th>
-            <th></th>
-			<th></th>
+            <th></th>			
           </tr>
         </thead>
         <tbody>
@@ -42,12 +41,6 @@
         		<input type="submit" class="btn btn-danger btn-mini" value="Absagen">
 			</form>
 			</td>
-			<td>
-				<form method="post" name="Storno" action="{% url action="mahlzeit" %}">
-					<input type="hidden" name="menu-id" value="{{ menu.id }}">
-        			<input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
-				</form>
-        	</td>
           </tr>
           {% endfor %}
           {% endif %}
@@ -55,7 +48,7 @@
       </table>
     </div>
   </div>
-  <div class="span3">
+  <div class="span4">
 	{% include "dish/create.html" %}
   </div>
 </div>

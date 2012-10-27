@@ -2,37 +2,54 @@
 
 {% block body %}
 <div class="container">
-<div class="row">
-  <div class="span9">
+<div class="row-fluid">
+  <div class="span8">
     <div class="well">
       <table class="table">
         <thead>
           <tr>
-	        <th>Datum</th>
-            <th>Speise</th>
-            <th>max.</th>
-            <th></th>
+  	        <th>Datum</th>
+              <th>Speise</th>
+              <th>max.</th>
+			  <th>Anmeldungen</th>
+              <th>Vegetarier</th>
+              <th>Anfragen</th>
+              <th></th>			
           </tr>
         </thead>
         <tbody>
           {% if menus %}
           {% for menu in menus %}
           <tr id="/admin/{{ menu.id }}">
-            <td>{{ menu.get_date_as_string }}</td>
+            <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_normal_eater|join:", "|default:"Keine Fleischesser"}}">	
+              <a href="/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }}</a>
+            </td>
             <td>{{ menu.dish.title }}</td>
             <td>{{ menu.slots}}</td>
+            <td>{{ menu.booking|length}}</td>
+            <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_vegetarian_eater|join:", "|default:"Keine Vegetarier"}}">			
+				<a href="#">{{ menu.get_vegetarian_eater|length }}</a>
+			</td>
+			<td data-popover-title="Fleisch" data-popover-content="{{ menu.get_requester_names|join:", "|default:"Keine Anfragen"}}">
+				<a href="#">{{ menu.get_request_count|length }}</a>
+			<td>
+				<a href="/admin/edit/{{ menu.id }}">bearbeiten</a>	
+        	</td>
+			<td>
+        	<form method="post" name="Storno" action="{% url action="storno" %}">
+				<input type="hidden" name="menu-id" value="{{ menu.id }}">
+        		<input type="submit" class="btn btn-danger btn-mini" value="Absagen">
+			</form>
+			</td>
           </tr>
-          <tr class="details">
-            <td colspan="4">{{ menu.dish.details }}</td>
-          </tr>
-          {% endfor %}
+          {% endfor %}            
           {% endif %}
         </tbody>
       </table>
     </div>
   </div>
-  <div class="span3">
-	{% include "dish/edit.html" %}
+  <div class="span4">
+	{% include "dish/create.html" %}
   </div>
 </div>
 </div>
