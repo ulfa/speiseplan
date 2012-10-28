@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+<div class="row-fluid">
+  <div class="span8">
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Text</th>
+            <th>Aktiv</th>
+          </tr>
+        </thead>
+        <tbody>			
+          {% if notes %}
+          {% for note in notes %}
+          <tr id="{{ note.id }}">
+            <td>
+              <a href="edit/{{ note.id }}">{{ note.created_date }}</a>
+            </td>
+            <td>{{ note.text }}</td>
+            <td>{{ note.aktiv }}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div class="span4">		
+	{% include "note/create.html" %}
+</div>			
+  
+</div>
+</div>
+{% endblock %}
