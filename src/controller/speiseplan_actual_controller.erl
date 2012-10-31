@@ -7,9 +7,13 @@
 		show_menu(boss_db:find(menu, [{date,  D}]), Date, Eater).
 		
 	show_menu([], Date, Eater) ->
-		{ok, [{eater, Eater}, {text, "bleibt die K&Uuml;che kalt"}, {date, Date}]};
+		case boss_db:find(note, [{ativ, true}]) of
+			[] -> {ok, [{eater, Eater}, {text, "bleibt die K&Uuml;che kalt"}, {date, Date}]};
+			[Note] -> {ok, [{eater, Eater}, {text, Note:text()}, {date, Date}]}
+		end;
 
 	show_menu([Menu], Date, Eater) ->
 		{ok, [{eater, Eater}, {text, "gibt es"}, {dish, Menu:dish()}, {date, Date}]}.
-		
-		
+				
+	show_note([], Date, Eater) ->
+			

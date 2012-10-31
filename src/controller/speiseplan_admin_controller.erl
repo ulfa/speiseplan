@@ -71,6 +71,7 @@ create('POST', [], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
+	
 	NewDish = dish:new(id, Title, Details, elib:handle_checkbox(Vegetarian)),	
 	case NewDish:save() of
 		{error, Errors} -> {redirect, [{'action', "index"}]};
@@ -80,8 +81,9 @@ create('POST', [], Admin) ->
 								{error, Errors} -> {redirect, [{'action', "index"}]}
 							end
 	end.
-					
-update('POST', [Id], Admin) ->
+
+update('POST', [], Admin) ->
+	Id = Req:post_param("id"),
 	Menu = boss_db:find(Id),
 	Dish = Menu:dish(),
 	Date = Req:post_param("date"),

@@ -1,4 +1,5 @@
-<form method="post" action="{% url action="create" %}" class="well">        
+<form method="post" action="{% url action="create" %}" class="well">      
+	<input type="hidden" name="id" value="{{ menu.id | default: undefined}}">     
 	<label>Speise<input type="text" name="title" placeholder="Linsensuppe" required value="{{ menu.dish.title | default: ''}}"></label>
 	<label>Details<textarea name="details" rows="4" placeholder="mit einer Wurst" required>{{menu.dish.details | default: ''}}</textarea></label>
 	<label>Datum<input type="text" name="date" class="auto-kal" placeholder="2012-10-01" required value="{{menu.get_date_as_string|default: ''}}"></label>
