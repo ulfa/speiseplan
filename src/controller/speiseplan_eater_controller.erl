@@ -23,21 +23,9 @@ verfied('POST', [Id], Admin) ->
 	NewEater = Eater:set([{verified, Verified}]),
 	handle_eater_return_value(NewEater:save()).
 						
-update('POST', [Id]) ->
-	Eater = boss_db:find(Id),
-	Account = Req:post_param("account"),
-	Name = Req:post_param("name"),
-	Mail = Req:post_param("mail"),
-	Forename = Req:post_param("forename"),
-	Intern = elib:convert_to_boolean(Req:post_param("intern")),
-	Admin = elib:convert_to_boolean(Req:post_param("admin")),
-	Verified = elib:convert_to_boolean(Req:post_param("verified")),
-	PriceToPay = Req:post_param("priceToPay"),
-	NewEater = Eater:set([{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}, {'verified', Verified}]),
-	handle_eater_return_value(NewEater:save()).
-	
 	
 create('POST', []) ->
+	Id = Req:post_param("id"),
 	Account = Req:post_param("account"),
 	Name = Req:post_param("name"),
 	Mail = Req:post_param("mail"),
@@ -45,14 +33,24 @@ create('POST', []) ->
 	Password = Req:post_param("password"),
 	Intern = elib:convert_to_boolean(Req:post_param("intern")),
 	Admin = elib:convert_to_boolean(Req:post_param("admin")),	
-	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false, false),
+	PriceToPay = Req:post_param("priceToPay"),
+	Verified = elib:convert_to_boolean(Req:post_param("verified")),
+	Comfirmed = elib:convert_to_boolean(Req:post_param("comfirmed")),
+	save(Id, [{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}, {'verified', Verified}, {password, Password},{comfirmed, Comfirmed}]).
+%%	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false, false),
+%%	handle_eater_return_value(NewEater:save()).
+  		
+save("undefined", [{'account', Account}, {'forename', Forename}, {'name', Name}, {'price_to_pay', PriceToPay}, {'intern', Intern}, {'admin', Admin}, {'mail', Mail}, {'verified', Verified}, {password, Password}, {comfirmed, Comfirmed}]) ->
+		NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", Admin, Mail, false, false),	
+		handle_eater_return_value(NewEater:save());
+	
+save(Id, Data) ->
+	Eater = boss_db:find(Id),
+	NewEater = Eater:set(Data),
 	handle_eater_return_value(NewEater:save()).
-  
+    
 handle_eater_return_value({ok, SavedEater}) ->
 	{redirect, [{'action', "index"}]};
 handle_eater_return_value({error, Errors}) ->
 	{redirect, [{'action', "index"}, {errors, Errors}]}.
-		
- 
-  
-  
+

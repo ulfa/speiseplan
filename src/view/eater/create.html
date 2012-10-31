@@ -1,4 +1,5 @@
 <form method="post" action="{% url action="create" %}" class="well">
+	<input type="hidden" name="id" value="{{ edit_eater.id | default: undefined}}"> 
 	<label>Account<input type="text" name="account" required placeholder="ha" value="{{ edit_eater.account|default : ''}}"></label>
 	<label>Vorname<input type="text" name="forename" required placeholder="Horst" value="{{ edit_eater.forename|default : ''}}"></label>
 	<label>Name<input type="text" name="name" required placeholder="Kater" value="{{ edit_eater.name|default : '' }}"></label>
