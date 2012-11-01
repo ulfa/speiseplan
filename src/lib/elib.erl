@@ -3,7 +3,7 @@
 
 convert_to_boolean(Value) ->
 	Value =:= "true".
-	
+
 get_price(true) ->
 	3.0;
 get_price(false) ->
@@ -14,7 +14,8 @@ intern(true) ->
 intern(false) ->
 	5.	
 
-handle_checkbox(Value) ->
+handle_checkbox(Value) ->	
+io:format("2... : ~p~n", [Value]),
 	Value =:= "true". 
 
 	

@@ -46,7 +46,7 @@
 						{% endif %}
 						{% if eater %}
 						<li class="divider-vertical"></li>
-						<li><p class="navbar-text"> {{eater.forename}} {{ eater.name }}</p></li>
+						<li><a href="/selfadmin/edit/{{eater.id}}">{{eater.forename}} {{ eater.name }}</p></a></li>
 						{% else %}			
 						<li><a href="/login/index">Log in</a></li>
 						{% endif %}

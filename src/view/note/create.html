@@ -3,6 +3,6 @@
 	<label>Notiz<textarea name="text" rows="4" placeholder="Urlaub" required>{{note.text | default: ''}}</textarea></label>
 	<label>Von Datum<input type="text" name="fromdate" class="auto-kal" placeholder="2012-10-01" required value="{{note.from_date|default: ''}}"></label>
 	<label>Bis Datum<input type="text" name="todate" class="auto-kal" placeholder="2012-10-01" required value="{{note.to_date|default: ''}}"></label>
-	<label><input type="checkbox" name="aktiv" value="{{ note.get_aktiv| default: false }}" {% if note.ativ %} checked {% endif %}>Aktiv</label>
+	<label><input type="checkbox" name="aktiv" value="true" {% if note.ativ %} checked {% endif %}>Aktiv</label>
 	<input type="submit" class="btn btn-primary btn-mini" value="Speichern">
 </form>

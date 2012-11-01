@@ -1,29 +1,14 @@
--module(speiseplan_eater_controller, [Req]).
+-module(speiseplan_selfadmin_controller, [Req]).
 -compile(export_all).
 
 before_(_) ->
-	user_lib:require_login(admin, Req).
+	user_lib:require_login(Req).
 
-index('GET', [], Admin) ->
-  Eaters = boss_db:find(eater, []),
-  {ok, [{eaters, Eaters}, {eater, Admin}]}.
-
-edit('GET', [Id], Admin) ->
-	Eaters = boss_db:find(eater, []),
+edit('GET', [Id], Eater) ->
 	Eater = boss_db:find(Id),
-	{ok, [{edit_eater, Eater},{eater, Admin}, {eaters, Eaters}]}.
-	
-delete('POST', [Id], Admin) ->
-	ok = boss_db:delete(Id),
-	{redirect, "/eater/index"}.
+	{ok, [{edit_eater, Eater},{eater, Eater}]}.
 
-verfied('POST', [Id], Admin) ->
-	Eater = boss_db:find(Id),
-	Verified = elib:convert_to_boolean(Req:post_param("verified")),
-	NewEater = Eater:set([{verified, Verified}]),
-	handle_eater_return_value(NewEater:save()).
-						
-create('POST', [], Admin) ->
+create('POST', [], Eater) ->
 	Id = Req:post_param("id"),
 	Account = Req:post_param("account"),
 	Name = Req:post_param("name"),
@@ -45,9 +30,10 @@ save(Id, Data) ->
 	Eater = boss_db:find(Id),
 	NewEater = Eater:set(Data),
 	handle_eater_return_value(NewEater:save()).
-    
+   
 handle_eater_return_value({ok, SavedEater}) ->
-	{redirect, [{'action', "index"}]};
+	{redirect, "/booking/index"};
 handle_eater_return_value({error, Errors}) ->
-	{redirect, [{'action', "index"}, {errors, Errors}]}.
+	{redirect, [{'action', "edit"}, {errors, Errors}]}.
 
+		

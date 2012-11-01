@@ -27,6 +27,9 @@ get_price_to_pay(false) ->
 get_admin(Admin) ->
 	Admin =:= true. 
 	
+get_admin()->
+	get_admin(Admin).
+	
 validation_tests() ->
 	[{fun() -> length(Account) > 0 end,
 		"Please enter a account"},

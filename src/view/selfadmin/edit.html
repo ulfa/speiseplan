@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+	<div class="board">
+		<h1>Selbstadministration</h1><br/>
+	</div>
+<div class="row-fluid">
+	<div class="span4">
+		<br/>
+	</div>
+    <div class="span4">
+<form method="post" action="{% url action="create" %}" class="well">
+	<input type="hidden" name="id" value="{{eater.id}}">
+	<label>Account<input type="text" name="account" value="{{ eater.account }}" required></label>
+	<label>Vorname<input type="text" name="forename" value="{{ eater.forename }}" required></label>
+	<label>Name<input type="text" name="name" value="{{ eater.name }}" required></label>
+	<label>Mail<input type="text" name="mail" value="{{ eater.mail }}" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"></label>
+	<label>Password<input type="password" name="password" required></label>
+	<label><input type="checkbox" name="intern" value="true" {% if eater.intern %} checked {% endif %}>Intern</label>
+	<input type="hidden" name="admin" value="{{eater.admin}}">
+	<input type="hidden" name="verified" value="{{eater.verified}}">
+	<input type="hidden" name="comfirmed" value="{{eater.comfirmed}}">
+	<input type="submit" class="btn btn-small" value="Erstellen">
+</form>
+	</div>
+</div>
+</div>
+{% endblock %}
