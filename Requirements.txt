@@ -1,4 +1,7 @@
 
+- Liste per
+- Anfragen werden zusätzlich per Mail an Anja gesendet.
+
 - Notes
 	- Es muss möglich sein, das ein Admin Notizen erfassen kann, damit diese dann dem Esser auf der actual Seite 
 	präsentiert wird. (Anmerkung : nur eine Notiz)

@@ -22,6 +22,10 @@ edit('GET' ,[Id], Admin) ->
 	Note = boss_db:find(Id),
 	Notes = boss_db:find(note, []),
 	{ok, [{note, Note}, {notes, Notes}, {eater, Admin}]}.
+
+delete('POST', [Id], Admin) ->
+	ok = boss_db:delete(Id),
+	{redirect, "/note/index"}.
 	
 save("undefined", [{create_date, CreatedDate}, {text, Text}, {ativ, Aktiv}, {from_date,FromDate}, {to_date, ToDate}]) ->
 	NewNote = note:new(id, CreatedDate, Aktiv, Text, FromDate, ToDate),	

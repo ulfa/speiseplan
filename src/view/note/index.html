@@ -10,6 +10,7 @@
             <th>Datum</th>
             <th>Text</th>
             <th>Aktiv</th>
+			<th></th>
           </tr>
         </thead>
         <tbody>			
@@ -21,6 +22,11 @@
             </td>
             <td>{{ note.text }}</td>
             <td>{{ note.get_aktiv }}</td>
+			<td>
+				<form method="post" name="Loeschung" action="{% url action="delete" id=note.id %}">
+					<input type="submit" class="btn btn-danger btn-mini" value="löschen">
+				</form>
+			</td>	
           </tr>
           {% endfor %}
           {% endif %}

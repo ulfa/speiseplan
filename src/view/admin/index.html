@@ -21,16 +21,16 @@
           {% if menus %}
           {% for menu in menus %}
           <tr id="/admin/{{ menu.id }}">
-            <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_normal_eater|join:", "|default:"Keine Fleischesser"}}">	
+            <td>	
               <a href="/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }}</a>
             </td>
             <td>{{ menu.dish.title }}</td>
             <td>{{ menu.slots}}</td>
             <td>{{ menu.booking|length}}</td>
-            <td data-popover-title="Fleisch" data-popover-content="{{ menu.get_vegetarian_eater|join:", "|default:"Keine Vegetarier"}}">			
+            <td>			
 				<a href="#">{{ menu.get_vegetarian_eater|length }}</a>
 			</td>
-			<td data-popover-title="Fleisch" data-popover-content="{{ menu.get_requester_names|join:", "|default:"Keine Anfragen"}}">
+			<td>
 				<a href="#">{{ menu.get_request_count|length }}</a>
 			<td>
 				<a href="/admin/edit/{{ menu.id }}">bearbeiten</a>	
