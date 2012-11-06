@@ -33,12 +33,12 @@
 			<td>
 				<a href="#">{{ menu.get_request_count|length }}</a>
 			<td>
-				<a href="/admin/edit/{{ menu.id }}">bearbeiten</a>	
+				<a class="btn btn-primary btn-mini " href="/admin/edit/{{ menu.id }}">Edit</a>	
         	</td>
 			<td>
         	<form method="post" name="Storno" action="{% url action="storno" %}">
 				<input type="hidden" name="menu-id" value="{{ menu.id }}">
-        		<input type="submit" class="btn btn-danger btn-mini" value="Absagen">
+        		<input type="submit" class="btn btn-danger btn-mini" value="Storno">
 			</form>
 			</td>
           </tr>
