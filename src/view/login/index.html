@@ -40,14 +40,10 @@
 					<input name="account" required placeholder="Account"/><br /><br />
 
 					Password:<br />
-					<input name="password" type="password" placeholder="Password" required/><br /><br />
-					<div class="control-group">
-						<div class="controls">
-							<input type="submit" class="btn btn-primary" value="Log in" />
-							<input type="hidden" name="redirect" value="{{ redirect|default_if_none:"/booking/index" }}" />
-							<a class ="btn btn-block" href="/registration">Registration</a>
-						</div>
-					</div>
+					<input name="password" type="password" placeholder="Password" required/><br /><br />											
+					<input type="submit" class="btn btn-primary" value="Anmelden" />
+					<input type="hidden" name="redirect" value="{{ redirect|default_if_none:"/booking/index" }}" />
+					<a class ="btn" href="/registration">Registration</a>											
 				</div>
 			</div>		
 		</div>
