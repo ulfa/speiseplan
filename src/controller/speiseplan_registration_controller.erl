@@ -22,7 +22,7 @@ create('POST', []) ->
 	NewEater = eater:new(id, Account, user_lib:hash_for(Account, Password), Forename, Name, Intern, "0.0", false, Mail, true, false),			
 	case find_by_account(Account) of
 		[] -> case NewEater:save() of
-  			{ok, SavedEater} -> send_mail(SavedEater), {redirect, "/login/index"};
+  				{ok, SavedEater} -> send_mail(SavedEater), {redirect, "/login/index"};
 	    		{error, Errors} -> {ok, [{errors, Errors}, {eater, NewEater}]}
 			end;	  				 
 		_ -> {ok, [{errors, ["Account already exists!"]}, {eater, NewEater}]}

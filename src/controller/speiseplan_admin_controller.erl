@@ -94,9 +94,10 @@ update('POST', [], Admin) ->
 	NewDish = Dish:set([{'title', Title}, {'details', Details}, {'vegetarian', elib:handle_checkbox(Vegetarian)}]),
 	NewMenu = Menu:set([{'date', date_lib:create_date_from_string(Date)}, {'slots', Slots}]),
 	{ok, SavedDish} = NewDish:save(),
-	{ok, SavedMenu} = NewMenu:save(),	
-	{redirect, [{'action', "index"}]}.
-	
+	case NewMenu:save() of
+		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
+		{error, Errors} -> {redirect, [{'action', "index"}, {menu, Menu}, {eater, Admin}, {errors, Errors}]}
+	end.
 		
 send_mail([], Menu, Text) ->
 	ok;

@@ -1,26 +1,35 @@
 
-- Liste per
-- Anfragen werden zusätzlich per Mail an Anja gesendet.
 
-- Notes
-	- Es muss möglich sein, das ein Admin Notizen erfassen kann, damit diese dann dem Esser auf der actual Seite 
-	präsentiert wird. (Anmerkung : nur eine Notiz)
-	- Auf der actual Seite wird in folgender Reihenfolge angezeigt : Das aktuelle Essen, die Notiz,  Heute bleibt die Küche kalt (ist das nicht eine Notiz?)
-- Validierungen
-	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
+- Statemachine einbauen
+	- Status des Menus in Abhängigkeit der Zeit
+	- Eingabe: Menu, Datum
+	- Rückgabe : [akt. Status, [mögliche Status von dem akt. Status aus]]
+	- Status
+		buchbar, stornierbar, überbuchbar, freigebbar (Sind das alle Status?)
+
+
+- Anfragen werden zusätzlich per Mail an Anja gesendet.
+- Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 		
-- Smell
-	Erzeugung von Essern darf nicht an 2 Stellen passieren!
 
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
 	- KW Hnadling einführen
+
 
 -Datenbank
 	- init Admin in DB erstellen
 	- Datenbank Migration
 		- Tabelle für die Versionen der Migration erstellen 
 		- Ablauf: komplettes Backup, Migration der Tabellen, Migration der Daten, Version der Migration einfügen.
-- Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
+
+- Smell
+	Erzeugung von Essern darf nicht an 2 Stellen passieren!
+
+- Validierungen
+	- Menu Erfassung: Datum darf nicht kleiner als das aktuelle sein
+
+- Verwaltung der Esser (nice to have)
+	- Zustände wie comfirmed werden mit einem farblichen Image gekennzeichnet.
 
 
 - Registrierung eines neuen Essers
@@ -46,7 +55,6 @@
 
 - Kennzeichen im Booking aufnehmen, dass Esser durch Anfrage gebucht wurde. (für Auswertung interessant)
 
-- Buchungen über Anfragen dürfen nicht stornierbar durch Esser sein.
 
 - Kennzeichen in Menu, dass ein Essen durch Anja freigegeben wurde. danach kann mit dem Essen nichts mehr gemacht werden.
 	Kein Löschen  möglich, aber noch das Hinzufügen von Essern.
@@ -120,6 +128,10 @@ NO-IP
 
 Fertige Aufgaben
 
+- Notes
+	- Es muss möglich sein, das ein Admin Notizen erfassen kann, damit diese dann dem Esser auf der actual Seite 
+	präsentiert wird. (Anmerkung : nur eine Notiz)
+	- Auf der actual Seite wird in folgender Reihenfolge angezeigt : Das aktuelle Essen, die Notiz,  Heute bleibt die Küche kalt (ist das nicht eine Notiz?)
 - Prüfung der Regeln muss im Controller durch geführt werden!
 - Wenn das Essen fertig ist, Button für "Essen ist fertig" und dann wird Mail an alle gebuchten Esser gesendet 
 - Stornierung im Controller um Abfrage "is_in_time" erweitern (fertig)

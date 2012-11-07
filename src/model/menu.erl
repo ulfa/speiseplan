@@ -4,6 +4,10 @@
 -has({booking, many}).
 -has({comment, many}).
 	
+%%validation_tests() ->
+%%	[{fun() -> date_lib:is_date_in_range(Date) end,
+%%		"The date is too old"}].	
+		
 is_in_time() ->
 	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
 
