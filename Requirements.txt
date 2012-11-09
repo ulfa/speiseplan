@@ -1,4 +1,5 @@
 
+- eUnit Tests und boss.test.config einführen. 
 
 - Statemachine einbauen
 	- Status des Menus in Abhängigkeit der Zeit
@@ -97,9 +98,8 @@ Regeln
 	
 -------------------------------------------------------------	
 BUGS
-
+- Esser können mehrmals ein und die selbe Anfrage stellen. Dadurch erscheinen diese auch in er Queue mehrmals
 - Nach dem Löschen eines Menus wird die index Seite nicht richtig refreshed
-- Beim Verkleinern des Menus muss das Menu geschlossen werden.
 - Die Grössen der einzelnen Felder müssen dynamisch änderbar sein.
 -------------------------------------------------------------	
 
@@ -128,6 +128,7 @@ NO-IP
 
 Fertige Aufgaben
 
+- Beim Verkleinern des Menus muss das Menu geschlossen werden.
 - Notes
 	- Es muss möglich sein, das ein Admin Notizen erfassen kann, damit diese dann dem Esser auf der actual Seite 
 	präsentiert wird. (Anmerkung : nur eine Notiz)

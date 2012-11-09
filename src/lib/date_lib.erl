@@ -3,8 +3,7 @@
 
 -define(WOCHENTAG(Int), lists:nth(Int, ["Montag","Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"])).
 
-is_date_in_range(Akt_date, Date) ->
-	io:format("~p~p~n", [Akt_date, Date]),
+is_date_in_range(Akt_date, Date) ->	
 	calendar:datetime_to_gregorian_seconds(Akt_date) - calendar:datetime_to_gregorian_seconds(Date) < 0.
 
 is_date_in_range(Date) ->

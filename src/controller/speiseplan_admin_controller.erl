@@ -78,7 +78,7 @@ create('POST', [], Admin) ->
 		{ok, SavedDish} -> NewMenu = menu:new(id, CreatedDate, date_lib:create_date_from_string(Date), SavedDish:id(), Slots, "0"),
 						   case NewMenu:save() of
 								{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
-								{error, Errors} -> {redirect, [{'action', "index"}]}
+								{error, Errors} -> {redirect, [{'action', "edit"}]}
 							end
 	end.
 
@@ -96,7 +96,7 @@ update('POST', [], Admin) ->
 	{ok, SavedDish} = NewDish:save(),
 	case NewMenu:save() of
 		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
-		{error, Errors} -> {redirect, [{'action', "index"}, {menu, Menu}, {eater, Admin}, {errors, Errors}]}
+		{error, Errors} -> {redirect, [{'action', "edit"}, {menu, Menu}, {eater, Admin}, {errors, Errors}]}
 	end.
 		
 send_mail([], Menu, Text) ->
