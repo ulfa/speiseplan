@@ -23,8 +23,16 @@ request('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),	
 	MenuId = Req:post_param("menu-id"),
 	Menu = boss_db:find(MenuId),
-	{ok, Timestamp} = boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId)),
+	case is_in_queue(Menu:get_date_as_string(), EaterId) of
+		false -> boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId));
+		true -> io:format("Eater : ~p already requested~n", [EaterId])
+	end,
 	{redirect, "/booking/index"}.
+
+is_in_queue(Date, EaterId) ->	
+	{ok, Timestamp, Messages} = boss_mq:poll(Date),
+	io:format("Messages : ~p ~n", [Messages]),
+	lists:member(erlang:list_to_binary(EaterId), Messages).
 
 detail('POST' ,[Id], Eater) ->
 	Menus = boss_db:find(menu, []),
