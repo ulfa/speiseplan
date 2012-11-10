@@ -21,7 +21,7 @@
               <a href="/note/edit/{{ note.id }}">{{ note.created_date_as_string }}</a>
             </td>
             <td>{{ note.text }}</td>
-            <td>{{ note.get_aktiv }}</td>
+            <td>{{ note.ativ }}</td>
 			<td>
 				<form method="post" name="Loeschung" action="{% url action="delete" id=note.id %}">
 					<input type="submit" class="btn btn-danger btn-mini" value="löschen">

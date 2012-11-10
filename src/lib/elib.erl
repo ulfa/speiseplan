@@ -15,7 +15,6 @@ intern(false) ->
 	5.	
 
 handle_checkbox(Value) ->	
-io:format("2... : ~p~n", [Value]),
 	Value =:= "true". 
 
 	
