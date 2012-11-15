@@ -15,9 +15,9 @@ search('POST', [], Admin) ->
 	To_Date = Req:post_param("to_date"),
 	Bookings = boss_db:find(booking, [{date, 'gt', date_lib:create_from_date(From_Date)}, {date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, date}]),	
 	Entries = create_billing(Bookings, From_Date, To_Date, []),
-	{ok,CsvFile} = file:list_dir(?CSV_DIR),
+	{ok, CsvFiles} = file:list_dir(?CSV_DIR),
 	{ok, [{eater, Admin}, {from_date, From_Date}, {to_date, To_Date},{billings, Entries}, {act_date, date_lib:create_date_string_from_date(erlang:date())},
-	{csvfiles, CsvFile}]}.
+	{csvfiles, lists:sort(CsvFiles)}]}.
 
 create_billing([], From_Date, To_Date, Acc) ->
 	Acc1 = lists:keysort(1,Acc),
