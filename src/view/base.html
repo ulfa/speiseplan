@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="stylesheet" href="/static/css/kalendae.css">
   <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/kalendae.min.js"></script>
+  <script src="/static/js/application.js"></script>
+  <script src="/static/js/highcharts.js"></script>
+  <script src="/static/js/exporting.js"></script>
 </head>
 	<body>
 	 <div class="container">	
@@ -44,6 +50,8 @@
 						<li><a href="/note/index">Notes</a></li>
 						<li class="divider-vertical"></li>
 						<li><a href="/billing/index">Billing</a></li>						
+						<!--li class="divider-vertical"></li>
+						<li><a href="/analysis/index/2012">Auswertung</a></li-->
 						{% endif %}
 						{% if eater %}
 						<li class="divider-vertical"></li>
@@ -68,10 +76,5 @@
 
       {% block body %}{% endblock %}
   </div>
-  <script src="/static/js/jquery.min.js"></script>
-  <script src="/static/js/bootstrap.min.js"></script>
-  <script src="/static/js/kalendae.min.js"></script>
-  <script src="/static/js/application.js"></script>
 </body>
-
 </html>

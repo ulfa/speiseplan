@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block body %}
+	<div id="chart" style="min-width: 400px; height: 600px; margin: 0 auto"></div>	
+	</div>
+	
+	<script>
+	    var chart;
+	    $(document).ready(function() {
+	        chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'chart',
+	                type: 'column'
+	            },
+	            title: {
+	                text: 'Anzahl der ausgebenen Speisen'
+	            },
+	            subtitle: {
+	                text: '{{subtitle}}'
+	            },
+	            xAxis: {
+	                categories: [{{categories}}]
+	            },
+	            yAxis: {
+	                min: 0,
+	                title: {
+	                    text: 'Anzahl Speisen'
+	                }
+	            },
+	            legend: {
+	                layout: 'vertical',
+	                backgroundColor: '#FFFFFF',
+	                align: 'left',
+	                verticalAlign: 'top',
+	                x: 100,
+	                y: 70,
+	                floating: true,
+	                shadow: true
+	            },
+	            tooltip: {
+	                formatter: function() {
+	                    return ''+
+	                        this.x +': '+ this.y;
+	                }
+	            },
+	            plotOptions: {
+	                column: {
+	                    pointPadding: 0.2,
+	                    borderWidth: 0
+	                }
+	            },
+	                series: [{
+	                name: 'interne Mitarbeiter',
+	                data: [{{intern}}]
+    
+	            }, {
+	                name: 'externe Mitarbeiter',
+	                data: [{{extern}}]
+    
+	            }]
+	        });
+	    });   
+	</script>
+{% endblock %}
+

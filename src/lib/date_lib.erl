@@ -76,6 +76,11 @@ get_last_day({Y, M, D}) ->
 	Last_day = calendar:last_day_of_the_month(Y, M),
 	ToDate = date_lib:create_date_string({{Y, M, Last_day}, {0,0,0}}).
 	
+get_days_of_month(Year, Month) ->
+	list_of_integer_to_string(lists:seq(1, calendar:last_day_of_the_month(list_to_integer(Year), list_to_integer(Month)))).
+	
+list_of_integer_to_string(List_of_integer) ->
+	string:join([integer_to_list(S) || S <- List_of_integer],",").	
 					
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).
