@@ -66,20 +66,22 @@ is_already_booked([]) ->
 	false;
 is_already_booked([Menu]) ->	
 	true.
-	
-	
-billing('GET', [], Eater) ->
-	Date = erlang:date(),
-	ToDate = date_lib:get_last_day(Date),
-	FromDate = date_lib:get_first_day(Date),		
-	{ok, [{eater, Eater}, {from_date, FromDate}, {to_date, ToDate}]};
-billing('POST', [], Eater) ->
-	FromDate = Req:post_param("from_date"),
-	ToDate = Req:post_param("to_date"),
+		
+billing('GET', [Eater_id], Eater) ->
+	% TODO We have to check, if the user who wants to see his bill is the same as in the cookie.
+	FromDate = get_date(Req, "from_date"),
+	ToDate = get_date(Req, "to_date"),
 	Bookings = boss_db:find(booking, [{eater_id, 'eq', Eater:id()},{date, 'gt', date_lib:create_from_date(FromDate)}, {date, 'lt', date_lib:create_to_date(ToDate)}], [{order_by, date}]),	
 	Billings = create_billing(Bookings, [], Eater),
 	{ok, [{eater, Eater}, {from_date, FromDate}, {to_date, ToDate},{billings, Billings}, {sum, lists:foldl(fun({X, Y, Z}, Acc0) -> Acc0 + Z end, 0, Billings)}]}.
 %% Sum of bookings	lists:foldl(fun({X, Y}, Acc0) -> Acc0 + Y end, 0, O).
+
+get_date(Req, Key) ->
+	Date = erlang:date(),
+	case Req:query_param(Key) of
+		undefined -> date_lib:get_first_day(Date);
+		_ -> Req:query_param(Key)
+	end.
 
 create_billing([], Acc, Eater) ->
 	Acc;

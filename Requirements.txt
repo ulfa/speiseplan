@@ -8,14 +8,11 @@
 	- Status
 		buchbar, stornierbar, überbuchbar, freigebbar (Sind das alle Status?)
 
-
 - Anfragen werden zusätzlich per Mail an Anja gesendet.
 - Button einfügen, mit dem man eine Mail an alle Esser schickt. Text : "Die Speisen für die kommende Woche wurden erfasst."
 		
-
 - Regel : Bis Montag 8:00 Uhr darf man sich anlegen
 	- KW Hnadling einführen
-
 
 -Datenbank
 	- init Admin in DB erstellen
@@ -44,8 +41,6 @@
   -  
 
 - Button Abbruch für Bearbeitung einbauen 
-
-
 
 - Release erstellen 
 
@@ -116,7 +111,6 @@ Future
 
 - SMS Versand für diverse Situationen
 - Anja Mail schicken, wenn Esser gebucht haben. (wird nicht gemacht)
-- Grafische Aufbereitung (z.B. Anzahl Buchung über Zeit)
 - Konfiguration in boss.config einfügen. (z.B. feste Mail Adressen )
 -------------------------------------------------------------	
 
@@ -127,6 +121,8 @@ NO-IP
 -------------------------------------------------------------	
 
 Fertige Aufgaben
+
+- Grafische Aufbereitung (z.B. Anzahl Buchung über Zeit)
 
 - Beim Verkleinern des Menus muss das Menu geschlossen werden.
 - Notes

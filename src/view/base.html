@@ -37,7 +37,7 @@
 					  <li class="divider-vertical"></li>
 					  {% if eater %}
 					  <li><a href="/booking/index">Booking</a></li>
-					  <li><a href="/booking/billing">Rechnung</a></li>								
+					  <li><a href="/booking/billing/{{eater.id}}">Rechnung</a></li>								
 					  {% endif %}
 					  <li class="divider-vertical"></li>
 					  {% if eater.admin == "true" %}	

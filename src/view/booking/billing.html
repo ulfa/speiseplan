@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
 <center>
+
 <div class="container">
-	<form method="post" action="{% url action="billing" %}" class="form-search">        		
+	<form method="GET" action="{% url action="billing" eater_id=eater.id %}" class="form-search">        		
 		<input type="text" name="from_date" value="{{ from_date }}" placeholder="Von Datum" class="auto-kal">
 		<input type="text" name="to_date" value="{{ to_date }}" placeholder="Bis Datum" class="auto-kal">
 		<input type="submit" class="btn btn-small btn-primary" value="Suche">

@@ -10,9 +10,9 @@ index('GET', [], Admin) ->
 	FromDate = date_lib:get_first_day(Date),		
 	{ok, [{eater, Admin}, {from_date, FromDate}, {to_date, ToDate}]}.
 	
-search('POST', [], Admin) ->
-	From_Date = Req:post_param("from_date"),
-	To_Date = Req:post_param("to_date"),
+search('GET', [], Admin) ->
+	From_Date = Req:query_param("from_date"),
+	To_Date = Req:query_param("to_date"),
 	Bookings = boss_db:find(booking, [{date, 'gt', date_lib:create_from_date(From_Date)}, {date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, date}]),	
 	Entries = create_billing(Bookings, From_Date, To_Date, []),
 	{ok, CsvFiles} = file:list_dir(?CSV_DIR),

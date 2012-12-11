@@ -1,6 +1,6 @@
 {application, speiseplan, [
         {description, "Der neue Speiseplan"},
-        {vsn, "0.0.1"},
+        {vsn, "0.1.0"},
         {modules, []},
         {registered, []},
         {applications, [kernel, stdlib, crypto, boss]},
