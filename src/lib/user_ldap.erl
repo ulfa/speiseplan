@@ -4,6 +4,7 @@
 -compile(export_all).
 
 start() ->
+	error_logger:info_msg("starting ldap import"),
 	ssl:start(),
 	Handle = connect(),
 	E = get_externals(Handle),
@@ -11,7 +12,7 @@ start() ->
 	Members = [get_member(Handle, E, A)||A <- M],
 	iterate_eaters(Members),
 	close(Handle),
-	?DEBUG("ldap import finished").	
+	error_logger:info_msg("finished ldap import").	
 connect() ->
 	{ok, Handle} = eldap:open(["testldap.innoq.com"], [{port, 636}, {ssl, true}]),
 	Dn = "cn=ulfreader,dc=innoq,dc=com",
@@ -85,8 +86,8 @@ extract_entry(Eldap_search_result) when is_record(Eldap_search_result, eldap_sea
 iterate_eaters([]) ->
 	ok;
 iterate_eaters([H|T]) ->
-	UID = lists:keyfind(account, 1, H),
-	?DEBUG(H),
+	{account, UID} = lists:keyfind(account, 1, H),
+	?DEBUG(UID),
 	save_eater(boss_db:find(eater,[account,'equals',UID]), H),
 	iterate_eaters(T).
 
