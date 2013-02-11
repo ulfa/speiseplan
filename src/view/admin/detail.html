@@ -28,7 +28,7 @@
 		{% if  menu.booking %}		
 		{% for booking in menu.booking %}
 		<tr>
-			<td>{{ booking.eater.forename }} {{ booking.eater.name }}</td>
+			<td>{{ booking.eater.display_name }} </td>
 			<td>{{ booking.get_formated_date }}</td>
 			<td>{{ booking.get_vegetarian }}</td>
 			<td>{{ booking.eater.price_to_pay }} €</td>				
@@ -54,7 +54,7 @@
 			<p>
 			    <select name="esser" >
 				  {% for eater in eaters %}
-			      <option value="{{eater.id}}">{{eater.forename}} {{eater.name}}</option>
+			      <option value="{{eater.id}}">{{eater.display_name}}</option>
 				  {% endfor %}
 			    </select>
 			  </p>
@@ -65,7 +65,7 @@
 			<p>
 			    <select name="esser" >
 				  {% for requester in requesters %}
-			      <option value="{{requester.id}}">{{requester.forename}} {{requester.name}}</option>
+			      <option value="{{requester.id}}">{{requester.display_name}}</option>
 				  {% endfor %}
 			    </select>
 			  </p>
