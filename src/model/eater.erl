@@ -1,4 +1,4 @@
--module(eater, [Id, Account, PasswordHash, Forename, Name, Intern, PriceToPay, Admin, Mail, Verified, Comfirmed]).
+-module(eater, [Id, Account, PasswordHash, Forename, Name, DisplayName, Intern, PriceToPay, Admin, Mail, Verified, Comfirmed]).
 -compile(export_all).
 -define(SECRET_STRING, "Not telling secrets!").
 
@@ -33,10 +33,6 @@ get_admin()->
 validation_tests() ->
 	[{fun() -> length(Account) > 0 end,
 		"Please enter a account"},
-	{fun() -> length(Forename) > 0 end,
-		"Please enter a forename"},
-	{fun() -> length(Name) > 0 end,
-		"Please enter a Name"},
 	{fun() -> length(Mail) > 0 end,
 		"Please enter a valid mail adress"}
 	].

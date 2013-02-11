@@ -7,12 +7,11 @@ start() ->
 	ssl:start(),
 	Handle = connect(),
 	E = get_externals(Handle),
-	?DEBUG(E),
 	M = get_members(Handle),
 	Members = [get_member(Handle, E, A)||A <- M],
+	iterate_eaters(Members),
 	close(Handle),
-	Members.
-	
+	?DEBUG("ldap import finished").	
 connect() ->
 	{ok, Handle} = eldap:open(["testldap.innoq.com"], [{port, 636}, {ssl, true}]),
 	Dn = "cn=ulfreader,dc=innoq,dc=com",
@@ -32,7 +31,7 @@ get_members(Handle) ->
 get_member(Handle, Externals, UID) ->	
 	M_group = "uid=" ++ UID ++ ",ou=People,dc=innoq,dc=com",
 	{ok, S}=eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["displayName", "mail"]}]),
-	[{account, UID}, {mail, extract_mail(S)}, {display_name, extract_display_name(S)}, {intern, is_internal(UID, Externals)}, {admin, false}, {verified, true}, {confirmed, true}].
+	[{account, UID}, {password, user_lib:hash_for(UID, "secret")}, {display_name, extract_display_name(S)}, {mail, extract_mail(S)},  {intern, is_internal(UID, Externals)},  {admin, false}, {verified, true}, {comfirmed, true}].
 
 get_externals(Handle) ->
 	M_group = "cn=Externe,ou=Group,dc=innoq,dc=com",
@@ -77,21 +76,36 @@ extract_mail(Eldap_search_result) when is_record(Eldap_search_result, eldap_sear
 extract_display_name(Eldap_search_result) when is_record(Eldap_search_result, eldap_search_result) ->
 	Entry = extract_entry(Eldap_search_result),
 	{"displayName", [DisplayName]} = lists:keyfind("displayName", 1, Entry#eldap_entry.attributes),
-	?DEBUG(DisplayName),
+	%%?DEBUG(DisplayName),
 	DisplayName.
 	
 extract_entry(Eldap_search_result) when is_record(Eldap_search_result, eldap_search_result)->
 	lists:nth(1,Eldap_search_result#eldap_search_result.entries).
 
-split_display_name(Display_name) ->
+iterate_eaters([]) ->
+	ok;
+iterate_eaters([H|T]) ->
+	UID = lists:keyfind(account, 1, H),
+	?DEBUG(H),
+	save_eater(boss_db:find(eater,[account,'equals',UID]), H),
+	iterate_eaters(T).
+
+save_eater([], [{account, Account}, {password, Password}, {display_name, DisplayName},  {mail, Mail}, {intern, Intern}, {admin, Admin}, {verified, Verified},  {comfirmed, Comfirmed}]) ->
+	?DEBUG("save new eater"),
+	NewEater = eater:new(id, Account, Password, "not set", "not set", DisplayName, Intern, "", Admin, Mail, Verified, Comfirmed),
+	Return = NewEater:save(),
+	?DEBUG(Return);
+save_eater(_A, H) ->
+	?DEBUG("allready in DB:"),
 	ok.
+
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).
 	
 is_internal_test() ->
 	Externals = ["aa", "bb", "cc"],
-	?assertEqual(true, is_internal("bb", Externals)),
-	?assertEqual(false, is_internal("dd", Externals)).
+	?assertEqual(false, is_internal("bb", Externals)),
+	?assertEqual(true, is_internal("dd", Externals)).
 
 get_member_test() ->
 	?assertEqual(["ua"], get_member(["uid=ua","ou=People","dc=innoq","dc=com"])).
