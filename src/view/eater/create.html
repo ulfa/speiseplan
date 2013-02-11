@@ -3,6 +3,9 @@
 	<label>Account<input type="text" name="account" required placeholder="ha" value="{{ edit_eater.account|default : ''}}"></label>
 	<label>Vorname<input type="text" name="forename" required placeholder="Horst" value="{{ edit_eater.forename|default : ''}}"></label>
 	<label>Name<input type="text" name="name" required placeholder="Kater" value="{{ edit_eater.name|default : '' }}"></label>
+	
+	<label>Displayname<input type="text" name="displayName" value="{{ edit_eater.display_name|default : '' }}"></label>	
+		
 	<label>Mail<input type="text" name="mail" placeholder="hk@email.com" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required value="{{ edit_eater.mail|default : '' }}"></label>
 	<label>Password<input type="password" name="password" required></label>
 	<label>Preis : {{ edit_eater.price_to_pay |default:0 }} €</label>
