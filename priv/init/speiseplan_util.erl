@@ -48,4 +48,5 @@ create_admin() ->
 		_ -> []
 	end.
 init_erlcron() ->
-	application:start(erlcron).
+	application:start(erlcron),
+	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}).
