@@ -4,6 +4,8 @@
 
 init() ->
   init_db (),
+  create_admin(),
+  init_erlcron(),
   ok.
 
 init_db () ->
@@ -40,4 +42,10 @@ create_table (Nodes, Table, Attribs) ->
 
 % here i will create the init admin 
 create_admin() ->
-	ok.
+	case boss_db:find(eater,[account,'equals',"admin"]) of
+		[] -> NewAdmin = eater:new(id, "admin", user_lib:hash_for("admin", "123fuck456"), "Admin", "Admin", "Administrator", true, 3, true, "ua@innoq.com", true, true),
+			  NewAdmin:save();
+		_ -> []
+	end.
+init_erlcron() ->
+	application:start(erlcron).
