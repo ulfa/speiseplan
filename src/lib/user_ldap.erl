@@ -1,15 +1,18 @@
 -module(user_ldap).
 -include_lib("eldap/include/eldap.hrl").
 -define(DEBUG(Var), io:format("DEBUG: ~p:~p - ~p~n ~p~n~n", [?MODULE, ?LINE, ??Var, Var])).
+-define(INTERNAL, "cn=Mitarbeiter,ou=Group,dc=innoq,dc=com").
+-define(EXTERNAL, "cn=Externe,ou=Group,dc=innoq,dc=com").
+
 -compile(export_all).
 
 start() ->
 	error_logger:info_msg("starting ldap import"),
 	ssl:start(),
 	Handle = connect(),
-	E = get_externals(Handle),
-	M = get_members(Handle),
-	Members = [get_member(Handle, E, A)||A <- M],
+	E = get_account_list(Handle, ?EXTERNAL),
+	M = get_account_list(Handle, ?INTERNAL),	
+	Members = [get_member(Handle, E, A)||A <- lists:append(M, E)],
 	iterate_eaters(Members),
 	close(Handle),
 	error_logger:info_msg("finished ldap import").
@@ -25,24 +28,23 @@ connect() ->
 close(Handle) ->
 	eldap:close(Handle).
 	
-get_members(Handle) ->
-	M_group = "cn=Mitarbeiter,ou=Group,dc=innoq,dc=com",
-	{ok, S} = eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["member"]}]),
-	convert_members(extract_members(S, M_group)).
-		
+get_account_list(Handle, Filter) ->
+	{ok, S} = eldap:search(Handle, [{base, Filter}, {filter, eldap:present("cn")}, {attributes, ["member"]}]),
+	convert_members(extract_members(S, Filter)).
+	
 get_member(Handle, Externals, UID) ->	
 	M_group = "uid=" ++ UID ++ ",ou=People,dc=innoq,dc=com",
 	{ok, S} = eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["displayName", "mail"]}]),
 	[{account, UID}, {password, user_lib:hash_for(UID, "secret")}, {display_name, extract_display_name(S, M_group)}, {mail, extract_mail(S,M_group)},  {intern, is_internal(UID, Externals)},  {admin, false}, {verified, true}, {comfirmed, true}].
-
-get_externals(Handle) ->
-	M_group = "cn=Externe,ou=Group,dc=innoq,dc=com",
-	{ok, S} = eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["member"]}]),
-	convert_members(extract_members(S, M_group)).
 	
 convert_members(Members) ->
 	lists:append([get_member(string:tokens(D,","))||D <- Members]).
 	
+extract_members(Eldap_search_result, M_group) when is_record(Eldap_search_result, eldap_search_result) ->
+	Entry = extract_entry(Eldap_search_result, M_group),
+	[{"member", Members}] = Entry#eldap_entry.attributes,
+	Members.	
+
 get_member(Member) ->
 	[get_uid(A)||A<-Member, is_uid(A)].
 
@@ -64,11 +66,6 @@ is_uid("uid", UID) ->
 	true;
 is_uid(_A, _B) ->
 	false.
-
-extract_members(Eldap_search_result, M_group) when is_record(Eldap_search_result, eldap_search_result) ->
-	Entry = extract_entry(Eldap_search_result, M_group),
-	[{"member",Members}] = Entry#eldap_entry.attributes,
-	Members.	
 
 extract_mail(Eldap_search_result, M_group) when is_record(Eldap_search_result, eldap_search_result) ->	
 	Entry = extract_entry(Eldap_search_result, M_group),	
