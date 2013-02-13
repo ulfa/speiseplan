@@ -5,11 +5,11 @@ before_(_) ->
 	user_lib:require_login(admin, Req).
 
 index('GET', [], Admin) ->
-  Eaters = boss_db:find(eater, []),
+  Eaters = boss_db:find(eater, [], [{order_by, account}]),
   {ok, [{eaters, Eaters}, {eater, Admin}]}.
 
 edit('GET', [Id], Admin) ->
-	Eaters = boss_db:find(eater, []),
+	Eaters = boss_db:find(eater, [], [{order_by, account}]),
 	Eater = boss_db:find(Id),
 	{ok, [{edit_eater, Eater},{eater, Admin}, {eaters, Eaters}]}.
 	
