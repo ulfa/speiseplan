@@ -32,18 +32,15 @@ create_billing([Booking|Bookings], From_Date, To_Date, Acc) ->
 	Menu  = Booking:menu(),
 	Dish = Menu:dish(),
 	Eater = Booking:eater(),
-	Acc1  = case lists:keyfind(create_full_name(Eater), 1, Acc) of
-		false -> [{create_full_name(Eater), Eater:intern(), [date_lib:create_date_string(Menu:date())]}|Acc];
-		{FullName, Intern, Dates} -> lists:keyreplace(FullName, 1, Acc, {create_full_name(Eater), Eater:intern(),[date_lib:create_date_string(Menu:date())|Dates]})
+	Acc1  = case lists:keyfind(Eater:display_name(), 1, Acc) of
+		false -> [{Eater:display_name(), Eater:intern(), [date_lib:create_date_string(Menu:date())]}|Acc];
+		{FullName, Intern, Dates} -> lists:keyreplace(FullName, 1, Acc, {Eater:display_name(), Eater:intern(),[date_lib:create_date_string(Menu:date())|Dates]})
 	end,	
 	create_billing(Bookings, From_Date, To_Date, Acc1).
 
 create_file_name() ->
 	"billing-" ++ date_lib:create_date_string_from_date(erlang:date()) ++ ".csv".
 			
-create_full_name(Eater) ->
-	Eater:forename() ++ " " ++ Eater:name().
-
 write_header(FD, From_Date, To_Date) ->
 	io:fwrite(FD, "#~s ~s~n", [From_Date, To_Date]),
 	io:fwrite(FD, "#Name, Intern, [Datum], Summe~n", []).
