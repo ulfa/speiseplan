@@ -35,7 +35,7 @@ create_to_date(Date) ->
 create_date_string(Date) ->
 	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
 	Args = [Year, Month, Day],
-	lists:flatten(io_lib:format("~B-~.10.0B-~.10B", Args)).
+	lists:flatten(io_lib:format("~B-~2..0B-~2..0B", Args)).
 
 create_date_string_from_date(Date) ->
 	create_date_string({Date, {0,0,0}}).
@@ -43,7 +43,7 @@ create_date_string_from_date(Date) ->
 create_date_german_string(Date) ->
 	{{Year,Month,Day},{Hour,Min,Seconds}} = Date,
 	Args = [Day,Month,Year],
-	lists:flatten(io_lib:format("~.10B.~.10.0B.~B", Args)).
+	lists:flatten(io_lib:format("~2..0B.~2..0B.~B", Args)).
 	
 create_actual_date() ->
 	calendar:local_time().
