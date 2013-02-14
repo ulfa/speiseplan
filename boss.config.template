@@ -1,0 +1,29 @@
+[{boss, [
+    {path, "../ChicagoBoss"},
+{applications, [speiseplan]},
+%%    {applications, [speiseplan, cb_admin]},
+    {db_host, "localhost"},
+    {db_port, 1978},
+    {db_adapter, mnesia},
+    {log_dir, "log"},
+    {server, mochiweb},
+    {port, 8081},
+    {session_adapter, mock},
+    {session_key, "_boss_session"},
+    {session_exp_time, 525600}
+]},
+{speiseplan, [
+    {path, "../speiseplan"},
+    {base_url, "/"},
+	{ldap_server, "testldap.innoq.com"},
+	{ldap_port, 636},
+	{ldap_baseDN, "dc=innoq,dc=com"},
+	{ldap_user, "cn=ulfreader,dc=innoq,dc=com"},
+	{ldap_pass, ""} 
+]}
+%%,
+%%{cb_admin, [
+%%    {path, "../cb_admin"},
+%%    {allow_ip_blocks, ["127.0.0.1"]},
+%%    {base_url, "/admin1"}]}
+].

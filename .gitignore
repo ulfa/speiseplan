@@ -1,3 +1,4 @@
+boss.config
 erl_crash.dump
 Mnesia.speiseplan@*
 log/*
