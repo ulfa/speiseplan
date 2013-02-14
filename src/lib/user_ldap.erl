@@ -18,11 +18,12 @@ start() ->
 	error_logger:info_msg("finished ldap import").
 		
 connect() ->
-	{ok, Handle} = eldap:open(["testldap.innoq.com"], [{port, 636}, {ssl, true}]),
-	Dn = "cn=ulfreader,dc=innoq,dc=com",
-	Pw = [86,50,54,110,124,93,120,118,85,86,36,34,34,90,65,122,80,87,80,87,81,108,79,50,104,112],
-	BaseDN = {base, "dc=innoq,dc=com"},
-	ok = eldap:simple_bind(Handle, Dn, Pw),	
+	Ldap_server = get_env(speiseplan, ldap_server, "testldap.innoq.com"),
+	Ldap_port = get_env(speiseplan, ldap_port, 636),
+	Ldap_user = get_env(speisplan, ldap_user, "cn=ulfreader,dc=innoq,dc=com"),
+	Ldap_pass = get_env(speisplan, ldap_pass, [86,50,54,110,124,93,120,118,85,86,36,34,34,90,65,122,80,87,80,87,81,108,79,50,104,112]),
+	{ok, Handle} = eldap:open([Ldap_server], [{port, Ldap_port}, {ssl, true}]),
+	ok = eldap:simple_bind(Handle, Ldap_user, Ldap_pass),	
 	Handle.
 
 close(Handle) ->
@@ -96,9 +97,15 @@ save_eater([], [{account, Account}, {password, Password}, {display_name, Display
 save_eater(_A, H) ->
 	?DEBUG("allready in DB:"),
 	ok.
+	
+get_env(App, Key, Default) ->
+	boss_env:get_env(App, Key, Default).
 
 -include_lib("eunit/include/eunit.hrl").
 -ifdef(TEST).
+
+get_env_test() ->
+	?assertEqual(636, get_env(speiseplan, ldap_port, fehler)).
 	
 is_internal_test() ->
 	Externals = ["aa", "bb", "cc"],
