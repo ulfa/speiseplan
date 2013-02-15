@@ -15,10 +15,10 @@
 {speiseplan, [
     {path, "../speiseplan"},
     {base_url, "/"},
-	{ldap_server, "testldap.innoq.com"},
+	{ldap_server, ""},
 	{ldap_port, 636},
-	{ldap_baseDN, "dc=innoq,dc=com"},
-	{ldap_user, "cn=ulfreader,dc=innoq,dc=com"},
+	{ldap_baseDN, ""},
+	{ldap_user, ""},
 	{ldap_pass, ""} 
 ]}
 %%,
