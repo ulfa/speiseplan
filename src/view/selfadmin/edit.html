@@ -12,16 +12,10 @@
 <form method="post" action="{% url action="create" %}" class="well">
 	<input type="hidden" name="id" value="{{eater.id}}">
 	<label>Account<input readonly="readonly" type="text" name="account" value="{{ eater.account }}" required></label>
-	<label>Vorname<input type="text" name="forename" value="{{ eater.forename }}" ></label>
-	<label>Name<input  type="text" name="name" value="{{ eater.name }}" ></label>
+	<label>Vorname<input readonly="readonly" type="text" name="forename" value="{{ eater.forename }}" ></label>
+	<label>Name<input  readonly="readonly" type="text" name="name" value="{{ eater.name }}" ></label>
 	<label>DisplayName<input readonly="readonly"type="text" name="name" value="{{ eater.display_name }}" r></label>	
-	<label>Mail<input readonly="readonly" type="text" name="mail" value="{{ eater.mail }}" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"></label>
-	<label>Password<input type="password" name="password" required></label>
-	<label><input type="checkbox" name="intern" value="true" {% if eater.intern %} checked {% endif %}>Intern</label>
-	<input type="hidden" name="admin" value="{{eater.admin}}">
-	<input type="hidden" name="verified" value="{{eater.verified}}">
-	<input type="hidden" name="comfirmed" value="{{eater.comfirmed}}">
-	<input type="submit" class="btn btn-small btn-primary" value="Speichern">
+	<label>Mail<input readonly="readonly" type="text" name="mail" value="{{ eater.mail }}" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"></label>	
 </form>
 	</div>
 </div>

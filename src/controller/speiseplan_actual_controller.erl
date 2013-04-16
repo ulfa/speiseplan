@@ -1,6 +1,9 @@
 -module(speiseplan_actual_controller, [Req]).
 -compile(export_all).
 
+	before_(_) ->
+		user_lib:require_login(Req).
+
 	index('GET', [], Eater) ->
 		D = date_lib:create_date_from_string([]),
 		Date = date_lib:create_date_german_string(D),	

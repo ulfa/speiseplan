@@ -14,7 +14,7 @@ label input[type="radio"] {
 
 @font-face {
 	font-family: kreide;
-	src: url('/static/font/EraserRegular.ttf');
+	src: url('/kiezkantine/static/font/EraserRegular.ttf');
 	font-style: normal;
 	font-weight: normal;
 }
@@ -22,7 +22,7 @@ label input[type="radio"] {
 h2 {color: #FFFFFF;}
 
 body {
-    background-image: url("/static/images/slate.jpg");
+    background-image: url("/kiezkantine/static/images/slate.jpg");
 }
 
 /* Tafel section

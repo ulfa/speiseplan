@@ -38,20 +38,25 @@
         	</td>
 			<td>
         	<form method="post" name="Storno" action="{% url action="storno" %}">
-				<input type="hidden" name="menu-id" value="{{ menu.id }}">
+            <input type="hidden" name="menu-id" value="{{ menu.id }}">
         		<input type="submit" class="btn btn-danger btn-mini" value="Storno">
-			</form>
+          </form>
 			</td>
           </tr>
           {% endfor %}
           {% endif %}
         </tbody>
       </table>
+      <div class="well">
+          <form method="post" name="ReadyMail" action="{% url action="readyMail" %}">            
+            <input type="submit" class="btn btn-primary" value="Mail senden, dass gebucht werden kann">
+          </form>
+      </div>
     </div>
   </div>
   <div class="span3">
 	{% include "dish/create.html" %}
-  </div>
+  </div> 
 </div>
 </div>
 {% endblock %}

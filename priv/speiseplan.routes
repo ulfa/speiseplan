@@ -13,11 +13,12 @@
 %
 % Note that routing across applications results in a 302 redirect.
 
-{"/login", [{controller, "login"}, {action, "index"}]}.
-{"/admin", [{controller, "admin"}, {action, "index"}]}.
-{"/eater", [{controller, "eater"}, {action, "index"}]}.
-{"/registration", [{controller, "registration"}, {action, "index"}]}.
-{"/billing", [{controller, "billing"}, {action, "index"}]}.
+%%{"/login", [{controller, "login"}, {action, "index"}]}.
+%%{"/admin", [{controller, "admin"}, {action, "index"}]}.
+%%{"/eater", [{controller, "eater"}, {action, "index"}]}.
+%%{"/registration", [{controller, "registration"}, {action, "index"}]}.
+%%{"/billing", [{controller, "billing"}, {action, "index"}]}.
+%%{"/booking", [{controller, "booking"}, {action, "index"}]}.
  
 % Front page
 {"/", [{controller, "actual"}, {action, "index"}]}.

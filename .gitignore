@@ -3,4 +3,5 @@ erl_crash.dump
 Mnesia.speiseplan@*
 log/*
 ebin/*
+deps/*
 /priv/static/billing/*

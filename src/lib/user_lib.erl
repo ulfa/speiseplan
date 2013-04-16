@@ -9,20 +9,17 @@ hash_for(Name, Password) ->
   hash_password(Password, Salt).
 
 require_login(Req) ->
-	case Req:cookie("user_id") of
-    	undefined -> {redirect, "/login/index"};
-    	Id ->
-      		case boss_db:find(Id) of
-        		undefined -> {redirect, "/login/index"};
-        		Eater ->
-          			case Eater:session_identifier() =:= Req:cookie("session_id") of
-            			false -> {redirect, "/login/index"};
-            			true -> {ok, Eater}
-          			end
-      			end
-  			end.
+error_logger:info_msg("X1... : ~p~n" , [Req:header("REMOTE_USER")]), 
+Account = case Req:header("REMOTE_USER") of 
+    undefined -> "guest";
+    Acc -> Acc
+  end,
+  error_logger:info_msg("X1... : ~p~n" , [Account]), 
+  [E] = boss_db:find(eater, [{account, 'equals', Account}]),
+  {ok, E}.
 
 require_login(admin, Req) -> 
+  error_logger:info_msg("X2... : " , [Req:header("REMOTE_USER")]), 
 	case require_login(Req) of
 		{redirect, "/login/index"}	-> {redirect, "/login/index"};
 		{ok, User} ->
@@ -30,5 +27,4 @@ require_login(admin, Req) ->
 				true -> {ok, User};
 				_ -> {redirect, "/login/index"}
 			end
-	end.
-	
+	end.	

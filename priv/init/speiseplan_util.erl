@@ -5,7 +5,9 @@
 init() ->
   init_db (),
   create_admin(),
+  create_guest(),
   init_erlcron(),
+  %%sue_start(),
   ok.
 
 init_db () ->
@@ -47,6 +49,15 @@ create_admin() ->
 			  NewAdmin:save();
 		_ -> []
 	end.
+create_guest() ->
+  case boss_db:find(eater,[account,'equals',"guest"]) of
+    [] -> NewGuest = eater:new(id, "guest", user_lib:hash_for("guest", "123fuck456"), "Guest", "Guest", "The guest", false, 5, false, "ua@innoq.com", true, true),
+        NewGuest:save();
+    _ -> []
+  end.
+
+sue_start() ->
+  sue:start().
 init_erlcron() ->
 	application:start(erlcron),
 	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}).
