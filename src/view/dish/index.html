@@ -17,7 +17,7 @@
           {% for dish in dishes %}
           <tr id="{{ dish.id }}">
             <td>
-              <a href="edit/{{ dish.id }}">{{ dish.title}}</a>
+              <a href="{{ _base_url }}/edit/{{ dish.id }}">{{ dish.title}}</a>
             </td>
             <td>{{ dish.details }}</td>
             <td>{{ dish.vegetarian }}</td>
