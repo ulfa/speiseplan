@@ -1,0 +1,51 @@
+
+Installation
+
+1. Verzeichnisse
+
+mkdir speiseplan
+
+cd speiseplan
+
+Installation von Chicagoboss
+
+git clone https://github.com/evanmiller/ChicagoBoss 
+
+cd ChicagoBoss
+make
+
+Abrufen vom Speiseplan
+
+git@github.com:ulfa/speiseplan.git (Wir brauchen den ldap Branch)
+
+cd speisplan
+make
+
+Sollte es noch keine boss.config geben ->
+cp boss.config.template boss.config
+
+./init-dev.sh startet die Anwendung im Development Mode
+./init.sh start/stop startet die Anwendung im Production Mode
+
+Konfiguration
+
+In der boss.config stehen ein paar Konfig Parameter, die man ändern kann.
+
+ldap_server, Die URL des ldap Servers
+ldap_port, Der Port des ldap Servers
+ldap_baseDN, Ab wo soll gesucht werden?
+ldap_user, User
+ldap_pass, Passwort als Liste von ints
+
+Wie kann ich so eine Liste generieren?
+
+erl 
+io:format("~w", [Password]).
+
+Welches Passwort ist zur Zeit aktiv?
+erl
+io:fwrite("~ts~n",[[86,50,54,110,124,93,120,118,85,86,36,34,34,90,65,122,80,87,80,87,81,108,79,50,104,112]]).
+
+mail_from, Wer sendet die Mail?
+mail_to, An wen wird die Mail gesendet
+mail_ready, Text für die readyMail
