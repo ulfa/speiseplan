@@ -24,8 +24,9 @@ request('POST', [], Eater) ->
 	MenuId = Req:post_param("menu-id"),
 	Menu = boss_db:find(MenuId),
 	case is_in_queue(Menu:get_date_as_string(), EaterId) of
-		false -> boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId));
-		true -> io:format("Eater : ~p already requested~n", [EaterId])
+		false -> boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId)),
+				 send_mail(EaterId, Menu);
+		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
 	{redirect, "/booking/index"}.
 
@@ -57,8 +58,10 @@ is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
 
 send_mail(EaterId, Menu) ->
+	To = get_env(speiseplan, mail_anfrage_to, "anja.angermann@innoq.com"),	
+	Anfrage =get_env(speiseplan, mail_anfrage, ""),	
 	Eater = boss_db:find(EaterId),
-	boss_mail:send(Eater:mail(), "uangermann@googlemail.com",  Menu:date(), "Anfrage von ").
+	boss_mail:send(Eater:mail(), To,  date_lib:create_date_string(Menu:date()), "Anfrage von: " ++ Eater:display_name() ++ Anfrage).
 
 is_allready_booked(MenuId, EaterId) ->
 	is_already_booked(boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}])).
@@ -96,4 +99,7 @@ create_billing([Booking|Bookings], Acc, Eater) ->
 	Menu = Booking:menu(),
 	Price = elib:get_price(Eater:intern()),
 	Dish = Menu:dish(),
-	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).			
+	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).		
+
+get_env(App, Key, Default) ->
+	boss_env:get_env(App, Key, Default).		

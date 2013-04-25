@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"height"
+			],
+			[
+				"mari",
+				"margin"
+			],
+			[
+				"erro",
+				"error_logger"
+			],
+			[
 				"list_",
 				"list_to_binary/1"
 			],
@@ -23,11 +35,23 @@
 	"build_system": "Packages/Erlang/Erlang.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"install package ",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 392.0
+		"width": 435.0
 	},
 	"console":
 	{
@@ -44,6 +68,40 @@
 	},
 	"file_history":
 	[
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_admin_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_booking_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/boss.config",
+		"/Users/ulfangermann/projects/erlang/speiseplan/docs/install.txt",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/booking/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_error_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/priv/speiseplan.routes",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/error/fuenfhundert.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/error/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/error/viernullvier.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/viernullvier/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/error/{% extends \"base.html\" %}\nfuenfhundert.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_viernullvier_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/eater/edit.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/eater/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/note/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/note/edit.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/base.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/actual/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/priv/static/css/main.css",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/lib/user_lib.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/admin/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/dish/index.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/priv/init/speiseplan_util.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_selfadmin_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/view/selfadmin/edit.html",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_actual_controller.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/model/eater.erl",
+		"/Users/ulfangermann/projects/erlang/speiseplan/speiseplan.sublime-project",
+		"/Users/ulfangermann/projects/erlang/speiseplan/src/controller/speiseplan_login_controller.erl",
+		"/Users/ulfangermann/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/ulfangermann/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Users/ulfangermann/projects/erlang/speiseplan/get_deps.sh",
+		"/Users/ulfangermann/projects/erlang/speiseplan/rebar.config",
 		"/Users/ulfangermann/Dropbox/projects/erlang/moni/templates/appmon.dtl",
 		"/Users/ulfangermann/Dropbox/projects/erlang/moni/templates/base.dtl",
 		"/Users/ulfangermann/Dropbox/projects/erlang/moni/src/nodes_resource.erl",
@@ -69,7 +127,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -83,6 +141,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"boss_db",
+			"-",
 			"This"
 		],
 		"highlight": true,
@@ -112,7 +172,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -143,7 +203,7 @@
 	},
 	"output.sublimerl_autocompiler":
 	{
-		"height": 100.0
+		"height": 27.0
 	},
 	"output.sublimerl_tests":
 	{
@@ -174,6 +234,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 219.0,
+	"side_bar_width": 266.0,
 	"status_bar_visible": true
 }

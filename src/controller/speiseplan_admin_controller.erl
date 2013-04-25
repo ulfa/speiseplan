@@ -98,6 +98,11 @@ update('POST', [], Admin) ->
 		{ok, SavedMenu} -> {redirect, [{'action', "index"}]};
 		{error, Errors} -> {redirect, [{'action', "edit"}, {menu, Menu}, {eater, Admin}, {errors, Errors}]}
 	end.
+
+readyMail('POST', [], Admin) ->	
+	send_ready_mail(),	
+	{redirect, [{'action', "index"}]}.
+
 		
 send_mail([], Menu, Text) ->
 	ok;
@@ -107,4 +112,16 @@ send_mail([Booking|Bookings], Menu, Text) ->
 	send_mail(Bookings, Menu, Text).
 
 send_a_mail(Eater, Menu, Text) ->
-	boss_mail:send("kuechenbulle@kiezkantine.de", Eater:mail(), Menu:get_date_as_string(), Text).
+	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
+	boss_mail:send(From, Eater:mail(), Menu:get_date_as_string(), Text).
+
+send_ready_mail() ->
+	
+	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
+	To = get_env(speiseplan, mail_to, "monheim@innoq.com"),
+	Text = get_env(speiseplan, mail_ready, ""),
+	lager:info("sending ready Mail from : ~p to : ~p", [From, To]),
+	boss_mail:send(From, To, "Mahlzeiten für die kommende KW wurden erfasst", Text).
+
+get_env(App, Key, Default) ->
+	boss_env:get_env(App, Key, Default).
