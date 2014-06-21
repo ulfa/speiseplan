@@ -7,7 +7,6 @@ init() ->
   create_admin(),
   create_guest(),
   init_erlcron(),
-  sue_start(),
   ok.
 
 init_db () ->
