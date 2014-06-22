@@ -14,6 +14,7 @@ search('GET', [], Admin) ->
 	From_Date = Req:query_param("from_date"),
 	To_Date = Req:query_param("to_date"),
 	Bookings = boss_db:find(booking, [{date, 'gt', date_lib:create_from_date(From_Date)}, {date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, date}]),	
+	lager:info(".... Boookings : ~p", [Bookings]),
 	Entries = create_billing(Bookings, From_Date, To_Date, []),
 	{ok, CsvFiles} = file:list_dir(?CSV_DIR),
 	{ok, [{eater, Admin}, {from_date, From_Date}, {to_date, To_Date},{billings, Entries}, {act_date, date_lib:create_date_string_from_date(erlang:date())},
@@ -27,7 +28,6 @@ create_billing([], From_Date, To_Date, Acc) ->
 	create_csv(FD, Acc1),
 	file:close(FD),
 	Acc1;
-	
 create_billing([Booking|Bookings], From_Date, To_Date, Acc) ->
 	Menu  = Booking:menu(),
 	Dish = Menu:dish(),

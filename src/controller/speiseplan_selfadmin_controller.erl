@@ -32,7 +32,7 @@ save(Id, Data) ->
 	handle_eater_return_value(NewEater:save()).
    
 handle_eater_return_value({ok, SavedEater}) ->
-	{redirect, "/booking/index"};
+	{redirect, elib:get_full_path(speiseplan,"/booking/index")};
 handle_eater_return_value({error, Errors}) ->
 	{redirect, [{'action', "edit"}, {errors, Errors}]}.
 

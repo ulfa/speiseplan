@@ -17,7 +17,7 @@ book('POST', [], Eater) ->
 		false -> NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
 				 {ok, SavedBooking} = NewBooking:save()
 	end,
-	{redirect, "/booking/index"}.
+	{redirect, elib:get_full_path(speiseplan, "/booking/index")}.
 
 request('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),	
@@ -28,12 +28,13 @@ request('POST', [], Eater) ->
 				 send_mail(EaterId, Menu);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
-	{redirect, "/booking/index"}.
+	{redirect, elib:get_full_path(speiseplan,"/booking/index")}.
 
-is_in_queue(Date, EaterId) ->	
-	{ok, Timestamp, Messages} = boss_mq:poll(Date),
-	io:format("Messages : ~p ~n", [Messages]),
-	lists:member(erlang:list_to_binary(EaterId), Messages).
+is_in_queue(Date, EaterId) ->
+	false.	
+	%%{ok, Timestamp, Messages} = boss_mq:poll(Date),
+	%%lager:info("Eater in queue : ~p", [Messages]),
+	%%lists:member(erlang:list_to_binary(EaterId), Messages).
 
 detail('POST' ,[Id], Eater) ->
 	Menus = boss_db:find(menu, []),
@@ -47,7 +48,7 @@ storno('POST', [], Eater) ->
 		true -> [Booking] = boss_db:find(booking, [{menu_id, 'equals', MenuId}, {eater_id , 'equals', EaterId}]),
 				ok = boss_db:delete(Booking:id())
 	end,		
-	{redirect, "/booking/index"}.
+	{redirect, elib:get_full_path(speiseplan, "/booking/index")}.
 
 is_in_time(Menu_Id) ->
 	Menu = boss_db:find(Menu_Id),
@@ -63,8 +64,10 @@ send_mail(EaterId, Menu) ->
 	Eater = boss_db:find(EaterId),
 	boss_mail:send(Eater:mail(), To,  date_lib:create_date_string(Menu:date()), "Anfrage von: " ++ Eater:display_name() ++ Anfrage).
 
+
 is_allready_booked(MenuId, EaterId) ->
 	is_already_booked(boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}])).
+
 is_already_booked([]) ->
 	false;
 is_already_booked([Menu]) ->	

@@ -25,7 +25,7 @@ edit('GET' ,[Id], Admin) ->
 
 delete('POST', [Id], Admin) ->
 	ok = boss_db:delete(Id),
-	{redirect, "/note/index"}.
+	{redirect, elib:get_full_path(speiseplan, "/note/index")}.
 	
 save("undefined", [{create_date, CreatedDate}, {ativ, Aktiv}, {text, Text}, {from_date,FromDate}, {to_date, ToDate}]) ->
 	NewNote = note:new(id, CreatedDate, Aktiv, Text, FromDate, ToDate),	

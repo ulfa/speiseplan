@@ -60,6 +60,7 @@
 			  </p>
 			  <input type="submit" class="btn btn-small" value="Hinzufügen">
 		</form>
+		
 		<h2>Anfragen</h2>
 		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
 			<p>
@@ -71,6 +72,7 @@
 			  </p>
 			  <input type="submit" class="btn btn-small" value="Hinzufügen">
 		</form>
+		
 		<h2>Ausgegebene Speisen</h2>
 		<form method="post" action="{% url action="add_count_given" id=menu.id %}" class="well">
 			<input type="text" name="count_given" value="{{ menu.count_given | default : 0 }}"><br>

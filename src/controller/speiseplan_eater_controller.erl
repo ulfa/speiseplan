@@ -15,7 +15,7 @@ edit('GET', [Id], Admin) ->
 	
 delete('POST', [Id], Admin) ->
 	ok = boss_db:delete(Id),
-	{redirect, "/eater/index"}.
+	{redirect, elib:get_full_path(speiseplan, "/eater/index")}.
 
 verfied('POST', [Id], Admin) ->
 	Eater = boss_db:find(Id),

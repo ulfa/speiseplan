@@ -17,4 +17,6 @@ intern(false) ->
 handle_checkbox(Value) ->	
 	Value =:= "true". 
 
-	
+get_full_path(App, Path) ->
+	Base_url = boss_env:get_env(App, base_url, "/"),
+	lists:flatten([Base_url, Path]).

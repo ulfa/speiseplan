@@ -14,7 +14,7 @@
 		<h3>CSV Dateien</h3>
 		{% for csvfile in csvfiles %}
 			<ul class="unstyled">
-				<li><a href="/static/billing/{{ csvfile }}">{{ csvfile }}</a></li>
+				<li><a href="{{_base_url}}/static/billing/{{ csvfile }}">{{ csvfile }}</a></li>
 			</ul>
 		{% endfor %}
 	</div>
