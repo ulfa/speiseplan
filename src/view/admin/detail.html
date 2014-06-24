@@ -64,7 +64,7 @@
 		<h2>Anfragen</h2>
 		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
 			<p>
-			    <select name="esser" >
+			    <select name="esser">
 				  {% for requester in requesters %}
 			      <option value="{{requester.id}}">{{requester.display_name}}</option>
 				  {% endfor %}

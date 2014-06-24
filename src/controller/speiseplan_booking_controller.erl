@@ -22,19 +22,20 @@ book('POST', [], Eater) ->
 request('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),	
 	MenuId = Req:post_param("menu-id"),
-	Menu = boss_db:find(MenuId),
-	case is_in_queue(Menu:get_date_as_string(), EaterId) of
-		false -> boss_mq:push(Menu:get_date_as_string(), erlang:list_to_binary(EaterId)),
-				 send_mail(EaterId, Menu);
+	Menu = boss_db:find(MenuId),	
+	case has_allready_requested(Menu:get_date_as_string(), EaterId, MenuId) of
+		false -> NewRequest = requester:new(id, erlang:localtime(), Menu:get_date_as_string(), MenuId, EaterId),
+				{ok, SavedRequest} = NewRequest:save();
+				 %%send_mail(EaterId, Menu);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
 	{redirect, elib:get_full_path(speiseplan,"/booking/index")}.
 
-is_in_queue(Date, EaterId) ->
-	false.	
-	%%{ok, Timestamp, Messages} = boss_mq:poll(Date),
-	%%lager:info("Eater in queue : ~p", [Messages]),
-	%%lists:member(erlang:list_to_binary(EaterId), Messages).
+has_allready_requested(Date, EaterId, MenuId) ->
+	case boss_db:find(requester, [{menu_date, 'equals', Date}, {eater_id, 'equals', EaterId}, {menu_id, 'equals', MenuId}]) of 
+		[] -> false;
+		[Eater] -> true
+	end.
 
 detail('POST' ,[Id], Eater) ->
 	Menus = boss_db:find(menu, []),
@@ -63,7 +64,6 @@ send_mail(EaterId, Menu) ->
 	Anfrage =get_env(speiseplan, mail_anfrage, ""),	
 	Eater = boss_db:find(EaterId),
 	boss_mail:send(Eater:mail(), To,  date_lib:create_date_string(Menu:date()), "Anfrage von: " ++ Eater:display_name() ++ Anfrage).
-
 
 is_allready_booked(MenuId, EaterId) ->
 	is_already_booked(boss_db:find(booking, [{menu_id, MenuId}, {eater_id, EaterId}])).

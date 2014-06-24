@@ -15,36 +15,27 @@ is_time_to_book() ->
 	calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{15,0,0}}) > 72000.
 	
 get_request_count() ->
-	case boss_mq:poll(get_date_as_string()) of
-		{ok, Timestamp, Eaters} -> Eaters;
-		_ -> []
-	end.
+	boss_db:count(requester, [{menu_date, 'equals', get_date_as_string()}]).
 
 get_requester_names() ->
-	EaterIds = case boss_mq:poll(get_date_as_string()) of
-		{ok, Timestamp, Messages} -> Messages;
-		_ -> []
-	end,	
-	get_req_names(EaterIds, []).
+	Requesters = boss_db:find(requester, [{menu_date, 'equals', get_date_as_string()}]),
+	get_req_names(Requesters, []).
 
-get_req_names([], Requester) ->
-	Requester;
-get_req_names([EaterId|EaterIds], Requester) ->
-	Eater = boss_db:find(erlang:binary_to_list(EaterId)),
-	get_req_names(EaterIds, [Eater:name()|Requester]).
+get_req_names([], Result) ->
+	Result;
+get_req_names([Requester|Requesters], Result) ->
+	Eater = boss_db:find(erlang:binary_to_list(Requester:eater_id())),
+	get_req_names(Requesters, [Eater:name()|Result]).
 
 get_requester() ->
-	EaterIds = case boss_mq:poll(get_date_as_string()) of
-		{ok, Timestamp, Messages} -> Messages;
-		_ -> []
-	end,	
-	get_req(EaterIds, []).
+	Requesters = boss_db:find(requester, [{menu_date, 'equals', get_date_as_string()}]),
+	get_req(Requesters, []).
 
-get_req([], Requester) ->
-	Requester;
-get_req([EaterId|EaterIds], Requester) ->
-	Eater = boss_db:find(erlang:binary_to_list(EaterId)),
-	get_req(EaterIds, [Eater|Requester]).
+get_req([], Result) ->
+	Result;
+get_req([Requester|Requesters], Result) ->
+	Eater = boss_db:find(Requester:eater_id()),
+	get_req(Requesters, [Eater|Result]).
 
 
 is_eater_id_in_list(EaterId, List_of_EaterIds) ->

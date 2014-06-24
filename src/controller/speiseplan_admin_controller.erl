@@ -28,16 +28,19 @@ edit('GET', [Id], Admin) ->
 add('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),
 	EaterId = Req:post_param("esser"),
-	lager:info(".... Id : ~p", [Id]),
 	case EaterId of 
 		undefined -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
 		_ ->	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
 					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
-							_->	NewBooking = booking:new(id, Date, false, EaterId, Id),
+							_->	NewBooking = booking:new(id, Date, false, EaterId, Id),								
 								{ok, SavedBooking} = NewBooking:save(),
+								case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
+									[] -> lager:error("can'delete requester!");
+									[Requester] -> boss_db:delete(Requester:id())
+								end,
 								Eater = boss_db:find(EaterId),
 								Menu = boss_db:find(Id),
-								send_a_mail(Eater, Menu, "Du wurdest hinzugefügt."),
+								send_a_mail(Eater, Menu, "Du wurdest hinzugefügt."),								
 								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
 				end
 	end.
