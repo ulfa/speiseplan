@@ -17,7 +17,6 @@ detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),
 	Eaters = boss_db:find(eater, []),
 	Requesters = Menu:get_requester(),
-	lager:info("....Requesters:  ~p ",[Requesters]),
 	{ok, [{menu, Menu}, {eaters, Eaters}, {eater, Admin}, {requesters, Requesters}]}.	
 	
 edit('GET', [Id], Admin) ->

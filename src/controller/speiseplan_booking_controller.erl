@@ -25,8 +25,8 @@ request('POST', [], Eater) ->
 	Menu = boss_db:find(MenuId),	
 	case has_allready_requested(Menu:get_date_as_string(), EaterId, MenuId) of
 		false -> NewRequest = requester:new(id, erlang:localtime(), Menu:get_date_as_string(), MenuId, EaterId),
-				{ok, SavedRequest} = NewRequest:save();
-				 %%send_mail(EaterId, Menu);
+				{ok, SavedRequest} = NewRequest:save(),
+				 send_mail(EaterId, Menu);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
 	{redirect, elib:get_full_path(speiseplan,"/booking/index")}.

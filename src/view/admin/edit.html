@@ -11,7 +11,7 @@
   	        <th>Datum</th>
               <th>Speise</th>
               <th>max.</th>
-			  <th>Anmeldungen</th>
+			        <th>Anmeldungen</th>
               <th>Vegetarier</th>
               <th>Anfragen</th>
               <th></th>			
@@ -20,9 +20,9 @@
         <tbody>
           {% if menus %}
           {% for menu in menus %}
-          <tr id="/admin/{{ menu.id }}">
+          <tr id="{{_base_url}}/admin/{{ menu.id }}">
             <td>	
-              <a href="/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }}</a>
+              <a href="{{_base_url}}/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }}</a>
             </td>
             <td>{{ menu.dish.title }}</td>
             <td>{{ menu.slots}}</td>
@@ -31,9 +31,9 @@
 				<a href="#">{{ menu.get_vegetarian_eater|length }}</a>
 			</td>
 			<td>
-				<a href="#">{{ menu.get_request_count|length }}</a>
+				<a href="#">{{ menu.get_request_count }}</a>
 			<td>
-				<a class="btn btn-primary btn-mini " href="/admin/edit/{{ menu.id }}">Edit</a>	
+				<a class="btn btn-primary btn-mini " href="{{_base_url}}/admin/edit/{{ menu.id }}">Edit</a>	
         	</td>
 			<td>
         	<form method="post" name="Storno" action="{% url action="storno" %}">
