@@ -124,10 +124,10 @@ send_a_mail(Eater, Menu, Text) ->
 
 send_ready_mail() ->
 	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
-	To = get_env(speiseplan, mail_to, "monheim@innoq.com"),
+	To = get_env(speiseplan, mail_to, "monheim@lists.innoq.com"),
 	Text = get_env(speiseplan, mail_ready, ""),
 	lager:info("sending ready Mail from : ~p to : ~p", [From, To]),
-	boss_mail:send(From, To, "Mahlzeiten für die kommende KW wurden erfasst", Text).
+	boss_mail:send(From, To, "Mittag für die nächste Woche ist eingestellt.", Text).
 
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).
