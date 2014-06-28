@@ -14,8 +14,11 @@ book('POST', [], Eater) ->
 	Vegetarian = Req:post_param("vegetarian"),
 	case is_allready_booked(MenuId, EaterId) and is_in_time(MenuId) of
 		true -> true;
-		false -> NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
-				 {ok, SavedBooking} = NewBooking:save()
+		false -> case is_booking_allowed(MenuId) of 
+					false -> false; 
+					true -> NewBooking = booking:new(id, erlang:localtime(), is_vegetarian(Vegetarian), EaterId, MenuId),
+				 			{ok, SavedBooking} = NewBooking:save()
+				 end
 	end,
 	{redirect, elib:get_full_path(speiseplan, "/booking/index")}.
 
@@ -55,7 +58,10 @@ is_in_time(Menu_Id) ->
 	Menu = boss_db:find(Menu_Id),
 	Menu:is_in_time().		
 
-	
+is_booking_allowed(MenuId) ->
+	Menu = boss_db:find(MenuId),
+	Menu:get_slot_count() > 0.
+
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
 
