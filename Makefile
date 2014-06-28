@@ -1,7 +1,7 @@
-PROJECT = speisplan
+PROJECT = speiseplan
 DIALYZER = dialyzer
 REBAR = rebar
-REPO = ../../../../repository
+REPO = ../repository
 REPOSRC = ../../repository
 TARGET = ~/projects/erlang
 
@@ -10,12 +10,9 @@ TARGET = ~/projects/erlang
 all: app
 
 tar: app 
-	cd rel; tar cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
+	cd .. ; tar cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT) --exclude log/* --exclude Mnesia.speiseplan@ua-TA880GB --exclude log --exclude mnesia.backup --exclude .git
 
-tarall: app 
-	cd ..; tar cf $(REPOSRC)/$(PROJECT).src.$(VERSION).tar $(PROJECT) --exclude log/* --exclude Mnesia.speiseplan@ua-TA880GB
-
-cpall: tarall
+cpall: tar
 	cd ..;scp $(REPOSRC)/$(PROJECT).src.$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)/$(PROJECT).src.$(VERSION).tar'
 
