@@ -10,14 +10,14 @@ TARGET = ~/projects/erlang
 all: app
 
 tar: app 
-	cd .. ; tar cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT) --exclude log/* --exclude Mnesia.speiseplan@ua-TA880GB --exclude log --exclude mnesia.backup --exclude .git
+	cd .. ; tar cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT) 
 
 cpall: tar
 	cd ..;scp $(REPOSRC)/$(PROJECT).src.$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)/$(PROJECT).src.$(VERSION).tar'
 
-cp: tar
-	 cd ..;scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
+cp: 
+	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 
 release: app
 	@$(REBAR) generate
