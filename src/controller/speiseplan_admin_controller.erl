@@ -17,7 +17,7 @@ detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),
 	Eaters = boss_db:find(eater, []),
 	Requesters = Menu:get_requester(),
-	{ok, [{menu, Menu}, {eaters, Eaters}, {eater, Admin}, {requesters, Requesters}]}.	
+	{ok, [{menu, Menu}, {eaters, lists:keysort(6,Eaters)}, {eater, Admin}, {requesters, Requesters}]}.	
 	
 edit('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),

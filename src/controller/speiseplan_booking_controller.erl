@@ -5,7 +5,7 @@ before_(_) ->
 	user_lib:require_login(Req).
 	
 index('GET', [], Eater) ->
-	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, descending]),
+	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, ascending]),
 	{ok, [{menus, Menus}, {eater, Eater}, {week, date_lib:week_of_year()}]}.	
 		
 book('POST', [], Eater) ->

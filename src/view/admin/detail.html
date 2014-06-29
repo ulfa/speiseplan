@@ -36,12 +36,17 @@
 		{% endfor %}
 		<tr>
 			<td><h3>Gesamt : {{ menu.get_sum}} € </h3></td>
+			<td></td>
+        	<td></td>
+        	<td><h3>{{ menu.booking|length}} </h3></td>
+		</tr>
 			<td>
 				<form method="post" name="Mahlzeit" action="{% url action="mahlzeit" %}">
 					<input type="hidden" name="menu-id" value="{{ menu.id }}">
         			<input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
 				</form>
         	</td>
+		<tr>
 		</tr>
 		{% endif %}
 		</tbody>

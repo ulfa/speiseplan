@@ -5,7 +5,8 @@
 <div id="scroller" class="container">
 <div class="container">
 	<div class="board">
-		<h1>Speiseplan KW. {{ week }}</h1>
+		<!--h1>Speiseplan KW. {{ week }}</h1 -->
+		<h1>Speiseplan</h1>
 	</div>
 </div>
 {% for menu in menus %}
@@ -26,7 +27,7 @@
 		<form method="post" action="{% url action="storno" %}">
 			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
-			<input type="submit" class="btn btn-warning btn-middle" value="Stornieren">
+			<input type="submit" class="btn btn-danger btn-middle" value="Stornieren">
 		</form>				
 	{% elif menu.get_slot_count > 0 and menu.is_in_time %}
 			<form method="post" action="{% url action="book"%}">
