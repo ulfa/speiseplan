@@ -9,8 +9,8 @@ TARGET = ~/kantine
 
 all: app
 
-tar: app 
-	cd .. ; tar cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT) 
+tar:  
+	cd ..; tar --exclude=$(PROJECT)/.git --exclude=$(PROJECT)/Mnesia.speiseplan* --exclude=$(PROJECT)/priv/static/billing/* --exclude=$(PROJECT)/*/.DS_Store --exclude=$(PROJECT)/.DS_Store --exclude=$(PROJECT)/log/* -cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
 
 cpall: tar
 	cd ..;scp $(REPOSRC)/$(PROJECT).src.$(VERSION).tar $(USR)@$(HOST):$(TARGET)
