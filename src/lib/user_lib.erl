@@ -10,7 +10,7 @@ hash_for(Name, Password) ->
 
 require_login(Req) ->
 Account = case Req:header("REMOTE_USER") of 
-    undefined -> "admin";
+    undefined -> "ua";
     Acc -> Acc
   end,  
   [E] = boss_db:find(eater, [{account, 'equals', Account}]),

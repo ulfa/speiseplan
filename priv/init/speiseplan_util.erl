@@ -44,7 +44,7 @@ create_table (Nodes, Table, Attribs) ->
 % here i will create the init admin 
 create_admin() ->
 	case boss_db:find(eater,[account,'equals',"ua"]) of
-		[] -> NewAdmin = eater:new(id, "ua", user_lib:hash_for("ua", "123fuck456"), "Ulf", "Angermann", "Administrator", true, 3, true, "ua@innoq.com", true, true),
+		[] -> NewAdmin = eater:new(id, "ua", user_lib:hash_for("ua", "123fuck456"), "Ulf", "Angermann", "Ulf Angermann", true, 3, true, "ua@innoq.com", true, true),
 			  NewAdmin:save();
 		_ -> []
 	end.
