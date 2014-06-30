@@ -3,7 +3,7 @@ DIALYZER = dialyzer
 REBAR = rebar
 REPO = ../repository
 REPOSRC = ../../repository
-TARGET = ~/projects/erlang
+TARGET = ~/kantine
 
 
 
