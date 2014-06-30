@@ -1,4 +1,4 @@
--module(booking, [Id, Date, Vegetarian, EaterId, MenuId]).
+-module(booking, [Id, Date, MenuDate, Vegetarian, EaterId, MenuId]).
 -compile(export_all).
 -belongs_to(menu).
 -belongs_to(eater).
