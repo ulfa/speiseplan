@@ -11,6 +11,7 @@ mahlzeit('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
 	ok = send_mail(Menu:booking(), Menu, "Das Essen ist fertig!"),
+	lager:info("uc : mahlzeit; menu-id : ~p", [Menu_Id]),
 	{redirect, [{'action', "index"}]}.
 	
 detail('GET', [Id], Admin) ->
@@ -34,8 +35,9 @@ add('POST', [Id], Admin) ->
 					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
 							_->	NewBooking = booking:new(id, Date, Menu:date(), false, EaterId, Id),	
 								{ok, SavedBooking} = NewBooking:save(),
+								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
 								case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
-									[] -> lager:error("can'delete requester!");
+									[] -> lager:error("can't delete requester : ~p", [EaterId]);
 									[Requester] -> boss_db:delete(Requester:id())
 								end,
 								Eater = boss_db:find(EaterId),
@@ -52,6 +54,7 @@ add_guest('POST', [Id], Admin) ->
 	Bookings = find_all_bookings(Id, "gast-*"),
 	delete(Bookings),
 	add_guests(list_to_integer(Count), Date, Menu:date(), Id),
+	lager:info("uc : add_guest; count : ~p; menu : ~p; date : ~p", [Count, Menu, Date]),
 	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
 
 %% add a count of praktikant to a menu	
@@ -62,6 +65,7 @@ add_praktikant('POST', [Id], Admin) ->
 	Bookings = find_all_bookings(Id, "praktikant-*"),
 	delete(Bookings),
 	add_praktikanten(list_to_integer(Count), Date, Menu:date(), Id),
+	lager:info("uc : add_praktikant; count : ~p; menu : ~p; date : ~p", [Count, Menu, Date]),
 	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
 
 add_count_given('POST', [Id], Admin) ->	
@@ -69,12 +73,14 @@ add_count_given('POST', [Id], Admin) ->
 	 Count_Given = Req:post_param("count_given"),
 	 MenuNew = Menu:set([{'count_given', Count_Given}]),
 	 {ok, SavedMenu} = MenuNew:save(),
+	 lager:info("uc : add_count_given; count_given : ~p; menu : ~p;", [Count_Given, Menu]),
 	 {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
 	
 remove('POST', [Id], Admin) ->
 	EaterId = Req:post_param("esser"),
 	[Booking] = boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]),
 	ok = boss_db:delete(Booking:id()),
+	lager:info("uc : remove; eater-id : ~p; bookin : ~p;", [EaterId, Booking]),
 	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
 
 storno('POST', [], Admin) ->
@@ -83,6 +89,7 @@ storno('POST', [], Admin) ->
 	ok = send_mail(Menu:booking(), Menu, "Das Essen muss leider abgesagt werden."),
 	remove_bookings(Menu:booking()),
 	boss_db:delete(Menu_Id),
+	lager:info("uc : storno; menu : ~p", [Menu]),
 	{redirect, elib:get_full_path(speiseplan, "/admin/index")}.	
 	
 remove_bookings([]) ->
