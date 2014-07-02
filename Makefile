@@ -4,6 +4,8 @@ REBAR = rebar
 REPO = ../repository
 REPOSRC = ../../repository
 TARGET = ~/kantine
+LOG_DIR = ../../innoq_icook
+DATE = `date +%Y-%m-%d`
 
 
 
@@ -19,6 +21,13 @@ cpall: tar
 cp: 
 	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 
+cp_log: 
+	mkdir -p $(LOG_DIR)/$(DATE)
+	scp $(USR)@$(HOST):$(TARGET)/$(PROJECT)/log/*.log.* $(LOG_DIR)/$(DATE)/
+
+cp_db:
+		mkdir -p $(LOG_DIR)/db/$(DATE)
+		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/Mnesia.* $(LOG_DIR)/db/$(DATE)/
 release: app
 	@$(REBAR) generate
 
