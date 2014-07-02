@@ -77,8 +77,6 @@ create_guest([H|T]=Account) ->
     _ -> []
   end.
 
-sue_start() ->
-  sue:start().
 init_erlcron() ->
 	application:start(erlcron),
 	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}), 

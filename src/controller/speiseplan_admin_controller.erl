@@ -16,7 +16,7 @@ mahlzeit('POST', [], Admin) ->
 	
 detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),
-	Eaters = boss_db:find(eater, [{account, 'not_matches', "gast-*"}]),
+	Eaters = boss_db:find(eater, [{account, 'not_matches', "gast-*"}, {account, 'not_matches', "praktikant-*"}]),
 	Requesters = Menu:get_requester(),
 	{ok, [{menu, Menu}, {eaters, lists:keysort(6,Eaters)}, {eater, Admin}, {requesters, Requesters}]}.	
 	
