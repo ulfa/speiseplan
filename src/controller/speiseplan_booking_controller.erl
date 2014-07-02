@@ -1,6 +1,10 @@
 -module(speiseplan_booking_controller, [Req]).
 -compile(export_all).
 
+-define(URI, "https://new.boxcar.io/api/notifications").
+-define(CONTENT_TYPE, "application/x-www-form-urlencoded").
+
+
 before_(_) ->
 	user_lib:require_login(Req).
 	
@@ -113,4 +117,18 @@ create_billing([Booking|Bookings], Acc, Eater) ->
 	create_billing(Bookings, [{date_lib:create_date_string(Menu:date()), Dish:title(), Price}|Acc], Eater).		
 
 get_env(App, Key, Default) ->
-	boss_env:get_env(App, Key, Default).		
+	boss_env:get_env(App, Key, Default).	
+
+send_message(Account, Title, Message, Sound) ->
+    case httpc:request(post, 
+        {?URI,
+        [],
+        ?CONTENT_TYPE,
+        mochiweb_util:urlencode([{"user_credentials", Account}, {"notification[title]",Title},{"notification[long_message]", Message}, {"notification[sound]", Sound}])
+        },
+        [{ssl, [{verify, 0}]}],
+        []
+        ) of 
+    {ok, Result} -> lager:info("did a post to boxcar with result : ~p", [Result]);
+    {error, Reason} -> lager:error("did a post to boxcar with error : ~p", [Reason])
+    end.

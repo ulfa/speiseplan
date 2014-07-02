@@ -80,6 +80,45 @@
 		</form>
 		</div>
 		{% endif %}
+        <h2>Gäste</h2>
+        <form method="post" action="{% url action="add_guest" id=menu.id %}" class="well">
+            <p>
+                <select name="guest_count" >                  
+                    <option value="0">0 x Gast</option>
+                    <option value="1">1 x Gast</option>
+                    <option value="2">2 x Gast</option>
+                    <option value="3">3 x Gast</option>
+                    <option value="4">4 x Gast</option>
+                    <option value="5">5 x Gast</option>
+                    <option value="6">6 x Gast</option>
+                    <option value="7">7 x Gast</option>
+                    <option value="8">8 x Gast</option>
+                    <option value="9">9 x Gast</option>
+                    <option value="10">10 x Gast</option>
+                </select>
+              </p>
+              <input type="submit" class="btn btn-small" value="Hinzufügen">
+        </form>
+        <h2>Praktikanten</h2>
+        <form method="post" action="{% url action="add_praktikant" id=menu.id %}" class="well">
+            <p>
+                <select name="praktikant_count" >                  
+                    <option value="0">0 x Praktikant</option>
+                    <option value="1">1 x Praktikant</option>
+                    <option value="2">2 x Praktikant</option>
+                    <option value="3">3 x Praktikant</option>
+                    <option value="4">4 x Praktikant</option>
+                    <option value="5">5 x Praktikant</option>
+                    <option value="6">6 x Praktikant</option>
+                    <option value="7">7 x Praktikant</option>
+                    <option value="8">8 x Praktikant</option>
+                    <option value="9">9 x Praktikant</option>
+                    <option value="10">10 x Praktikant</option>
+                </select>
+              </p>
+              <input type="submit" class="btn btn-small" value="Hinzufügen">
+        </form>
+
 		<h2>Ausgegebene Speisen</h2>
 		<form method="post" action="{% url action="add_count_given" id=menu.id %}" class="well">
 			<input type="text" name="count_given" value="{{ menu.count_given | default : 0 }}"><br>

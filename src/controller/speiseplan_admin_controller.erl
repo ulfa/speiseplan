@@ -15,7 +15,7 @@ mahlzeit('POST', [], Admin) ->
 	
 detail('GET', [Id], Admin) ->
 	Menu = boss_db:find(Id),
-	Eaters = boss_db:find(eater, []),
+	Eaters = boss_db:find(eater, [{account, 'not_matches', "gast-*"}]),
 	Requesters = Menu:get_requester(),
 	{ok, [{menu, Menu}, {eaters, lists:keysort(6,Eaters)}, {eater, Admin}, {requesters, Requesters}]}.	
 	
@@ -27,11 +27,12 @@ edit('GET', [Id], Admin) ->
 add('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),
 	EaterId = Req:post_param("esser"),
+	Menu = boss_db:find(Id),
 	case EaterId of 
 		undefined -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
 		_ ->	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
 					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
-							_->	NewBooking = booking:new(id, Date, false, EaterId, Id),								
+							_->	NewBooking = booking:new(id, Date, Menu:date(), false, EaterId, Id),	
 								{ok, SavedBooking} = NewBooking:save(),
 								case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
 									[] -> lager:error("can'delete requester!");
@@ -43,6 +44,25 @@ add('POST', [Id], Admin) ->
 								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
 				end
 	end.
+%% add a count of guests to a menu	
+add_guest('POST', [Id], Admin) ->
+	Date = calendar:universal_time(),
+	Count = Req:post_param("guest_count"),
+	Menu = boss_db:find(Id),
+	Bookings = find_all_bookings(Id, "gast-*"),
+	delete(Bookings),
+	add_guests(list_to_integer(Count), Date, Menu:date(), Id),
+	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
+
+%% add a count of praktikant to a menu	
+add_praktikant('POST', [Id], Admin) ->
+	Date = calendar:universal_time(),
+	Count = Req:post_param("praktikant_count"),
+	Menu = boss_db:find(Id),
+	Bookings = find_all_bookings(Id, "praktikant-*"),
+	delete(Bookings),
+	add_praktikanten(list_to_integer(Count), Date, Menu:date(), Id),
+	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
 
 add_count_given('POST', [Id], Admin) ->	
 	 Menu = boss_db:find(Id),
@@ -131,3 +151,39 @@ send_ready_mail() ->
 
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).
+
+find_all_bookings(Menu_id, RegExp) ->
+	find_all(Menu_id, RegExp).
+
+find_all(Menu_id, RegExp) ->
+	Bookings = boss_db:find(booking, [{menu_id, 'eq', Menu_id}]),	
+	[Booking||Booking <- Bookings, is_guest_booking(Booking:eater(), RegExp)].
+	
+is_guest_booking(Eater, RegExp) ->
+	case boss_db:find(eater, [{id, eq, Eater:id()}, {account, matches, RegExp}]) of 
+		[] -> false;
+		_ -> true 
+	end.
+
+delete(Bookings) ->
+	[boss_db:delete(Booking:id()) || Booking <- Bookings].
+
+add_praktikanten(0, Date, Menu_date, Id) ->
+	ok;
+add_praktikanten(Count, Date, Menu_date, Id) ->
+	save_guest_or_prakt("praktikant-", Count, Date, Menu_date, Id),
+	add_praktikanten(Count - 1, Date, Menu_date, Id).
+
+
+add_guests(0, Date, Menu_date, Id) ->
+	ok;
+add_guests(Count, Date, Menu_date, Id) ->
+	save_guest_or_prakt("gast-", Count, Date, Menu_date, Id),
+	add_guests(Count - 1, Date, Menu_date, Id).
+
+save_guest_or_prakt(Sign, Count, Date, Menu_date, Id) ->
+	[Eater] =boss_db:find(eater, [{account, eq, Sign ++ integer_to_list(Count)}]),
+	NewBooking_ = booking:new(id, Date, Menu_date, false, Eater:id(), Id),	
+	{ok, SavedBooking} = NewBooking_:save().
+
+

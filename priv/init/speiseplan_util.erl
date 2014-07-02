@@ -5,7 +5,8 @@
 init() ->
   init_db (),
   create_admin(),
-  create_guest(),
+  create_guest_account(10),
+  create_praktikant_account(10),
   init_erlcron(),
   ok.
 
@@ -48,9 +49,30 @@ create_admin() ->
 			  NewAdmin:save();
 		_ -> []
 	end.
-create_guest() ->
-  case boss_db:find(eater,[account,'equals',"guest"]) of
-    [] -> NewGuest = eater:new(id, "guest", user_lib:hash_for("guest", "123fuck456"), "Guest", "Guest", "The guest", false, 5, false, "ua@innoq.com", true, true),
+
+  
+create_praktikant_account(0) ->
+  ok;
+create_praktikant_account(Count) -> 
+  create_praktikant("praktikant-" ++ integer_to_list(Count)),
+  create_praktikant_account(Count - 1).
+create_praktikant([H|T]=Account) ->
+  case boss_db:find(eater,[account,'equals',Account]) of
+    [] -> NewGuest = eater:new(id, Account, user_lib:hash_for(Account, "123fuck456"), "Praktikant", "Praktikant", lists:flatten([string:to_upper(H),T]), false, 5, false, "ua@innoq.com", true, true),
+        NewGuest:save();
+    _ -> []
+  end.
+
+
+create_guest_account(0) ->
+  ok;
+create_guest_account(Count) -> 
+  create_guest("gast-" ++ integer_to_list(Count)),
+  create_guest_account(Count - 1).
+
+create_guest([H|T]=Account) ->
+  case boss_db:find(eater,[account,'equals',Account]) of
+    [] -> NewGuest = eater:new(id, Account, user_lib:hash_for(Account, "123fuck456"), "Gast", "Gast", lists:flatten([string:to_upper(H),T]), false, 5, false, "ua@innoq.com", true, true),
         NewGuest:save();
     _ -> []
   end.
