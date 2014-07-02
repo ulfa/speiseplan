@@ -81,4 +81,8 @@ sue_start() ->
   sue:start().
 init_erlcron() ->
 	application:start(erlcron),
-	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}).
+	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}), 
+  erlcron:cron({{daily, {2, 00, am}}, {mnesia, backup, ["../backup/mnesia.backup"]}}).
+
+
+
