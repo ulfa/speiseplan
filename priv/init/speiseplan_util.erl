@@ -78,6 +78,7 @@ create_guest([H|T]=Account) ->
   end.
 
 init_erlcron() ->
+  os:cmd("mkdir -p ../backup"),
 	application:start(erlcron),
 	erlcron:cron({{daily, {1, 00, am}}, {user_ldap, start, []}}), 
   erlcron:cron({{daily, {2, 00, am}}, {mnesia, backup, ["../backup/mnesia.backup"]}}).
