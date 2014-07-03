@@ -35,8 +35,10 @@ request('POST', [], Eater) ->
 	case has_allready_requested(Menu:get_date_as_string(), EaterId, MenuId) of
 		false -> NewRequest = requester:new(id, erlang:localtime(), Menu:get_date_as_string(), MenuId, EaterId),
 				{ok, SavedRequest} = NewRequest:save(),
-				 send_mail(EaterId, Menu),
-				 lager:info("uc : request; eater-id : ~p; booking : ~p", [EaterId, NewRequest]);
+				Eater = boss_db:find(EaterId),
+				send_mail(Eater, Menu),
+				send_message_to_BC("Anfrage : " ++ Menu:get_date_as_string(), "test", "bell-triple"),
+				lager:info("uc : request; eater-id : ~p; booking : ~p", [EaterId, NewRequest]);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
 	{redirect, elib:get_full_path(speiseplan,"/booking/index")}.
@@ -73,10 +75,9 @@ is_booking_allowed(MenuId) ->
 is_vegetarian(Vegetarian) ->
 	Vegetarian =:= "true".
 
-send_mail(EaterId, Menu) ->
+send_mail(Eater, Menu) ->
 	To = get_env(speiseplan, mail_anfrage_to, "anja.angermann@innoq.com"),	
-	Anfrage =get_env(speiseplan, mail_anfrage, ""),	
-	Eater = boss_db:find(EaterId),
+	Anfrage = get_env(speiseplan, mail_anfrage, ""),		
 	boss_mail:send(Eater:mail(), To,  date_lib:create_date_string(Menu:date()), "Anfrage von: " ++ Eater:display_name() ++ Anfrage).
 
 is_allready_booked(MenuId, EaterId) ->
@@ -122,7 +123,9 @@ create_billing([Booking|Bookings], Acc, Eater) ->
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).	
 
-send_message(Account, Title, Message, Sound) ->
+send_message_to_BC(Title, Message, Sound) ->	
+	lager:info("uc : send_message_to_BC"),
+	Account = boss_env:get_env(speiseplan, boxcar, "NmEAW2euRjuUGesV58n"), 
     case httpc:request(post, 
         {?URI,
         [],

@@ -3,6 +3,11 @@
 -define (APPNAME, speiseplan). % is it possible to get it automatically somewhere in CB?
 
 init() ->
+  application:start(crypto),
+  application:start(asn1),
+  application:start(public_key),
+  application:start(ssl),
+  application:start(inets),
   init_db (),
   create_admin(),
   create_guest_account(10),
