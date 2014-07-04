@@ -13,10 +13,7 @@
 		case boss_db:find(note, [{ativ, true}]) of
 			[] -> {ok, [{eater, Eater}, {text, "bleibt die Kueche kalt"}, {date, Date}]};
 			[Note] -> {ok, [{eater, Eater}, {text, Note:text()}, {date, Date}]}
-		end;
+		end; 
 
 	show_menu([Menu], Date, Eater) ->
 		{ok, [{eater, Eater}, {text, "gibt es"}, {dish, Menu:dish()}, {date, Date}]}.
-				
-	show_note([], Date, Eater) ->
-			
