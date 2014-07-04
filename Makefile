@@ -1,6 +1,6 @@
 PROJECT = speiseplan
 DIALYZER = dialyzer
-REBAR = rebar
+REBAR = ./rebar
 REPO = ../repository
 REPOSRC = ../../repository
 TARGET = ~/kantine
