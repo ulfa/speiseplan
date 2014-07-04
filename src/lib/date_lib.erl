@@ -45,6 +45,10 @@ create_date_german_string(Date) ->
 	Args = [Day,Month,Year],
 	lists:flatten(io_lib:format("~2..0B.~2..0B.~B", Args)).
 	
+get_day_as_string(Date) ->
+	{{Year, Month, Day}, Time} = Date,
+	?WOCHENTAG(calendar:day_of_the_week({Year, Month, Day})).
+
 create_actual_date() ->
 	calendar:local_time().
 

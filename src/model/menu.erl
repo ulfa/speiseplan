@@ -47,6 +47,9 @@ is_eater_id_in_list(EaterId, List_of_EaterIds) ->
 get_date_as_string() ->
 	date_lib:create_date_string(Date).
 	
+get_day_as_string() ->
+	date_lib:get_day_as_string(Date).
+
 get_slot_count() ->
 	list_to_integer(Slots) - erlang:length(booking()).
 
