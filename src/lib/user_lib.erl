@@ -16,7 +16,7 @@ require_login(Req) ->
     end,
     case boss_db:find(eater, [{account, 'equals', Account}]) of 
         [E] -> {ok, E};
-        [] -> {redirect, elib:get_full_path(speiseplan, "/error/viernulleins")}
+        [] -> {redirect, elib:get_full_path(speiseplan, "/error/viernullvier")}
     end.
 
 require_login(admin, Req) -> 

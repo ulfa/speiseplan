@@ -11,19 +11,19 @@ DATE = `date +%Y-%m-%d`
 
 all: app
 
-tar:  
+tar: app 
 	cd ..; tar --exclude=$(PROJECT)/.git --exclude=$(PROJECT)/Mnesia.speiseplan* --exclude=$(PROJECT)/priv/static/billing/* --exclude=$(PROJECT)/*/.DS_Store --exclude=$(PROJECT)/.DS_Store --exclude=$(PROJECT)/log/* -cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
 
 cpall: tar
 	cd ..;scp $(REPOSRC)/$(PROJECT).src.$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)/$(PROJECT).src.$(VERSION).tar'
 
-cp: 
+cp: tar
 	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 
 cp_log: 
 	mkdir -p $(LOG_DIR)/$(DATE)
-	scp $(USR)@$(HOST):$(TARGET)/$(PROJECT)/log/*.log.* $(LOG_DIR)/$(DATE)/
+	scp $(USR)@$(HOST):$(TARGET)/$(PROJECT)/log/*.log* $(LOG_DIR)/$(DATE)/
 
 cp_db:
 		mkdir -p $(LOG_DIR)/db/$(DATE)
@@ -43,6 +43,8 @@ clean:
 	rm -f erl_crash.dump
 	rm -f log/*
 
+install:
+	find . -name '._*'|xargs rm
 tests: clean app eunit ct
 
 eunit:
