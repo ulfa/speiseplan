@@ -42,7 +42,7 @@ add('POST', [Id], Admin) ->
 								end,
 								Eater = boss_db:find(EaterId),
 								Menu = boss_db:find(Id),
-								send_a_mail(Eater, Menu, "Du wurdest hinzugefügt."),								
+								send_a_mail(Eater, Menu, get_env(speiseplan, mail_bestaetigung, "")),								
 								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
 				end
 	end.
@@ -192,5 +192,3 @@ save_guest_or_prakt(Sign, Count, Date, Menu_date, Id) ->
 	[Eater] =boss_db:find(eater, [{account, eq, Sign ++ integer_to_list(Count)}]),
 	NewBooking_ = booking:new(id, Date, Menu_date, false, Eater:id(), Id),	
 	{ok, SavedBooking} = NewBooking_:save().
-
-
