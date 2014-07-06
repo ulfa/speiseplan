@@ -1,130 +1,160 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="container">
-<div class="row-fluid">
-  <div class="span8">
-    <h2>Menu vom {{ menu.get_date_as_string }}</h2>
-    <div class="well">
-      <table class="table" id="table_id">
-        <thead>
-          <tr>
-            <th><h3>Datum</h3></th>
-            <th><h3>Speise</h3></th>
-			<th><h3>vegetarisch</h3></th>
-            <th><h3>max.</h3></th>
-
-            <th></th>
-          </tr>
-        </thead>
-		<tbody>
-		<tr>
-			<td><h4>{{ menu.get_date_as_string }}</h4></td>
-			<td><h4>{{ menu.dish.title }}</h4></td>
-			<td><h4>{{ menu.dish.vegetarian }}</h4></td>			
-			<td><h4>{{ menu.slots }}</h4></td>
-			<td></td>
-		</tr>
-		{% if  menu.booking %}		
-		{% for booking in menu.booking %}
-		<tr>
-			<td>{{ booking.eater.display_name }} </td>
-			<td>{{ booking.get_formated_date }}</td>
-			<td>{{ booking.get_vegetarian }}</td>
-			<td>{{ booking.eater.price_to_pay }} €</td>				
-		</tr>	
-		{% endfor %}
-		<tr>
-			<td><h3>Gesamt : {{ menu.get_sum}} € </h3></td>
-			<td></td>
-        	<td></td>
-        	<td><h3>{{ menu.booking|length}} </h3></td>
-		</tr>
-			<td>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-7">    	
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Menu am : {{ menu.get_date_as_string }}</h2>  
+			</div>
+			<div class="panel-body">
+				<table class="table">
+			        <thead>
+			          <tr>
+			            <th>Datum</th>
+			            <th>Speise</th>
+						<th>vegetarisch</th>
+			            <th>max.</th>			           
+			          </tr>
+			        </thead>
+					<tbody>
+					<tr>
+						<td><strong>{{ menu.get_date_as_string }}</strong></td>
+						<td><strong>{{ menu.dish.title }}</strong></td>
+						<td><strong>{{ menu.dish.vegetarian }}</strong></td>			
+						<td><strong>{{ menu.slots }}</strong></td>
+						<td></td>
+					</tr>
+					{% if  menu.booking %}		
+					{% for booking in menu.booking %}
+					<tr>
+						<td>{{ booking.eater.display_name }} </td>
+						<td>{{ booking.get_formated_date }}</td>
+						<td>{{ booking.get_vegetarian }}</td>
+						<td>{{ booking.eater.price_to_pay }} €</td>				
+					</tr>	
+					{% endfor %}
+					<tr>
+						<td><h3>Gesamt : {{ menu.get_sum}} € </h3></td>
+						<td></td>
+			        	<td></td>
+			        	<td><h3>{{ menu.booking|length}} </h3></td>
+					</tr>
+					{% endif %}
+					</tbody>
+				</table>				
+			</div>
+			<div class="panel-footer">
 				<form method="post" name="Mahlzeit" action="{% url action="mahlzeit" %}">
 					<input type="hidden" name="menu-id" value="{{ menu.id }}">
-        			<input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
+			        <input type="submit" class="btn btn-primary btn-mini" value="Mahlzeit!">
 				</form>
-        	</td>
-		<tr>
-		</tr>
-		{% endif %}
-		</tbody>
-	</table>
-	</div>
-	</div>
-	<div class="span3">
-		<h2>Verspätete Esser</h2>
-		<form method="post" action="{% url action="add" id=menu.id %}" class="well">
-			<p>
-			    <select name="esser" >
-				  {% for eater in eaters %}
-			      <option value="{{eater.id}}">{{eater.display_name}}</option>
-				  {% endfor %}
-			    </select>
-			  </p>
-			  <input type="submit" class="btn btn-small" value="Hinzufügen">
-		</form>
-		{% if requesters %}		
-		<h2>Anfragen</h2>		
-		<div class="alert alert-info">
-		<form method="post" action="{% url action="add" id=menu.id %}">
-			<p>
-			    <select name="esser">
-				  {% for requester in requesters %}
-			      <option value="{{requester.id}}">{{requester.display_name}}</option>
-				  {% endfor %}
-			    </select>
-			  </p>
-			  <input type="submit" class="btn btn-small" value="Hinzufügen">
-		</form>
+			</div>
 		</div>
+	</div>
+	<div class="col-xs-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Verspätete Esser</h2>  
+			</div>
+			<div class="panel-body">		
+				<form method="post" action="{% url action="add" id=menu.id %}">
+					<p>
+			    		<select name="esser" >
+				  		{% for eater in eaters %}
+			      			<option value="{{eater.id}}">{{eater.display_name}}</option>
+				  		{% endfor %}
+			    		</select>
+			  		</p>
+			  		<input type="submit" class="btn btn-small" value="Hinzufügen">
+				</form>
+			</div>
+		</div>
+		{% if requesters %}		
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h2 class="panel-title">Anfragen</h2>  
+			</div>
+			<div class="panel-body">	
+					<form method="post" action="{% url action="add" id=menu.id %}">
+						<p>
+				   			<select name="esser">
+				  			{% for requester in requesters %}
+			      				<option value="{{requester.id}}">{{requester.display_name}}</option>
+				  			{% endfor %}
+			    			</select>
+						</p>
+				  		<input type="submit" class="btn btn-small" value="Hinzufügen">
+					</form>
+			</div>
+		</div>		
 		{% endif %}
-        <h2>Gäste</h2>
-        <form method="post" action="{% url action="add_guest" id=menu.id %}" class="well">
-            <p>
-                <select name="guest_count" >                  
-                    <option value="0">0 x Gast</option>
-                    <option value="1">1 x Gast</option>
-                    <option value="2">2 x Gast</option>
-                    <option value="3">3 x Gast</option>
-                    <option value="4">4 x Gast</option>
-                    <option value="5">5 x Gast</option>
-                    <option value="6">6 x Gast</option>
-                    <option value="7">7 x Gast</option>
-                    <option value="8">8 x Gast</option>
-                    <option value="9">9 x Gast</option>
-                    <option value="10">10 x Gast</option>
-                </select>
-              </p>
-              <input type="submit" class="btn btn-small" value="Hinzufügen">
-        </form>
-        <h2>Praktikanten</h2>
-        <form method="post" action="{% url action="add_praktikant" id=menu.id %}" class="well">
-            <p>
-                <select name="praktikant_count" >                  
-                    <option value="0">0 x Praktikant</option>
-                    <option value="1">1 x Praktikant</option>
-                    <option value="2">2 x Praktikant</option>
-                    <option value="3">3 x Praktikant</option>
-                    <option value="4">4 x Praktikant</option>
-                    <option value="5">5 x Praktikant</option>
-                    <option value="6">6 x Praktikant</option>
-                    <option value="7">7 x Praktikant</option>
-                    <option value="8">8 x Praktikant</option>
-                    <option value="9">9 x Praktikant</option>
-                    <option value="10">10 x Praktikant</option>
-                </select>
-              </p>
-              <input type="submit" class="btn btn-small" value="Hinzufügen">
-        </form>
-
-		<h2>Ausgegebene Speisen</h2>
-		<form method="post" action="{% url action="add_count_given" id=menu.id %}" class="well">
-			<input type="text" name="count_given" value="{{ menu.count_given | default : 0 }}"><br>
-			<input type="submit" class="btn btn-small" value="Hinzufügen">
-		</form>
-		
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Gäste</h2>  
+			</div>
+			<div class="panel-body">		
+        		<form method="post" action="{% url action="add_guest" id=menu.id %}">
+            		<p>
+		                <select name="guest_count" >                  
+		                    <option value="0">0 x Gast</option>
+		                    <option value="1">1 x Gast</option>
+		                    <option value="2">2 x Gast</option>
+		                    <option value="3">3 x Gast</option>
+		                    <option value="4">4 x Gast</option>
+		                    <option value="5">5 x Gast</option>
+		                    <option value="6">6 x Gast</option>
+		                    <option value="7">7 x Gast</option>
+		                    <option value="8">8 x Gast</option>
+		                    <option value="9">9 x Gast</option>
+		                    <option value="10">10 x Gast</option>
+		                </select>
+		            </p>
+					<input type="submit" class="btn btn-small" value="Hinzufügen">
+        		</form>
+        	</div>
+        </div>
+        <div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Praktikanten</h2>  
+			</div>
+			<div class="panel-body">	        
+        		<form method="post" action="{% url action="add_praktikant" id=menu.id %}">
+            		<p>
+		                <select name="praktikant_count" >                  
+		                    <option value="0">0 x Praktikant</option>
+		                    <option value="1">1 x Praktikant</option>
+		                    <option value="2">2 x Praktikant</option>
+		                    <option value="3">3 x Praktikant</option>
+		                    <option value="4">4 x Praktikant</option>
+		                    <option value="5">5 x Praktikant</option>
+		                    <option value="6">6 x Praktikant</option>
+		                    <option value="7">7 x Praktikant</option>
+		                    <option value="8">8 x Praktikant</option>
+		                    <option value="9">9 x Praktikant</option>
+		                    <option value="10">10 x Praktikant</option>
+		                </select>
+					</p>
+					<input type="submit" class="btn btn-small" value="Hinzufügen">
+        		</form>
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Ausgegebene Speisen</h2>  
+			</div>
+			<div class="panel-body">		
+				<form method="post" action="{% url action="add_count_given" id=menu.id %}">
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" name="count_given" value="{{ menu.count_given | default : 0 }}">
+						</div>
+					</div>
+					<input type="submit" class="btn btn-small" value="Hinzufügen">
+				</form>
+			</div>
+		</div>
   	</div>
 </div>
 </div>

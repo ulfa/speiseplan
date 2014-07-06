@@ -1,17 +1,77 @@
-<form method="post" action="{% url action="create" %}" class="well">
-	<input type="hidden" name="id" value="{{ edit_eater.id | default: undefined}}"> 
-	<label>Account<input type="text" name="account" required placeholder="ha" value="{{ edit_eater.account|default : ''}}"></label>
-	<label>Vorname<input type="text" name="forename" required placeholder="Horst" value="{{ edit_eater.forename|default : ''}}"></label>
-	<label>Name<input type="text" name="name" required placeholder="Kater" value="{{ edit_eater.name|default : '' }}"></label>
-	
-	<label>Displayname<input type="text" name="displayName" value="{{ edit_eater.display_name|default : '' }}"></label>	
-		
-	<label>Mail<input type="text" name="mail" placeholder="hk@email.com" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required value="{{ edit_eater.mail|default : '' }}"></label>
-	<label>Password<input type="password" name="password" required></label>
-	<label>Preis : {{ edit_eater.price_to_pay |default:0 }} €</label>
-	<label><input type="checkbox" name="intern" value="true" {% if edit_eater.intern %} checked {% endif %} >Interner Mitarbeiter</label>
-	<label><input type="checkbox" name="admin" value="true" {% if edit_eater.admin %} checked {% endif %} >Admin</label>
-	<label><input type="checkbox" name="verified" value="true" {% if edit_eater.verified %} checked {% endif %}>Freigabe</label>
-	<label><input type="checkbox" name="comfirmed" value="true" {% if edit_eater.comfirmed %} checked {% endif %}>Bestätigt</label>
-	<input type="submit" class="btn btn-primary btn-mini" value="Hinzufügen">
-</form>
+
+<div class="col-xs-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Bearbeiten</h2>  
+            </div>
+            <div class="panel-body">
+				<form method="post" action="{% url action="create" %}">
+					<input type="hidden" name="id" value="{{ edit_eater.id | default: undefined}}">
+
+					<div class="form-group">
+						<label>Account</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="text" name="account" required placeholder="ha" value="{{ edit_eater.account|default : ''}}">	
+						    </div>
+					</div>
+					<div class="form-group">
+						<label>Vorname</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="text" name="forename" required placeholder="Horst" value="{{ edit_eater.forename|default : ''}}">
+						    </div>
+					</div>
+					<div class="form-group">
+						<label>Name</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="text" name="name" required placeholder="Kater" value="{{ edit_eater.name|default : '' }}">		
+						    </div>
+					</div>					
+					<div class="form-group">
+						<label>Displayname</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="text" name="displayName" value="{{ edit_eater.display_name|default : '' }}">					
+						    </div>
+					</div>					
+					<div class="form-group">
+						<label>Mail</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="text" name="mail" placeholder="hk@email.com" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required value="{{ edit_eater.mail|default : '' }}">				
+						    </div>
+					</div>					
+					<div class="form-group">
+						<label>Password</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" type="password" name="password" required>				
+						    </div>
+					</div>					
+					<div class="form-group">
+						<div class="controls">
+							<label>Preis : {{ edit_eater.price_to_pay |default:0 }} €</label>     
+						</div>
+					</div>
+					<div class="form-group">
+							<div class="controls">       
+								<input type="checkbox" name="intern" value="true" {% if edit_eater.intern %} checked {% endif %}> Interner Mitarbeiter
+						    </div>
+					</div>
+					<div class="form-group">
+							<div class="controls">       
+								<input type="checkbox" name="admin" value="true" {% if edit_eater.admin %} checked {% endif %}> Admin
+						    </div>
+					</div>
+					<div class="form-group">
+							<div class="controls">       
+								<input type="checkbox" name="verified" value="true" {% if edit_eater.verified %} checked {% endif %}> Freigabe
+						    </div>
+					</div>					
+					<div class="form-group">						
+							<div class="controls">       
+								<input type="checkbox" name="comfirmed" value="true" {% if edit_eater.comfirmed %} checked {% endif %}> Bestätigt
+						    </div>
+					</div>					
+					<input type="submit" class="btn btn-primary btn-mini" value="Hinzufügen">
+				</form>
+			</div>
+		</div>
+</div>
+

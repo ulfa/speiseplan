@@ -1,47 +1,51 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container">
-<div class="row-fluid">
-	<div class="span9">
-		<div class="well">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Account</th>
-						<th>DisplayName</th>
-						<th>Mail</th>
-						<th>Intern</th>
-						<th>Admin</th>
-						<th>Freigabe</th>				
-					</tr>	
-				</thead>
-				{% if eaters %}
-				<tbody>
-					{% for eater in eaters %}
-					<tr>
-						<td>
-							<a href="/kiezkantine/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
-						</td>
-						<td>{{ eater.display_name }}</td>						
-						<td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td>
-						<td>{{ eater.intern }}</td>
-						<td>{{ eater.admin }}</td>
-						<td>{{ eater.verified }}</td>
-						<td>
-							<form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
-								<input type="submit" class="btn btn-danger btn-mini" value="löschen">
-							</form>
-						</td>
-					</tr>
-					{% endfor %}
-				</tbody>
-				{% endif%}
-			</table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-7">
+		<div class="panel panel-primary">
+        	<div class="panel-heading">
+          		<h2 class="panel-title">Esser</h2>  
+        	</div>
+        	<div class="panel-body">
+				<table class="table" id="table_id">
+					<thead>
+						<tr>
+							<th>Account</th>
+							<th>DisplayName</th>
+							<!--th>Mail</th-->
+							<th>Intern</th>
+							<th>Admin</th>
+							<th>Freigabe</th>				
+						</tr>	
+					</thead>
+					{% if eaters %}
+					<tbody>
+						{% for eater in eaters %}
+						<tr>
+							<td>
+								<a href="{{_base_url}}/eater/edit/{{ eater.id }}">{{ eater.account }}</a>
+							</td>
+							<td>{{ eater.display_name }}</td>						
+							<!--td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td-->
+							<td>{{ eater.intern }}</td>
+							<td>{{ eater.admin }}</td>
+							<td>{{ eater.verified }}</td>
+							<!--td>
+								<form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
+									<input type="submit" class="btn btn-danger btn-mini" value="löschen">
+								</form>
+							</td-->
+						</tr>
+						{% endfor %}
+					</tbody>
+					{% endif%}
+				</table>
+			</div>
 		</div>
-		</div>
-			<div class="span3">		
-				{% include "eater/create.html" %}
-			</div>			
-	</div>
+	</div>			
+{% include "eater/create.html" %}
+</div>			
+</div>
 </div>
 {% endblock %}

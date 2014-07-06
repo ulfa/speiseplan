@@ -1,34 +1,38 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container">
-<div class="row-fluid">
-  <div class="span8">
-    <div class="well">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Datum</th>
-            <th>Text</th>
-            <th>Aktiv</th>
-          </tr>
-        </thead>
-        <tbody>			
-          {% if notes %}
-          {% for note in notes %}
-          <tr id="{{ note.id }}">
-            <td>
-              <a href="/kiezkantine/note/edit/{{ note.id }}">{{ note.created_date_as_string }}</a>
-            </td>
-            <td>{{ note.text }}</td>
-            <td>{{ note.get_aktiv }}</td>
-          </tr>
-          {% endfor %}
-          {% endif %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-<div class="span3">		
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-7">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title">Notes</h2>  
+        </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Text</th>
+                <th>Aktiv</th>
+              </tr>
+            </thead>
+            <tbody>			
+              {% if notes %}
+              {% for note in notes %}
+              <tr id="{{ note.id }}">
+                <td>
+                  <a href="/kiezkantine/note/edit/{{ note.id }}">{{ note.created_date_as_string }}</a>
+                </td>
+                <td>{{ note.text }}</td>
+                <td>{{ note.ativ }}</td>
+              </tr>
+              {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>	
 	{% include "note/create.html" %}
 </div>			
   

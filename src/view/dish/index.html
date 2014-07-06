@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container">
-<div class="row">
-  <div class="span8">
-    <div class="well">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Titel</th>
-            <th>Details</th>
-            <th>vegetarisch</th>
-          </tr>
-        </thead>
-        <tbody>			
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-7">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="panel-title">Speisen</h2>  
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Details</th>
+              <th>vegetarisch</th>
+            </tr>
+          </thead>
+          <tbody>			
           {% if dishes %}
           {% for dish in dishes %}
           <tr id="{{ dish.id }}">
@@ -29,6 +33,7 @@
       </table>
     </div>
   </div>
+</div>
 </div>
 </div>
 {% endblock %}

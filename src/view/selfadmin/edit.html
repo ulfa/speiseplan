@@ -1,23 +1,56 @@
 {% extends "base.html" %}
 {% block body %}
+
+				<div class="board">
+					<h1>Autonomie</h1><br/>
+				</div>
+
 <div class="container">
-	<div class="board">
-		<h1>Autonomie</h1><br/>
-	</div>
-<div class="row-fluid">
-	<div class="span4">
-		<br/>
-	</div>
-    <div class="span3">
-<form method="post" action="{% url action="create" %}" class="well">
-	<input type="hidden" name="id" value="{{eater.id}}">
-	<label>Account<input readonly="readonly" type="text" name="account" value="{{ eater.account }}" required></label>
-	<label>Vorname<input readonly="readonly" type="text" name="forename" value="{{ eater.forename }}" ></label>
-	<label>Name<input  readonly="readonly" type="text" name="name" value="{{ eater.name }}" ></label>
-	<label>DisplayName<input readonly="readonly"type="text" name="name" value="{{ eater.display_name }}" r></label>	
-	<label>Mail<input readonly="readonly" type="text" name="mail" value="{{ eater.mail }}" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"></label>	
-</form>
+	<div class="row">
+    	<div class="col-xs-6 col-xs-offset-3">
+			<div class="panel panel-primary">
+        		<div class="panel-heading">
+          			<h2 class="panel-title">Selbstverwaltung</h2>  
+        		</div>
+		        <div class="panel-body">
+					<form method="post" action="{% url action="create" %}">						
+						<input type="hidden" name="id" value="{{eater.id}}">
+						<div class="form-group">
+							<label>Account</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" readonly="readonly" type="text" name="account" value="{{ eater.account }}" required>
+							</div>
+						</div>					
+						<div class="form-group">
+							<label>Vorname</label>     
+							<div class="controls">     
+								<input class="form-control col-md-8" readonly="readonly" type="text" name="forename" value="{{ eater.forename }}" >  
+							</div>
+						</div>					
+						<div class="form-group">
+							<label>Name</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" readonly="readonly" type="text" name="name" value="{{ eater.name }}" >
+							</div>
+						</div>					
+						<div class="form-group">
+							<label>DisplayName</label>     
+							<div class="controls">       
+								<input class="form-control col-md-8" readonly="readonly"type="text" name="name" value="{{ eater.display_name }}" r>
+							</div>
+						</div>					
+						<div class="form-group">
+							<label>Mail</label>     
+							<div class="controls">     
+								<input class="form-control col-md-8" readonly="readonly" type="text" name="mail" value="{{ eater.mail }}" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">  
+							</div>
+						</div>					
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 </div>
 {% endblock %}
+
+
