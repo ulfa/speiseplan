@@ -1,7 +1,7 @@
 -module(menu, [Id, CreatedDate, Date, DishId, Slots, CountGiven]).
 -compile(export_all).
 -belongs_to(dish).
--has({booking, many}).
+-has({booking, many, [{order_by, date}, {descending, true}]}).
 -has({comment, many}).
 	
 %%validation_tests() ->
