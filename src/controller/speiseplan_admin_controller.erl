@@ -37,7 +37,7 @@ add('POST', [Id], Admin) ->
 								{ok, SavedBooking} = NewBooking:save(),
 								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
 								case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
-									[] -> lager:error("can't delete requester : ~p", [EaterId]);
+									[] -> lager:info("can't delete requester : ~p", [EaterId]);
 									[Requester] -> boss_db:delete(Requester:id())
 								end,
 								Eater = boss_db:find(EaterId),
