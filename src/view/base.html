@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="{{ _base_url }}/static/css/main.css">
   <link rel="stylesheet" href="{{ _base_url }}/static/css/kalendae.css">
   <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
 </head>
 	<body>
 		<div class="container-fluid"> 
@@ -70,16 +73,12 @@
       	{% block body %}{% endblock %}
   	</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-
-	
 	<script src="{{ _base_url }}/static/js/bootstrap.js" type="text/javascript"></script>
 	<script src="{{ _base_url }}/static/js/kalendae.min.js"></script>
   	<script src="{{ _base_url }}/static/js/application.js"></script>
-  	<script src="{{ _base_url }}/static/js/highcharts.js"></script>
-  	<script src="{{ _base_url }}/static/js/exporting.js"></script>
 
     <script type="text/javascript" charset="utf8">
         $(document).ready( function () {

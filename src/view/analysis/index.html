@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
+	
+	<script type="text/javascript" src="{{ _base_url }}/static/js/highcharts.js"></script>
+    <script type="text/javascript" src="{{ _base_url }}/static/js/exporting.js"></script>
+
 	<div id="chart" style="min-width: 400px; height: 600px; margin: 0 auto"></div>	
 	</div>
 	
@@ -18,7 +22,9 @@
 	                text: '{{subtitle}}'
 	            },
 	            xAxis: {
+	            	{% autoescape off %}
 	                categories: [{{categories}}]
+	                {% endautoescape %}
 	            },
 	            yAxis: {
 	                min: 0,
