@@ -21,6 +21,8 @@ label input[type="radio"] {
 
 h2 {color: #FFFFFF;}
 
+a {color: #FFFFFF;}
+
 body {
     padding-top: 60px;
     background-image: url("/kiezkantine/static/images/slate.jpg");

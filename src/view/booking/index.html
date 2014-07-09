@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 <!-- Index side of the booking interface-->
+
 {% block body %}
 {% if menus %}
 <div id="scroller" class="container">
@@ -20,7 +21,7 @@
 <div class="span4">
 	<p>
 	<h2>{{ menu.get_date_as_string }}</h2>
-    <h5>({{ menu.get_day_as_string }})</h5>
+    <h5><a href="#" class="link" data-original-title="{{menu.get_all_eater_names}}">({{ menu.get_day_as_string }})</a></h5>
 	<h3>{{ menu.dish.title }}</h3>	
 	<h3>{{ menu.dish.details }}</h3>
 	</p>
@@ -58,6 +59,13 @@
 
 {% endfor %}
 {% endif %}
+<script>
+
+    jQuery(function ($) {
+        $("a").tooltip()
+    });
+
+</script>
 
 </div>
 {% endblock %}

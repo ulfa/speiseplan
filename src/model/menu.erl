@@ -105,7 +105,13 @@ get_norm_eater(Booking, Eaters) ->
 		_ -> Eaters
 	end.
 
-	
+get_all_eater_names() ->
+	Eaters = [get_eater(Name) || Name <- get_all_eater()],
+	string:join([Eater:display_name()|| Eater <- Eaters], ",").
+
+get_eater(Key) ->
+	boss_db:find(Key).
+
 get_vegetarian_eater() ->
 	get_v_eater(booking(), []).
 

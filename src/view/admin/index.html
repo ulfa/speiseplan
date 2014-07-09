@@ -24,10 +24,8 @@
               <tbody>
                 {% if menus %}
                 {% for menu in menus %}
-                <tr id="/admin/{{ menu.id }}">
-                  <td>	
-                    <a href="{{ _base_url }}/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }} ({{menu.get_day_as_string}})</a>
-                  </td>
+                <tr id="{{_base_url}}/admin/{{ menu.id }}">
+                  <td><a href="{{ _base_url }}/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }} ({{menu.get_day_as_string}})</a></td>
                   <td>{{ menu.dish.title }}</td>
                   <td>{{ menu.slots}}</td>
                   <td>{{ menu.booking|length}}</td>
