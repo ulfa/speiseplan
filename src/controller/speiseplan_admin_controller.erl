@@ -36,10 +36,7 @@ add('POST', [Id], Admin) ->
 							_->	NewBooking = booking:new(id, Date, Menu:date(), false, EaterId, Id),	
 								{ok, SavedBooking} = NewBooking:save(),
 								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
-								case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
-									[] -> lager:info("can't delete requester : ~p", [EaterId]);
-									[Requester] -> boss_db:delete(Requester:id())
-								end,
+								delete_requester(Id, EaterId),	
 								Eater = boss_db:find(EaterId),
 								Menu = boss_db:find(Id),
 								send_a_mail(Eater, Menu, get_env(speiseplan, mail_bestaetigung, "")),								
@@ -53,16 +50,20 @@ handle_requester('POST', [Id], Admin) ->
 		"ablehnen" -> refuse('POST', [Id], Admin)
 	end.
 
-refuse('POST', [Id], Admin) ->
+refuse('POST', [Id], Admin) ->	
 	EaterId = Req:post_param("esser"),
 	Eater = boss_db:find(EaterId),
 	Menu = boss_db:find(Id),
-	case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
-		[] -> lager:info("can't delete requester : ~p", [EaterId]);
-		[Requester] -> boss_db:delete(Requester:id())
-	end,
+	lager:info("uc : refuse; eater-id : ~p; menu: ~p", [EaterId, Menu]),
+	delete_requester(Id, EaterId),	
 	send_a_mail(Eater, Menu, get_env(speiseplan, mail_ablehnung, "")),		
 	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
+
+delete_requester(MenuId, EaterId) ->
+	case boss_db:find(requester, [{menu_id, 'equals', MenuId}, {eater_id, 'equals', EaterId}]) of
+		[] -> lager:info("can't delete requester : ~p", [EaterId]);
+		[Requester] -> boss_db:delete(Requester:id())
+	end.
 
 %% add a count of guests to a menu	
 add_guest('POST', [Id], Admin) ->
