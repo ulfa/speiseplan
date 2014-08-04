@@ -46,6 +46,24 @@ add('POST', [Id], Admin) ->
 								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
 				end
 	end.
+handle_requester('POST', [Id], Admin) ->
+	Button = Req:post_param("button"),
+	case Button of 
+		"hinzufuegen" -> add('POST', [Id], Admin);
+		"ablehnen" -> refuse('POST', [Id], Admin)
+	end.
+
+refuse('POST', [Id], Admin) ->
+	EaterId = Req:post_param("esser"),
+	Eater = boss_db:find(EaterId),
+	Menu = boss_db:find(Id),
+	case boss_db:find(requester, [{menu_id, 'equals', Id}, {eater_id, 'equals', EaterId}]) of
+		[] -> lager:info("can't delete requester : ~p", [EaterId]);
+		[Requester] -> boss_db:delete(Requester:id())
+	end,
+	send_a_mail(Eater, Menu, get_env(speiseplan, mail_ablehnung, "")),		
+	{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}.
+
 %% add a count of guests to a menu	
 add_guest('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),

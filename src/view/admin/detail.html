@@ -67,7 +67,7 @@
 				  		{% endfor %}
 			    		</select>
 			  		</p>
-			  		<input type="submit" class="btn btn-small" value="Hinzufügen">
+			  		<input type="submit" class="btn btn-small" value="Hinzufügen">			  		
 				</form>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 				<h2 class="panel-title">Anfragen</h2>  
 			</div>
 			<div class="panel-body">	
-					<form method="post" action="{% url action="add" id=menu.id %}">
+					<form method="post" action="{% url action="handle_requester" id=menu.id %}">
 						<p>
 				   			<select name="esser">
 				  			{% for requester in requesters %}
@@ -85,7 +85,8 @@
 				  			{% endfor %}
 			    			</select>
 						</p>
-				  		<input type="submit" class="btn btn-small" value="Hinzufügen">
+				  		<button type="submit" class="btn btn-small" name="button" value="hinzufuegen">Hinzufügen</button>
+				  		<button type="submit" class="btn btn-small" name="button" value="ablehnen">Ablehnen</button>
 					</form>
 			</div>
 		</div>		
