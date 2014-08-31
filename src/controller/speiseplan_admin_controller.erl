@@ -166,7 +166,7 @@ send_mail([Booking|Bookings], Menu, Text) ->
 
 send_a_mail(Eater, Menu, Text) ->
 	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
-	boss_mail:send(From, Eater:mail(), Menu:get_date_as_string(), Text).
+	boss_mail:send(From, Eater:mail(), Menu:get_date_as_string(), unicode:characters_to_list(Text, utf8)).
 
 send_ready_mail() ->
 	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
