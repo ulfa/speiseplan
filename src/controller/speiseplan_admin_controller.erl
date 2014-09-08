@@ -124,6 +124,7 @@ create('POST', [], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
+	lager:info(".... : ~p", [Date]),
 	
 	NewDish = dish:new(id, Title, Details, elib:handle_checkbox(Vegetarian)),	
 	case NewDish:save() of
@@ -143,7 +144,8 @@ update('POST', [], Admin) ->
 	Title = Req:post_param("title"),
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
-	Vegetarian = Req:post_param("vegetarian"),	
+	Vegetarian = Req:post_param("vegetarian"),
+		lager:info(".... : ~p", [Date]),	
 	NewDish = Dish:set([{'title', Title}, {'details', Details}, {'vegetarian', elib:handle_checkbox(Vegetarian)}]),
 	NewMenu = Menu:set([{'date', date_lib:create_date_from_string(Date)}, {'slots', Slots}]),
 	{ok, SavedDish} = NewDish:save(),

@@ -1,4 +1,12 @@
 
+<script type="text/javascript">
+  $(function() {
+    $('#datepicker').datepicker({
+    	format: 'yyyy-mm-dd'
+    });
+  });
+</script>
+
 	<div class="col-xs-3">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -19,12 +27,13 @@
 							<textarea class="form-control col-md-8" name="details" rows="4" placeholder="mit einer Wurst" required>{{menu.dish.details | default: ''}}</textarea>                   
 	                    </div>
 					</div>
-					<div class="form-group">
-						<label>Datum</label>     
-						<div class="controls">       
-	                        <input type="text" name="date" class="auto-kal" placeholder="2012-10-01" required value="{{menu.get_date_as_string|default: ''}}">                      
-	                    </div>
-					</div>   
+				<div class="form-group">
+						<label>Datum</label> 
+						<div class="controls">
+						<input type="text" name="date" class="span2" value="{{menu.get_date_as_string|default: ''}}" data-date-format="yyyy-mm-dd" id="datepicker" required>
+					</div>
+
+				</div>   
 					<div class="form-group">
 						<label>max.</label>     
 	                    <div class="controls">       
@@ -43,4 +52,3 @@
 			</div>
 		</div>
 	</div>
-
