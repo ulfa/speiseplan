@@ -7,7 +7,7 @@
 -compile(export_all).
 
 start() ->
-	error_logger:info_msg("starting ldap import"),
+	error_logger:info_msg("uc: ldap_import; start"),
 	ssl:start(),
 	Handle = connect(),
 	E = get_account_list(Handle, ?EXTERNAL),
@@ -15,7 +15,7 @@ start() ->
 	Members = [get_member(Handle, E, A)||A <- lists:append(M, E)],
 	iterate_eaters(Members),
 	close(Handle),
-	error_logger:info_msg("finished ldap import").
+	error_logger:info_msg("uc: ldap_import; finished").
 		
 connect() ->
 	Ldap_server = get_env(speiseplan, ldap_server, "testldap.innoq.com"),
@@ -35,8 +35,11 @@ get_account_list(Handle, Filter) ->
 	
 get_member(Handle, Externals, UID) ->	
 	M_group = "uid=" ++ UID ++ ",ou=People,dc=innoq,dc=com",
-	{ok, S} = eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["displayName", "mail"]}]),
-	[{account, UID}, {password, user_lib:hash_for(UID, "secret")}, {display_name, extract_display_name(S, M_group)}, {mail, extract_mail(S,M_group)},  {intern, is_internal(UID, Externals)},  {admin, false}, {verified, true}, {comfirmed, true}].
+	case eldap:search(Handle, [{base, M_group}, {filter, eldap:present("cn")}, {attributes, ["displayName", "mail"]}]) of 		
+		{error, Reason} -> lager:error("uc : ldap_import; Error : ~p for uid : ~p ", [Reason, UID]),
+							[];
+		{ok, S} ->[{account, UID}, {password, user_lib:hash_for(UID, "secret")}, {display_name, extract_display_name(S, M_group)}, {mail, extract_mail(S,M_group)},  {intern, is_internal(UID, Externals)},  {admin, false}, {verified, true}, {comfirmed, true}]
+	end.		
 	
 convert_members(Members) ->
 	lists:append([get_member(string:tokens(D,","))||D <- Members]).
@@ -83,6 +86,8 @@ extract_entry(Eldap_search_result, M_group) when is_record(Eldap_search_result, 
 
 iterate_eaters([]) ->
 	ok;
+iterate_eaters([[]|T]) ->
+	iterate_eaters(T);
 iterate_eaters([H|T]) ->
 	{account, UID} = lists:keyfind(account, 1, H),
 	?DEBUG(UID),
