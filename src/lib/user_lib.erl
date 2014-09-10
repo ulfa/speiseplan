@@ -16,7 +16,8 @@ require_login(Req) ->
     end,
     case boss_db:find(eater, [{account, 'equals', Account}]) of 
         [E] -> {ok, E};
-        [] -> {redirect, elib:get_full_path(speiseplan, "/error/viernullvier")}
+        [] -> lager:warning("uc : login; account ~p is missing", [Account]), 
+             {redirect, elib:get_full_path(speiseplan, "/error/viernullvier")}
     end.
 
 require_login(admin, Req) -> 
