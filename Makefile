@@ -53,3 +53,6 @@ eunit:
 
 docs:
 	@$(REBAR) doc skip_deps=true
+
+show_logs:
+	git log `git describe --tags --abbrev=0`..HEAD --oneline
