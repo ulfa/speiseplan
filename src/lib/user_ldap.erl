@@ -96,7 +96,7 @@ iterate_eaters([H|T]) ->
 
 save_eater([], [{account, Account}, {password, Password}, {display_name, DisplayName},  {mail, Mail}, {intern, Intern}, {admin, Admin}, {verified, Verified},  {comfirmed, Comfirmed}]) ->
 	?DEBUG("save new eater"),
-	NewEater = eater:new(id, Account, Password, "not set", "not set", DisplayName, Intern, "", Admin, Mail, Verified, Comfirmed),
+	NewEater = eater:new(id, Account, Password, user_lib:get_forename(DisplayName), user_lib:get_lastname(DisplayName), DisplayName, Intern, "", Admin, Mail, Verified, Comfirmed),
 	Return = NewEater:save(),
 	?DEBUG(Return);
 save_eater(_A, H) ->
