@@ -48,7 +48,16 @@
     			<input type="hidden" name="eater-id" value="{{ eater.id }}">
     			<input type="hidden" name="menu-id" value="{{ menu.id }}">
 				<input type="submit" class="btn btn-warning btn-middle" value="Anfrage">
-			</form>
+			</form>            
+            {% for requester in menu.get_requester %}
+                {% if eater.id == requester.id%}
+                <br>                
+                <div class="alert">                    
+                    <p class="text-success"><strong>Info!</strong> Anfrage wurde gesendet!<p>
+                </div>
+            </div>
+                {% endif %}
+            {% endfor %}
 	{% else %}
 	<h4>beendet</h4>
 	{% endif %}
