@@ -13,7 +13,7 @@ index('GET', [], Admin) ->
 search('GET', [], Admin) ->
 	From_Date = Req:query_param("from_date"),
 	To_Date = Req:query_param("to_date"),
-	Bookings = boss_db:find(booking, [{date, 'gt', date_lib:create_from_date(From_Date)}, {date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, date}]),	
+	Bookings = boss_db:find(booking, [{menu_date, 'gt', date_lib:create_from_date(From_Date)}, {menu_date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, menu_date}]),	
 	lager:info(".... Boookings : ~p", [Bookings]),
 	Entries = create_billing(Bookings, From_Date, To_Date, []),
 	{ok, CsvFiles} = file:list_dir(?CSV_DIR),
