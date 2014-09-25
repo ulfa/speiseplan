@@ -10,7 +10,7 @@ hash_for(Name, Password) ->
 
 require_login(Req) ->
     Account = case Req:header("REMOTE_USER") of
-        undefined -> lager:warning("SOMEONE IS ABLE TO LOGIN WITH NO REMOTE HEADER SET"),
+        undefined -> lager:warning("SOMEONE IS ABLE TO LOGIN WITH NO REMOTE HEADER SET"),                     
                      "ua";
         User -> User        
     end,
@@ -20,8 +20,14 @@ require_login(Req) ->
              {redirect, elib:get_full_path(speiseplan, "/error/viernullvier")}
     end.
 
-require_login(admin, Req) -> 
-	require_login(Req).
+require_login(admin, Req) ->
+  case Req:header("REMOTE_USER") of
+    undefined -> {redirect, elib:get_full_path(speiseplan, "/error/viernulldrei")};
+    User -> case boss_db:find(eater, [{account, 'equals', User}, {admin, 'equals', true}]) of
+              [] -> {redirect, elib:get_full_path(speiseplan, "/error/viernulldrei")}; 
+              [Admin] -> {ok, Admin}
+            end
+  end.
 
 get_forename(Display_name) when is_list(Display_name) ->
   case string:rstr(Display_name, " ") of 

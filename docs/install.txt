@@ -49,3 +49,12 @@ io:fwrite("~ts~n",[[86,50,54,110,124,93,120,118,85,86,36,34,34,90,65,122,80,87,8
 mail_from, Wer sendet die Mail?
 mail_to, An wen wird die Mail gesendet
 mail_ready, Text für die readyMail
+
+2. Setzen der IP Adressen
+export MOCHIWEB_IP="127.0.0.1"
+export ERL_EPMD_ADDRESS="127.0.0.1"
+
+Um zu sehen, welcher Port unter osx benutzt wird : sudo lsof -i -n -P | grep TCP
+
+
+
