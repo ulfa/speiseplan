@@ -175,7 +175,7 @@ send_ready_mail() ->
 	To = get_env(speiseplan, mail_to, "monheim@lists.innoq.com"),
 	Text = get_env(speiseplan, mail_ready, ""),
 	lager:info("sending ready Mail from : ~p to : ~p", [From, To]),
-	boss_mail:send(From, To, "Mittag für die nächste Woche ist eingestellt.", Text).
+	boss_mail:send(From, To, "Mittag für die nächste Woche ist eingestellt.", unicode:characters_to_list(Text, utf8)).
 
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).
