@@ -25,13 +25,13 @@
 	<div class="well">
 		<h3>Details fuer den eingebenen Zeitraum</h3>
 		<ul>
-			{% for name, intern, dates in billings %}
+			{% for name, intern, dates, sum in billings %}
 			<li>{{ name }} {{ intern }}</li>
 			<ul>
 				{% for date in dates %}
 				<li>{{ date }}</li>
 				{% endfor %}				
-				Summe : 0.0 €
+				Summe : {{sum}} €
 			</ul>
 			{% endfor %}
 		</ul>

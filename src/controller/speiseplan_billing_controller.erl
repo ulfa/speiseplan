@@ -11,13 +11,13 @@ index('GET', [], Admin) ->
 	{ok, [{eater, Admin}, {from_date, FromDate}, {to_date, ToDate}]}.
 	
 search('GET', [], Admin) ->
-	From_Date = Req:query_param("from_date"),
+	From_Date = Req:query_param("from_date"),	
 	To_Date = Req:query_param("to_date"),
+	lager:info("uc: create billing csv; from_date : ~p - to_date : ~p", [From_Date, To_Date]),
 	Bookings = boss_db:find(booking, [{menu_date, 'gt', date_lib:create_from_date(From_Date)}, {menu_date, 'lt', date_lib:create_to_date(To_Date)}], [{order_by, menu_date}]),	
-	lager:info(".... Boookings : ~p", [Bookings]),
 	Entries = create_billing(Bookings, From_Date, To_Date, []),
 	{ok, CsvFiles} = file:list_dir(?CSV_DIR),
-	{ok, [{eater, Admin}, {from_date, From_Date}, {to_date, To_Date},{billings, Entries}, {act_date, date_lib:create_date_string_from_date(erlang:date())},
+	{ok, [{eater, Admin}, {from_date, From_Date}, {to_date, To_Date}, {billings, create_sum_ui(Entries, [])}, {act_date, date_lib:create_date_string_from_date(erlang:date())},
 	{csvfiles, lists:sort(CsvFiles)}]}.
 
 create_billing([], From_Date, To_Date, Acc) ->
@@ -53,7 +53,12 @@ create_csv(FD, [{Name, Intern, Dates}|Billings]) ->
 	
 create_csv_line(Name, Intern, Dates) ->
 	string:join([string:join([string:join([Name, erlang:atom_to_list(Intern)], ",")|Dates], ","), create_sum(Intern, length(Dates))], ",").
-	
+
+create_sum_ui([], Acc) ->
+	Acc;	
+create_sum_ui([{FullName, Intern, Dates}|Entities], Acc) ->
+	create_sum_ui(Entities, [{FullName, Intern, Dates, create_sum(Intern, length(Dates))}|Acc]).
+
 create_sum(Intern, Day_Count) ->
 	erlang:integer_to_list(Day_Count * elib:intern(Intern)).
 
