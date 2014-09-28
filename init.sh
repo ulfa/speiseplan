@@ -9,6 +9,9 @@
 # plugin/driver, all configuration params and paths are in boss.config
 # -------------------------------------------------------------------
 
+export MOCHIWEB_IP="127.0.0.1"
+export ERL_EPMD_ADDRESS=127.0.0.1
+
 cd `dirname $0`
 
 case "${1:-''}" in
