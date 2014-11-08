@@ -13,6 +13,7 @@ init() ->
   create_guest_account(10),
   create_praktikant_account(10),
   init_erlcron(),
+  application:start(speiseplan_interface),
   ok.
 
 init_db () ->
