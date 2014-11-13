@@ -10,7 +10,7 @@ index('GET', [], Admin) ->
 mahlzeit('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
-	ok = send_mail(Menu:booking(), Menu, "Das Essen ist fertig!"),
+	ok = mahlzeit_mail(),
 	lager:info("uc : mahlzeit; menu-id : ~p", [Menu_Id]),
 	{redirect, [{'action', "index"}]}.
 	
@@ -157,7 +157,6 @@ update('POST', [], Admin) ->
 readyMail('POST', [], Admin) ->	
 	send_ready_mail(),	
 	{redirect, [{'action', "index"}]}.
-
 		
 send_mail([], Menu, Text) ->
 	ok;
@@ -165,6 +164,11 @@ send_mail([Booking|Bookings], Menu, Text) ->
 	Eater = Booking:eater(),
 	send_a_mail(Eater, Menu, Text),
 	send_mail(Bookings, Menu, Text).
+
+mahlzeit_mail() ->
+	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
+	To = get_env(speiseplan, mail_to, "monheim@lists.innoq.com"),	
+	boss_mail:send(From, To, "Mahlzeit!", "Das Essen ist fertig!").
 
 send_a_mail(Eater, Menu, Text) ->
 	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
