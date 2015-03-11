@@ -17,7 +17,7 @@ index_json('GET', [], Eater) ->
 	{json, [get_menu_json(Menus), {eater_id, Eater:id()}, {week, date_lib:week_of_year()}]}.
 
 get_menu_json(Menus) ->
-	{menus,[[{menu, Menu}, {dish, Menu:dish()}, get_all_eater_json(Menu), get_all_eater_names_json(Menu)]||Menu<-Menus]}.
+	{menus,[[{menu, Menu}, {dish, Menu:dish()}, get_all_eater_json(Menu), get_all_eater_names_json(Menu), get_free_slots_json(Menu)]||Menu<-Menus]}.
 
 get_all_eater_json(Menu) ->
 	{bookings, [[{eater, Eater}]||Eater <- Menu:get_all_eater()]}.
@@ -29,6 +29,8 @@ get_all_eater_names_json(Menu) ->
 	end,
 	{eater_name, Result}.
 
+get_free_slots_json(Menu) ->
+	{free_slots, Menu:get_slot_count()}.
 
 book('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),
