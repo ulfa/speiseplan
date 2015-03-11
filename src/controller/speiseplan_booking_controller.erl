@@ -10,8 +10,26 @@ before_(_) ->
 	
 index('GET', [], Eater) ->
 	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, ascending]),
-	{ok, [{menus, Menus}, {eater, Eater}, {week, date_lib:week_of_year()}]}.	
-		
+	{ok, [{menus, Menus}, {eater, Eater}, {week, date_lib:week_of_year()}]}.
+
+index_json('GET', [], Eater) ->
+	Menus = boss_db:find(menu, [{date, 'ge', date_lib:create_date_from_string([])}], [{order_by, date}, ascending]),
+	{json, [get_menu_json(Menus), {eater_id, Eater:id()}, {week, date_lib:week_of_year()}]}.
+
+get_menu_json(Menus) ->
+	{menus,[[{menu, Menu}, {dish, Menu:dish()}, get_all_eater_json(Menu), get_all_eater_names_json(Menu)]||Menu<-Menus]}.
+
+get_all_eater_json(Menu) ->
+	{bookings, [[{eater, Eater}]||Eater <- Menu:get_all_eater()]}.
+
+get_all_eater_names_json(Menu) ->
+	Result = case Menu:get_all_eater_names() of
+		[] -> "";
+		Any -> Any
+	end,
+	{eater_name, Result}.
+
+
 book('POST', [], Eater) ->
 	EaterId = Req:post_param("eater-id"),
 	MenuId = Req:post_param("menu-id"),
