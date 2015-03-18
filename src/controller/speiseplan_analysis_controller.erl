@@ -20,6 +20,18 @@ index('GET', [Year, Month], Admin) ->
 	{Intern, Extern} = analyse_menus(month,Menus, array:new(Day_count, {default,0}), array:new(Day_count, {default,0})),
 	{ok, [{eater, Admin}, {categories, date_lib:get_days_of_month(Year, Month)},
 	 {subtitle, ?SUBTITLE_MONTH(Month)}, {intern, Intern}, {extern, Extern}]}.
+
+index_json('GET', [Year], Admin) -> 
+	Menus = get_menus_for_year(Year),	
+	{Intern, Extern} = analyse_menus(year, Menus, array:new(12, {default,0}), array:new(12, {default,0})),
+	{json, [{categories, ?YEAR}, {subtitle, ?SUBTITLE_YEAR(Year)}, {year, Year}, {intern, Intern}, {extern, Extern}]};
+
+index_json('GET', [Year, Month], Admin) -> 
+	Menus = get_menus_for_month(Year, Month),	
+	Day_count = calendar:last_day_of_the_month(list_to_integer(Year), list_to_integer(Month)),
+	{Intern, Extern} = analyse_menus(month,Menus, array:new(Day_count, {default,0}), array:new(Day_count, {default,0})),
+	{json, [{categories, date_lib:get_days_of_month(Year, Month)},
+	 {subtitle, ?SUBTITLE_MONTH(Month)}, {intern, Intern}, {extern, Extern}]}.
 		
 analyse_menus(year,[], Intern, Extern) ->
 	{list_of_integer_to_string(array:to_list(Intern)), list_of_integer_to_string(array:to_list(Extern))};	

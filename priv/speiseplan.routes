@@ -18,8 +18,9 @@
 %%{"/eater", [{controller, "eater"}, {action, "index"}]}.
 %%{"/registration", [{controller, "registration"}, {action, "index"}]}.
 %%{"/billing", [{controller, "billing"}, {action, "index"}]}.
-{"/booking/index_json", [{controller, "booking"}, {action, "index_json"}]}.
- 
+%%{"/booking/index_json", [{controller, "booking"}, {action, "index_json"}]}.
+%%{"/analysis/index_json", [{controller, "analysis"}, {action, "index_json"}]}.
+
 % Front page
 {"/", [{controller, "actual"}, {action, "index"}]}.
 
