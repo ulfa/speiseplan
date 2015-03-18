@@ -1,5 +1,6 @@
 -module(speiseplan_admin_controller, [Req]).
 -compile(export_all).
+
 before_(_) ->
 	user_lib:require_login(admin, Req).
 	
@@ -124,8 +125,6 @@ create('POST', [], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
-	lager:info(".... : ~p", [Date]),
-	
 	NewDish = dish:new(id, Title, Details, elib:handle_checkbox(Vegetarian)),	
 	case NewDish:save() of
 		{error, Errors} -> {redirect, [{'action', "index"}]};
@@ -145,7 +144,6 @@ update('POST', [], Admin) ->
 	Details = Req:post_param("details"),
 	Slots = Req:post_param("slots"),
 	Vegetarian = Req:post_param("vegetarian"),
-		lager:info(".... : ~p", [Date]),	
 	NewDish = Dish:set([{'title', Title}, {'details', Details}, {'vegetarian', elib:handle_checkbox(Vegetarian)}]),
 	NewMenu = Menu:set([{'date', date_lib:create_date_from_string(Date)}, {'slots', Slots}]),
 	{ok, SavedDish} = NewDish:save(),
@@ -166,20 +164,21 @@ send_mail([Booking|Bookings], Menu, Text) ->
 	send_mail(Bookings, Menu, Text).
 
 mahlzeit_mail() ->
-	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
-	To = get_env(speiseplan, mail_to, "monheim@lists.innoq.com"),	
+	From = get_env(speiseplan, mail_from, ""),
+	To = get_env(speiseplan, mail_to, ""),	
 	boss_mail:send(From, To, "Mahlzeit!", "Das Essen ist fertig!").
 
 send_a_mail(Eater, Menu, Text) ->
-	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
+	From = get_env(speiseplan, mail_from, ""),
 	boss_mail:send(From, Eater:mail(), Menu:get_date_as_string(), unicode:characters_to_list(Text, utf8)).
 
 send_ready_mail() ->
-	From = get_env(speiseplan, mail_from, "anja.angermann@innoq.com"),
-	To = get_env(speiseplan, mail_to, "monheim@lists.innoq.com"),
+	From = get_env(speiseplan, mail_from, ""),
+	To = get_env(speiseplan, mail_to, ""),
 	Text = get_env(speiseplan, mail_ready, ""),
-	lager:info("sending ready Mail from : ~p to : ~p", [From, To]),
-	boss_mail:send(From, To, "Mittag für die nächste Woche ist eingestellt.", unicode:characters_to_list(Text, utf8)).
+	Subject = get_env(speiseplan, mail_ready_subject, ""),
+	lager:info("uc: send_ready_mail from : ~p to : ~p", [From, To]),
+	boss_mail:send(From, To, Subject, Text).
 
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).
