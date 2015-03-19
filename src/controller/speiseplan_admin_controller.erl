@@ -2,6 +2,7 @@
 -compile(export_all).
 
 before_(_) ->
+	lager:info("user agent: ~p for user: ~p", [Req:header('User-Agent'), Req:header("remote_user")]),
 	user_lib:require_login(admin, Req).
 	
 index('GET', [], Admin) ->
