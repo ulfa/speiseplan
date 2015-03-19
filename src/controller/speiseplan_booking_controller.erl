@@ -6,6 +6,7 @@
 
 
 before_(_) ->
+	lager:info("user agent: ~p for user: ~p", [Reg:header('User-Agent'), Req:header("remote_user")]),
 	user_lib:require_login(Req).
 	
 index('GET', [], Eater) ->
