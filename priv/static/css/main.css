@@ -38,52 +38,70 @@ body {
 
 .board h1 {
   margin: 60px 0 10px;
-  font-size: 80px;
-  font-weight: 200;
-  line-height: 1;
   letter-spacing: -1px;
   font-family: Kreide; color: #FFFFFF
 }
 
 .board h2 {
 	margin: 60px 0 10px;
-	font-size: 50px;
-	font-weight: 200;
-	line-height: 1;
 	letter-spacing: -1px;
 	font-family: Kreide; color: #FFFFFF
 }
 
+@media (min-width: 768px) {
+	.board h1 {
+		font-size: 80px;
+  		font-weight: 200;
+  		line-height: 1;
+	}
+	.board h2 {
+		font-size: 50px;
+		font-weight: 200;
+		line-height: 1;
+	}
+	.board h3 {
+		font-size: 40px;
+		font-weight: 200;
+		line-height: 1;
+	}
+	.board h4 {
+		font-size: 30px;
+		font-weight: 200;
+		line-height: 1;
+	}
+	.board h5 {
+		font-size: 16px;
+		font-weight: 200;
+		line-height: 1;
+	}
+	.board h9 {
+		font-size: 12px;
+		font-weight: 200;
+		line-height: 1;
+	}
+
+
+
+}
+
 .board h3 {
 	margin: 60px 0 10px;
-	font-size: 40px;
-	font-weight: 200;
-	line-height: 1;
 	letter-spacing: -1px;
   	font-family: Kreide; color: #FFFFFF
 }
 
 .board h4 {
 	margin: 60px 0 10px;
-	font-size: 30px;
-	font-weight: 200;
-	line-height: 1;
 	letter-spacing: -1px;
   	font-family: Kreide; color: #FF0000
 }
 
 .board h5 {
-	font-size: 16px;
-	font-weight: 200;
-	line-height: 1;
 	letter-spacing: -1px;
   	font-family: Kreide; color: #FFFFFF
 }
 
 .board h9 {
-	font-size: 12px;
-	font-weight: 200;
-	line-height: 1;
 	letter-spacing: -1px;
   	font-family: Kreide; color: #FFFFFF
 }
