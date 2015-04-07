@@ -12,7 +12,7 @@ index('GET', [], Admin) ->
 mahlzeit('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
-	ok = mahlzeit_mail(),
+	mahlzeit_mail(),
 	lager:info("uc : mahlzeit; menu-id : ~p", [Menu_Id]),
 	{redirect, [{'action', "index"}]}.
 	
