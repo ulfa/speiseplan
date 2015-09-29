@@ -28,6 +28,11 @@ cp_log:
 cp_db:
 		mkdir -p $(LOG_DIR)/db/$(DATE)
 		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/Mnesia.* $(LOG_DIR)/db/$(DATE)/
+
+cp_backup:
+		mkdir -p $(LOG_DIR)/backup/$(DATE)
+		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup $(LOG_DIR)/backup/$(DATE)/
+
 release: app
 	@$(REBAR) generate
 
