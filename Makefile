@@ -33,9 +33,17 @@ cp_backup:
 		mkdir -p $(LOG_DIR)/backup/$(DATE)
 		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup $(LOG_DIR)/backup/$(DATE)/
 
+cp_backup_latest:
+		mkdir -p $(LOG_DIR)/backup/latest
+		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup $(LOG_DIR)/backup/latest/
+
 cp_boss_config:
 		mkdir -p $(LOG_DIR)/config/$(DATE)
 		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config $(LOG_DIR)/config/$(DATE)/
+
+cp_boss_config_latest:
+		mkdir -p $(LOG_DIR)/config/latest
+		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config $(LOG_DIR)/config/latest/
 		
 release: app
 	@$(REBAR) generate
