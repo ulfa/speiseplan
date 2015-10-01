@@ -1,5 +1,13 @@
 -module(convert).
 -export([change_node_name/4, restore/1]).
+-export([migrate/2]).
+
+migrate(From, To) ->
+	change_node_name(From, To, "./backup/latest/mnesia.backup", "./backup/latest/migration.backup"),
+	restore("./backup/latest/migration.backup"),
+	mnesia:stop(),
+	mnesia:start(),
+	io:format("~n migration finished! ~n").
 
 change_node_name(From, To, Source, Target) ->
 	Switch =
@@ -43,7 +51,7 @@ change_node_name(From, To, Source, Target) ->
 				%io:format(" --- ~p~n", [Other]),
 				{[Other], Acc}
 		end,
-	mnesia:traverse_backup(Source, Target, Convert, switched).
+	{ok, _LastAcc} = mnesia:traverse_backup(Source, Target, Convert, switched).
 
 restore(Backup) ->
-	mnesia:restore(Backup, [{default_op, recreate_tables}]).
+	{atomic, _RestoredTabs} = mnesia:restore(Backup, [{default_op, recreate_tables}]).

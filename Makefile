@@ -34,8 +34,8 @@ cp_backup:
 		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup $(LOG_DIR)/backup/$(DATE)/
 
 cp_backup_latest:
-		mkdir -p $(LOG_DIR)/backup/latest
-		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup $(LOG_DIR)/backup/latest/
+		mkdir -p ./backup/latest
+		scp -r $(USR)@$(HOST):$(TARGET)/backup/mnesia.backup ./backup/latest/
 
 cp_boss_config:
 		mkdir -p $(LOG_DIR)/config/$(DATE)
