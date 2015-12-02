@@ -3,7 +3,7 @@ DIALYZER = dialyzer
 REBAR = ./rebar
 REPO = ../repository
 REPOSRC = ../../repository
-TARGET = ~/kantine
+TARGET = ~/
 LOG_DIR = ../../innoq_icook
 DATE = `date +%Y-%m-%d`
 
@@ -11,12 +11,12 @@ DATE = `date +%Y-%m-%d`
 
 all: app
 
-tar: app 
+tar: 
 	cd ..; tar --exclude=$(PROJECT)/.git --exclude=$(PROJECT)/Mnesia.speiseplan* --exclude=$(PROJECT)/priv/static/billing/* --exclude=$(PROJECT)/*/.DS_Store --exclude=$(PROJECT)/.DS_Store --exclude=$(PROJECT)/log/* -cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
 
 cpall: tar
 	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
-	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)/$(PROJECT).$(VERSION).tar'
+	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)$(PROJECT).$(VERSION).tar'
 
 cp: tar
 	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
@@ -42,8 +42,8 @@ cp_boss_config:
 		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config $(LOG_DIR)/config/$(DATE)/
 
 cp_boss_config_latest:
-		mkdir -p $(LOG_DIR)/config/latest
-		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config $(LOG_DIR)/config/latest/
+		mkdir -p ./config/latest
+		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config ./config/latest/
 		
 release: app
 	@$(REBAR) generate

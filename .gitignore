@@ -1,8 +1,10 @@
 *.DS_STORE
 boss.config
+boss.config.dev
 erl_crash.dump
 Mnesia.speiseplan@*
 log/*
 ebin/*
 deps/*
 /priv/static/billing/*
+backup

@@ -14,6 +14,7 @@ init() ->
   create_praktikant_account(10),
   init_erlcron(),
   application:start(speiseplan_interface),
+  janga_core_sup:start_link(),
   ok.
 
 init_db () ->
