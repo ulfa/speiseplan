@@ -1,0 +1,2 @@
+-module(devicetoken, [Id, Account, DeviceToken]).
+-compile(export_all).

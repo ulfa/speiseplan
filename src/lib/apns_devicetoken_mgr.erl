@@ -83,22 +83,28 @@ init([]) ->
 %% --------------------------------------------------------------------
 handle_call({add, Account, Device_token}, _From, State=#state{table = Table_id}) ->
 	lager:info("add devicetoken : ~p for account : ~p ", [Device_token, Account]),
-    ets:insert(Table_id, {Account, Device_token}),
+    DT = case boss_db:find(devicetoken, [{account, eq, Account}]) of
+        [] -> devicetoken:new(id, Account, Device_token);              
+        [DeviceToken] -> DeviceToken:set([{device_token,Device_token}])
+    end,
+    DT:save(),
     {reply, ok, State};
 
 handle_call({get, Account}, _From, State=#state{table = Table_id}) ->
-    case ets:lookup(Table_id, Account) of
+    case boss_db:find(devicetoken, [{account, eq, Account}]) of
         [] -> {reply, notfound, State};
-        [{_Account, Device_token}] -> {reply, Device_token, State}
+        [DeviceToken] -> {reply, DeviceToken:device_token(), State}
     end;
 
 handle_call(get, _From, State=#state{table = Table_id}) ->
-    Device_token = ets:tab2list(Table_id),
+    Device_token = boss_db:find(devicetoken, []),
     {reply, Device_token, State};
 
 handle_call({delete, Account}, _From, State=#state{table = Table_id}) ->
-    ets:delete(Table_id, Account),
-    {reply, ok, State};
+    case boss_db:find(devicetoken, [{account, eq, Account}]) of
+        [] -> {reply, ok, State};
+        [DeviceToken] -> {reply, boss_db:delete(DeviceToken:id()), State}
+    end;
 
 handle_call(_Request, _From, State) ->
     Reply = ok,
