@@ -14,8 +14,7 @@ init() ->
   create_guest_account(10),
   create_praktikant_account(10),
   init_erlcron(),
-  application:start(speiseplan_interface),
-  janga_core_sup:start_link(),
+  application:start(speiseplan_interface),  
   apns:connect_test(),
   ok.
 
