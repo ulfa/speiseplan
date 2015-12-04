@@ -54,6 +54,8 @@ mail_ready, Text für die readyMail
 export MOCHIWEB_IP="127.0.0.1"
 export ERL_EPMD_ADDRESS="127.0.0.1"
 
+Um lokal zu entwicklen sollte man dieses Variablen in dem Shript init.sh auskommentieren.
+
 Um zu sehen, welcher Port unter osx benutzt wird : sudo lsof -i -n -P | grep TCP
 
 
