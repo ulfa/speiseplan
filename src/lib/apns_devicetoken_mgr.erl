@@ -69,7 +69,7 @@ start() ->
 %%          {stop, Reason}
 %% --------------------------------------------------------------------
 init([]) ->
-    {ok, #state{}, 0}.
+    {ok, #state{}}.
 
 %% --------------------------------------------------------------------
 %% Function: handle_call/3
@@ -127,14 +127,6 @@ handle_cast(_Msg, State) ->
 %%          {noreply, State, Timeout} |
 %%          {stop, Reason, State}            (terminate/2 is called)
 %% --------------------------------------------------------------------
-handle_info(timeout, State) ->    
-    Table_id = janga_ets_mgr:init_table(self(), ?MODULE, []),
-    {noreply, State#state{table = Table_id}};
-
-handle_info({'ETS-TRANSFER', TableId, Pid, _Data}, State) ->
-    lager:info("ETS Manager (~p) -> Serivce (~p) getting TableId: ~p~n", [Pid, self(), TableId]),
-    {noreply, State#state{table = TableId}};
-
 handle_info(_Info, State) ->
     {noreply, State}.
 

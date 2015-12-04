@@ -24,8 +24,7 @@ start_link() ->
 
 init([]) ->
     {ok, {{one_for_one, 5, 10}, 
-    	[        	
-    	?CHILD(janga_ets_mgr, worker),
+    	[        	    	
         ?CHILD(apns_devicetoken_mgr, worker)
     	]
     	}}.

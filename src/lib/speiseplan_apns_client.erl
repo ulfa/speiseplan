@@ -29,7 +29,7 @@ send(Alert, Device_token) ->
       }).
 
 send_all(Alert) ->
-	[send(Alert, Device_token:device_token())||Device_token <- apns_devicetoken_mgr:get()].
+	[send(Alert, Device_token)||{_Account, Device_token} <- apns_devicetoken_mgr:get()].
 
 -spec log_error(string(), string()) -> ok.
 log_error(MsgId, Status) ->
