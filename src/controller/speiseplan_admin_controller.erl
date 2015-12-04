@@ -13,7 +13,7 @@ mahlzeit('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
 	mahlzeit_mail(),
-	mahlzeit_apn(),
+	send_apn("Mahlzeit!"),
 	lager:info("uc : mahlzeit; menu-id : ~p", [Menu_Id]),
 	{redirect, [{'action', "index"}]}.
 	
@@ -170,8 +170,8 @@ mahlzeit_mail() ->
 	To = get_env(speiseplan, mail_to, ""),	
 	boss_mail:send(From, To, "Mahlzeit!", "Das Essen ist fertig!").
 
-mahlzeit_apn() ->
-	speiseplan_apns_client:send_all("Mahlzeit!").
+send_apn(Text) ->
+	speiseplan_apns_client:send_all(Text).
 
 send_a_mail(Eater, Menu, Text) ->
 	From = get_env(speiseplan, mail_from, ""),
@@ -183,6 +183,7 @@ send_ready_mail() ->
 	Text = get_env(speiseplan, mail_ready, ""),
 	Subject = get_env(speiseplan, mail_ready_subject, ""),
 	lager:info("uc: send_ready_mail from : ~p to : ~p", [From, To]),
+	send_apn(Subject),
 	boss_mail:send(From, To, Subject, Text).
 
 get_env(App, Key, Default) ->
@@ -218,6 +219,6 @@ add_guests(Count, Date, Menu_date, Id) ->
 	add_guests(Count - 1, Date, Menu_date, Id).
 
 save_guest_or_prakt(Sign, Count, Date, Menu_date, Id) ->
-	[Eater] =boss_db:find(eater, [{account, eq, Sign ++ integer_to_list(Count)}]),
+	[Eater] = boss_db:find(eater, [{account, eq, Sign ++ integer_to_list(Count)}]),
 	NewBooking_ = booking:new(id, Date, Menu_date, false, Eater:id(), Id),	
 	{ok, SavedBooking} = NewBooking_:save().
