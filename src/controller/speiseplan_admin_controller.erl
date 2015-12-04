@@ -13,6 +13,7 @@ mahlzeit('POST', [], Admin) ->
 	Menu_Id = Req:post_param("menu-id"),
 	Menu = boss_db:find(Menu_Id),
 	mahlzeit_mail(),
+	mahlzeit_apn(),
 	lager:info("uc : mahlzeit; menu-id : ~p", [Menu_Id]),
 	{redirect, [{'action', "index"}]}.
 	
@@ -168,6 +169,9 @@ mahlzeit_mail() ->
 	From = get_env(speiseplan, mail_from, ""),
 	To = get_env(speiseplan, mail_to, ""),	
 	boss_mail:send(From, To, "Mahlzeit!", "Das Essen ist fertig!").
+
+mahlzeit_apn() ->
+	speiseplan_apns_client:send_all("Mahlzeit!").
 
 send_a_mail(Eater, Menu, Text) ->
 	From = get_env(speiseplan, mail_from, ""),

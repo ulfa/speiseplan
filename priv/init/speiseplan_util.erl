@@ -8,6 +8,7 @@ init() ->
   application:start(public_key),
   application:start(ssl),
   application:start(inets),
+  application:start(apns),
   init_db (),
   create_admin(),
   create_guest_account(10),
@@ -15,6 +16,7 @@ init() ->
   init_erlcron(),
   application:start(speiseplan_interface),
   janga_core_sup:start_link(),
+  apns:connect_test(),
   ok.
 
 init_db () ->

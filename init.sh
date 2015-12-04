@@ -9,8 +9,6 @@
 # plugin/driver, all configuration params and paths are in boss.config
 # -------------------------------------------------------------------
 
-export MOCHIWEB_IP="127.0.0.1"
-export ERL_EPMD_ADDRESS=127.0.0.1
 
 cd `dirname $0`
 
@@ -18,6 +16,8 @@ case "${1:-''}" in
   'start')
         # Start Boss in production mode
         echo "starting boss in production mode..."
+        export MOCHIWEB_IP="127.0.0.1"
+        export ERL_EPMD_ADDRESS=127.0.0.1
         START=$(./rebar boss c=start_cmd|grep -v "==>")
         $START
         ;;
