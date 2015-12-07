@@ -1,5 +1,6 @@
 *.DS_STORE
 boss.config
+boss.config.org
 boss.config.dev
 erl_crash.dump
 Mnesia.speiseplan@*
