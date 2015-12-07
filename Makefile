@@ -62,6 +62,10 @@ clean:
 
 install:
 	find . -name '._*'|xargs rm
+
+link_boss_config:
+	ln -s ../icook-config/boss.config boss.config
+	
 tests: clean app eunit ct
 
 eunit:

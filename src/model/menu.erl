@@ -9,10 +9,10 @@
 %%		"The date is too old"}].	
 		
 is_in_time() ->
-	(calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
+	calendar:datetime_to_gregorian_seconds(Date) - (calendar:datetime_to_gregorian_seconds({erlang:date(),{12,0,0}})) > 0.	
 
 is_time_to_book() ->
-	calendar:datetime_to_gregorian_seconds(Date) - calendar:datetime_to_gregorian_seconds({erlang:date(),{15,0,0}}) > 72000.
+	calendar:datetime_to_gregorian_seconds(Date) - (calendar:datetime_to_gregorian_seconds({erlang:date(),{15,0,0}})) > 72000.
 	
 get_request_count() ->
 	boss_db:count(requester, [{menu_date, 'equals', get_date_as_string()}]).
@@ -51,7 +51,7 @@ get_day_as_string() ->
 	date_lib:get_day_as_string(Date).
 
 get_slot_count() ->
-	list_to_integer(Slots) - erlang:length(booking()).
+	list_to_integer(Slots) - (erlang:length(booking())).
 
 get_all_eater() ->
 	get_a_eater(booking(), []).
