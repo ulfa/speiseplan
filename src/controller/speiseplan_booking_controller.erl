@@ -62,8 +62,6 @@ request('POST', [], Eater) ->
 				Eater = boss_db:find(EaterId),
 				send_mail(Eater, Menu),
 				send_apn(Eater, Menu),
-				%send_message_to_BC("Anfrage : " ++ Menu:get_date_as_string(), "test", "bell-triple"),
-
 				lager:info("uc : request; eater-id : ~p; booking : ~p", [EaterId, NewRequest]);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
@@ -155,19 +153,3 @@ create_billing([Booking|Bookings], Acc, Eater) ->
 
 get_env(App, Key, Default) ->
 	boss_env:get_env(App, Key, Default).	
-
-send_message_to_BC(Title, Message, Sound) ->	
-	lager:info("uc : send_message_to_BC"),
-	Account = boss_env:get_env(speiseplan, boxcar, "NmEAW2euRjuUGesV58n"), 
-    case httpc:request(post, 
-        {?URI,
-        [],
-        ?CONTENT_TYPE,
-        mochiweb_util:urlencode([{"user_credentials", Account}, {"notification[title]",Title},{"notification[long_message]", Message}, {"notification[sound]", Sound}])
-        },
-        [{ssl, [{verify, 0}]}],
-        []
-        ) of 
-    {ok, Result} -> lager:info("did a post to boxcar with result : ~p", [Result]);
-    {error, Reason} -> lager:error("did a post to boxcar with error : ~p", [Reason])
-    end.
