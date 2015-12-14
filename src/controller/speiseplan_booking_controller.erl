@@ -61,18 +61,12 @@ request('POST', [], Eater) ->
 				{ok, SavedRequest} = NewRequest:save(),
 				Eater = boss_db:find(EaterId),
 				send_mail(Eater, Menu),
-				send_apn(Eater, Menu),
+				speiseplan_apns_client:send_apn(Eater, Menu),
 				lager:info("uc : request; eater-id : ~p; booking : ~p", [EaterId, NewRequest]);
 		true -> lager:info("Eater : ~p already requested", [EaterId])
 	end,
 	{redirect, elib:get_full_path(speiseplan,"/booking/index")}.
 
-send_apn(Eater, Menu) ->
-	Account = boss_env:get_env(speiseplan, admin_apn, ""),
-	Device_token = apns_devicetoken_mgr:get(Account), 
-	Message = "Anfrage " ++ date_lib:create_date_german_string(Menu:date()) ++"\nvon " ++ Eater:name(),
-	lager:info("uc: request : ~p ~p ~p", [Account, Device_token, Message]),
-	speiseplan_apns_client:send(Message, Device_token). 
 
 has_allready_requested(Date, EaterId, MenuId) ->
 	case boss_db:find(requester, [{menu_date, 'equals', Date}, {eater_id, 'equals', EaterId}, {menu_id, 'equals', MenuId}]) of 
