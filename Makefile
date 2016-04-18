@@ -3,7 +3,7 @@ DIALYZER = dialyzer
 REBAR = ./rebar
 REPO = ../repository
 REPOSRC = ../../repository
-TARGET = ~/
+TARGET = ~/projects/erlang/
 LOG_DIR = ../../innoq_icook
 DATE = `date +%Y-%m-%d`
 
@@ -15,9 +15,9 @@ tar:
 	rm -f erl_crash.dump
 	cd ..; tar --exclude=$(PROJECT)/.git --exclude=$(PROJECT)/Mnesia.speiseplan* --exclude=$(PROJECT)/priv/static/billing/* --exclude=$(PROJECT)/*/.DS_Store --exclude=$(PROJECT)/.DS_Store --exclude=$(PROJECT)/log/* -cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
 
-cpall: tar
-	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
+dist: tar cp
 	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)$(PROJECT).$(VERSION).tar'
+	ssh $(USR)@$(HOST) 'cd $(TARGET)/speiseplan; make install'
 
 cp: tar
 	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
@@ -61,8 +61,9 @@ clean:
 	rm -f erl_crash.dump
 	rm -f log/*
 
-install:
+install: link_boss_config
 	find . -name '._*'|xargs rm
+	cd deps/jiffy; rebar clean; make
 
 link_boss_config:
 	ln -s ../icook-config/boss.config boss.config
