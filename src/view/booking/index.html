@@ -25,7 +25,10 @@
 	<h3>{{ menu.dish.title }}</h3>	
 	<h3>{{ menu.dish.details }}</h3>
 	</p>
-	{% if eater.id in menu.get_all_eater and menu.is_in_time %}						
+	{% if eater.id in menu.get_all_eater and menu.is_in_time %}	
+		{%if eater.name in menu.get_vegetarian_eater%}
+		<p class="text-success"><strong>Du hast vegetarisch gebucht!</strong><p>
+		{%endif%}					
 		<form method="post" action="{% url action="storno" %}">
 			<input type="hidden" name="eater-id" value="{{ eater.id }}">
 			<input type="hidden" name="menu-id" value="{{ menu.id }}">            			
