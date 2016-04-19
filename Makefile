@@ -61,7 +61,7 @@ clean:
 	rm -f erl_crash.dump
 	rm -f log/*
 
-install: link_boss_config
+install: 
 	find . -name '._*'|xargs rm
 	cd deps/jiffy; rebar clean; make
 

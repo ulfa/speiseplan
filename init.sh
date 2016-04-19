@@ -13,6 +13,13 @@
 cd `dirname $0`
 
 case "${1:-''}" in
+  'qa')
+        # Start Boss in production mode
+        echo "starting boss in qa mode..."
+        START=$(./rebar boss c=start_cmd|grep -v "==>")
+        $START
+        ;;
+
   'start')
         # Start Boss in production mode
         echo "starting boss in production mode..."
