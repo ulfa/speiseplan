@@ -59,4 +59,16 @@ Um lokal zu entwicklen sollte man immer init-dev.sh benutzen und auf dem QA Serv
 Um zu sehen, welcher Port unter osx benutzt wird : sudo lsof -i -n -P | grep TCP
 
 
+Installation der Software auf dem Zielrechner
 
+1. make dist mit den erforderlichen Parametern aufrufen
+2. auf dem Zielrechner einloggen 
+3. cp -R speiseplan speiseplan_<alte Release Nummer>
+4. stoppen des Servers. Dazu muss man sie mit ps -aef|grep erl den Prozess suchen und diesen mit kill <Prozess> beenden
+5. tar xvf speiseplan_<Release_Nummer>.tar
+6. cd speiseplan 
+7. make install
+8. In das Verzeichnis icook-config wechseln und git pull aufrufen
+8. die alte boss.config in dem Verzeichnis speiseplan löschen
+9. make link_boss_config aufrufen
+10. ./init.sh start
