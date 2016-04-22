@@ -15,12 +15,13 @@ tar:
 	rm -f erl_crash.dump
 	cd ..; tar --exclude=$(PROJECT)/.git --exclude=$(PROJECT)/Mnesia.speiseplan* --exclude=$(PROJECT)/priv/static/billing/* --exclude=$(PROJECT)/*/.DS_Store --exclude=$(PROJECT)/.DS_Store --exclude=$(PROJECT)/log/* -cvf $(REPO)/$(PROJECT).$(VERSION).tar $(PROJECT)
 
-dist: tar cp
+dist_qa: tar
+	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
 	ssh $(USR)@$(HOST) 'cd $(TARGET); tar xf $(TARGET)$(PROJECT).$(VERSION).tar'
 	ssh $(USR)@$(HOST) 'cd $(TARGET)/speiseplan; make install'
 
-cp: tar
-	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):$(TARGET)
+dist: tar
+	scp $(REPOSRC)/$(PROJECT).$(VERSION).tar $(USR)@$(HOST):~/
 
 cp_log: 
 	mkdir -p $(LOG_DIR)/$(DATE)
@@ -78,4 +79,4 @@ docs:
 	@$(REBAR) doc skip_deps=true
 
 show_logs:
-	git log `git describe --tags --abbrev=0`..HEAD --oneline
+	git shortlog `git describe --tags --abbrev=0`..HEAD --oneline
