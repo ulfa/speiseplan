@@ -64,7 +64,6 @@ clean:
 
 install: 
 	find . -name '._*'|xargs rm
-	cd deps/jiffy; rebar clean; make
 
 link_boss_config:
 	ln -s ../icook-config/boss.config boss.config
