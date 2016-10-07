@@ -14,7 +14,12 @@ edit('GET', [Id], Admin) ->
 	{ok, [{edit_eater, Eater},{eater, Admin}, {eaters, Eaters}]}.
 	
 delete('POST', [Id], Admin) ->
-	ok = boss_db:delete(Id),
+	usr_ldap:start(),
+	{redirect, elib:get_full_path(speiseplan, "/eater/index")}.
+
+import('POST', [], Admin) ->
+	lager:info("uc : manual triggert import of the ldap data"),
+	user_ldap:start(),
 	{redirect, elib:get_full_path(speiseplan, "/eater/index")}.
 
 verfied('POST', [Id], Admin) ->

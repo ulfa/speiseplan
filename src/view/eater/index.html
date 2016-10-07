@@ -2,7 +2,7 @@
 {% block body %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-lg-8 col-md-12">
 		<div class="panel panel-primary">
         	<div class="panel-heading">
           		<h2 class="panel-title">Esser</h2>  
@@ -41,6 +41,10 @@
 					</tbody>
 					{% endif%}
 				</table>
+				<form method="post" action="{% url action="import" %}">
+						<input type="submit" class="btn btn-danger btn-mini" value="Ldap import">
+				</form>					
+
 			</div>
 		</div>
 	</div>			

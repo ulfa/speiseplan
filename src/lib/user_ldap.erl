@@ -1,6 +1,5 @@
 -module(user_ldap).
 -include_lib("eldap/include/eldap.hrl").
--define(DEBUG(Var), io:format("DEBUG: ~p:~p - ~p~n ~p~n~n", [?MODULE, ?LINE, ??Var, Var])).
 -define(INTERNAL, "cn=Mitarbeiter,ou=Group,dc=innoq,dc=com").
 -define(EXTERNAL, "cn=Externe,ou=Group,dc=innoq,dc=com").
 -define(PRAKTIKUM, "cn=Praktikum,ou=Group,dc=innoq,dc=com").
@@ -11,17 +10,17 @@
 -compile(export_all).
 
 start() ->
-	error_logger:info_msg("uc: ldap_import; start"),
+	lager:info("uc: ldap_import; start"),
 	ssl:start(),
 	Handle = connect(),
 	E = get_account_list(Handle, ?EXTERNAL),
 	M = get_account_list(Handle, ?INTERNAL),
-	%P = get_account_list(Handle, ?PRAKTIKUM),
-	%lager:info("Praktikum : ~p", [P]),	
-	Members = [get_member(Handle, E, A)||A <- lists:append(M, E)],
+	P = get_account_list(Handle, ?PRAKTIKUM),
+	lager:info("Praktikum : ~p", [P]),	
+	Members = [get_member(Handle, E, A)||A <- lists:append([M, E, P])],
 	iterate_eaters(Members),
 	close(Handle),
-	error_logger:info_msg("uc: ldap_import; finished").
+	lager:info("uc: ldap_import; finished").
 		
 connect() ->
 	Ldap_server = get_env(speiseplan, ldap_server, "testldap.innoq.com"),
@@ -95,18 +94,18 @@ iterate_eaters([]) ->
 iterate_eaters([[]|T]) ->
 	iterate_eaters(T);
 iterate_eaters([H|T]) ->
-	{account, UID} = lists:keyfind(account, 1, H),
-	?DEBUG(UID),
+	{account, UID} = lists:keyfind(account, 1, H),	
 	save_eater(boss_db:find(eater,[account,'equals',UID]), H),
 	iterate_eaters(T).
 
 save_eater([], [{account, Account}, {password, Password}, {display_name, DisplayName},  {mail, Mail}, {intern, Intern}, {admin, Admin}, {verified, Verified},  {comfirmed, Comfirmed}]) ->
-	?DEBUG("save new eater"),
+	lager:info("save a new eater with account : ~p ", [Account]),
 	NewEater = eater:new(id, Account, Password, user_lib:get_forename(DisplayName), user_lib:get_lastname(DisplayName), DisplayName, Intern, "", Admin, Mail, Verified, Comfirmed),
-	Return = NewEater:save(),
-	?DEBUG(Return);
+	case NewEater:save() of		
+		{error, Reason} -> lager:error("can't save new eater ~p , because of the error : ~p", [Account, Reason]);
+		Return -> lager:info("saved eater : ~p", [Return])
+	end;
 save_eater(_A, H) ->
-	?DEBUG("allready in DB:"),
 	ok.
 	
 get_env(App, Key, Default) ->

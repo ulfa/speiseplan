@@ -18,7 +18,7 @@ get_free_slots_json(Menu) ->
 	{free_slots, Menu:get_slot_count()}.
 
 get_vegetarian_json(Menu) ->
-	{vegetarian, Menu:get_vegetarian_count()}.
+	{vegie_count, Menu:get_vegetarian_count()}.
 
 get_requester_json(Menu) ->
 	{requesters, [[{requester, Requester:id()}]||Requester <- Menu:get_requester()]}.
