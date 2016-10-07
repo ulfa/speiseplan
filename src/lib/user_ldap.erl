@@ -3,7 +3,11 @@
 -define(DEBUG(Var), io:format("DEBUG: ~p:~p - ~p~n ~p~n~n", [?MODULE, ?LINE, ??Var, Var])).
 -define(INTERNAL, "cn=Mitarbeiter,ou=Group,dc=innoq,dc=com").
 -define(EXTERNAL, "cn=Externe,ou=Group,dc=innoq,dc=com").
+-define(PRAKTIKUM, "cn=Praktikum,ou=Group,dc=innoq,dc=com").
 
+%% 
+%% Mittach 
+%% 
 -compile(export_all).
 
 start() ->
@@ -11,7 +15,9 @@ start() ->
 	ssl:start(),
 	Handle = connect(),
 	E = get_account_list(Handle, ?EXTERNAL),
-	M = get_account_list(Handle, ?INTERNAL),	
+	M = get_account_list(Handle, ?INTERNAL),
+	%P = get_account_list(Handle, ?PRAKTIKUM),
+	%lager:info("Praktikum : ~p", [P]),	
 	Members = [get_member(Handle, E, A)||A <- lists:append(M, E)],
 	iterate_eaters(Members),
 	close(Handle),
@@ -57,7 +63,7 @@ get_uid(Uid_string) ->
 	B.
 	
 is_internal(UID, Externals) ->
-	is_internal([A||A<-Externals, A=:=UID]).
+	is_internal([A || A <- Externals, A=:=UID]).
 is_internal([]) ->
 	true;
 is_internal(L) ->

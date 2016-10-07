@@ -1,15 +1,39 @@
-PROJECT = speiseplan
-DIALYZER = dialyzer
-REBAR = ./rebar
-REPO = ../repository
-REPOSRC = ../../repository
-TARGET = ~/projects/erlang/
-LOG_DIR = ../../innoq_icook
-DATE = `date +%Y-%m-%d`
+REBAR := ./rebar
 
+all: get-deps compile compile-app
 
+get-deps:
+	$(REBAR) get-deps
 
-all: app
+compile:
+	$(REBAR) compile
+
+compile-app:
+	$(REBAR) boss c=compile
+
+test:
+	$(REBAR) boss c=test_functional
+
+help:
+	@echo 'Makefile for your chicagoboss app                                      '
+	@echo '                                                                       '
+	@echo 'Usage:                                                                 '
+	@echo '   make help                        displays this help text            '
+	@echo '   make get-deps                    updates all dependencies           '
+	@echo '   make compile                     compiles dependencies              '
+	@echo '   make compile-app                 compiles only your app             '
+	@echo '                                    (so you can reload via init.sh)    '
+	@echo '   make test                        runs functional tests              '
+	@echo '   make all                         get-deps compile compile-app       '
+	@echo '                                                                       '
+	@echo 'DEFAULT:                                                               '
+	@echo '   make all                                                            '
+	@echo '                                                                       '
+
+.PHONY: all get-deps compile compile-app help test
+
+show_logs:
+	git shortlog `git describe --tags --abbrev=0`..HEAD --oneline
 
 tar: 
 	rm -f erl_crash.dump
@@ -46,36 +70,3 @@ cp_boss_config:
 cp_boss_config_latest:
 		mkdir -p ./config/latest
 		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config ./config/latest/
-		
-release: app
-	@$(REBAR) generate
-
-app: deps
-	@$(REBAR) compile
-
-deps:
-	@$(REBAR) get-deps
-
-clean:
-	@$(REBAR) clean
-	rm -f test/*.beam
-	rm -f erl_crash.dump
-	rm -f log/*
-
-install: 
-	find . -name '._*'|xargs rm
-
-link_boss_config:
-	ln -s ../icook-config/boss.config boss.config
-	
-tests: clean app eunit ct
-
-eunit:
-	@$(REBAR) eunit skip_deps=true
-
-
-docs:
-	@$(REBAR) doc skip_deps=true
-
-show_logs:
-	git shortlog `git describe --tags --abbrev=0`..HEAD --oneline

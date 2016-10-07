@@ -80,7 +80,6 @@ get_v_count(Booking, Count) ->
 is_vegetarian([], Count) ->
 		Count;
 is_vegetarian(Booking, Count) ->
-	io:format("vegetarin : ~p~n", [Booking:vegetarian()]),
 	case Booking:vegetarian() of
 		true -> Count + 1;
 		_ -> Count

@@ -1,6 +1,6 @@
 % Routes file.
 
-% Formats: 
+% Formats:
 %   {"/some/route", [{controller, "Controller"}, {action, "Action"}]}.
 %   {"/some/route", [{controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
 %   {"/(some|any)/route/(\\d+)", [{controller, '$1'}, {action, "Action"}, {id, '$2'}]}.
@@ -13,14 +13,6 @@
 %
 % Note that routing across applications results in a 302 redirect.
 
-%%{"/login", [{controller, "login"}, {action, "index"}]}.
-%%{"/admin", [{controller, "admin"}, {action, "index"}]}.
-%%{"/eater", [{controller, "eater"}, {action, "index"}]}.
-%%{"/registration", [{controller, "registration"}, {action, "index"}]}.
-%%{"/billing", [{controller, "billing"}, {action, "index"}]}.
-%%{"/booking/index_json", [{controller, "booking"}, {action, "index_json"}]}.
-%%{"/analysis/index_json", [{controller, "analysis"}, {action, "index_json"}]}.
-
 % Front page
 {"/", [{controller, "actual"}, {action, "index"}]}.
 
@@ -30,4 +22,3 @@
 
 % 500 Internal Error handler (only invoked in production)
 {500, [{controller, "error"}, {action, "fuenfhundert"}]}.
-

@@ -50,6 +50,12 @@
 			<form method="post" action="{% url action="request"%}">
     			<input type="hidden" name="eater-id" value="{{ eater.id }}">
     			<input type="hidden" name="menu-id" value="{{ menu.id }}">
+    			{% if menu.dish.vegetarian %}
+    			<label>
+      				<input type="checkbox" name="vegetarian" value="true">
+					<h9>vegetarisch</h9>					
+    			</label></br>
+				{% endif %}
 				<input type="submit" class="btn btn-warning btn-middle" value="Anfrage">
 			</form>            
             {% for requester in menu.get_requester %}
