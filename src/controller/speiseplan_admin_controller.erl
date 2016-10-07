@@ -30,13 +30,15 @@ edit('GET', [Id], Admin) ->
 
 add('POST', [Id], Admin) ->
 	Date = calendar:universal_time(),
-	EaterId = Req:post_param("esser"),
 	Menu = boss_db:find(Id),
+	EaterId = Req:post_param("esser"),
 	case EaterId of 
 		undefined -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
 		_ ->	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
 					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
-							_->	NewBooking = booking:new(id, Date, Menu:date(), false, EaterId, Id),	
+							_->	
+								Requester  = find_requester(Id, EaterId),
+								NewBooking = booking:new(id, Date, Menu:date(), Requester:vegetarian(), EaterId, Id),	
 								{ok, SavedBooking} = NewBooking:save(),
 								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
 								delete_requester(Id, EaterId),	
@@ -46,6 +48,7 @@ add('POST', [Id], Admin) ->
 								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
 				end
 	end.
+
 handle_requester('POST', [Id], Admin) ->
 	Button = Req:post_param("button"),
 	case Button of 
@@ -66,6 +69,12 @@ delete_requester(MenuId, EaterId) ->
 	case boss_db:find(requester, [{menu_id, 'equals', MenuId}, {eater_id, 'equals', EaterId}]) of
 		[] -> lager:info("can't delete requester : ~p", [EaterId]);
 		[Requester] -> boss_db:delete(Requester:id())
+	end.
+
+find_requester(MenuId, EaterId) ->
+	case boss_db:find(requester, [{menu_id, 'equals', MenuId}, {eater_id, 'equals', EaterId}]) of
+		[] -> [];
+		[Requester] -> Requester
 	end.
 
 %% add a count of guests to a menu	

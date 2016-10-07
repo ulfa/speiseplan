@@ -40,7 +40,7 @@ request('POST', [], Eater) ->
 	Vegetarian = Req:post_param("vegetarian"),
 	Menu = boss_db:find(MenuId),		
 	case has_allready_requested(Menu:get_date_as_string(), EaterId, MenuId) of
-		false -> NewRequest = requester:new(id, erlang:localtime(), Menu:get_date_as_string(), Vegetarian, MenuId, EaterId),
+		false -> NewRequest = requester:new(id, erlang:localtime(), Menu:get_date_as_string(), is_vegetarian(Vegetarian), MenuId, EaterId),
 				{ok, SavedRequest} = NewRequest:save(),
 				Eater = boss_db:find(EaterId),
 				send_mail(Eater, Menu),
