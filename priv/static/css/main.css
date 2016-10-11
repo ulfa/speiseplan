@@ -24,8 +24,13 @@ h2 {color: #FFFFFF;}
 .white {color: #FFFFFF;}
 
 body {
-    padding-top: 0px;
+    padding-top: 10px;
     background-image: url("/kiezkantine/static/images/slate.jpg");
+}
+
+.container-fluid-cook{
+  @extend .container-fluid;
+    margin-top: 50px;
 }
 
 /* Tafel section
