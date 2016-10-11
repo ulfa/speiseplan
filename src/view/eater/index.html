@@ -14,9 +14,9 @@
 							<th>Account</th>
 							<th>DisplayName</th>
 							<!--th>Mail</th-->
-							<th>Intern</th>
-							<th>Admin</th>
-							<th>Freigabe</th>				
+							<th class="hidden-sm hidden-xs">Intern</th>
+							<th class="hidden-sm hidden-xs">Admin</th>
+							<th class="hidden-sm hidden-xs">Freigabe</th>				
 						</tr>	
 					</thead>
 					{% if eaters %}
@@ -28,9 +28,9 @@
 							</td>
 							<td>{{ eater.display_name }}</td>						
 							<!--td><a href="mailto:{{ eater.mail }}">{{ eater.mail }}</a></td-->
-							<td>{{ eater.intern }}</td>
-							<td>{{ eater.admin }}</td>
-							<td>{{ eater.verified }}</td>
+							<td class="hidden-sm hidden-xs">{{ eater.intern }}</td>
+							<td class="hidden-sm hidden-xs">{{ eater.admin }}</td>
+							<td class="hidden-sm hidden-xs">{{ eater.verified }}</td>
 							<!--td>
 								<form method="post" name="Loeschung" action="{% url action="delete" id=eater.id %}">
 									<input type="submit" class="btn btn-danger btn-mini" value="löschen">
