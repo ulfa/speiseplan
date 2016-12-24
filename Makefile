@@ -1,4 +1,11 @@
-REBAR := ./rebar
+PROJECT = speiseplan
+DIALYZER = dialyzer
+REBAR = ./rebar
+REPO = ../repository
+REPOSRC = ../../repository
+TARGET = ~/projects/erlang/
+LOG_DIR = ../../innoq_icook
+DATE = `date +%Y-%m-%d`
 
 all: get-deps compile compile-app
 
@@ -70,3 +77,9 @@ cp_boss_config:
 cp_boss_config_latest:
 		mkdir -p ./config/latest
 		scp -r $(USR)@$(HOST):$(TARGET)/$(PROJECT)/boss.config ./config/latest/
+
+install: 
+	find . -name '._*'|xargs rm
+
+link_boss_config:
+	ln -s ../icook-config/boss.config boss.config
