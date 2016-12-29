@@ -52,7 +52,7 @@
 				<p class="panel-title">Verspätete Esser</p>  
 			</div>
 			<div class="panel-body">		
-				<form method="post" action="{% url action="add" id=menu.id %}">
+				<form method="post" action="{% url action="add_eater" id=menu.id %}">
 					<p>
 			    		<select name="esser" >
 				  		{% for eater in eaters %}

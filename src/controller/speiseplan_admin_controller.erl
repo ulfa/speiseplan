@@ -36,9 +36,30 @@ add('POST', [Id], Admin) ->
 		undefined -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
 		_ ->	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
 					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
-							_->	
-								Requester  = find_requester(Id, EaterId),
+						  [] ->	
+								Requester  = find_requester(Id, EaterId),								
 								NewBooking = booking:new(id, Date, Menu:date(), Requester:vegetarian(), EaterId, Id),	
+								{ok, SavedBooking} = NewBooking:save(),
+								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
+								delete_requester(Id, EaterId),	
+								Eater = boss_db:find(EaterId),
+								Menu = boss_db:find(Id),
+								send_a_mail(Eater, Menu, get_env(speiseplan, mail_bestaetigung, "")),								
+								{redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)}
+				end
+	end.
+
+add_eater('POST', [Id], Admin) ->
+	Date = calendar:universal_time(),
+	Menu = boss_db:find(Id),
+	EaterId = Req:post_param("esser"),
+	case EaterId of 
+		undefined -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
+		_ ->	case boss_db:find(booking, [{menu_id, 'equals', Id}, {eater_id , 'equals', EaterId}]) of
+					[Result] -> {redirect, elib:get_full_path(speiseplan, "/admin/detail/" ++ Id)};
+						  [] ->	
+								Requester  = find_requester(Id, EaterId),								
+								NewBooking = booking:new(id, Date, Menu:date(), false, EaterId, Id),	
 								{ok, SavedBooking} = NewBooking:save(),
 								lager:info("uc : add; eater-id : ~p; menu: ~p; booking : ~p", [EaterId, Menu, NewBooking]),
 								delete_requester(Id, EaterId),	
