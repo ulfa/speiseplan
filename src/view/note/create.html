@@ -1,4 +1,11 @@
-<div class="col-xs-3">
+  <script type="text/javascript">
+  $(function() {
+    $('#datepicker2').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+  });
+</script>
+<div class="col-lg-4 col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h2 class="panel-title">Bearbeiten</h2>  
@@ -16,14 +23,13 @@
  				<div class="form-group">
 					<label>Von Datum</label>     
 						<div class="controls">       
-							<input type="text" name="fromdate" class="auto-kal" placeholder="2012-10-01" required value="{{note.from_date|default: ''}}">
-
+						    <input type="text" name="todate" class="form-control" placeholder="2012-01-01"  value="{{note.from_date|default: ''}}" data-date-format="yyyy-mm-dd" id="datepicker2" required>
                         </div>
                 </div>
 				<div class="form-group">
 					<label>Bis Datum</label>     
 						<div class="controls"> 
-							<input type="text" name="todate" class="auto-kal" placeholder="2012-10-01" required value="{{note.to_date|default: ''}}">      
+                            <input type="text" name="todate" class="form-control" placeholder="2012-01-01"  value="{{note.to_date|default: ''}}" data-date-format="yyyy-mm-dd" id="datepicker2" required>
                         </div>
                 </div>
 				<div class="form-group">
