@@ -14,7 +14,7 @@ label input[type="radio"] {
 
 @font-face {
 	font-family: kreide;
-	src: url('/kiezkantine/static/font/EraserRegular.ttf');
+	src: url('/kiezkantine/static/font/KGBrokenVesselsSketch.ttf');
 	font-style: normal;
 	font-weight: normal;
 }
@@ -127,7 +127,7 @@ body {
 }
 
 .board h3 {
-	margin: 60px 0 10px;
+	margin: 30px 0 10px;
 	letter-spacing: -1px;
   	font-family: Kreide; color: #FFFFFF
 }

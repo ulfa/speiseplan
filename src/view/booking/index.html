@@ -4,7 +4,7 @@
 {% if menus %}
 <div id="scroller" class="container">
 <div class="container">
-	<div class="board">		
+	<div class="board">
 		<h1>Speiseplan</h1>
 	</div>
 </div>
@@ -14,14 +14,14 @@
 <div class="board">
 <div class="row-fluid">
 <div class="span4">
-	<br>
+	
 </div>	
 <div class="span4">
 	<p>
 	<h2>{{ menu.get_date_as_string }}</h2>
     <h5><a href="#" class="link white" data-original-title="{{menu.get_all_eater_names}}">({{ menu.get_day_as_string }})</a></h5>
 	<h3>{{ menu.dish.title }}</h3>	
-	<h3>{{ menu.dish.details }}</h3>
+	<h5>{{ menu.dish.details }}</h5>
 	</p>
 	{% if eater.id in menu.get_all_eater and menu.is_in_time %}	
 		{%if eater.name in menu.get_vegetarian_eater%}
@@ -39,7 +39,7 @@
 				{% if menu.dish.vegetarian %}
     			<label>
       				<input type="checkbox" name="vegetarian" value="true">
-					<h9>vegetarisch</h9>					
+					<h8>vegetarisch</h8>					
     			</label></br>
 				{% endif %}
     			<input type="submit" class="btn btn-primary btn-middle" value="Buchen">				
