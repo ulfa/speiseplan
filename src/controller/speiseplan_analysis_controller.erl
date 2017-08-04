@@ -11,9 +11,8 @@ before_(_) ->
 	user_lib:require_login(admin, Req).
 
 index('GET', [Year], Admin) -> 
-	Menus = get_menus_for_year(Year),	
-	{Intern, Extern} = analyse_menus(year, Menus, array:new(12, {default,0}), array:new(12, {default,0})),
-	{ok, [{eater, Admin}, {categories, ?YEAR}, {subtitle, ?SUBTITLE_YEAR(Year)}, {year, Year}, {intern, Intern}, {extern, Extern}]};
+	{Year, [{intern, Intern}, {extern, Extern}, {ausgegeben, Ausgegeben}]} = bookings:get_eater(Year),
+	{ok, [{eater, Admin}, {categories, ?YEAR}, {subtitle, ?SUBTITLE_YEAR(Year)}, {year, Year}, {intern, Intern}, {extern, Extern}, {ausgegeben, Ausgegeben}]};
 	
 index('GET', [Year, Month], Admin) -> 
 	Menus = get_menus_for_month(Year, Month),	
@@ -23,8 +22,6 @@ index('GET', [Year, Month], Admin) ->
 	 {subtitle, ?SUBTITLE_MONTH(Month)}, {intern, Intern}, {extern, Extern}]}.
 
 index_json('GET', [Year], Admin) -> 
-%	Menus = get_menus_for_year(Year),	
-%	{Intern, Extern} = analyse_menus(year, Menus, array:new(12, {default,0}), array:new(12, {default,0})),
 	{Year, [{intern, Intern}, {extern, Extern}, {ausgegeben, Ausgegeben}]} = bookings:get_eater(Year),
 	{json, [{categories, ?YEAR}, {subtitle, ?SUBTITLE_YEAR(Year)}, {year, Year}, {intern, Intern}, {extern, Extern}, {ausgegeben, Ausgegeben}]};
 
