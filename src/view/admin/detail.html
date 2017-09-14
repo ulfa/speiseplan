@@ -47,12 +47,12 @@
 		</div>
 	</div>
 	<div class="col-lg-3">
-		<div class="panel panel-primary hidden-sm hidden-xs">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<p class="panel-title">Verspätete Esser</p>  
-			</div>
+			</div>			
 			<div class="panel-body">		
-				<form method="post" action="{% url action="add_eater" id=menu.id %}">
+				<form role="form" method="post" action="{% url action="add_eater" id=menu.id %}">
 					<p>
 			    		<select name="esser" >
 				  		{% for eater in eaters %}
@@ -84,7 +84,7 @@
 			</div>
 		</div>		
 		{% endif %}
-		<div class="panel panel-primary hidden-sm hidden-xs">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<p class="panel-title">Gäste</p>  
 			</div>
@@ -109,7 +109,7 @@
         		</form>
         	</div>
         </div>
-        <div class="panel panel-primary hidden-sm hidden-xs">
+        <div class="panel panel-primary">
 			<div class="panel-heading">
 				<p class="panel-title">Praktikanten</p>  
 			</div>
@@ -134,7 +134,7 @@
         		</form>
 			</div>
 		</div>
-		<div class="panel panel-primary hidden-sm hidden-xs">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<p class="panel-title">Ausgegebene Speisen</p>  
 			</div>

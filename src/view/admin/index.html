@@ -13,10 +13,10 @@
                 <tr>
       	        <th>Datum</th>
                   <th>Speise</th>
-                  <th>max.</th>
+                  <th class="hidden-sm hidden-xs">max.</th>
                   <th>Anmeldungen</th>
                   <th>Vegetarier</th>
-                  <th>Anfragen</th>
+                  <th class="hidden-sm hidden-xs">Anfragen</th>
                   <th></th>                  			
                   <th></th>   
                   <th></th>   
@@ -28,10 +28,10 @@
                 <tr id="{{_base_url}}/admin/{{ menu.id }}">
                   <td><a href="{{ _base_url }}/admin/detail/{{ menu.id }}">{{ menu.get_date_as_string }} ({{menu.get_day_as_string}})</a></td>
                   <td>{{ menu.dish.title }}</td>
-                  <td>{{ menu.slots}}</td>
+                  <td class="hidden-sm hidden-xs">{{ menu.slots}}</td>
                   <td>{{ menu.booking|length}}</td>
                   <td>{{ menu.get_vegetarian_eater|length }}</td>
-                  <td>{{ menu.get_request_count }}<td>
+                  <td class="hidden-sm hidden-xs">{{ menu.get_request_count }}<td>
                   <td><a class="btn btn-primary btn-xs" href="{{ _base_url }}/admin/edit/{{menu.id}}">Edit</a></td>
                   <td>
                     <form method="post" name="Storno" action="{% url action="storno" %}">
